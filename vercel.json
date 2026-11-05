@@ -3,7 +3,12 @@
   "version": 2,
   "cleanUrls": true,
   "functions": {
-    "api/**/*.js": {
+    "api/index.js": {
+      "memory": 1024,
+      "maxDuration": 30,
+      "includeFiles": "server.mjs,data/**,public/assets/**"
+    },
+    "api/[...all].js": {
       "memory": 1024,
       "maxDuration": 30,
       "includeFiles": "server.mjs,data/**,public/assets/**"

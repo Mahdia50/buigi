@@ -5,8 +5,8 @@
   "functions": {
     "api/**/*.js": {
       "memory": 1024,
-      "maxDuration": 15,
-      "includeFiles": "data/**,public/assets/**"
+      "maxDuration": 30,
+      "includeFiles": "server.mjs,data/**,public/assets/**"
     }
   },
   "rewrites": [

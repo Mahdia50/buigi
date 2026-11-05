@@ -339,7 +339,23 @@ function parseSerovalNode(node, root) {
 function unpackPayload(body) {
   if (!body) return {};
   try {
-    const json = typeof body === "string" ? JSON.parse(body) : body;
+    // تحويل Buffer إلى string إذا لزم (Vercel Serverless يُعطي req.body كـ Buffer أحياناً)
+    let str;
+    if (Buffer.isBuffer(body)) {
+      str = body.toString("utf8");
+    } else if (typeof body === "string") {
+      str = body;
+    } else if (typeof body === "object") {
+      // إذا كان object جاهز (Vercel قد يُحلّل body تلقائياً)
+      if (body.t && body.f !== undefined) {
+        const parsed = parseSerovalNode(body.t, body);
+        return parsed?.data || parsed || {};
+      }
+      return body.data || body;
+    } else {
+      return {};
+    }
+    const json = JSON.parse(str);
     if (json.t && json.f !== undefined) {
       const parsed = parseSerovalNode(json.t, json);
       return parsed?.data || parsed || {};
@@ -352,15 +368,20 @@ function unpackPayload(body) {
 
 async function getRawOrParsedBody(req) {
   if (req.body !== undefined && req.body !== null) {
+    // تحويل Buffer إلى string لضمان التوافق مع Vercel Serverless
+    if (Buffer.isBuffer(req.body)) {
+      return req.body.toString("utf8");
+    }
     return req.body;
   }
   if (req.readableEnded || req.complete) {
     return "";
   }
   return new Promise((resolve) => {
-    let raw = "";
-    req.on("data", chunk => { raw += chunk; });
+    let chunks = [];
+    req.on("data", chunk => { chunks.push(chunk); });
     req.on("end", () => {
+      const raw = Buffer.concat(chunks).toString("utf8");
       req.body = raw;
       resolve(raw);
     });
@@ -382,6 +403,20 @@ function sendFnResponse(res, data) {
 
 // معالج الطلبات العام المتوافق مع Node.js و Vercel Serverless
 export async function handleRequest(req, res) {
+  try {
+    return await _handleRequest(req, res);
+  } catch (err) {
+    console.error("[UNHANDLED_ERROR]", err?.message || err);
+    if (!res.headersSent) {
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.writeHead(500);
+      res.end(JSON.stringify({ error: err?.message || "خطأ غير متوقع", ok: false }));
+    }
+  }
+}
+
+async function _handleRequest(req, res) {
   const host = req.headers?.host || "localhost";
   const url = new URL(req.url, `http://${host}`);
   
@@ -403,11 +438,14 @@ export async function handleRequest(req, res) {
   if (req.method === "POST" || req.method === "PUT" || req.method === "PATCH") {
     if (req.body === undefined || req.body === null) {
       req.body = await new Promise((resolve) => {
-        let raw = "";
-        req.on("data", chunk => { raw += chunk; });
-        req.on("end", () => resolve(raw));
+        let chunks = [];
+        req.on("data", chunk => { chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)); });
+        req.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
         req.on("error", () => resolve(""));
       });
+    } else if (Buffer.isBuffer(req.body)) {
+      // Vercel قد يُعطي req.body كـ Buffer - نحوّله لـ string
+      req.body = req.body.toString("utf8");
     }
   }
   // إتاحة CORS للأجهزة والشبكة المحلية

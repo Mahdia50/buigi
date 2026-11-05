@@ -1,0 +1,982 @@
+{
+  "category_id": "general",
+  "category_name": "المغرب العام",
+  "emoji": "🇲🇦",
+  "questions": [
+    {
+      "id": "gen_100_1",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هي عاصمة المملكة المغربية الإدارية والسياسية؟",
+      "options": {
+        "A": "مراكش",
+        "B": "فاس",
+        "C": "الرباط",
+        "D": "الدار البيضاء"
+      },
+      "correct_answer": "C",
+      "explanation": "الرباط هي العاصمة الإدارية والسياسية للمملكة المغربية ومدينة الأنوار وعاصمة الثقافة.",
+      "source_title": "بوابة المغرب الرسمية",
+      "source_url": "https://www.maroc.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_2",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هي العملة الرسمية المتداولة في المملكة المغربية؟",
+      "options": {
+        "A": "الفرنك",
+        "B": "الريال",
+        "C": "الدينار",
+        "D": "الدرهم المغربي"
+      },
+      "correct_answer": "D",
+      "explanation": "الدرهم المغربي هو الوحدة الأساسية لعملة المغرب ويصدره بنك المغرب.",
+      "source_title": "بنك المغرب",
+      "source_url": "https://www.bkam.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_3",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "media": null,
+      "question": "كم عدد أضلاع النجمة التي تتوسط العلم الوطني المغربي؟",
+      "options": {
+        "A": "خمسة أضلاع",
+        "B": "ستة أضلاع",
+        "C": "ثمانية أضلاع",
+        "D": "أربعة أضلاع"
+      },
+      "correct_answer": "A",
+      "explanation": "يتوسط العلم المغربي ذو الخلفية الحمراء نجمة خماسية خضراء ترمز لأركان الإسلام الخمسة.",
+      "source_title": "دستور المملكة المغربية",
+      "source_url": "https://www.maroc.ma/ar/content/symboles-royaume",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_4",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "media": null,
+      "question": "أي من المحيطات التالية يطل عليها المغرب من جهة الغرب؟",
+      "options": {
+        "A": "المحيط الهادئ",
+        "B": "المحيط الأطلسي",
+        "C": "المحيط المتجمد الشمالي",
+        "D": "المحيط الهندي"
+      },
+      "correct_answer": "B",
+      "explanation": "يمتلك المغرب واجهة ساحلية واسعة على المحيط الأطلسي غرباً وعلى البحر الأبيض المتوسط شمالاً.",
+      "source_title": "وزارة التجهيز والماء المغربية",
+      "source_url": "http://www.equipement.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_5",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هما اللغتان الرسميتان المعتمدتان في الدستور المغربي لعام 2011؟",
+      "options": {
+        "A": "العربية والفرنسية",
+        "B": "الأمازيغية والفرنسية",
+        "C": "العربية والأمازيغية",
+        "D": "العربية والإنجليزية"
+      },
+      "correct_answer": "C",
+      "explanation": "ينص الفصل الخامس من الدستور المغربي على أن العربية والأمازيغية هما اللغتان الرسميتان للمملكة.",
+      "source_title": "الجريدة الرسمية للمملكة المغربية",
+      "source_url": "http://www.sgg.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_1",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو المضيق الاستراتيجي الذي يفصل المغرب عن القارة الأوروبية؟",
+      "options": {
+        "A": "مضيق هرمز",
+        "B": "مضيق باب المندب",
+        "C": "مضيق البوسفور",
+        "D": "مضيق جبل طارق"
+      },
+      "correct_answer": "D",
+      "explanation": "مضيق جبل طارق يربط بين البحر الأبيض المتوسط والمحيط الأطلسي ويفصل المغرب عن إسبانيا بمسافة تقارب 14 كم.",
+      "source_title": "وكالة الموانئ الوطنية المغربية",
+      "source_url": "https://www.anp.org.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_2",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "media": null,
+      "question": "أي مدينة مغربية تُعرف تاريخياً بلقب «المدينة الحمراء»؟",
+      "options": {
+        "A": "مراكش",
+        "B": "مكناس",
+        "C": "طنجة",
+        "D": "فاس"
+      },
+      "correct_answer": "A",
+      "explanation": "تلقب مراكش بالمدينة الحمراء نظراً للون الطمي والحجارة الحمراء المستخدمة في بناء أسوارها ومبانيها القديمة.",
+      "source_title": "المكتب الوطني المغربي للسياحة",
+      "source_url": "https://www.visitmorocco.com",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_3",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو أعلى قمة جبلية في المملكة المغربية وسلسلة جبال الأطلس؟",
+      "options": {
+        "A": "جبل بويبلان",
+        "B": "جبل توبقال",
+        "C": "جبل العياشي",
+        "D": "جبل تدغين"
+      },
+      "correct_answer": "B",
+      "explanation": "يبلغ ارتفاع جبل توبقال 4167 متراً فوق مستوى سطح البحر وهو أعلى قمة في المغرب وشمال إفريقيا.",
+      "source_title": "الوكالة الوطنية للمياه والغابات",
+      "source_url": "http://www.eauxetforets.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_4",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو رمز الاتصال الدولي الهاتفي المخصص للمملكة المغربية؟",
+      "options": {
+        "A": "+20",
+        "B": "+216",
+        "C": "+212",
+        "D": "+213"
+      },
+      "correct_answer": "C",
+      "explanation": "+212 هو رمز الاتصال الدولي المعين للمغرب من قبل الاتحاد الدولي للاتصالات.",
+      "source_title": "الاتحاد الدولي للاتصالات",
+      "source_url": "https://www.itu.int",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_5",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "media": null,
+      "question": "في أي مدينة مغربية تقع صومعة حسان التاريخية وضريح محمد الخامس؟",
+      "options": {
+        "A": "سلا",
+        "B": "تطوان",
+        "C": "فاس",
+        "D": "الرباط"
+      },
+      "correct_answer": "D",
+      "explanation": "تقع صومعة حسان التاريخية التي شيدها السلطان يعقوب المنصور الموحدي في العاصمة الرباط.",
+      "source_title": "وزارة الشباب والثقافة والتواصل",
+      "source_url": "https://minculture.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_1",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "media": null,
+      "question": "كم يبلغ عدد جهات المملكة المغربية وفق التقسيم الجهوي الإداري المعمول به منذ عام 2015؟",
+      "options": {
+        "A": "12 جهة",
+        "B": "16 جهة",
+        "C": "14 جهة",
+        "D": "10 جهات"
+      },
+      "correct_answer": "A",
+      "explanation": "اعتمد المغرب عام 2015 تقسيماً جهوياً جديداً قلص عدد الجهات من 16 إلى 12 جهة بهدف تعزيز الجهوية المتقدمة.",
+      "source_title": "وزارة الداخلية - البوابة الوطنية للجهات",
+      "source_url": "http://www.pncl.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_2",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو أطول نهر يتدفق بالكامل داخل الأراضي المغربية ويصب في المحيط الأطلسي قرب المهدية؟",
+      "options": {
+        "A": "نهر أبي رقراق",
+        "B": "نهر سبو",
+        "C": "نهر أم الربيع",
+        "D": "نهر ملوية"
+      },
+      "correct_answer": "B",
+      "explanation": "نهر سبو هو أكبر أنهار المغرب من حيث الصبيب المائي، بينما أم الربيع هو الأطول (حوالي 555 كم). ويصب سبو في المهدية.",
+      "source_title": "وكالة الحوض المائي لسبو",
+      "source_url": "http://www.abhsebou.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_3",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "media": null,
+      "question": "في أي سنة أدرجت ساحة جامع الفناء بمراكش ضمن التراث الثقافي اللامادي للإنسانية من قِبل اليونسكو؟",
+      "options": {
+        "A": "1995",
+        "B": "2012",
+        "C": "2001",
+        "D": "2008"
+      },
+      "correct_answer": "C",
+      "explanation": "أعلنت اليونسكو ساحة جامع الفناء تحفة للتراث الشفهي واللامادي للإنسانية عام 2001 وأدرجت رسمياً عام 2008.",
+      "source_title": "منظمة اليونسكو - التراث اللامادي",
+      "source_url": "https://ich.unesco.org/en/RL/cultural-space-of-jemaa-el-fna-square-00014",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_4",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هي المدينة المغربية التي تحتوي على أقدم جامعة مستمرة في منح الشهادات بالعالم وفق اليونسكو؟",
+      "options": {
+        "A": "مراكش",
+        "B": "الرباط",
+        "C": "طنجة",
+        "D": "فاس"
+      },
+      "correct_answer": "D",
+      "explanation": "جامعة القرويين بمدينة فاس أسستها فاطمة الفهرية عام 859م وتعتبرها اليونسكو وموسوعة غينيس أقدم مؤسسة تعليمية قائمة في العالم.",
+      "source_title": "اليونسكو - مركز التراث العالمي",
+      "source_url": "https://whc.unesco.org/en/list/170",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_5",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو الاسم التاريخي لمضيق جبل طارق في المصادر الجغرافية واليونانية القديمة؟",
+      "options": {
+        "A": "أعمدة هرقل",
+        "B": "بحر المجاز",
+        "C": "خليج تينجيس",
+        "D": "بحر الظلمات"
+      },
+      "correct_answer": "A",
+      "explanation": "أطلق القدماء على مضيق جبل طارق اسم «أعمدة هرقل»، حيث كان يُعتقد أنه الحد الغربي للعالم المعروف.",
+      "source_title": "المكتبة الوطنية للمملكة المغربية",
+      "source_url": "http://www.bnrm.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_1",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو الطائر المهدد بالانقراض عالمياً والذي تأوي المحميات المغربية في سوس-ماسة أكبر مستعمرة برية متكاثرة له في العالم؟",
+      "options": {
+        "A": "العقاب الإمبراطوري",
+        "B": "أبو منجل الأقرع الشمالي",
+        "C": "الحبارى الإفريقية",
+        "D": "النحام الوردي"
+      },
+      "correct_answer": "B",
+      "explanation": "منتزه سوس ماسة الوطني بالمغرب يأوي غالبية أفراد طائر أبو منجل الأقرع الشمالي (Geronticus eremita) البرية المتبقية على كوكب الأرض.",
+      "source_title": "المنتزه الوطني لسوس ماسة",
+      "source_url": "http://www.parcnationalsoussmassa.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_2",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "media": null,
+      "question": "في أي موقع أثري مغربي تم اكتشاف أقدم بقايا للإنسان العاقل (Homo sapiens) يعود تاريخها لنحو 300 ألف سنة؟",
+      "options": {
+        "A": "كهف المهربين بتمارة",
+        "B": "مغارة الحمام بتافوغالت",
+        "C": "جبل إيغود",
+        "D": "موقع وليلي"
+      },
+      "correct_answer": "C",
+      "explanation": "اكتشف فريق بحثي دولي بقيادة المعهد الوطني لعلوم الآثار والتراث في جبل إيغود بإقليم اليوسفية بقايا إنسان عاقل تعود لأكثر من 300,000 سنة.",
+      "source_title": "مجلة Nature والوزارة المكلفة بالثقافة",
+      "source_url": "https://www.nature.com/articles/nature22336",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_3",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "media": null,
+      "question": "ما اسم الشجرة المتوطنة الحصرية بالمغرب والمصنفة محمية حيوية من قبل اليونسكو ويُستخرج منها زيت غذائي وتجميلي نادر؟",
+      "options": {
+        "A": "شجرة الزقوم",
+        "B": "شجرة الأرز الأطلسي",
+        "C": "شجرة الصنوبر الحلبي",
+        "D": "شجرة الأركان"
+      },
+      "correct_answer": "D",
+      "explanation": "شجرة الأركان (Argania spinosa) شجرة نادرة تستوطن بالأساس جنوب غرب المغرب ومسجلة كتراث إنساني ومحمية للمحيط الحيوي من طرف اليونسكو.",
+      "source_title": "منظمة اليونسكو - شبكة محميات المحيط الحيوي",
+      "source_url": "https://en.unesco.org/biosphere/arab-states/arganeraie",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_4",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هي السنة التي أنشئ فيها أول متحف وطني مغربي للصلصاليين والآثار في فاس (متحف البطحاء)؟",
+      "options": {
+        "A": "1915",
+        "B": "1945",
+        "C": "1924",
+        "D": "1932"
+      },
+      "correct_answer": "A",
+      "explanation": "تحول قصر البطحاء الذي بناه السلطان مولاي عبد العزيز عام 1897 إلى أول متحف للفنون والآثار بالمغرب في عام 1915.",
+      "source_title": "المؤسسة الوطنية للمتاحف بالمغرب",
+      "source_url": "https://fnm.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_5",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو الاسم الذي أطلقه الجغرافي الشريف الإدريسي في خريطته الشهيرة في القرن 12 على هضبة الفوسفاط المغربية؟",
+      "options": {
+        "A": "بلاد السوس",
+        "B": "أرض تامسنا",
+        "C": "بلاد الشاوية",
+        "D": "جبال درن"
+      },
+      "correct_answer": "B",
+      "explanation": "عُرفت المنطقة الوسطى الغربية التاريخية التي تضم الشاوية ودكالة ومناطق الفوسفاط الحالية في كتابات الإدريسي باسم إقليم تامسنا.",
+      "source_title": "نزهة المشتاق في اختراق الآفاق للإدريسي",
+      "source_url": "http://www.bnrm.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_1",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هي أدنى نقطة انخفاضاً تحت مستوى سطح البحر في المملكة المغربية؟",
+      "options": {
+        "A": "ضاية عوا",
+        "B": "سبخة زيما",
+        "C": "سبخة طاح",
+        "D": "شط ملغيغ"
+      },
+      "correct_answer": "C",
+      "explanation": "سبخة طاح الواقعة قرب طرفاية تنخفض بحوالي 55 متراً تحت مستوى سطح البحر، وهي أخفض نقطة في المغرب.",
+      "source_title": "الوكالة الحضرية للعيون الساقية الحمراء",
+      "source_url": "http://www.aulaayoune.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_2",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو الاسم الفلكي الدقيق للنجم الذي أطلق عليه الاتحاد الفلكي الدولي رسمياً اسم «تطوان» والنجم التابع له اسم «الشاون» عام 2015؟",
+      "options": {
+        "A": "نجم الدبران Alpha Tauri",
+        "B": "نجم سهيل Canopus",
+        "C": "نجم HD 208487",
+        "D": "نجم تيتسي Upsilon Andromedae"
+      },
+      "correct_answer": "D",
+      "explanation": "في عام 2015 وخلال حملة NameExoWorlds اختيرت الأسماء المغربية 'تطوان' لنجم أبسيلون المرأة المسلسلة و'الشاون' لكوكبه التابع له تكريماً لعلم الفلك المغربي.",
+      "source_title": "الاتحاد الفلكي الدولي IAU",
+      "source_url": "https://www.iau.org/public/themes/naming_exoplanets",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_3",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "media": null,
+      "question": "كم تبلغ المساحة الإجمالية للمنطقة الاقتصادية الخالصة البحرية (EEZ) للمملكة المغربية تقريباً؟",
+      "options": {
+        "A": "نحو مليون ومائتي ألف كم²",
+        "B": "نحو 570 ألف كم²",
+        "C": "نحو 200 ألف كم²",
+        "D": "نحو 850 ألف كم²"
+      },
+      "correct_answer": "A",
+      "explanation": "تبلغ المنطقة الاقتصادية الخالصة للمغرب أكثر من 1.2 مليون كيلومتر مربع بفضل سواحله الممتدة لأكثر من 3500 كم على واجهتين بحريتين.",
+      "source_title": "وزارة الشؤون الخارجية والتعاون الإفريقي والمغاربة المقيمين بالخارج",
+      "source_url": "https://www.diplomatie.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_4",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو الاسم العلمي لسحلية 'الضب المغربي' المستوطن في المناطق شبه الصحراوية والجنوبية للمملكة؟",
+      "options": {
+        "A": "Chamaeleo chamaeleon",
+        "B": "Uromastyx nigriventris",
+        "C": "Uromastyx acanthinura",
+        "D": "Varanus griseus"
+      },
+      "correct_answer": "B",
+      "explanation": "الضب المغربي ذو البطن الأسود يصنف علمياً كـ Uromastyx nigriventris ويتميز بتكيفه العالي مع مناخ الأطلس الصغير والمناطق الجنوبية.",
+      "source_title": "المجلة المغربية لعلم الحيوان والجامعة العلمية بالرباط",
+      "source_url": "http://www.israbat.ac.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_5",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "media": null,
+      "question": "ما هو التاريخ الدقيق لصدور أول ظهير شريف ينظم دار السكة المغربية الحديثة في عهد السلطان الحسن الأول؟",
+      "options": {
+        "A": "عام 1878م بمكناس",
+        "B": "عام 1902م بطنجة",
+        "C": "عام 1881م بالرباط",
+        "D": "عام 1891م بفاس"
+      },
+      "correct_answer": "C",
+      "explanation": "أمر السلطان الحسن الأول بتحديث السكة المغربية واستيراد آلات سك حديثة بالرباط بموجب إصلاحات نقدية واسعة عام 1881م لسك الريال الحسني الفضي.",
+      "source_title": "متحف بنك المغرب وتاريخ النقد المغربي",
+      "source_url": "https://www.bkam.ma/Musee",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_6",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "question": "ما هي عملة المملكة المغربية الرسمية؟",
+      "options": {
+        "A": "الفرنك الأطلسي",
+        "B": "الدينار المغاربي",
+        "C": "الريال المغربي",
+        "D": "الدرهم المغربي"
+      },
+      "correct_answer": "D",
+      "explanation": "الدرهم المغربي هو الوحدة النقدية والعملة الرسمية للمملكة المغربية الصادرة عن بنك المغرب.",
+      "source_title": "بنك المغرب",
+      "source_url": "https://www.bkam.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_7",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "question": "ما هو اللقب الشهير الذي يُطلق على المنتخب الوطني المغربي لكرة القدم؟",
+      "options": {
+        "A": "أسود الأطلس",
+        "B": "فرسان المتوسط",
+        "C": "نسور قرطاج",
+        "D": "محاربو الصحراء"
+      },
+      "correct_answer": "A",
+      "explanation": "يُلقب المنتخب المغربي بـ 'أسود الأطلس' نسبة إلى أسد الأطلس التاريخي الذي استوطن جبال الأطلس المغربية.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_8",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "question": "ما هو المحيط الذي يحد المغرب من جهة الغرب؟",
+      "options": {
+        "A": "المحيط المتجمد",
+        "B": "المحيط الأطلسي",
+        "C": "المحيط الهادئ",
+        "D": "المحيط الهندي"
+      },
+      "correct_answer": "B",
+      "explanation": "يمتلك المغرب واجهة بحرية غربية واسعة تمتد لآلاف الكيلومترات على المحيط الأطلسي.",
+      "source_title": "وزارة التجهيز والماء المغربية",
+      "source_url": "https://www.equipement.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_9",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "question": "ما هو رمز الاتصال الدولي الهاتفي المخصص للمملكة المغربية؟",
+      "options": {
+        "A": "+216",
+        "B": "+213",
+        "C": "+212",
+        "D": "+218"
+      },
+      "correct_answer": "C",
+      "explanation": "مفتاح الاتصال الهاتفي الدولي للمغرب هو +212 المعتمد من الاتحاد الدولي للاتصالات.",
+      "source_title": "الوكالة الوطنية لتقنين المواصلات",
+      "source_url": "https://www.anrt.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_100_10",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "text",
+      "question": "ما هي الشجرة النادرة التي ينفرد بها المغرب عالمياً وتنتج زيتاً ذهبياً ثميناً؟",
+      "options": {
+        "A": "شجرة الصنوبر",
+        "B": "شجرة الكالبتوس",
+        "C": "شجرة الأرز",
+        "D": "شجرة الأركان"
+      },
+      "correct_answer": "D",
+      "explanation": "شجرة الأركان (Argania spinosa) شجرة متوطنة في المغرب ومعترف بها من اليونسكو كتراث إنساني ومحمية حيوية.",
+      "source_title": "منظمة اليونسكو العالمية",
+      "source_url": "https://www.unesco.org",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_6",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "question": "كم عدد الجهات الإدارية التي يتكون منها التقسيم الجهوي للمملكة المغربية منذ عام 2015؟",
+      "options": {
+        "A": "12 جهة",
+        "B": "16 جهة",
+        "C": "10 جهات",
+        "D": "14 جهة"
+      },
+      "correct_answer": "A",
+      "explanation": "اعتمد المغرب تقسيماً جهوياً جديداً بموجب مرسوم 2015 يقسم تراب المملكة إلى 12 جهة إدارية.",
+      "source_title": "المديرية العامة للجماعات الترابية",
+      "source_url": "https://www.collectivitesterritoriales.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_7",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "question": "ما هو أطول نهر مغربي يصب في المحيط الأطلسي بطول يقارب 556 كم؟",
+      "options": {
+        "A": "نهر درعة",
+        "B": "نهر أم الربيع",
+        "C": "نهر ملوية",
+        "D": "نهر سبو"
+      },
+      "correct_answer": "B",
+      "explanation": "نهر أم الربيع هو أطول نهر دائم الجريان ينبع ويصب بالكامل داخل الأراضي المغربية بطول يناهز 556 كم.",
+      "source_title": "وكالة الحوض المائي لأم الربيع",
+      "source_url": "https://www.abhzer.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_8",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "question": "أي مدينة مغربية تُعرف بلقب 'عاصمة الزيوت' و'العاصمة الإسماعيلية'؟",
+      "options": {
+        "A": "تطوان",
+        "B": "وجدة",
+        "C": "مكناس",
+        "D": "فاس"
+      },
+      "correct_answer": "C",
+      "explanation": "مدينة مكناس بناها السلطان المولى إسماعيل وتشتهر بإنتاج أجود أنواع زيت الزيتون في المغرب.",
+      "source_title": "بوابة جهة فاس مكناس",
+      "source_url": "https://www.fesmeknes.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_9",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "question": "ما هو الاسم التاريخي القديم الذي كان يُطلقه الرومان على وادي سبو بالمغرب؟",
+      "options": {
+        "A": "أنساريا",
+        "B": "ليكسوس",
+        "C": "سالا",
+        "D": "سوبور (Subur)"
+      },
+      "correct_answer": "D",
+      "explanation": "كان وادي سبو يُعرف في المصادر اللاتينية والرومانية باسم وادي 'سوبور' (Subur).",
+      "source_title": "تاريخ المغرب القديم - المعهد الوطني للآثار",
+      "source_url": "https://minculture.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_200_10",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "text",
+      "question": "ما هي المحطة السياحية الشتوية المغربية الشهيرة للتزلج في جبال الأطلس المتوسط؟",
+      "options": {
+        "A": "ميشليفن",
+        "B": "بين الويدان",
+        "C": "أوكايمدن",
+        "D": "إملشيل"
+      },
+      "correct_answer": "A",
+      "explanation": "محطة ميشليفن تقع بالقرب من مدينة إفران بالأطلس المتوسط وتعد من أبرز منتجعات التزلج في المغرب.",
+      "source_title": "المكتب الوطني المغربي للسياحة",
+      "source_url": "https://www.visitmorocco.com",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_6",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "question": "في أي عام تم توقيع معاهدة فاس التي فرضت الحماية الاستعمارية على المغرب؟",
+      "options": {
+        "A": "1906",
+        "B": "1912",
+        "C": "1914",
+        "D": "1920"
+      },
+      "correct_answer": "B",
+      "explanation": "وُقعت معاهدة فاس في 30 مارس 1912 بين السلطان المولى عبد الحفيظ والجمهورية الفرنسية.",
+      "source_title": "الخزانة الوطنية للمملكة المغربية",
+      "source_url": "https://www.bnrm.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_7",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "question": "ما هو أقدم سد مائي كبير شُيّد في المغرب في أوائل عهد الحماية عام 1929؟",
+      "options": {
+        "A": "سد بين الويدان",
+        "B": "سد الوحدة",
+        "C": "سد سيدي معاشو",
+        "D": "سد المسيرة"
+      },
+      "correct_answer": "C",
+      "explanation": "سد سيدي معاشو على نهر أم الربيع هو أول سد كهرومائي رئيسي شُيد بالمغرب وبدأ تشغيله عام 1929.",
+      "source_title": "المكتب الوطني للكهرباء والماء الصالح للشرب",
+      "source_url": "https://www.one.org.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_8",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "question": "ما اسم الميناء المتوسطي المغربي الضخم الذي يحتل المرتبة الأولى في إفريقيا والبحر المتوسط لتداول الحاويات؟",
+      "options": {
+        "A": "ميناء الجرف الأصفر",
+        "B": "ميناء الدار البيضاء",
+        "C": "ميناء الناظور غرب المتوسط",
+        "D": "ميناء طنجة المتوسط"
+      },
+      "correct_answer": "D",
+      "explanation": "ميناء طنجة المتوسط هو أكبر مجمع مينائي في البحر الأبيض المتوسط والقارة الإفريقية.",
+      "source_title": "هيئة ميناء طنجة المتوسط",
+      "source_url": "https://www.tangermed.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_9",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "question": "ما هي المعاهدة التي أنهت الحرب الإسبانية المغربية (حرب تطوان) عام 1860؟",
+      "options": {
+        "A": "معاهدة واد راس",
+        "B": "معاهدة طنجة",
+        "C": "معاهدة الجزيرة الخضراء",
+        "D": "معاهدة لالة مغنية"
+      },
+      "correct_answer": "A",
+      "explanation": "معاهدة واد راس وُقعت في 26 أبريل 1860 بين المغرب وإسبانيا عقب احتلال مدينة تطوان.",
+      "source_title": "تاريخ الدبلوماسية المغربية",
+      "source_url": "https://www.diplomatie.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_300_10",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "text",
+      "question": "ما هو الاسم الذي كان يُعرف به المغاربة لدى مؤرخي الأندلس وأوروبا في القرون الوسطى؟",
+      "options": {
+        "A": "الغوط",
+        "B": "المورو (Moors)",
+        "C": "الوندال",
+        "D": "الفرنجة"
+      },
+      "correct_answer": "B",
+      "explanation": "أطلق الأوروبيون والأندلسيون مصطلح 'المورو' (Moors) على أهل المغرب وشمال إفريقيا.",
+      "source_title": "الموسوعة المغربية",
+      "source_url": "https://www.alacademia.org.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_6",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "question": "ما هو الاسم الذي كان يحمله قصر بلدية طنجة التاريخي الذي احتضن إدارة المنطقة الدولية لطنجة؟",
+      "options": {
+        "A": "قصر المنبهي",
+        "B": "دار المخزن",
+        "C": "دار النيابة",
+        "D": "دار الباشا"
+      },
+      "correct_answer": "C",
+      "explanation": "دار النيابة بطنجة كانت مقراً لنائب السلطان ومقر السفارات واللجنة الدبلوماسية الدولية بطنجة.",
+      "source_title": "مؤسسة طنجة للتراث والحضارة",
+      "source_url": "https://minculture.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_7",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "question": "ما اسم أول مطبعة حجرية مغربية استقدمت إلى المغرب سنة 1864 ووضعت في مكناس ثم فاس؟",
+      "options": {
+        "A": "مطبعة الصباح",
+        "B": "مطبعة المعارف",
+        "C": "مطبعة المنار",
+        "D": "المطبعة الفاسية الحجرية لمحمد القصار"
+      },
+      "correct_answer": "D",
+      "explanation": "استقدم القاضي محمد بن الطيب الروداني أول مطبعة حجرية للمغرب عام 1864 وعرفت بالمطبعة الحجرية.",
+      "source_title": "تاريخ الطباعة والنشر بالمغرب - الخزانة الوطنية",
+      "source_url": "https://www.bnrm.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_8",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "question": "أي من القبائل المغربية قادت المقاومة المستميتة ضد الاستعمار الإسباني في معركة أنوال الخالدة 1921؟",
+      "options": {
+        "A": "قبائل الريف (بني ورياغل وإبقوين والتمان)",
+        "B": "قبائل الشاوية",
+        "C": "قبائل الغرب",
+        "D": "قبائل زعير"
+      },
+      "correct_answer": "A",
+      "explanation": "قادت قبيلة آيث ورياغل وقبائل الريف المجاهدة بقيادة عبد الكريم الخطابي ملحمة معركة أنوال العظمى عام 1921.",
+      "source_title": "المندوبية السامية لقدماء المقاومين وأعضاء جيش التحرير",
+      "source_url": "https://www.hcp.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_9",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "question": "ما هي أول محمية طبيعية بيولوجية أُحدثت في المغرب سنة 1934؟",
+      "options": {
+        "A": "المنتزه الوطني لتلسمطان",
+        "B": "المنتزه الوطني لتوبقال",
+        "C": "المنتزه الوطني لسوس ماسة",
+        "D": "المنتزه الوطني لإفران"
+      },
+      "correct_answer": "B",
+      "explanation": "منتزه توبقال الوطني الذي أُسس عام 1934 في الأطلس الكبير هو أقدم وأول منتزه وطني في تاريخ المغرب.",
+      "source_title": "الوكالة الوطنية للمياه والغابات",
+      "source_url": "https://www.eauxetforets.gov.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_400_10",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "text",
+      "question": "ما هي العملة الذهبية الموحدية المربعة التي كانت سائدة في المغرب والأندلس وأوروبا في العصر الوسيط؟",
+      "options": {
+        "A": "الريال الحسني",
+        "B": "الفلس المرابطي",
+        "C": "الدينار المومني المربع",
+        "D": "المثقال السعدي"
+      },
+      "correct_answer": "C",
+      "explanation": "الدينار الموحدي المربع سكه عبد المؤمن بن علي وكان علامة نقدية فارقة في اقتصاد البحر المتوسط.",
+      "source_title": "متحف بنك المغرب للعملات",
+      "source_url": "https://www.bkam.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_6",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "question": "ما هو الاسم الذي كان يُعرف به أول دستور مكتوب للمملكة المغربية صاغه علي زنيبر سنة 1908؟",
+      "options": {
+        "A": "وثيقة الاستقلال",
+        "B": "نظام الشورى المراكشي",
+        "C": "ميثاق طنجة",
+        "D": "مشروع دستور 1908 لجريدة لسان المغرب"
+      },
+      "correct_answer": "D",
+      "explanation": "في سنة 1908 صاغ مفكرون مغاربة برئاسة علي زنيبر مشروع دستور مكتوب نُشر في جريدة 'لسان المغرب' بطنجة.",
+      "source_title": "تاريخ المؤسسات الدستورية بالمغرب",
+      "source_url": "https://www.chambredesrepresentants.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_7",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "question": "ما هي المدينة المغربية التي احتضنت سنة 1969 المؤتمر التأسيسي لمنظمة التعاون الإسلامي إثر حريق المسجد الأقصى؟",
+      "options": {
+        "A": "الرباط",
+        "B": "فاس",
+        "C": "مراكش",
+        "D": "الدار البيضاء"
+      },
+      "correct_answer": "A",
+      "explanation": "احتضنت العاصمة الرباط القمة الإسلامية التأسيسية لمنظمة المؤتمر الإسلامي بدعوة من الملك الحسن الثاني في سبتمبر 1969.",
+      "source_title": "منظمة التعاون الإسلامي",
+      "source_url": "https://www.oic-oci.org",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_8",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "question": "ما اسم الفلكي والمؤقت المغربي الشهير من القرن الرابع عشر صاحب 'جامع المبادئ والغايات في علم الميقات'؟",
+      "options": {
+        "A": "أبو القاسم الفاسي",
+        "B": "الحسن المراكشي",
+        "C": "ابن طفيل",
+        "D": "ابن البناء المراكشي"
+      },
+      "correct_answer": "B",
+      "explanation": "الحسن المراكشي (أبو علي الحسن بن علي بن عمر المراكشي) ألف موسوعته الفلكية العظيمة جامع المبادئ والغايات في علم الميقات.",
+      "source_title": "تاريخ الفلك بالمغرب الأقصى",
+      "source_url": "https://www.alacademia.org.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_9",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "question": "ما اسم السفينة الدبلوماسية المغربية التي أرسلها السلطان سيدي محمد بن عبد الله سنة 1783 إلى السواحل الأمريكية للتأكيد على اعتراف المغرب بأمريكا؟",
+      "options": {
+        "A": "فرقاطة الفتح",
+        "B": "سفينة الرقاص",
+        "C": "المركب الحربي البشير",
+        "D": "سفينة الميمونة"
+      },
+      "correct_answer": "C",
+      "explanation": "كانت الفرقاطة المغربية 'البشير' من كبريات سفن الأسطول الدبلوماسي والتجاري العلوي في عهد سيدي محمد بن عبد الله.",
+      "source_title": "وثائق العلاقات التاريخية المغربية الأمريكية",
+      "source_url": "https://www.diplomatie.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    },
+    {
+      "id": "gen_500_10",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "text",
+      "question": "ما هي أقدم معاهدة صداقة لا تزال سارية المفعول دون انقطاع في تاريخ الولايات المتحدة الأمريكية؟",
+      "options": {
+        "A": "معاهدة واشنطن 1795",
+        "B": "معاهدة فرساي 1783",
+        "C": "معاهدة مدريد 1880",
+        "D": "معاهدة الصداقة المغربية الأمريكية لسنة 1786"
+      },
+      "correct_answer": "D",
+      "explanation": "معاهدة الصداقة الموقعة بمكناس عام 1786 بين المغرب وأمريكا هي أطول معاهدة صداقة غير منقطعة في تاريخ الولايات المتحدة.",
+      "source_title": "الأرشيف الدبلوماسي للمملكة المغربية",
+      "source_url": "https://www.diplomatie.ma",
+      "category": "المغرب العام",
+      "category_id": "general"
+    }
+  ]
+}

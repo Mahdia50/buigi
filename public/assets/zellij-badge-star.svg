@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g transform="translate(16,16)">
+    <!-- 8-Pointed Star -->
+    <polygon points="0,-14 4.2,-4.2 14,0 4.2,4.2 0,14 -4.2,4.2 -14,0 -4.2,-4.2" fill="#0284C7" stroke="#0369A1" stroke-width="1.2"/>
+    <polygon points="0,-14 4.2,-4.2 14,0 4.2,4.2 0,14 -4.2,4.2 -14,0 -4.2,-4.2" transform="rotate(45)" fill="#F59E0B" stroke="#D97706" stroke-width="1.2"/>
+    <!-- Center disk -->
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF" stroke="#0F172A" stroke-width="1"/>
+    <circle cx="0" cy="0" r="2.5" fill="#10B981"/>
+  </g>
+</svg>

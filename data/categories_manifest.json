@@ -1,0 +1,179 @@
+{
+  "categories": [
+    {
+      "category_id": "amazigh",
+      "category_name": "الثقافة الأمازيغية",
+      "emoji": "ⵣ",
+      "questions_count": 50,
+      "file": "cat_amazigh.json"
+    },
+    {
+      "category_id": "arts",
+      "category_name": "السينما والدراما والفن",
+      "emoji": "🎬",
+      "questions_count": 50,
+      "file": "cat_arts.json"
+    },
+    {
+      "category_id": "cities_civilization",
+      "category_name": "المدن والحضارة المغربية",
+      "emoji": "🏰",
+      "questions_count": 50,
+      "file": "cat_cities_civilization.json"
+    },
+    {
+      "category_id": "crafts",
+      "category_name": "الصناعة التقليدية",
+      "emoji": "🏺",
+      "questions_count": 50,
+      "file": "cat_crafts.json"
+    },
+    {
+      "category_id": "economy",
+      "category_name": "الاقتصاد والصناعة",
+      "emoji": "🏭",
+      "questions_count": 50,
+      "file": "cat_economy.json"
+    },
+    {
+      "category_id": "emoji_riddles",
+      "category_name": "ألغاز الإيموجي",
+      "emoji": "🧩",
+      "questions_count": 50,
+      "file": "cat_emoji_riddles.json"
+    },
+    {
+      "category_id": "festivals",
+      "category_name": "المهرجانات والفلكلور",
+      "emoji": "🎭",
+      "questions_count": 50,
+      "file": "cat_festivals.json"
+    },
+    {
+      "category_id": "figures",
+      "category_name": "شخصيات مغربية",
+      "emoji": "👤",
+      "questions_count": 50,
+      "file": "cat_figures.json"
+    },
+    {
+      "category_id": "food_photos",
+      "category_name": "الأكلات المغربية بالصور",
+      "emoji": "🍲",
+      "questions_count": 50,
+      "file": "cat_food_photos.json"
+    },
+    {
+      "category_id": "general",
+      "category_name": "المغرب العام",
+      "emoji": "🇲🇦",
+      "questions_count": 50,
+      "file": "cat_general.json"
+    },
+    {
+      "category_id": "geography",
+      "category_name": "جغرافيا المغرب",
+      "emoji": "🗺️",
+      "questions_count": 50,
+      "file": "cat_geography.json"
+    },
+    {
+      "category_id": "guess_flag_symbol",
+      "category_name": "خمن العلم أو الرمز",
+      "emoji": "🚩",
+      "questions_count": 50,
+      "file": "cat_guess_flag_symbol.json"
+    },
+    {
+      "category_id": "guess_monument",
+      "category_name": "خمن المعلم من الصورة",
+      "emoji": "🏛️",
+      "questions_count": 50,
+      "file": "cat_guess_monument.json"
+    },
+    {
+      "category_id": "guess_person",
+      "category_name": "خمن الشخصية من الصورة",
+      "emoji": "👤",
+      "questions_count": 50,
+      "file": "cat_guess_person.json"
+    },
+    {
+      "category_id": "guess_sports_club",
+      "category_name": "خمن الشعار أو النادي الرياضي",
+      "emoji": "⚽",
+      "questions_count": 50,
+      "file": "cat_guess_sports_club.json"
+    },
+    {
+      "category_id": "history",
+      "category_name": "تاريخ ومعالم المغرب",
+      "emoji": "🏛️",
+      "questions_count": 50,
+      "file": "cat_history.json"
+    },
+    {
+      "category_id": "kingdom",
+      "category_name": "المملكة المغربية",
+      "emoji": "👑",
+      "questions_count": 50,
+      "file": "cat_kingdom.json"
+    },
+    {
+      "category_id": "literature",
+      "category_name": "الشعر والأدب",
+      "emoji": "📚",
+      "questions_count": 50,
+      "file": "cat_literature.json"
+    },
+    {
+      "category_id": "music",
+      "category_name": "الموسيقى المغربية",
+      "emoji": "🎵",
+      "questions_count": 50,
+      "file": "cat_music.json"
+    },
+    {
+      "category_id": "nature",
+      "category_name": "الطبيعة والحيوانات",
+      "emoji": "🦅",
+      "questions_count": 50,
+      "file": "cat_nature.json"
+    },
+    {
+      "category_id": "riddles",
+      "category_name": "الألغاز والحكايات",
+      "emoji": "📜",
+      "questions_count": 50,
+      "file": "cat_riddles.json"
+    },
+    {
+      "category_id": "science",
+      "category_name": "العلوم والاكتشافات",
+      "emoji": "🔬",
+      "questions_count": 50,
+      "file": "cat_science.json"
+    },
+    {
+      "category_id": "sports",
+      "category_name": "الرياضة المغربية",
+      "emoji": "⚽",
+      "questions_count": 50,
+      "file": "cat_sports.json"
+    },
+    {
+      "category_id": "technology",
+      "category_name": "التكنولوجيا",
+      "emoji": "💻",
+      "questions_count": 50,
+      "file": "cat_technology.json"
+    },
+    {
+      "category_id": "world",
+      "category_name": "المغرب والعالم",
+      "emoji": "🌍",
+      "questions_count": 50,
+      "file": "cat_world.json"
+    }
+  ]
+}

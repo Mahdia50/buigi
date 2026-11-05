@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="28" viewBox="0 0 160 28">
+  <defs>
+    <filter id="tileBevel" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.5" flood-color="#0F172A" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Background border bed -->
+  <rect width="160" height="28" fill="#0F172A"/>
+  
+  <!-- Outer Brass framing wires -->
+  <line x1="0" y1="2" x2="160" y2="2" stroke="#F59E0B" stroke-width="2"/>
+  <line x1="0" y1="26" x2="160" y2="26" stroke="#F59E0B" stroke-width="2"/>
+
+  <!-- Repeating Colorful Zellij Stars & Triangles -->
+  <!-- Module 1: x=0 to 40 -->
+  <g transform="translate(20, 14)" filter="url(#tileBevel)">
+    <!-- 8-pointed star in cobalt & ruby -->
+    <polygon points="0,-9 2.7,-2.7 9,0 2.7,2.7 0,9 -2.7,2.7 -9,0 -2.7,-2.7" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="0.8"/>
+    <polygon points="0,-9 2.7,-2.7 9,0 2.7,2.7 0,9 -2.7,2.7 -9,0 -2.7,-2.7" transform="rotate(45)" fill="#E11D48" stroke="#FFFFFF" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="2.8" fill="#FBBF24"/>
+    <!-- Interlacing Moroccan green teeth -->
+    <polygon points="-16,-6 -11,-1 -16,4" fill="#10B981" stroke="#047857" stroke-width="0.6"/>
+    <polygon points="16,-6 11,-1 16,4" fill="#10B981" stroke="#047857" stroke-width="0.6"/>
+  </g>
+
+  <!-- Module 2: x=40 to 80 -->
+  <g transform="translate(60, 14)" filter="url(#tileBevel)">
+    <polygon points="0,-9 2.7,-2.7 9,0 2.7,2.7 0,9 -2.7,2.7 -9,0 -2.7,-2.7" fill="#10B981" stroke="#FFFFFF" stroke-width="0.8"/>
+    <polygon points="0,-9 2.7,-2.7 9,0 2.7,2.7 0,9 -2.7,2.7 -9,0 -2.7,-2.7" transform="rotate(45)" fill="#F59E0B" stroke="#FFFFFF" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="2.8" fill="#1D4ED8"/>
+    <polygon points="-16,-6 -11,-1 -16,4" fill="#E11D48" stroke="#BE123C" stroke-width="0.6"/>
+    <polygon points="16,-6 11,-1 16,4" fill="#E11D48" stroke="#BE123C" stroke-width="0.6"/>
+  </g>
+
+  <!-- Module 3: x=80 to 120 -->
+  <g transform="translate(100, 14)" filter="url(#tileBevel)">
+    <polygon points="0,-9 2.7,-2.7 9,0 2.7,2.7 0,9 -2.7,2.7 -9,0 -2.7,-2.7" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="0.8"/>
+    <polygon points="0,-9 2.7,-2.7 9,0 2.7,2.7 0,9 -2.7,2.7 -9,0 -2.7,-2.7" transform="rotate(45)" fill="#E11D48" stroke="#FFFFFF" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="2.8" fill="#FBBF24"/>
+    <polygon points="-16,-6 -11,-1 -16,4" fill="#10B981" stroke="#047857" stroke-width="0.6"/>
+    <polygon points="16,-6 11,-1 16,4" fill="#10B981" stroke="#047857" stroke-width="0.6"/>
+  </g>
+
+  <!-- Module 4: x=120 to 160 -->
+  <g transform="translate(140, 14)" filter="url(#tileBevel)">
+    <polygon points="0,-9 2.7,-2.7 9,0 2.7,2.7 0,9 -2.7,2.7 -9,0 -2.7,-2.7" fill="#10B981" stroke="#FFFFFF" stroke-width="0.8"/>
+    <polygon points="0,-9 2.7,-2.7 9,0 2.7,2.7 0,9 -2.7,2.7 -9,0 -2.7,-2.7" transform="rotate(45)" fill="#F59E0B" stroke="#FFFFFF" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="2.8" fill="#1D4ED8"/>
+    <polygon points="-16,-6 -11,-1 -16,4" fill="#E11D48" stroke="#BE123C" stroke-width="0.6"/>
+    <polygon points="16,-6 11,-1 16,4" fill="#E11D48" stroke="#BE123C" stroke-width="0.6"/>
+  </g>
+</svg>

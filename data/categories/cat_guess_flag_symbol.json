@@ -1,0 +1,1307 @@
+{
+  "category_id": "guess_flag_symbol",
+  "category_name": "خمن العلم أو الرمز",
+  "emoji": "🚩",
+  "questions": [
+    {
+      "id": "sym_100_1",
+      "category": "خمن العلم أو الرمز",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ماذا يمثل هذا العلم الوطني ذو الخلفية الحمراء والنجمة الخماسية الخضراء؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/CGI_Morocco_Flag.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ACGI%20Morocco%20Flag.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "راية المملكة المغربية الحمراء التي تتوسطها النجمة الخماسية الخضراء"
+      },
+      "options": {
+        "A": "علم تونس",
+        "B": "علم تركيا",
+        "C": "علم المملكة المغربية",
+        "D": "علم الجزائر"
+      },
+      "correct_answer": "C",
+      "explanation": "العلم الوطني للمملكة المغربية لونه أحمر تتوسطه نجمة خماسية خضراء ترمز لأركان الإسلام الخمسة، واعتمد بشكله الحالي رسمياً عام 1915.",
+      "source_title": "الأمانة العامة للحكومة - الرموز الوطنية",
+      "source_url": "https://www.sgg.gov.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_2",
+      "category": "خمن العلم أو الرمز",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ماذا يمثل هذا الشعار الرسمي المتوج بالتاج الملكي وأسدين يحيطان بدرع وشمس؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Coat_of_arms_of_Morocco_%28Improved%29.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Morocco_(Improved).png",
+        "license": "Public Domain",
+        "alt": "شعار المملكة المغربية الرسمي (الأسدان والشمس المشرقة والنجمة الخماسية)"
+      },
+      "options": {
+        "A": "شعار ولاية الرباط",
+        "B": "شعار المحكمة الدستورية",
+        "C": "شعار البرلمان المغربي",
+        "D": "شعار المملكة المغربية الرسمي"
+      },
+      "correct_answer": "D",
+      "explanation": "شعار المملكة يضم درعاً أحمر بحقل الشمس المشرقة وجبال الأطلس يعلوه التاج الملكي ويحيط به أسدا الأطلس، مع الآية 'إن تنصروا الله ينصركم'.",
+      "source_title": "بوابة المغرب الرسمية",
+      "source_url": "https://www.maroc.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_3",
+      "category": "خمن العلم أو الرمز",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ماذا يمثل هذا الرمز الأبجدي التاريخي الشهير (ⵣ) في الثقافة المغربية والمغاربية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Inbound6814163727882473864.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AInbound6814163727882473864.webp",
+        "license": "CC BY-SA 4.0",
+        "alt": "رمز حرف الزاي بتيفيناغ (ⵣ) الممثل للإنسان الحر"
+      },
+      "options": {
+        "A": "حرف الزاي (أزا) ورمز الهوية الأمازيغية والإنسان الحر",
+        "B": "علامة المطر التراثية",
+        "C": "حرف الشين الفينيقي",
+        "D": "رمز الشمس القرطاجي"
+      },
+      "correct_answer": "A",
+      "explanation": "حرف 'أزا' (ⵣ) بخط التيفيناغ يرمز للأمازيغ (الإنسان الحر) وهو رمز الهوية واللغة الأمازيغية العريقة في شمال إفريقيا.",
+      "source_title": "المعهد الملكي للثقافة الأمازيغية (IRCAM)",
+      "source_url": "https://www.ircam.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_4",
+      "category": "خمن العلم أو الرمز",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "إلى ماذا يرمز هذا الشكل الهندسي (النجمة الخماسية الخضراء) في قلب العلم الوطني المغربي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Star_of_Morocco.svg/960px-Star_of_Morocco.svg.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Star_of_Morocco.svg",
+        "license": "Public domain",
+        "alt": "النجمة الخماسية المغربية الخضراء المتشابكة (الخاتم السليماني)"
+      },
+      "options": {
+        "A": "القارات الخمس",
+        "B": "الخاتم السليماني وأركان الإسلام الخمسة",
+        "C": "الأنهار الخمسة الكبرى",
+        "D": "فصول السنة والخير"
+      },
+      "correct_answer": "B",
+      "explanation": "النجمة الخماسية المفتوحة (الخاتم السليماني) ترمز في الثقافة المغربية لحفظ الوطن وأركان الإسلام الخمسة، ويرمز لونها الأخضر للنماء والسلام.",
+      "source_title": "تاريخ العلم المغربي - أكاديمية المملكة المغربية",
+      "source_url": "https://www.alacademia.org.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_5",
+      "category": "خمن العلم أو الرمز",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ماذا تمثل هذه العملة النقدية الوطنية الصادرة عن بنك المغرب؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Coin_MA_Dirham_1764_Obverse.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ACoin%20MA%20Dirham%201764%20Obverse.jpg",
+        "license": "Public domain",
+        "alt": "قطعة نقدية معدنية للدرهم المغربي تحمل رمز التاج وشعار المملكة"
+      },
+      "options": {
+        "A": "الريال الفضي القديم",
+        "B": "الفرنك الإفريقي",
+        "C": "الدرهم المغربي",
+        "D": "الدينار المغاربي"
+      },
+      "correct_answer": "C",
+      "explanation": "الدرهم المغربي هو الوحدة الرسمية للعملة الوطنية الصادرة عن بنك المغرب ويقسم إلى 100 سنتيم وتصكه دار السكة بالرباط.",
+      "source_title": "بنك المغرب - دار السكة",
+      "source_url": "https://www.bkam.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_1",
+      "category": "خمن العلم أو الرمز",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "إلى أي دولة إسلامية مغربية كبرى تعود هذه الراية التاريخية البيضاء التي رفعت في معركة الزلاقة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Almohad_banner_%281229%2C_conquest_of_Majorca%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AAlmohad%20banner%20%281229%2C%20conquest%20of%20Majorca%29.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "الراية البيضاء للدولة المرابطية التاريخية بآيات النصر"
+      },
+      "options": {
+        "A": "الدولة الوطاسية",
+        "B": "الدولة المرينية",
+        "C": "الدولة الموحدية",
+        "D": "الدولة المرابطية"
+      },
+      "correct_answer": "D",
+      "explanation": "اتخذ المرابطون في عهد يوسف بن تاشفين الراية البيضاء المكتوب عليها الشهادتان وشعار النصر راية لجيوشهم في الأندلس والمغرب.",
+      "source_title": "الرايات والأعلام المغربية عبر التاريخ - عبد الهادي التازي",
+      "source_url": "https://bnrm.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_2",
+      "category": "خمن العلم أو الرمز",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما هي الدولة المغربية التاريخية العظيمة التي اتخذت هذا العلم المميز بنمط رقعة الشطرنج؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Las_Navas_de_Tolosa_banner2.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Las_Navas_de_Tolosa_banner2.jpg",
+        "license": "Public Domain",
+        "alt": "راية الدولة الموحدية التاريخية المحفوظة في دير لاس هولغاس"
+      },
+      "options": {
+        "A": "الدولة الموحدية",
+        "B": "الدولة الإدريسية",
+        "C": "الدولة السعدية",
+        "D": "الدولة العلوية"
+      },
+      "correct_answer": "A",
+      "explanation": "اشتهر الموحدون برقعة الشطرنج الرمزية التي تعبر عن النظام والصرامة الفكرية والعسكرية في عهد عبد المؤمن ويعقوب المنصور.",
+      "source_title": "معالم الحضارة الموحدية - منشورات وزارة الثقافة",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_3",
+      "category": "خمن العلم أو الرمز",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما هي الدولة المغربية التاريخية العظيمة صاحبة هذا الدينار الذهبي التاريخي المنقوش بالخاتم المربع المتداخل؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Abu_Bakr_Abu_Yahya_Marinid_gold_coin.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abu_Bakr_Abu_Yahya_Marinid_gold_coin.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "دينار ذهبي تاريخي للدولة المرينية يحمل الخاتم المربع المزدوج"
+      },
+      "options": {
+        "A": "الدولة الحفصية",
+        "B": "الدولة المرينية",
+        "C": "الدولة الرستمية",
+        "D": "الدولة الفاطمية"
+      },
+      "correct_answer": "B",
+      "explanation": "الدينار المريني الذهبي تميز بنقوشه القرآنية الدقيقة والخاتم المربع المزدوج وكان عملة قوية للتجارة بين فاس والأندلس وإفريقيا.",
+      "source_title": "تاريخ المغرب في العهد المريني",
+      "source_url": "https://bnrm.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_4",
+      "category": "خمن العلم أو الرمز",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما هي الدولة المغربية التي خلدت هذه اللوحة التاريخية نصرها التاريخي الحاسم في معركة وادي المخازن سنة 1578م؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Cena_da_Batalha_de_Alc%C3%A1cer_Quibir.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cena_da_Batalha_de_Alc%C3%A1cer_Quibir.png",
+        "license": "Public domain",
+        "alt": "لوحة تاريخية أثرية تصور معركة وادي المخازن في عهد الدولة السعدية"
+      },
+      "options": {
+        "A": "الدولة المرابطية",
+        "B": "الدولة الموحدية",
+        "C": "الدولة السعدية",
+        "D": "الدولة الإدريسية"
+      },
+      "correct_answer": "C",
+      "explanation": "معركة وادي المخازن (معركة الملوك الثلاثة) عام 1578 كانت أعظم انتصار عسكري للدولة السعدية على الجيش البرتغالي وحمت سيادة واستقلال المغرب.",
+      "source_title": "الاستقصا لأخبار دول المغرب الأقصى",
+      "source_url": "https://bnrm.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_5",
+      "category": "خمن العلم أو الرمز",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ماذا كان يمثل هذا العلم الأحمر بالنجمة السداسية البيضاء في سواحل المغرب قبل عام 1915؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/1837_flag_chart_-_The_Flags_of_The_Principal_Nations_In_the_World.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3A1837%20flag%20chart%20-%20The%20Flags%20of%20The%20Principal%20Nations%20In%20the%20World.jpg",
+        "license": "Public domain",
+        "alt": "العلم البحري التجاري المغربي القديم في القرن 19 بالنجمة السداسية"
+      },
+      "options": {
+        "A": "علم قراصنة سلا",
+        "B": "علم حامية الصويرة",
+        "C": "علم طنجة الإسباني",
+        "D": "الراية البحرية والتجارية المغربية في العهد العلوي القديم"
+      },
+      "correct_answer": "D",
+      "explanation": "قبل صدور ظهير 1915 الذي حدد النجمة الخماسية، استخدمت السفن المغربية في المحيط الأطلسي والمتوسط راية بنجمة سداسية (خاتم سليمان التراثي).",
+      "source_title": "تاريخ الأسطول البحري المغربي - وزارة التجهيز والماء",
+      "source_url": "https://www.equipement.gov.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_1",
+      "category": "خمن العلم أو الرمز",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم المؤسسة والناقل الجوي الوطني المغربي صاحب هذا الشعار المميز؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Boeing_737-8B6%2C_Royal_Air_Maroc_-_RAM_AN0539732.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ABoeing%20737-8B6%2C%20Royal%20Air%20Maroc%20-%20RAM%20AN0539732.jpg",
+        "license": "GFDL 1.2",
+        "alt": "شعار الخطوط الملكية المغربية (لارام) بالتاج الملكي والنجمة الخماسية"
+      },
+      "options": {
+        "A": "الخطوط الملكية المغربية (Royal Air Maroc)",
+        "B": "مطار محمد الخامس",
+        "C": "المكتب الوطني للمطارات",
+        "D": "العربية للطيران المغرب"
+      },
+      "correct_answer": "A",
+      "explanation": "الخطوط الملكية المغربية (لارام) تأسست عام 1957 وهي شركة الطيران الوطنية للمملكة المغربية وعضو في تحالف 'وان وورلد' العالمي.",
+      "source_title": "الموقع الرسمي للخطوط الملكية المغربية",
+      "source_url": "https://www.royalairmaroc.com",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_2",
+      "category": "خمن العلم أو الرمز",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هي المجموعة الصناعية والتعدينية المغربية العملاقة صاحبة هذا الشعار ذي الدوائر الخضراء الثلاث؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Logo_Ocp.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ALogo%20Ocp.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "شعار المجمع الشريف للفوسفاط (OCP) ذو الدوائر الخضراء الثلاث"
+      },
+      "options": {
+        "A": "الشركة الوطنية للصلب (صوناسيد)",
+        "B": "المكتب الشريف للفوسفاط (OCP Group)",
+        "C": "وكالة الطاقة المستدامة (مازن)",
+        "D": "مجموعة مناجم"
+      },
+      "correct_answer": "B",
+      "explanation": "مجموعة OCP هي الرائد العالمي في صناعة وتصدير الفوسفاط والأسمدة الفوسفاطية بحضور عالمي في خمس قارات.",
+      "source_title": "المكتب الشريف للفوسفاط",
+      "source_url": "https://www.ocpgroup.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_3",
+      "category": "خمن العلم أو الرمز",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هي المؤسسة المالية والنقدية السيادية بالمملكة صاحبة هذا الشعار؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Bank_Al-Maghrib_Logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bank_Al-Maghrib_Logo.png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار بنك المغرب (البنك المركزي للمملكة المغربية)"
+      },
+      "options": {
+        "A": "بورصة الدار البيضاء",
+        "B": "القرض الفلاحي للمغرب",
+        "C": "بنك المغرب (البنك المركزي)",
+        "D": "صندوق الإيداع والتدبير (CDG)"
+      },
+      "correct_answer": "C",
+      "explanation": "بنك المغرب هو البنك المركزي للمملكة المشرف على الاستقرار المالي وإصدار العملة وتنظيم البنوك الوطنية.",
+      "source_title": "بنك المغرب",
+      "source_url": "https://www.bkam.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_4",
+      "category": "خمن العلم أو الرمز",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الدفاعية الوطنية التي تحمل هذا الشعار بشعارها الخالد 'الله، الوطن، الملك'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Moroccan_Armed_Force.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moroccan_Armed_Force.png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار القوات المسلحة الملكية المغربية FAR"
+      },
+      "options": {
+        "A": "الجمارك المغربية",
+        "B": "القوات المساعدة",
+        "C": "الأمن الوطني (DGSN)",
+        "D": "القوات المسلحة الملكية المغربية (FAR)"
+      },
+      "correct_answer": "D",
+      "explanation": "القوات المسلحة الملكية تأسست عام 1956 على يد المغفور له محمد الخامس والحسن الثاني لحماية سيادة الوطن ووحدته الترابية.",
+      "source_title": "إدارة الدفاع الوطني والقوات المسلحة الملكية",
+      "source_url": "https://www.maroc.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_5",
+      "category": "خمن العلم أو الرمز",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هو الجهاز الأمني الوطني المغربي صاحب هذه الشارة الرسمية؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Emblem_of_the_Moroccan_DGSN.svg/960px-Emblem_of_the_Moroccan_DGSN.svg.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Emblem_of_the_Moroccan_DGSN.svg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شارة وشعار المديرية العامة للأمن الوطني المغربي DGSN"
+      },
+      "options": {
+        "A": "المديرية العامة للأمن الوطني (DGSN)",
+        "B": "الوقاية المدنية",
+        "C": "الدرك الملكي",
+        "D": "إدارة السجون"
+      },
+      "correct_answer": "A",
+      "explanation": "المديرية العامة للأمن الوطني (الشرطة المغربية) تسهر على حمن وسلامة المواطنين والممتلكات ومكافحة الجريمة.",
+      "source_title": "المديرية العامة للأمن الوطني",
+      "source_url": "https://www.dgsn.gov.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_1",
+      "category": "خمن العلم أو الرمز",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هو جهاز الإغاثة والطوارئ المغربي صاحب هذا الشعار الرسمي؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Logo_de_la_Protection_Civile_Marocaine.svg/960px-Logo_de_la_Protection_Civile_Marocaine.svg.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Logo_de_la_Protection_Civile_Marocaine.svg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار الوقاية المدنية المغربية"
+      },
+      "options": {
+        "A": "الصحة العمومية",
+        "B": "الوقاية المدنية المغربية",
+        "C": "حراس الغابات",
+        "D": "الهلال الأحمر المغربي"
+      },
+      "correct_answer": "B",
+      "explanation": "المديرية العامة للوقاية المدنية تابعة لوزارة الداخلية وتتولى عمليات الإطفاء والإنقاذ والإسعاف في الحوادث والكوارث الطبيعية.",
+      "source_title": "المديرية العامة للوقاية المدنية",
+      "source_url": "https://www.interieur.gov.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_2",
+      "category": "خمن العلم أو الرمز",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هو السلك العسكري والأمني الوطني المغربي صاحب هذا الشعار ذي التاج والقنبلة الرمزية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Insigne-gendarmerie_royale_marocaine.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Insigne-gendarmerie_royale_marocaine.jpg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شارة وسلاح الدرك الملكي المغربي"
+      },
+      "options": {
+        "A": "القوات الجوية الملكية",
+        "B": "البحرية الملكية",
+        "C": "الدرك الملكي المغربي",
+        "D": "الحرس الملكي"
+      },
+      "correct_answer": "C",
+      "explanation": "الدرك الملكي قوة عسكرية ذات مهام أمنية وقضائية تسهر على حفظ النظام والأمن العمومي في البوادي والمجالات القروية والطرق الوطنية.",
+      "source_title": "الدرك الملكي - إدارة الدفاع الوطني",
+      "source_url": "https://www.maroc.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_3",
+      "category": "خمن العلم أو الرمز",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ماذا يمثل هذا الرمز البيئي المعترف به من قِبل اليونسكو منذ عام 1998؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Arganeraie.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AArganeraie.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "رمز محمية شجرة الأركان للمحيط الحيوي بالمغرب"
+      },
+      "options": {
+        "A": "غابة المعمورة",
+        "B": "محمية أرز الأطلس",
+        "C": "منتزه توبقال الوطني",
+        "D": "محمية المحيط الحيوي لشجرة الأركان (Arganeraie Biosphere)"
+      },
+      "correct_answer": "D",
+      "explanation": "صنفت اليونسكو منطقة الأركان بسوس وحاحا كمحمية محيط حيوي عالمية لحماية هذا النظام البيئي النادر وشجرته المتوطنة.",
+      "source_title": "منظمة اليونسكو - برنامج الإنسان والمحيط الحيوي",
+      "source_url": "https://en.unesco.org/mab",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_4",
+      "category": "خمن العلم أو الرمز",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ماذا يمثل هذا الختم الدائري المنقوش بالخط المغربي الدقيق في الوثائق والظهائر الشريفة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Copy_of_the_divan_of_Nasir_Khusraw%2C_created_in_1621_at_Hyderabad.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ACopy%20of%20the%20divan%20of%20Nasir%20Khusraw%2C%20created%20in%201621%20at%20Hyderabad.jpg",
+        "license": "Public domain",
+        "alt": "الختم السلطاني المغربي الرسمي على الظهائر الشريفة"
+      },
+      "options": {
+        "A": "الختم والطابع الملكي للظهائر الشريفة",
+        "B": "طابع بريد المحميات القديم",
+        "C": "ختم وزير الحرب السعدي",
+        "D": "خاتم قاضي القضاة"
+      },
+      "correct_answer": "A",
+      "explanation": "يختم جلالة الملك الظهائر الشريفة والقوانين بالطابع الشريف الخاص الذي يثبت صدور التشريع وتنفيذه رسمياً في الجريدة الرسمية.",
+      "source_title": "الأمانة العامة للحكومة - الجريدة الرسمية",
+      "source_url": "https://www.sgg.gov.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_5",
+      "category": "خمن العلم أو الرمز",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ماذا تمثل هذه الراية التاريخية التي رفعتها المقاومة الوطنية بالريف في عهد عبد الكريم الخطابي (1921 - 1926)؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/222Drapeau_de_l%27ancienne_r%C3%A9publique_du_rif_%281921-1926%29.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3A222Drapeau%20de%20l%27ancienne%20r%C3%A9publique%20du%20rif%20%281921-1926%29.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "راية جمهورية الريف التاريخية بحقل أحمر ومثلث أبيض بداخله هلال ونجمة خضراء"
+      },
+      "options": {
+        "A": "علم حركة الهيبة بسوس",
+        "B": "راية حركة المقاومة بجمهورية الريف",
+        "C": "علم قبائل زيان",
+        "D": "راية جيش التحرير بالجنوب"
+      },
+      "correct_answer": "B",
+      "explanation": "رفعت قبائل الريف المتحدة في عهد عبد الكريم الخطابي هذا العلم في ثورتها ضد الاحتلال الإسباني بعد ملحمة أنوال الخالدة.",
+      "source_title": "أرشيف معركة أنوال وتاريخ الريف",
+      "source_url": "https://www.hcp.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_1",
+      "category": "خمن العلم أو الرمز",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الفكرية والعلمية العليا بالمغرب صاحبة هذا الشعار التراثي الرفيع؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Nitin_Gadkari_and_the_Minister_of_Equipment%2C_Transport%2C_Logistic_and_Water%2C_Kingdom_of_Morocco_%282%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ANitin%20Gadkari%20and%20the%20Minister%20of%20Equipment%2C%20Transport%2C%20Logistic%20and%20Water%2C%20Kingdom%20of%20Morocco%20%282%29.jpg",
+        "license": "GODL-India",
+        "alt": "شعار أكاديمية المملكة المغربية التراثي بالعمارة المغربية وكتاب العلم"
+      },
+      "options": {
+        "A": "أكاديمية الحسن الثاني للعلوم والتقنيات",
+        "B": "الرابطة المحمدية للعلماء",
+        "C": "أكاديمية المملكة المغربية",
+        "D": "المجلس الأعلى للتربية والتكوين"
+      },
+      "correct_answer": "C",
+      "explanation": "أكاديمية المملكة المغربية شيدها الحسن الثاني عام 1977 وتضم صفوة المفكرين والعلماء المغاربة والدوليين لنشر الفكر والتنوير وتطوير المعرفة.",
+      "source_title": "أكاديمية المملكة المغربية",
+      "source_url": "https://www.alacademia.org.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_2",
+      "category": "خمن العلم أو الرمز",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الوطنية الأكاديمية المغربية صاحبة هذا الشعار؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/5/54/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D9%85%D8%B9%D9%87%D8%AF_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A_%D9%84%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9_%D8%A7%D9%84%D8%A3%D9%85%D8%A7%D8%B2%D9%8A%D8%BA%D9%8A%D8%A9.png",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D9%85%D8%B9%D9%87%D8%AF_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A_%D9%84%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9_%D8%A7%D9%84%D8%A3%D9%85%D8%A7%D8%B2%D9%8A%D8%BA%D9%8A%D8%A9.png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار المعهد الملكي للثقافة الأمازيغية بالمغرب IRCAM"
+      },
+      "options": {
+        "A": "جامعة الأخوين",
+        "B": "المعهد الوطني للآثار",
+        "C": "المكتبة الوطنية للمملكة المغربية",
+        "D": "المعهد الملكي للثقافة الأمازيغية (IRCAM)"
+      },
+      "correct_answer": "D",
+      "explanation": "تأسس الإيركام بظهير ملكي شريف بعد خطاب أجدير التاريخي سنة 2001 لإدماج الأمازيغية وتوحيد معايير تدريسها وكتابتها بتيفيناغ.",
+      "source_title": "المعهد الملكي للثقافة الأمازيغية",
+      "source_url": "https://www.ircam.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_3",
+      "category": "خمن العلم أو الرمز",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الوسام الوطني الملكي الرفيع الذي يوشح به كبار الشخصيات والوطنيين بمناسبة عيد العرش؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Order_of_the_Throne%2C_granted_by_Hassan_II_of_Morocco_-_IMG_4987.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Order_of_the_Throne,_granted_by_Hassan_II_of_Morocco_-_IMG_4987.JPG",
+        "license": "CC BY-SA 4.0",
+        "alt": "وسام العرش المغربي الشريف"
+      },
+      "options": {
+        "A": "وسام العرش (Ordre du Trône)",
+        "B": "وسام الاستحقاق الوطني",
+        "C": "وسام الكفاءة الفكرية",
+        "D": "الوسام العلوي"
+      },
+      "correct_answer": "A",
+      "explanation": "وسام العرش وسام ملكي شريف أنشئ في عهد المغفور له الملك محمد الخامس، ويكافئ الخدمات المدنية والعسكرية الجليلة لصالح المملكة.",
+      "source_title": "ديوان الأوسمة الملكية - وزارة القصور الملكية والتشريفات والأوسمة",
+      "source_url": "https://www.maroc.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_4",
+      "category": "خمن العلم أو الرمز",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ماذا تمثل هذه الشارة الدائرية الرسمية المعتمدة في الطائرات العسكرية المغربية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Roundel_of_Morocco.svg/960px-Roundel_of_Morocco.svg.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Roundel_of_Morocco.svg",
+        "license": "Public Domain",
+        "alt": "شارة وشعار القوات الجوية الملكية المغربية (Cocarde)"
+      },
+      "options": {
+        "A": "شعار المكتب الشريف للفوسفاط",
+        "B": "شارة القوات الجوية الملكية المغربية",
+        "C": "شارة الحرس الملكي",
+        "D": "شعار البحرية الملكية"
+      },
+      "correct_answer": "B",
+      "explanation": "شارة وشعار القوات الجوية الملكية المغربية (Royal Moroccan Air Force Roundel)، وتوضع على هياكل وأجنحة المقاتلات والطائرات العسكرية المغربية.",
+      "source_title": "القوات المسلحة الملكية المغربية - القوات الجوية",
+      "source_url": "https://www.hcp.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_5",
+      "category": "خمن العلم أو الرمز",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هي الملحمة الوطنية الكبرى التي خلدتها هذه العملة التذكارية الرسمية الصادرة عن دار السكة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Green_March_1975.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Green_March_1975.jpg",
+        "license": "Public Domain",
+        "alt": "صورة تاريخية لجموع المتطوعين في المسيرة الخضراء المظفرة سنة 1975 حاملين المصاحف والأعلام"
+      },
+      "options": {
+        "A": "معركة وادي المخازن",
+        "B": "ثورة الملك والشعب",
+        "C": "المسيرة الخضراء المظفرة",
+        "D": "عيد الاستقلال المجيد"
+      },
+      "correct_answer": "C",
+      "explanation": "تصدر دار السكة ببنك المغرب قطعاً نقدية تذكارية من الذهب والفضة تخلد ذكرى انطلاق المسيرة الخضراء في 6 نوفمبر 1975 لاسترجاع الأقاليم الجنوبية.",
+      "source_title": "متحف بنك المغرب والمسكوكات التذكارية",
+      "source_url": "https://www.bkam.ma",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_6",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ماذا يمثل هذا العلم الثلاثي الألوان (الأزرق، الأخضر، الأصفر) المتضمن لحرف 'الزاي' الأمازيغي باللون الأحمر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Amazigh_Flag.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Amazigh_Flag.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "علم الهوية الثقافية الأمازيغية"
+      },
+      "options": {
+        "A": "راية الطوارق الصحراوية",
+        "B": "علم منطقة القبائل",
+        "C": "علم جزر الكناري",
+        "D": "علم الهوية الثقافية الأمازيغية"
+      },
+      "correct_answer": "D",
+      "explanation": "يرمز اللون الأزرق للبحر والأخضر للطبيعة والجبال والأصفر للصحراء، ويتوسطه حرف الزاي (أزا) باللون الأحمر رمزاً للحرية والتضحية.",
+      "source_title": "المعهد الملكي للثقافة الأمازيغية",
+      "source_url": "https://www.ircam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_7",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما هي هذه الوثيقة الرسمية السيادية الخضراء المتوجة بشعار المملكة المغربية والمزودة بشريحة إلكترونية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/MARPass.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:MARPass.JPG",
+        "license": "Public Domain",
+        "alt": "غلاف جواز السفر المغربي البيومتري الرسمي"
+      },
+      "options": {
+        "A": "جواز السفر البيومتري المغربي",
+        "B": "بطاقة التعريف الوطنية",
+        "C": "الدفتر العائلي المغربي",
+        "D": "جواز الحج المغربي"
+      },
+      "correct_answer": "A",
+      "explanation": "جواز السفر المغربي البيومتري تصدره وزارة الداخلية وفق أرقى معايير المنظمة الدولية للطيران المدني (ICAO).",
+      "source_title": "وزارة الداخلية - جواز السفر المغربي",
+      "source_url": "https://www.passeport.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_8",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الوطنية وشركة الطيران الرسمية صاحبة هذا الشعار المتوج بالتاج والنجمة على ذيل طائراتها؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Queue_royal_air_maroc.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Queue_royal_air_maroc.png",
+        "license": "Fair Use",
+        "alt": "شعار الخطوط الملكية المغربية على ذيل الطائرة"
+      },
+      "options": {
+        "A": "الخطوط الجوية المغاربية",
+        "B": "الخطوط الملكية المغربية (Royal Air Maroc)",
+        "C": "طيران العربية المغرب",
+        "D": "المكتب الوطني للمطارات"
+      },
+      "correct_answer": "B",
+      "explanation": "الخطوط الملكية المغربية (RAM) هي الناقل الجوي الوطني للمملكة وتعتبر عضواً في تحالف 'ون وورلد' العالمي.",
+      "source_title": "شركة الخطوط الملكية المغربية",
+      "source_url": "https://www.royalairmaroc.com",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_9",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما هي شركة الاتصالات التاريخية والفاعل الأول في شبكات الهاتف الثابت والمتنقل بالمغرب صاحبة هذا الشعار؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Maroc_Telecom_logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maroc_Telecom_logo.png",
+        "license": "Fair Use",
+        "alt": "شعار مجموعة اتصالات المغرب الرسمي"
+      },
+      "options": {
+        "A": "إنوي المغرب",
+        "B": "الوكالة الوطنية للاتصالات",
+        "C": "مجموعة اتصالات المغرب (Maroc Telecom)",
+        "D": "أورنج المغرب"
+      },
+      "correct_answer": "C",
+      "explanation": "اتصالات المغرب هي الشركة الرائدة في قطاع الاتصالات بالمملكة والمستثمر الرئيسي في البنية التحتية للألياف البصرية بإفريقيا.",
+      "source_title": "مجموعة اتصالات المغرب",
+      "source_url": "https://www.iam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_100_10",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الوطنية العمومية المسؤولة عن شبكة القطارات والسكك الحديدية بالمغرب صاحبة هذا الشعار البرتقالي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Logo-oncf.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Logo-oncf.png",
+        "license": "Fair Use",
+        "alt": "شعار المكتب الوطني للسكك الحديدية ONCF"
+      },
+      "options": {
+        "A": "الشركة الوطنية للنقل واللوجستيك",
+        "B": "المكتب الوطني للنقل السككي",
+        "C": "شركة قطار البراق",
+        "D": "المكتب الوطني للسكك الحديدية (ONCF)"
+      },
+      "correct_answer": "D",
+      "explanation": "يدير المكتب الوطني للسكك الحديدية (ONCF) شبكة قطارات حديثة تربط مدن المملكة وتضم قطار 'البراق' فائق السرعة.",
+      "source_title": "المكتب الوطني للسكك الحديدية",
+      "source_url": "https://www.oncf.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_6",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا الوسام الملكي الرفيع للمملكة المغربية الذي يوشح به كبار الشخصيات الوطنية والدولية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Marokkaanse_Ridderorde_Ouissam_alaouite_ch%C3%A9rifien.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Marokkaanse_Ridderorde_Ouissam_alaouite_ch%C3%A9rifien.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "شارة الوسام العلوي الشريف للعرش الملكي"
+      },
+      "options": {
+        "A": "الوسام العلوي الشريف (Ordre du Ouissam Alaouite)",
+        "B": "وسام جوقة الشرف",
+        "C": "وسام الاستقلال",
+        "D": "وسام النيل"
+      },
+      "correct_answer": "A",
+      "explanation": "الوسام العلوي الشريف من أقدم الأوسمة الملكية المغربية أحدثه السلطان مولاي يوسف سنة 1913 لتكريم الشخصيات العسكرية والمدنية.",
+      "source_title": "ديوان الأوسمة الملكية بالرباط",
+      "source_url": "https://www.maroc.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_7",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما هي هذه العملة الذهبية الإسلامية التاريخية ذات الشكل المربع داخل دائرة الصادرة في عهد الدولة الموحدية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Abu_Muhammad_%27Abd_Allah_-_Almohad_AV_Dinar_10401144.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abu_Muhammad_%27Abd_Allah_-_Almohad_AV_Dinar_10401144.jpg",
+        "license": "CC BY-SA 2.5",
+        "alt": "الدينار الذهبي الموحدي المربع التاريخي"
+      },
+      "options": {
+        "A": "الريال الفضي الإسماعيلي",
+        "B": "الدينار الذهبي الموحدي (Dinar Almohade)",
+        "C": "الفلس السعدي",
+        "D": "الدرهم المريني"
+      },
+      "correct_answer": "B",
+      "explanation": "ابتكر الموحدون تصميماً نقدياً ثورياً بوضع مربع داخل دائرة وكتابة اسم المهدي بن تومرت وخلفاء الموحدين بالخط الكوفي المغربي.",
+      "source_title": "متحف بنك المغرب للنقود والعملات",
+      "source_url": "https://www.bkam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_8",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما هي هذه العملة الفضية الإسلامية التاريخية المسكوكة في مدينة فاس سنة 828م في عهد السلطان إدريس الثاني؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Dirham_of_Idris_II%2C_828_A.D.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dirham_of_Idris_II,_828_A.D.jpg",
+        "license": "Public Domain",
+        "alt": "درهم فضي إدريسي مسكوك بمدينة فاس"
+      },
+      "options": {
+        "A": "الدرهم الأموي الأندلسي",
+        "B": "الدينار الفاطمي",
+        "C": "الدرهم الفضي الإدريسي (مدينة فاس)",
+        "D": "الريال السعدي"
+      },
+      "correct_answer": "C",
+      "explanation": "تعتبر الدراهم الإدريسية المضروبة في فاس ووليلي وتودغة من أقدم العملات الإسلامية المستقلة في تاريخ المغرب الأقصى.",
+      "source_title": "متحف النقود ببنك المغرب",
+      "source_url": "https://www.bkam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_9",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ماذا تمثل هذه الحروف الأبجدية الهندسية العريقة المعتمدة رسمياً في التعليم والإعلام بالمغرب لكتابة اللغة الأمازيغية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Tifinagh_ALPHABET_VIDEO.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tifinagh_ALPHABET_VIDEO.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "حروف تيفيناغ الأمازيغية المغربية الرسمية"
+      },
+      "options": {
+        "A": "الخط المسماري",
+        "B": "الأبجدية الإيبيرية",
+        "C": "الأبجدية الفينيقية",
+        "D": "أبجدية تيفيناغ (Tifinagh)"
+      },
+      "correct_answer": "D",
+      "explanation": "اعتمد جلالة الملك محمد السادس حرف تيفيناغ رسمياً سنة 2003 لكتابة وتدريس اللغة الأمازيغية وفق المعايير الأكاديمية للإيركام.",
+      "source_title": "المعهد الملكي للثقافة الأمازيغية (IRCAM)",
+      "source_url": "https://www.ircam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_200_10",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما هي المنظمة الإنسانية والتطوعية الوطنية المغربية المسعفة صاحبة هذا الشعار والشارة الحمراء؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Moroccan_Red_Crescent_Volunteer_in_Nador.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moroccan_Red_Crescent_Volunteer_in_Nador.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "شارة ومتطوعو الهلال الأحمر المغربي"
+      },
+      "options": {
+        "A": "الهلال الأحمر المغربي (Croissant-Rouge marocain)",
+        "B": "مؤسسة محمد الخامس للتضامن",
+        "C": "كشافة المغرب",
+        "D": "الصليب الأحمر الدولي"
+      },
+      "correct_answer": "A",
+      "explanation": "تأسس الهلال الأحمر المغربي سنة 1957 كجمعية ذات منفعة عامة لتقديم الإسعافات الأولية والإغاثة الإنسانية في الكوارث.",
+      "source_title": "منظمة الهلال الأحمر المغربي",
+      "source_url": "https://crm.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_6",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هي الراية العسكرية والجهادية الموحدية التاريخية الباقية التي غنمها الإسبان في معركة العقاب عام 1212م؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Las_Navas_de_Tolosa_banner2.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Las_Navas_de_Tolosa_banner2.jpg",
+        "license": "Public Domain",
+        "alt": "راية الموحدين التاريخية المحفوظة في بورغوس بإسبانيا"
+      },
+      "options": {
+        "A": "راية السعديين",
+        "B": "راية الموحدين التاريخية (Las Navas de Tolosa)",
+        "C": "راية الأدارسة",
+        "D": "راية المرينيين بوادي المخازن"
+      },
+      "correct_answer": "B",
+      "explanation": "راية الخليفة الموحدي الناصر لدين الله المحفوظة في دير لاس هولغاس ببورغوس تعد أقدم نسيج عسكري إسلامي مغربي باقٍ في العالم.",
+      "source_title": "التراث المغربي الأندلسي في المتاحف الدولية",
+      "source_url": "https://alacademia.org.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_7",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الأمنية والعسكرية المغربية العريقة المسؤولة عن سلامة البوادي والطرق ومراقبة المياه صاحبة هذا الشعار؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Insigne-gendarmerie_royale_marocaine.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Insigne-gendarmerie_royale_marocaine.jpg",
+        "license": "Fair Use",
+        "alt": "شارة وسلاح الدرك الملكي المغربي"
+      },
+      "options": {
+        "A": "الأمن الوطني",
+        "B": "الحرس الملكي",
+        "C": "الدرك الملكي المغربي (Gendarmerie Royale)",
+        "D": "القوات المساعدة"
+      },
+      "correct_answer": "C",
+      "explanation": "تأسس جهاز الدرك الملكي المغربي سنة 1957 كقوة عسكرية وأمنية تسهر على حماية النظام العام ومكافحة الجريمة خارج الحواضر.",
+      "source_title": "إدارة الدفاع الوطني والدرك الملكي",
+      "source_url": "https://www.defense.gov.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_8",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هو البنك المركزي للمملكة المغربية الضامن للنظام المالي والمصدر للدرهم صاحب هذا الشعار الرسمي المتوج بالتاج والأسدين؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Bank_Al-Maghrib_Logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bank_Al-Maghrib_Logo.png",
+        "license": "Fair Use",
+        "alt": "شعار بنك المغرب الرسمي"
+      },
+      "options": {
+        "A": "البنك الشعبي",
+        "B": "التجاري وفا بنك",
+        "C": "القرض الفلاحي للمغرب",
+        "D": "بنك المغرب (Bank Al-Maghrib)"
+      },
+      "correct_answer": "D",
+      "explanation": "بنك المغرب هو البنك المركزي للمملكة أسس سنة 1959 وتولى إصدار الدرهم المغربي وإدارة الاحتياطات النقدية والمصرفية.",
+      "source_title": "بنك المغرب",
+      "source_url": "https://www.bkam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_9",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هي المؤسسة العسكرية الدفاعية الأولى للمملكة المغربية التي تحمل شعار 'الله، الوطن، الملك' وتدافع عن حوزة الوطن؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Moroccan_Armed_Force.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moroccan_Armed_Force.png",
+        "license": "Fair Use",
+        "alt": "شعار القوات المسلحة الملكية المغربية FAR"
+      },
+      "options": {
+        "A": "القوات المسلحة الملكية المغربية (FAR)",
+        "B": "جمارك المملكة",
+        "C": "الأمن الوطني",
+        "D": "الوقاية المدنية"
+      },
+      "correct_answer": "A",
+      "explanation": "أنشئت القوات المسلحة الملكية المغربية في ماي 1956 على يد المغفور له الملك محمد الخامس وولي عهده آنذاك الأمير مولاي الحسن.",
+      "source_title": "القوات المسلحة الملكية المغربية",
+      "source_url": "https://www.far.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_300_10",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هي الهيئة الأمنية الوطنية المغربية المسؤولة عن أمن المدن والمواطنين ومكافحة الجريمة صاحبة هذا الشعار الرسمي؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Emblem_of_the_Moroccan_DGSN.svg/960px-Emblem_of_the_Moroccan_DGSN.svg.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Emblem_of_the_Moroccan_DGSN.svg",
+        "license": "Fair Use",
+        "alt": "شارة المديرية العامة للأمن الوطني DGSN"
+      },
+      "options": {
+        "A": "القوات المساعدة",
+        "B": "المديرية العامة للأمن الوطني (DGSN)",
+        "C": "الدرك الملكي",
+        "D": "مراقبة التراب الوطني (DGST)"
+      },
+      "correct_answer": "B",
+      "explanation": "تأسست المديرية العامة للأمن الوطني (الشرطة المغربية) سنة 1956 وتسهر على حماية الأشخاص والممتلكات وإصدار وثائق الهوية.",
+      "source_title": "المديرية العامة للأمن الوطني",
+      "source_url": "https://dgsn.gov.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_6",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هو جهاز الإغاثة والطوارئ المغربي صاحب هذا الشعار ذي الخوذة والمشعل والمثلث الأزرق والبرتقالي؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Logo_de_la_Protection_Civile_Marocaine.svg/960px-Logo_de_la_Protection_Civile_Marocaine.svg.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Logo_de_la_Protection_Civile_Marocaine.svg",
+        "license": "Fair Use",
+        "alt": "شعار المديرية العامة للوقاية المدنية المغربية"
+      },
+      "options": {
+        "A": "الهلال الأحمر",
+        "B": "وحدة الإنقاذ السريع",
+        "C": "الوقاية المدنية المغربية (Protection Civile)",
+        "D": "إدارة الأزمات الملكية"
+      },
+      "correct_answer": "C",
+      "explanation": "المديرية العامة للوقاية المدنية هي الهيئة المسؤولة عن إخماد الحرائق، الإنقاذ البحري، وإغاثة ضحايا حوادث السير والكوارث الطبيعية.",
+      "source_title": "المديرية العامة للوقاية المدنية",
+      "source_url": "https://interieur.gov.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_7",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الأكاديمية والبحثية الملكية صاحبة هذا الشعار المتضمن لحرف 'يازا' باللون الأحمر لكتابة وتطوير الثقافة الأمازيغية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/5/54/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D9%85%D8%B9%D9%87%D8%AF_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A_%D9%84%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9_%D8%A7%D9%84%D8%A3%D9%85%D8%A7%D8%B2%D9%8A%D8%BA%D9%8A%D8%A9.png",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D9%85%D8%B9%D9%87%D8%AF_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A_%D9%84%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9_%D8%A7%D9%84%D8%A3%D9%85%D8%A7%D8%B2%D9%8A%D8%BA%D9%8A%D8%A9.png",
+        "license": "Fair Use",
+        "alt": "شعار المعهد الملكي للثقافة الأمازيغية IRCAM"
+      },
+      "options": {
+        "A": "أكاديمية المملكة المغربية",
+        "B": "متحف الفنون المعاصرة",
+        "C": "وزارة الثقافة المغربية",
+        "D": "المعهد الملكي للثقافة الأمازيغية (IRCAM)"
+      },
+      "correct_answer": "D",
+      "explanation": "تأسس المعهد الملكي للثقافة الأمازيغية (IRCAM) بظهير شريف أصدره الملك محمد السادس بأجدير سنة 2001 للحفاظ على الثقافة الأمازيغية والنهوض بها.",
+      "source_title": "المعهد الملكي للثقافة الأمازيغية",
+      "source_url": "https://www.ircam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_8",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ماذا تمثل هذه الشارة الدائرية الخضراء والحمراء المتوجة بالتاج الملكي والمثبتة على طائرات سلاح الجو المغربي؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Roundel_of_Morocco.svg/960px-Roundel_of_Morocco.svg.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Roundel_of_Morocco.svg",
+        "license": "Public Domain",
+        "alt": "شارة القوات الجوية الملكية المغربية الرسمية"
+      },
+      "options": {
+        "A": "شارة القوات الجوية الملكية المغربية (RMAF)",
+        "B": "شعار الطيران المدني",
+        "C": "شارة الحرس الملكي",
+        "D": "شعار البحرية الملكية"
+      },
+      "correct_answer": "A",
+      "explanation": "شارة القوات الجوية الملكية (Roundel) ترمز للسيادة الجوية للمملكة وتزين مقاتلات إف-16 ومروحيات الجيش المغربي.",
+      "source_title": "القوات المسلحة الملكية - القوات الجوية",
+      "source_url": "https://www.far.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_9",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هي الملحمة الشعبية والوطنية التاريخية التي خلدتها هذه الصورة سنة 1975 بمسيرة 350 ألف مواطن لاسترجاع الصحراء المغربية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Green_March_1975.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Green_March_1975.jpg",
+        "license": "Public Domain",
+        "alt": "صورة تاريخية لجموع المتطوعين في المسيرة الخضراء المظفرة 1975"
+      },
+      "options": {
+        "A": "معركة إيسلي",
+        "B": "المسيرة الخضراء المظفرة",
+        "C": "ثورة الملك والشعب",
+        "D": "معركة أنوال"
+      },
+      "correct_answer": "B",
+      "explanation": "المسيرة الخضراء انطلقت في 6 نونبر 1975 بعبقرية الملك الحسن الثاني طيب الله ثراه لاسترجاع الأقاليم الجنوبية سلماً بالقرآن والأعلام.",
+      "source_title": "المندوبية السامية لقدماء المقاومين",
+      "source_url": "https://hassa.gov.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_400_10",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هو هذا الوسام الوطني الملكي الرفيع ذو الشارة الخضراء والحمراء الذي أحدثه الملك الحسن الثاني سنة 1963 لمكافأة الخدمات المتميزة للعرش؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Order_of_the_Throne%2C_granted_by_Hassan_II_of_Morocco_-_IMG_4987.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Order_of_the_Throne,_granted_by_Hassan_II_of_Morocco_-_IMG_4987.JPG",
+        "license": "CC BY-SA 4.0",
+        "alt": "شارة وميدالية وسام العرش المغربي"
+      },
+      "options": {
+        "A": "وسام الشجاعة",
+        "B": "وسام الكفاءة الفكرية",
+        "C": "وسام العرش (Ordre du Trône)",
+        "D": "وسام الاستحقاق الوطني"
+      },
+      "correct_answer": "C",
+      "explanation": "وسام العرش هو وسام ملكي شريف يمنحه الملك سنوياً في عيد العرش للشخصيات المدنية والعسكرية التي أسدت خدمات جليلة للوطن.",
+      "source_title": "ديوان الأوسمة الملكية",
+      "source_url": "https://www.maroc.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_6",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الدينار الذهبي التاريخي الخالص الصادر في عهد السلطان المرابطي علي بن يوسف بن تاشفين المضروب بمراكش؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Abu_Muhammad_%27Abd_Allah_-_Almohad_AV_Dinar_10401144.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abu_Muhammad_%27Abd_Allah_-_Almohad_AV_Dinar_10401144.jpg",
+        "license": "CC BY-SA 2.5",
+        "alt": "دينار ذهبي مغربي مرابطي موحدي نادر"
+      },
+      "options": {
+        "A": "الدرهم المريني الفضي",
+        "B": "الريال الحسني الفضي",
+        "C": "الدولار البرتغالي لمازاغان",
+        "D": "الدينار الذهبي المرابطي / الموحدي"
+      },
+      "correct_answer": "D",
+      "explanation": "كانت الدنانير الذهبية المغربية في العهدين المرابطي والموحدي أقوى عملة تجارية دولية في حوض البحر الأبيض المتوسط وأوروبا لقرون.",
+      "source_title": "تاريخ النقود المغربية - بنك المغرب",
+      "source_url": "https://www.bkam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_7",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هو الاسم التاريخي والرمزي للخاتم الملكي المخطوط بالمداد الأسود في أعلى المراسلات والظهائر الشريفة للسلاطين العلويين؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Coat_of_arms_of_Morocco_%28Improved%29.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Morocco_(Improved).png",
+        "license": "Public Domain",
+        "alt": "الطابع الشريف والختم السلطاني المغربي"
+      },
+      "options": {
+        "A": "الطابع الشريف (الختم السلطاني للظهائر)",
+        "B": "الفرمان العثماني",
+        "C": "الصولجان الملكي",
+        "D": "التاج السعدي"
+      },
+      "correct_answer": "A",
+      "explanation": "يسمى الختم المطبوع على الظهائر والمراسيم الملكية بـ 'الطابع الشريف'، ويحمل اسم السلطان ولقبه ودعاء النصر والتمكين.",
+      "source_title": "الأمانة العامة للحكومة والخزانة الملكية",
+      "source_url": "https://sgg.gov.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_8",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الفكرية والعلمية الأسمى في المملكة المغربية المنشأة عام 1977 وتضم 60 عضواً من ألمع علماء العالم؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Order_of_the_Throne%2C_granted_by_Hassan_II_of_Morocco_-_IMG_4987.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Order_of_the_Throne,_granted_by_Hassan_II_of_Morocco_-_IMG_4987.JPG",
+        "license": "CC BY-SA 4.0",
+        "alt": "رمز ورئاسة أكاديمية المملكة المغربية"
+      },
+      "options": {
+        "A": "المجلس الأعلى للتربية والتكوين",
+        "B": "أكاديمية المملكة المغربية",
+        "C": "المجلس الدستوري",
+        "D": "الرابطة المحمدية للعلماء"
+      },
+      "correct_answer": "B",
+      "explanation": "تعد أكاديمية المملكة المغربية المؤسسة المرجعية العليا لنشر الفكر والمعرفة الإنسانية وترسيخ إشعاع المغرب الحضاري برعاية ملكية سامية.",
+      "source_title": "أكاديمية المملكة المغربية",
+      "source_url": "https://alacademia.org.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_9",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هو الاسم التاريخي للعملة الفضية الوطنية المغربية المسكوكة في عهد السلطان مولاي الحسن الأول سنة 1881 وتسمى 'الريال الحسني'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Dirham_of_Idris_II%2C_828_A.D.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dirham_of_Idris_II,_828_A.D.jpg",
+        "license": "Public Domain",
+        "alt": "الريال الفضي الحسني في العهد العلوي"
+      },
+      "options": {
+        "A": "المزونة البرونزية",
+        "B": "البسيطة الإسبانية",
+        "C": "الريال الحسني (Hassani Rial)",
+        "D": "الفلس السعدي"
+      },
+      "correct_answer": "C",
+      "explanation": "أصلح السلطان مولاي الحسن الأول النظام النقدي المغربي بسك الريال الحسني الفضي في باريس وبرلين ولندن لوقف تدهور العملة الوطنية.",
+      "source_title": "متحف بنك المغرب وتاريخ الريال الحسني",
+      "source_url": "https://www.bkam.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    },
+    {
+      "id": "sym_500_10",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ماذا تمثل هذه الراية التاريخية ذات النجمة السداسية الخضراء في القرن التاسع عشر قبل اعتماد النجمة الخماسية الحالية سنة 1915؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Amazigh_Flag.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Amazigh_Flag.jpg",
+        "license": "Public Domain",
+        "alt": "الراية البحرية والتجارية للمملكة في عهد السلطان مولاي الحسن الأول"
+      },
+      "options": {
+        "A": "راية إمارة سجلماسة",
+        "B": "راية المرابطين العسكرية",
+        "C": "علم قراصنة سلا",
+        "D": "الراية البحرية المغربية في العهد العلوي القديم"
+      },
+      "correct_answer": "D",
+      "explanation": "كانت السفن المغربية في عهد السلاطين العلويين القدامى ترفع رايات حمراء تتوسطها نجمة سداسية (الخاتم السليماني) قبل ظهير 1915.",
+      "source_title": "تاريخ العلم والرايات المغربية",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن العلم أو الرمز",
+      "category_id": "guess_flag_symbol"
+    }
+  ]
+}

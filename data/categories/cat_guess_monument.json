@@ -1,0 +1,1307 @@
+{
+  "category_id": "guess_monument",
+  "category_name": "خمن المعلم من الصورة",
+  "emoji": "🏛️",
+  "questions": [
+    {
+      "id": "mon_100_1",
+      "category": "خمن المعلم من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا المعلم التاريخي البارز وأين يقع؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Hassan_Tower%2C_Rabat%2C_Marocco_%28%D8%B5%D9%88%D9%85%D8%B9%D8%A9_%D8%AD%D8%B3%D8%A7%D9%86_%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AHassan%20Tower%2C%20Rabat%2C%20Marocco%20%28%D8%B5%D9%88%D9%85%D8%B9%D8%A9%20%D8%AD%D8%B3%D8%A7%D9%86%20%29.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صومعة حسان التاريخية في مدينة الرباط"
+      },
+      "options": {
+        "A": "صومعة حسان (الرباط)",
+        "B": "صومعة تينمل (الحوز)",
+        "C": "مسجد القرويين (فاس)",
+        "D": "صومعة الكتبية (مراكش)"
+      },
+      "correct_answer": "A",
+      "explanation": "صومعة حسان من أبرز معالم العاصمة الرباط، شيدها السلطان يعقوب المنصور الموحدي في القرن الثاني عشر الميلادي.",
+      "source_title": "مؤسسة المحافظة على التراث الثقافي للرباط",
+      "source_url": "https://fppcr.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_2",
+      "category": "خمن المعلم من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا المسجد والصرح المعماري العظيم المشيد جزئياً فوق مياه المحيط الأطلسي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Framing_Heritage_-_Hassan_II_Mosque.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AFraming%20Heritage%20-%20Hassan%20II%20Mosque.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "مسجد الحسن الثاني ومئذنته الشاهقة على ساحل الدار البيضاء"
+      },
+      "options": {
+        "A": "مسجد الأندلسيين (فاس)",
+        "B": "مسجد الحسن الثاني (الدار البيضاء)",
+        "C": "جامع الفنا (مراكش)",
+        "D": "مسجد محمد الخامس (طنجة)"
+      },
+      "correct_answer": "B",
+      "explanation": "مسجد الحسن الثاني بالدار البيضاء تحفة معمارية مغربية فريدة، تتميز بمئذنتها الشاهقة البالغة 210 أمتار وسقفه المتحرك.",
+      "source_title": "مؤسسة مسجد الحسن الثاني بالدار البيضاء",
+      "source_url": "https://www.mosquee-hassan2.com",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_3",
+      "category": "خمن المعلم من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذه الصومعة التاريخية الشهيرة المجاورة لساحة جامع الفنا؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Kutubiyya_Mosque%2C_Marrakesh%2C_Morocco%2C_20250124_1830_7025.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AKutubiyya%20Mosque%2C%20Marrakesh%2C%20Morocco%2C%2020250124%201830%207025.jpg",
+        "license": "CC BY 4.0",
+        "alt": "صومعة جامع الكتبية التاريخية في مراكش"
+      },
+      "options": {
+        "A": "صومعة حسان (الرباط)",
+        "B": "مئذنة البوعنانية (فاس)",
+        "C": "صومعة الكتبية (مراكش)",
+        "D": "الخيرالدا (إشبيلية)"
+      },
+      "correct_answer": "C",
+      "explanation": "جامع الكتبية وصومعته المهيبة من روائع الفن المعماري الموحدي في مراكش، استوحت منها صومعة الخيرالدا بإشبيلية وصومعة حسان بالرباط.",
+      "source_title": "وزارة الأوقاف والشؤون الإسلامية",
+      "source_url": "https://www.habous.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_4",
+      "category": "خمن المعلم من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا القصر الطيني التراثي العالمي الشهير الواقع بإقليم ورزازات؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Ait_Zineb_-_Ksar_of_A%C3%AFt_Benhaddou_-_20190716175500.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AAit%20Zineb%20-%20Ksar%20of%20A%C3%AFt%20Benhaddou%20-%2020190716175500.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "قصر أيت بن حدو الطيني التاريخي بورزازات"
+      },
+      "options": {
+        "A": "قصبة بولعوان",
+        "B": "قصر الباهية",
+        "C": "قصبة الوداية",
+        "D": "قصر آيت بن حدو"
+      },
+      "correct_answer": "D",
+      "explanation": "قصر أيت بن حدو نموذج رائع للعمارة الطينية التقليدية بالجنوب المغربي وموقع مصنف ضمن التراث الإنساني لليونسكو.",
+      "source_title": "اليونسكو - التراث العالمي",
+      "source_url": "https://whc.unesco.org/en/list/444",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_5",
+      "category": "خمن المعلم من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الباب التاريخي الأثري الضخم المشرف على ساحة الهديم بمكناس؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Bab_El_Mansour_Gate_Meknes_Morocco_165357_%2849682259918%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ABab%20El%20Mansour%20Gate%20Meknes%20Morocco%20165357%20%2849682259918%29.jpg",
+        "license": "CC BY 2.0",
+        "alt": "باب المنصور لعلج الضخم بمدينة مكناس"
+      },
+      "options": {
+        "A": "باب المنصور لعلج",
+        "B": "باب مراكش",
+        "C": "باب بوجلود",
+        "D": "باب الرواح"
+      },
+      "correct_answer": "A",
+      "explanation": "باب المنصور لعلج هو أعظم أبواب القصبة الإسماعيلية بمكناس، شيده المولى إسماعيل وأكمله ابنه المولى عبد الله سنة 1732م.",
+      "source_title": "وزارة الشباب والثقافة والتواصل",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_1",
+      "category": "خمن المعلم من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا الموقع الأثري الروماني العريق الواقع قرب مدينة مولاي إدريس زرهون؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Ruins_of_Roman_Mosaic_floor_in_Volubilis%2C_Morocco.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ARuins%20of%20Roman%20Mosaic%20floor%20in%20Volubilis%2C%20Morocco.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "الآثار الرومانية وقوس النصر في موقع وليلي"
+      },
+      "options": {
+        "A": "موقع تمودة",
+        "B": "موقع وليلي الأثري (Volubilis)",
+        "C": "موقع ليكسوس",
+        "D": "موقع شالة"
+      },
+      "correct_answer": "B",
+      "explanation": "وليلي مدينة رومانية أثرية عريقة تزخر بالأعمدة الرخامية وبقايا قصر كركلا ولوحات الفسيفساء النادرة، ومصنفة لدى اليونسكو.",
+      "source_title": "الموقع الأثري لوليلي - وزارة الثقافة",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_2",
+      "category": "خمن المعلم من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه القصبة الحصينة المشرفة على نهر أبي رقراق والمحيط الأطلسي بالرباط؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Fortifications_of_Rabat%2C_Kasbah_Udayas_%28%D8%A3%D8%B3%D9%88%D8%A7%D8%B1_%D8%A7%D9%84%D8%B1%D8%A8%D8%A7%D8%B7%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AFortifications%20of%20Rabat%2C%20Kasbah%20Udayas%20%28%D8%A3%D8%B3%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B1%D8%A8%D8%A7%D8%B7%29.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "باب قصبة الأوداية الموحدي العظيم بالرباط"
+      },
+      "options": {
+        "A": "شالة الأثرية",
+        "B": "قصبة تادلة",
+        "C": "قصبة الأوداية",
+        "D": "قصبة تاوريرت"
+      },
+      "correct_answer": "C",
+      "explanation": "قصبة الأوداية بنيت كحصن عسكري لحماية مصب وادي أبي رقراق وتضم أزقة بيضاء وزرقاء رائعة وباباً موحدياً منقوشاً بالصخر.",
+      "source_title": "مؤسسة تراث الرباط الثقافي",
+      "source_url": "https://fppcr.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_3",
+      "category": "خمن المعلم من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا الضريح الملكي الفخم الذي يضم رفات الملك محمد الخامس والحسن الثاني والأمير عبد الله؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Honor_guard_at_Mausoleum_of_Mohammed_V%2C_Rabat%2C_Morocco.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AHonor%20guard%20at%20Mausoleum%20of%20Mohammed%20V%2C%20Rabat%2C%20Morocco.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "ضريح محمد الخامس الرخامي بالرباط"
+      },
+      "options": {
+        "A": "أضرحة السعديين (مراكش)",
+        "B": "ضريح مولاي إدريس (فاس)",
+        "C": "ضريح المولى إسماعيل (مكناس)",
+        "D": "ضريح محمد الخامس (الرباط)"
+      },
+      "correct_answer": "D",
+      "explanation": "ضريح محمد الخامس تحفة العمارة الحديثة بالمغرب بالرخام الأبيض الإيطالي والنحاس المطلي والزليج والسقف الجبسي المخروط بالأخضر.",
+      "source_title": "الديوان الملكي المغربي",
+      "source_url": "https://www.maroc.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_4",
+      "category": "خمن المعلم من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا الباب الأندلسي المزخرف الذي يعد المدخل الرئيسي لفاس البالي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Bab_Bou_Jeloud-Fez.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ABab%20Bou%20Jeloud-Fez.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "باب بوجلود المزخرف باللونين الأزرق والأخضر بفاس"
+      },
+      "options": {
+        "A": "باب بوجلود (Bab Bou Jeloud)",
+        "B": "باب الرصيف",
+        "C": "باب الفتوح",
+        "D": "باب الدكاكين"
+      },
+      "correct_answer": "A",
+      "explanation": "باب بوجلود يشتهر بفسيفسائه الزرقاء الفاسية من الخارج والخضراء من الداخل، وبني في شكله الحالي عام 1913 في عهد الحماية.",
+      "source_title": "وكالة التنمية ورد الاعتبار لمدينة فاس",
+      "source_url": "https://ader-fes.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_5",
+      "category": "خمن المعلم من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه المدينة المغربية التاريخية الشهيرة بطلائها الأزرق الجذاب بين أحضان جبال الريف؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/2018_01_%28Blue%29_-_Chaouen.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3A2018%2001%20%28Blue%29%20-%20Chaouen.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "أزقة شفشاون الزرقاء الخلابة ودروبها التراثية"
+      },
+      "options": {
+        "A": "الحسيمة",
+        "B": "شفشاون",
+        "C": "وزان",
+        "D": "أصيلة"
+      },
+      "correct_answer": "B",
+      "explanation": "شفشاون (الجوهرة الزرقاء) أسسها علي بن راشد عام 1471، واكتسبت أزقتها الزرقاء شهرة عالمية كإحدى أجمل مدن العالم.",
+      "source_title": "المكتب الوطني المغربي للسياحة",
+      "source_url": "https://www.visitmorocco.com",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_1",
+      "category": "خمن المعلم من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا القصر التاريخي العظيم الذي شيده أحمد المنصور الذهبي بمراكش بعد معركة وادي المخازن؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/El_Badi_Palace%2C_Marrakesh%2C_Morocco%2C_20250125_0944_7096.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AEl%20Badi%20Palace%2C%20Marrakesh%2C%20Morocco%2C%2020250125%200944%207096.jpg",
+        "license": "CC BY 4.0",
+        "alt": "أطلال وأحواض قصر البديع بمراكش"
+      },
+      "options": {
+        "A": "قصر المنبهي",
+        "B": "قصر دار المخزن",
+        "C": "قصر البديع (مراكش)",
+        "D": "قصر الباهية"
+      },
+      "correct_answer": "C",
+      "explanation": "شيد السلطان السعدي أحمد المنصور الذهبي قصر البديع عام 1578 ورصعه بالرخام والذهب وعقيق العاج، وتحول اليوم لمعلم أثري وفضاء ثقافي.",
+      "source_title": "المعالم التاريخية بمراكش - وزارة الثقافة",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_2",
+      "category": "خمن المعلم من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذه المدرسة المرينية التراثية الواقعة قرب سوق العطارين وجامع القرويين بفاس؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/%22Ein_Juwel_islamischer_Architektur%22._11.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3A%22Ein%20Juwel%20islamischer%20Architektur%22.%2011.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "الصحن المنقوش بالجبس والزليج لمدرسة العطارين بفاس"
+      },
+      "options": {
+        "A": "المدرسة البوعنانية (مكناس)",
+        "B": "مدرسة الصفارين",
+        "C": "مدرسة ابن يوسف (مراكش)",
+        "D": "مدرسة العطارين (فاس)"
+      },
+      "correct_answer": "D",
+      "explanation": "شيد السلطان المريني أبو سعيد عثمان مدرسة العطارين عام 1325م وتعد تحفة الزخرفة بالزليج والنقش على خشب الأرز والجبس المريني.",
+      "source_title": "وكالة رد الاعتبار لمدينة فاس",
+      "source_url": "https://ader-fes.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_3",
+      "category": "خمن المعلم من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا المسجد الأثري الموحدي الواقع في جبال الأطلس الكبير ومهد الدولة الموحدية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/ASC_Leiden_-_van_Achterberg_Collection_-_10_-_35_-_La_grande_mosqu%C3%A9e_de_Tinmel_avec_une_tour_carr%C3%A9e_-_Tinmel%2C_Maroc_-_Ann%C3%A9es_1990.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AASC%20Leiden%20-%20van%20Achterberg%20Collection%20-%2010%20-%2035%20-%20La%20grande%20mosqu%C3%A9e%20de%20Tinmel%20avec%20une%20tour%20carr%C3%A9e%20-%20Tinmel%2C%20Maroc%20-%20Ann%C3%A9es%201990.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "مسجد تينمل الموحدي التاريخي في جبال الأطلس الكبير"
+      },
+      "options": {
+        "A": "مسجد تينمل التاريخي",
+        "B": "جامع الكتبية",
+        "C": "جامع الوداية",
+        "D": "مسجد السمعة"
+      },
+      "correct_answer": "A",
+      "explanation": "مسجد تينمل في أعالي الأطلس الكبير شيده الموحدون في القرن الثاني عشر ويعد مهد حركتهم ومنطلق إمبراطوريتهم العظمى.",
+      "source_title": "وزارة الثقافة - مآثر تينمل التاريخية",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_4",
+      "category": "خمن المعلم من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الخزان المائي التحت أرضي الأثري ذي الأقواس القوطية في قلعة مازاغان بالجديدة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Cistern_El_Jadida.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ACistern%20El%20Jadida.jpg",
+        "license": "Public domain",
+        "alt": "المسقاة البرتغالية وعمودها وأقواسها المغمورة بالماء بالجديدة"
+      },
+      "options": {
+        "A": "صهريج السواني (مكناس)",
+        "B": "المسقاة البرتغالية (الجديدة)",
+        "C": "صهريج المنارة (مراكش)",
+        "D": "حوض أغمات"
+      },
+      "correct_answer": "B",
+      "explanation": "المسقاة البرتغالية (Citerne portugaise) شيدت عام 1514 داخل الحصن البرتغالي بالجديدة لتجميع مياه الأمطار وتتميز بانعكاس ضوئها الفريد.",
+      "source_title": "موقع التراث العالمي مازاغان - اليونسكو",
+      "source_url": "https://whc.unesco.org/en/list/1058",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_5",
+      "category": "خمن المعلم من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الموقع الأثري بالرباط الذي يضم آثاراً رومانية ومقابر سلاطين الدولة المرينية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Chellah_%26_minaret%2C_Rabat.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chellah_%26_minaret,_Rabat.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صومعة وأسوار موقع شالة الأثري التاريخي بالرباط"
+      },
+      "options": {
+        "A": "موقع وليلي",
+        "B": "قصبة أبي رقراق",
+        "C": "موقع شالة الأثري (Chellah)",
+        "D": "موقع تامدولت"
+      },
+      "correct_answer": "C",
+      "explanation": "شالة تجمع بين المدينة الرومانية (سلا كولونيا) والمقبرة الملكية المرينية المحصنة التي بناها السلطان أبو الحسن وأبو عنان المريني.",
+      "source_title": "وزارة الشباب والثقافة والتواصل",
+      "source_url": "https://www.mjcc.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_1",
+      "category": "خمن المعلم من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا القصر الشهير بمراكش الذي بناه الوزير أحمد بن موسى (باحماد) لزوجته؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Bahia_Palace_Marrakech_Back_Courtyard_LL.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ABahia%20Palace%20Marrakech%20Back%20Courtyard%20LL.JPG",
+        "license": "CC BY-SA 3.0",
+        "alt": "صحن قصر الباهية الفخم بمراكش"
+      },
+      "options": {
+        "A": "دار سي سعيد",
+        "B": "قصر البديع",
+        "C": "قصر المنبهي",
+        "D": "قصر الباهية (مراكش)"
+      },
+      "correct_answer": "D",
+      "explanation": "قصر الباهية شيده الوزير باحماد في أواخر القرن 19 ويمتد على 8 هكتارات ويضم أروع نقوش الخشب والزليج والرياضات الأندلسية.",
+      "source_title": "المعالم التاريخية بمراكش",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_2",
+      "category": "خمن المعلم من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا المجمع الجنائزي السعدي الفخم الذي أعيد اكتشافه سنة 1917 قرب جامع القصبة بمراكش؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Marrakech%2C_Saadian_Tombs.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AMarrakech%2C%20Saadian%20Tombs.JPG",
+        "license": "CC BY 3.0",
+        "alt": "قاعة الأعمدة الاثني عشر في قبور السعديين بمراكش"
+      },
+      "options": {
+        "A": "قبور السعديين (Saadian Tombs)",
+        "B": "مقبرة شالة المرينية",
+        "C": "روضة الأدارسة",
+        "D": "ضريح مولاي علي الشريف"
+      },
+      "correct_answer": "A",
+      "explanation": "تضم قبور السعديين رفات أحمد المنصور الذهبي وسلاطين الدولة السعدية وتشتهر بقاعة الأعمدة الاثني عشر المصنوعة من رخام كارارا الإيطالي.",
+      "source_title": "متحف قبور السعديين - وزارة الثقافة",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_3",
+      "category": "خمن المعلم من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه المنارة البحرية التاريخية المشيدة عام 1864 عند نقطة التقاء البحر الأبيض المتوسط والمحيط الأطلسي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Cap_Spartel%2C_Tangier%2C_Morocco_-_panoramio.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ACap%20Spartel%2C%20Tangier%2C%20Morocco%20-%20panoramio.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "منارة كاب سبارتيل التاريخية عند التقاء المتوسط والأطلسي بطنجة"
+      },
+      "options": {
+        "A": "منارة طرفاية",
+        "B": "منارة كاب سبارتيل (طنجة)",
+        "C": "منارة العنق (الدار البيضاء)",
+        "D": "منارة سيدي إفني"
+      },
+      "correct_answer": "B",
+      "explanation": "منارة رأس سبارتيل بطنجة أول منارة حديثة بالمغرب أنشئت بالتعاون الدولي عام 1864 وتطل على مضيق جبل طارق والتقاء البحرين.",
+      "source_title": "المديرية العامة للموانئ والملاحة التجارية",
+      "source_url": "https://www.mtpnet.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_4",
+      "category": "خمن المعلم من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الموقع الأثري العريق على ضفاف نهر اللكوس قرب العرائش والذي اشتهر بمصانع تمليح السمك قديماً؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Ruins_at_Lixus_archaeological_site.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ARuins%20at%20Lixus%20archaeological%20site.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "أطلال موقع ليكسوس الفينيقي والروماني قرب العرائش"
+      },
+      "options": {
+        "A": "موقع باناصا",
+        "B": "موقع تامودة",
+        "C": "موقع ليكسوس الأثري (Lixus)",
+        "D": "موقع تمازغة"
+      },
+      "correct_answer": "C",
+      "explanation": "ليكسوس أقدم مستوطنة فينيقية في المغرب يعود تاريخها للقرن الثاني عشر قبل الميلاد، وتضم مسرحاً رومانياً ومصانع لصلصة الغاروم الشهيرة.",
+      "source_title": "المعهد الوطني لعلوم الآثار والتراث",
+      "source_url": "https://www.insap.ac.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_5",
+      "category": "خمن المعلم من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه القصبة الطينية التراثية الشامخة في قلب مدينة ورزازات والمقر التاريخي لعائلة الكلاوي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Kasbah_Taourirt_Ouarzazate_DSCF6838.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AKasbah%20Taourirt%20Ouarzazate%20DSCF6838.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "أبراج وزخارف قصبة تاوريرت الطينية بورزازات"
+      },
+      "options": {
+        "A": "قصبة تلوات",
+        "B": "قصبة أمدير",
+        "C": "قصبة مهدية",
+        "D": "قصبة تاوريرت (ورزازات)"
+      },
+      "correct_answer": "D",
+      "explanation": "قصبة تاوريرت شيدت في القرن 17 ورممت في عهد التهامي الكلاوي وتعد من أكبر القصبات الطينية المحفوظة بنقوشها الهندسية البربرية.",
+      "source_title": "مركز صيانة وتوظيف التراث المعماري بمناطق الأطلس والجنوب",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_1",
+      "category": "خمن المعلم من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الجناح التاريخي ذي السقف الهرمي الأخضر والحوض المائي الفسيح بمراكش الذي شيده الموحدون والسعديون؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Marrakesh_Menara_Garden_Pavilion_seen_from_across_the_basin.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AMarrakesh%20Menara%20Garden%20Pavilion%20seen%20from%20across%20the%20basin.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "جناح وحوض حدائق المنارة بمراكش مع خلفية جبال الأطلس"
+      },
+      "options": {
+        "A": "جناح وحدائق المنارة (مراكش)",
+        "B": "عرصة مولاي عبد السلام",
+        "C": "حديقة ماجوريل",
+        "D": "حدائق أكدال"
+      },
+      "correct_answer": "A",
+      "explanation": "حدائق المنارة أنشأها عبد المؤمن بن علي الموحدي سنة 1157م وجدد الجناح السلطان العلوي عبد الرحمن بن هشام، وتتغذى من مياه الأطلس بنظام الخطارات.",
+      "source_title": "حدائق مراكش التاريخية - اليونسكو",
+      "source_url": "https://whc.unesco.org/en/list/330",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_2",
+      "category": "خمن المعلم من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا المعلم الحرفي التاريخي الذي يعد أقدم مدبغة تقليدية للجلود لا تزال تعمل في العالم منذ العهد الإدريسي بفاس؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Fez_Chouara_Tannery_%2854238811596%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AFez%20Chouara%20Tannery%20%2854238811596%29.jpg",
+        "license": "CC BY 2.0",
+        "alt": "أحواض دار الدباغ شوارة الملونة لصبغ الجلود بفاس"
+      },
+      "options": {
+        "A": "مدبغة سيدي موسى",
+        "B": "دار الدباغ شوارة (فاس)",
+        "C": "مدبغة باب الدباغ بمراكش",
+        "D": "فندق النجارين"
+      },
+      "correct_answer": "B",
+      "explanation": "دار الدباغ شوارة بفاس العتيقة يعود إنشاؤها للقرن التاسع الميلادي وتستخدم أحواضاً كلسية وصبغات طبيعية في مشهد بصري تراثي عالمي استثنائي.",
+      "source_title": "وكالة التنمية ورد الاعتبار لمدينة فاس (ADER-Fès)",
+      "source_url": "https://ader-fes.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_3",
+      "category": "خمن المعلم من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا المعلم الإسماعيلية الضخم بمكناس المخصص لخزن الحبوب وإيواء آلاف خيول السلطان المولى إسماعيل؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Royal_Stables_Meknes_2018_1.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3ARoyal%20Stables%20Meknes%202018%201.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "أقواس مخازن وإسطبلات هري السواني وصهريج السواني بمكناس"
+      },
+      "options": {
+        "A": "برج الصخرة",
+        "B": "سجن قارة",
+        "C": "هري السواني وصهريج السواني",
+        "D": "قصر المنصور"
+      },
+      "correct_answer": "C",
+      "explanation": "هري السواني (إسطبلات ومخازن السلطان) يتميز بأقواسه الحجرية المهيبة ونظام التهوئة المبتكر وبجواره صهريج السواني لتغذية المدينة بالماء.",
+      "source_title": "معالم مكناس الإسماعيلية - وزارة الثقافة",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_4",
+      "category": "خمن المعلم من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذه المدرسة القرآنية العظيمة بمراكش التي أعاد بناءها السلطان السعدي عبد الله الغالب وتعد كبرى مدارس المغرب التاريخية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Marrakesh_Ben_Youssef_Madrasa_courtyard_1.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File%3AMarrakesh%20Ben%20Youssef%20Madrasa%20courtyard%201.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "الصحن التاريخي المنقوش لمدرسة ابن يوسف بمراكش"
+      },
+      "options": {
+        "A": "مدرسة العطارين",
+        "B": "مدرسة الصباحيين",
+        "C": "المدرسة البوعنانية",
+        "D": "مدرسة ابن يوسف (مراكش)"
+      },
+      "correct_answer": "D",
+      "explanation": "مدرسة ابن يوسف بمراكش أسسها المرينيون ووسعها السعديون عام 1564م لتتسع لـ 900 طالب، وتعد آية في فنون الخشب والجبس والزليج والخط الكوفي.",
+      "source_title": "مؤسسة تراث مراكش ومدرسة ابن يوسف",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_5",
+      "category": "خمن المعلم من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الموقع الأثري النادر في شمال المغرب المكون من دائرة أحجار صخرية مغليثية تعود لعصور ما قبل التاريخ؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Cromlech_de_M%27zora.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cromlech_de_M%27zora.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "النصب الميغاليثي والدائرة الحجرية الأثرية كرومليك مزورة بالقرب من أصيلة"
+      },
+      "options": {
+        "A": "كرومليك مزورة (M'zora)",
+        "B": "كهف الحمام",
+        "C": "موقع سيدي عبد الرحمن",
+        "D": "مغارة هرقل"
+      },
+      "correct_answer": "A",
+      "explanation": "موقع مزورة قرب أصيلة حلقة صخرية جنائزية ميغاليثية من 167 نصباً صخرياً يتوسطها حجر الوتد بارتفاع يفوق 5 أمتار وتعتبر مقبرة أسطورية للملك الأمازيغي عنتي (Antaeus).",
+      "source_title": "المعهد الوطني لعلوم الآثار والتراث (INSAP)",
+      "source_url": "https://www.insap.ac.ma",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_6",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الباب الموحدي التاريخي الفخم المنقوش بالحجر الرملي والذي يعد المدخل الرئيسي لقصبة مراكش؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Bab_Agnaou%2C_Marrakesh%2C_Morocco%2C_20250125_1255_7243.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bab_Agnaou,_Marrakesh,_Morocco,_20250125_1255_7243.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "باب أكناو التاريخي الموحدي بمراكش"
+      },
+      "options": {
+        "A": "باب دكالة",
+        "B": "باب أكناو (مراكش)",
+        "C": "باب شالة",
+        "D": "باب الرواح"
+      },
+      "correct_answer": "B",
+      "explanation": "باب أكناو شيده الخليفة الموحدي يعقوب المنصور في القرن الثاني عشر الميلادي كمدخل فخم لقصبة مراكش السلطانية.",
+      "source_title": "وزارة الثقافة المغربية",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_7",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذه الأسوار البحرية التاريخية المحصنة بالمدافع البرونزية المطلة على المحيط الأطلسي في الصويرة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Essaouira_City_walls_-_panoramio_%287%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Essaouira_City_walls_-_panoramio_(7).jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "أسوار صقالة القصبة ومدافع الصويرة الأطلسية"
+      },
+      "options": {
+        "A": "أسوار الجديدة",
+        "B": "قصبة آسفي البحرية",
+        "C": "صقالة القصبة وأسوار الصويرة",
+        "D": "حصن أصيلة"
+      },
+      "correct_answer": "C",
+      "explanation": "شيدت صقالة القصبة بمدينة الصويرة في عهد السلطان سيدي محمد بن عبد الله العلوي لحماية الميناء بمدافع برونزية إسبانية وهولندية.",
+      "source_title": "مؤسسة الصويرة موكادور",
+      "source_url": "https://essaouira.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_8",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الباب الحجري الأثري الشامخ والمزخرف بأشكال هندسية الذي يمثل المدخل الرئيسي لقصبة الأوداية بالرباط؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Bab_oudaia_inner_facade.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bab_oudaia_inner_facade.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "الباب الكبير لقصبة الأوداية في الرباط"
+      },
+      "options": {
+        "A": "باب فاس",
+        "B": "باب الزعير",
+        "C": "باب المريسة",
+        "D": "باب الأوداية (الرباط)"
+      },
+      "correct_answer": "D",
+      "explanation": "باب الأوداية الموحدي بالرباط تحفة معمارية عسكرية نادرة تتميز بأقواسها المنكسرة وزخارفها الحجرية البديعة المشرفة على نهر أبي رقراق.",
+      "source_title": "مؤسسة التراث المعماري بالرباط",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_9",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذه الساحة الشعبية والتاريخية الكبرى في مكناس المقابلة لباب المنصور لعلج؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Meknes_El_Hedim_Place.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Meknes_El_Hedim_Place.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "ساحة الهديم التاريخية بمدينة مكناس"
+      },
+      "options": {
+        "A": "ساحة الهديم (مكناس)",
+        "B": "ساحة جامع الفنا",
+        "C": "ساحة وطاء الحمام",
+        "D": "ساحة بوجلود"
+      },
+      "correct_answer": "A",
+      "explanation": "شيد السلطان مولاي إسماعيل ساحة الهديم بمكناس لتكون نقطة وصل بين المدينة القديمة والقصر الملكي وميداناً للاستعراضات.",
+      "source_title": "مونوغرافيا مكناس الإسماعيلية",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_100_10",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذه القصبة الجبلية الحمراء المشيدة عام 1471 في قلب شفشاون والمحاطة بحديقة أندلسية غناء؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Mus%C3%A9e_Ethnographique_de_Chefchaouen_2.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_Ethnographique_de_Chefchaouen_2.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "قصبة شفشاون التاريخية والمتحف الإثنوغرافي"
+      },
+      "options": {
+        "A": "قصبة طنجة",
+        "B": "قصبة شفشاون (المدينة الزرقاء)",
+        "C": "قصبة غيلان",
+        "D": "قصبة تادلة"
+      },
+      "correct_answer": "B",
+      "explanation": "أسس القائد علي بن راشد قصبة شفشاون عام 1471 كحصن للمجاهدين في جبال الريف، وتضم اليوم المتحف الإثنوغرافي وحديقة أندلسية رائعة.",
+      "source_title": "محافظة تراث شفشاون",
+      "source_url": "https://visitmorocco.com",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_6",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه المدرسة المرينية الباهرة بفاس البالي المشهورة بمئذنتها الفريدة وساعتها المائية المقابلة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Bou_Inania_Madrasa%2C_Fes%2C_%28Old_name-_Fes_November_2008-42%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bou_Inania_Madrasa,_Fes,_(Old_name-_Fes_November_2008-42).jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "المدرسة البوعنانية بفاس وزخارفها المرينية"
+      },
+      "options": {
+        "A": "مدرسة الصفارين",
+        "B": "مدرسة العطارين",
+        "C": "المدرسة البوعنانية (فاس)",
+        "D": "المدرسة المصباحية"
+      },
+      "correct_answer": "C",
+      "explanation": "أسس السلطان أبو عنان فارس المدرسة البوعنانية عام 1351م، وتعد المدرسة الوحيدة بالمغرب التي أقيمت بها صلاة الجمعة وتضم مئذنة وساعة مائية.",
+      "source_title": "وكالة التنمية ورد الاعتبار لمدينة فاس",
+      "source_url": "https://ader-fes.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_7",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا الصهريج المائي الإسماعيلي الضخم بمكناس المحاذي لمخازن الحبوب والخيول السلطانية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Heri_Es-souani.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Heri_Es-souani.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "هري السواني وصهريج السواني بمكناس"
+      },
+      "options": {
+        "A": "صهريج المنارة",
+        "B": "صهريj أجدال",
+        "C": "صهريج البقر",
+        "D": "صهريج السواني (مكناس)"
+      },
+      "correct_answer": "D",
+      "explanation": "صهريج السواني بناه السلطان مولاي إسماعيل بمساحة مائية شاسعة لتزويد قصور مكناس وحدائقها وإسطبلات الخيل بالمياه العذبة عبر النواعير.",
+      "source_title": "محافظة المعالم الإسماعيلية بمكناس",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_8",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا الصرح الإسلامي والجامعي التاريخي العظيم بفاس الذي شيدته فاطمة الفهرية عام 859م؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Al-Qarawiyyin_University%2C_Fes%2C_Morocco_-_Var_132.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Al-Qarawiyyin_University,_Fes,_Morocco_-_Var_132.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "جامع وجامعة القرويين بفاس وصحنها المعماري"
+      },
+      "options": {
+        "A": "جامع القرويين (فاس)",
+        "B": "جامع الشرفاء",
+        "C": "جامع الأندلسيين",
+        "D": "مسجد الرصيف"
+      },
+      "correct_answer": "A",
+      "explanation": "جامعة وجامع القرويين أسستها فاطمة الفهرية عام 859م وتعتبرها اليونسكو وغينيس أقدم مؤسسة للتعليم العالي المستمر في العالم.",
+      "source_title": "جامعة القرويين بفاس",
+      "source_url": "https://alquaraouiyine.com",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_9",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه المدينة الروحية الجبلية العريقة المشرفة على وادي خومان والشهيرة بضريح مؤسس الدولة الإدريسية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Fonds_Achille_Dassonville_%281890-1967%29_-_Maroc_-_Vue_panoramique_de_la_ville_de_Moulay_Idriss_Zerhoun_avec_au_premier_plan%2C_deux_enfants_%28M%C3%A9diHAL_3982437%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fonds_Achille_Dassonville_(1890-1967)_-_Maroc_-_Vue_panoramique_de_la_ville_de_Moulay_Idriss_Zerhoun_avec_au_premier_plan,_deux_enfants_(M%C3%A9diHAL_3982437).jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "مدينة مولاي إدريس زرهون الجبلية المقدسة"
+      },
+      "options": {
+        "A": "وزان",
+        "B": "مدينة مولاي إدريس زرهون",
+        "C": "أبي الجعد",
+        "D": "صفرو"
+      },
+      "correct_answer": "B",
+      "explanation": "تحتضن مدينة زرهون ضريح المولى إدريس الأول مؤسس الدولة الإدريسية عام 789م، وتتميز بموقعها الجبلي ومئذنتها الدائرية الفريدة.",
+      "source_title": "وزارة الأوقاف والشؤون الإسلامية",
+      "source_url": "https://www.habous.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_200_10",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه القصبة الساحلية التاريخية المشرفة على مصب نهر سبو في المحيط الأطلسي بالقنيطرة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Ancient_Mosque_Inside_the_Mehdia_Castle.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ancient_Mosque_Inside_the_Mehdia_Castle.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "مسجد وأسوار قصبة المهدية الأثرية بالقنيطرة"
+      },
+      "options": {
+        "A": "قصبة تادلة",
+        "B": "قصبة بولعوان",
+        "C": "قصبة المهدية (المهدية / القنيطرة)",
+        "D": "قصبة شالة"
+      },
+      "correct_answer": "C",
+      "explanation": "قصبة المهدية التاريخية عند مصب نهر سبو حررها السلطان مولاي إسماعيل عام 1681م وبنى بها مسجداً وقصراً وأسواراً شاهقة لمراقبة الساحل.",
+      "source_title": "المندوبية الجهوية للثقافة بالقنيطرة",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_6",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذه المدرسة القرآنية المرينية السعدية العظيمة بمراكش التي شيدت في القرن الرابع عشر وتعد كبرى مدارس المغرب؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Medersa-Ben-Youssef-01.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Medersa-Ben-Youssef-01.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "مدرسة ابن يوسف التاريخية بمراكش"
+      },
+      "options": {
+        "A": "مدرسة سيدي بلعباس",
+        "B": "المدرسة البوعنانية",
+        "C": "مدرسة باب الدباغ",
+        "D": "مدرسة ابن يوسف (مراكش)"
+      },
+      "correct_answer": "D",
+      "explanation": "أسسها السلطان المريني أبو الحسن وأعاد بناءها وتوسيعها السلطان السعدي عبد الله الغالب، واستقبلت أكثر من 900 طالب علم بمراكش.",
+      "source_title": "محافظة مدرسة ابن يوسف بمراكش",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_7",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذه القصبة الجبلية العظيمة في ممر تيشكا بالأطلس الكبير التي كانت مقراً لآل الكلاوي وتتميز بزخارف غرفها الفاخرة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Kasbah_of_Telouet-Kazuhisa_Otsubo-04.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kasbah_of_Telouet-Kazuhisa_Otsubo-04.jpg",
+        "license": "CC BY 2.0",
+        "alt": "قصبة تلوات التاريخية بالأطلس الكبير"
+      },
+      "options": {
+        "A": "قصبة تلوات (Telouet)",
+        "B": "قصبة آيت بن حدو",
+        "C": "قصبة امريديل",
+        "D": "قصبة تامنوغالت"
+      },
+      "correct_answer": "A",
+      "explanation": "شيدت قصبة تلوات في القرن 19 بموقع استراتيجي على طريق قوافل الملح والذهب، وتجمع بين الطين الخارجي والزليج والرخام الفخم داخلياً.",
+      "source_title": "دليل التراث القروي بالأطلس",
+      "source_url": "https://visitmorocco.com",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_8",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا القصر التاريخي ومتحف الروافد بمراكش الذي شيده الباشا التهامي الكلاوي ويضم مقهى شهيراً للقهوة التراثية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Dar_El_Bacha.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dar_El_Bacha.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "متحف وقصر دار الباشا بمراكش"
+      },
+      "options": {
+        "A": "متحف مراكش",
+        "B": "دار الباشا (متحف الروافد بمراكش)",
+        "C": "قصر البديع",
+        "D": "دار السي سعيد"
+      },
+      "correct_answer": "B",
+      "explanation": "قصر دار الباشا تحفة معمارية بنيت عام 1910 وتضم أسقفاً خشبية منقوشة ونوافير وأعمدة رخامية، وافتتحت كمتحف وطني للملتقيات الثقافية.",
+      "source_title": "المؤسسة الوطنية للمتاحف (FNM)",
+      "source_url": "https://fnm.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_9",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الحصن العسكري السعدي المشرف على فاس البالي من جهة الشمال والذي يحتضن اليوم المتحف الوطني للأسلحة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Borj_Nord.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Borj_Nord.JPG",
+        "license": "CC BY-SA 3.0",
+        "alt": "برج الشمال والمتحف الوطني للأسلحة بفاس"
+      },
+      "options": {
+        "A": "برج الجنوب",
+        "B": "برج بوقنادل",
+        "C": "برج الشمال (Borj Nord بفاس)",
+        "D": "برج الدموع"
+      },
+      "correct_answer": "C",
+      "explanation": "بنى السلطان السعدي أحمد المنصور الذهبي برج الشمال أواخر القرن 16 على الطراز البرتغالي للدفاع عن فاس، ويضم متحف الأسلحة النادرة.",
+      "source_title": "المؤسسة الوطنية للمتاحف والمتحف الوطني للأسلحة بفاس",
+      "source_url": "https://fnm.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_300_10",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الموقع الأثري العريق قرب تطوان على وادي مرتيل الذي يعود للعهد الموريطاني والقرن الثاني قبل الميلاد؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Tamuda_ruins_Tetouan_Morocco.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tamuda_ruins_Tetouan_Morocco.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "أطلال موقع تمودة الأثري قرب تطوان"
+      },
+      "options": {
+        "A": "موقع بليونش",
+        "B": "موقع ليكسوس",
+        "C": "موقع القصر الصغير",
+        "D": "موقع تمودة الأثري (Tamuda)"
+      },
+      "correct_answer": "D",
+      "explanation": "تمودة مدينة مغربية عريقة في حوض وادي مرتيل بتطوان، كشفت الحفريات عن أسلحة وحلي ومعسكرات رومانية وموريطانية قديمة.",
+      "source_title": "المعهد الوطني لعلوم الآثار والتراث",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_6",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه القصبة الطينية التراثية الشامخة في ورزازات المشرفة على وادي ورزازات والتي ظهرت في العديد من الأفلام العالمية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Kasbah_Tifoultoute.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kasbah_Tifoultoute.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "قصبة تيفولتوت الأثرية بإقليم ورزازات"
+      },
+      "options": {
+        "A": "قصبة تيفولتوت (Kasbah Tifoultoute)",
+        "B": "قصبة تلوات",
+        "C": "قصبة تاوريرت",
+        "D": "قصبة آيت بن حدو"
+      },
+      "correct_answer": "A",
+      "explanation": "قصبة تيفولتوت شيدت في القرن السابع عشر وكانت حصناً عسكرياً وإدارياً في وادي ورزازات وصورت بها مشاهد فيلم لورنس العرب.",
+      "source_title": "المجلس الإقليمي للسياحة بورزازات",
+      "source_url": "https://visitouarzazate.com",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_7",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا البهو الشرفي والرياض الأندلسي الفسيح المرصوف بالرخام الإيطالي والزليج في قصر الباهية بمراكش؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Cour_d%27Honneur_du_Palais_de_la_Bahia_%C3%A0_Marrakech.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cour_d%27Honneur_du_Palais_de_la_Bahia_%C3%A0_Marrakech.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "الفناء الشرفي والرياض في قصر الباهية بمراكش"
+      },
+      "options": {
+        "A": "حديقة المنارة",
+        "B": "فناء الشرف بقصر الباهية (مراكش)",
+        "C": "صحن قصر البديع",
+        "D": "فناء دار السي سعيد"
+      },
+      "correct_answer": "B",
+      "explanation": "يعد فناء الشرف بقصر الباهية أكبر فناء رخامي مفتوح بقصور مراكش، وتحيط به أروقة خشبية منقوشة ونوافير رخامية مدهشة.",
+      "source_title": "محافظة قصر الباهية بمراكش",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_8",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه المدرسة المرينية العتيقة الواقعة بحي الأندلس بفاس البالي والمشيدة بحوض مائي مستطيل؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Madrasa_as-Sahrij_courtyard_1.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Madrasa_as-Sahrij_courtyard_1.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "مدرسة الصهريج المرينية بفاس البالي"
+      },
+      "options": {
+        "A": "مدرسة الشراطين",
+        "B": "مدرسة السباعيين",
+        "C": "مدرسة الصهريج (Sahrij Madrasa بفاس)",
+        "D": "المدرسة المصباحية"
+      },
+      "correct_answer": "C",
+      "explanation": "بناها السلطان المريني أبو الحسن سنة 1321م وتتميز بصهريجها المائي الرائع وزخارف خشب الأرز والجبس المريني الدقيق.",
+      "source_title": "وكالة التنمية ورد الاعتبار لمدينة فاس",
+      "source_url": "https://ader-fes.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_9",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الباب الحجري الموحدي والمريني التاريخي الشامخ المؤدي إلى موقع مقابر السلاطين بشالة في الرباط؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Chellah-Rabat-porte-principale.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chellah-Rabat-porte-principale.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "باب موقع شالة الأثري الرئيسي بالرباط"
+      },
+      "options": {
+        "A": "باب الأوداية",
+        "B": "باب الرواح",
+        "C": "باب المريسة",
+        "D": "باب شالة التاريخي (الرباط)"
+      },
+      "correct_answer": "D",
+      "explanation": "شيد هذا الباب الحصين السلطان المريني أبو الحسن سنة 1339م ويتميز ببرجيه شبه المثمنين ونقوشه الكوفية المرينية البديعة.",
+      "source_title": "مؤسسة شالة للتراث بالرباط",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_400_10",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الحصن الجبلي التاريخي المشرف على خليج أكادير والمكتوب على سوره 'الله، الوطن، الملك' بالأمازيغية والعربية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Agadir_Kasbah_2011.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Agadir_Kasbah_2011.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "قصبة أكادير أوفلا وأسوارها الشامخة"
+      },
+      "options": {
+        "A": "قصبة أكادير أوفلا",
+        "B": "قصبة تارودانت",
+        "C": "قصبة تيزنيت",
+        "D": "قصبة ميرلفت"
+      },
+      "correct_answer": "A",
+      "explanation": "قصبة أكادير أوفلا شيدها السلطان السعدي محمد الشيخ عام 1540 لصد الغزاة البرتغاليين، وخضعت مؤخراً لترميم تاريخي شامل ومسار تيليفريك.",
+      "source_title": "شركة التنمية المحلية سوس ماسة وأكادير أوفلا",
+      "source_url": "https://agadir.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_6",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الموقع الأثري الروماني التاريخي الواقع على ضفاف وادي سبو في إقليم سيدي قاسم والمعروف قديماً باسم 'يوليا فالنتيا'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Banasa_Roman_ruins_Sidi_Kacem_Morocco.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Banasa_Roman_ruins_Sidi_Kacem_Morocco.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "أطلال موقع باناصا الروماني الأثري بسيدي قاسم"
+      },
+      "options": {
+        "A": "موقع وليلي",
+        "B": "موقع باناصا الأثري (Banasa)",
+        "C": "موقع ليكسوس",
+        "D": "موقع تاموسيدا"
+      },
+      "correct_answer": "B",
+      "explanation": "موقع باناصا (Iulia Valentia Banasa) مستعمرة رومانية هامة على نهر سبو عثر فيها على نصوص قانونية برونزية وساحة فوروم وحمامات.",
+      "source_title": "المعهد الوطني لعلوم الآثار والتراث",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_7",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذه الصومعة والمئذنة الموحدية والسعدية التاريخية المرتفعة عند باب دكالة بمراكش والتي شيدتها للا مسعودة السعدية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Bab_Doukkala_Mosque_Minaret_Marrakech.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bab_Doukkala_Mosque_Minaret_Marrakech.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صومعة مسجد باب دكالة بمراكش"
+      },
+      "options": {
+        "A": "صومعة جامع بريمة",
+        "B": "صومعة القرويين",
+        "C": "صومعة مسجد باب دكالة (مراكش)",
+        "D": "صومعة جامع المنصور بالمشور"
+      },
+      "correct_answer": "C",
+      "explanation": "شيدت المسجد الأميرة السعدية الحكيمة للا مسعودة والدة المنصور عام 1557م بمئذنة بديعة على طراز صوامع الأندلس الموحدة.",
+      "source_title": "وزارة الأوقاف والشؤون الإسلامية",
+      "source_url": "https://www.habous.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_8",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا القصر التاريخي والمتحف الإسماعيلي الشامخ بمدينة مكناس المطل على ساحة الهديم والذي بناه الوزير الجامعي في القرن التاسع عشر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Dar_Jamai_Museum_Meknes_entrance.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dar_Jamai_Museum_Meknes_entrance.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "قصر ومتحف دار الجامعي بمكناس"
+      },
+      "options": {
+        "A": "دار البطحاء",
+        "B": "قصر دار المقري",
+        "C": "قصر الباهية",
+        "D": "متحف دار الجامعي (مكناس)"
+      },
+      "correct_answer": "D",
+      "explanation": "بنى الوزير محمد بن العربي الجامعي هذا القصر الفاخر عام 1882م، وتحول إلى متحف وطني للموسيقى والآلات التراثية بمكناس.",
+      "source_title": "المؤسسة الوطنية للمتاحف (FNM)",
+      "source_url": "https://fnm.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_9",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذه المنارة البحرية التاريخية ذات الطراز المعماري الأرت ديكو المشيدة فوق جرف صخري في مدينة سيدي إفني؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Phare_de_Sidi_Ifni.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Phare_de_Sidi_Ifni.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "منارة سيدي إفني البحرية التاريخية"
+      },
+      "options": {
+        "A": "منارة سيدي إفني (Phare de Sidi Ifni)",
+        "B": "منارة كاب غير بأكادir",
+        "C": "منارة رأس بوجدور",
+        "D": "منارة رأس سبارتيل"
+      },
+      "correct_answer": "A",
+      "explanation": "تعد منارة سيدي إفني المشيدة عام 1949 إحدى أبرز المعالم المعمارية البحرية في الساحل الأطلسي الجنوبي للمغرب.",
+      "source_title": "وزارة التجهيز والماء المغربية",
+      "source_url": "https://www.equipement.gov.ma",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    },
+    {
+      "id": "mon_500_10",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذه القصبة الطينية التراثية العظيمة بوادي درعة قرب أكدز التي كانت مركزاً لتحصيل الجمارك وتعد عاصمة قصور درعة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Kasbah_Tamnougalt_Draa_Valley_Morocco.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kasbah_Tamnougalt_Draa_Valley_Morocco.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "قصبة تامنوغالت التاريخية بوادي درعة"
+      },
+      "options": {
+        "A": "قصبة تلوات",
+        "B": "قصبة تامنوغالت (Tamnougalt)",
+        "C": "قصبة أمريديل",
+        "D": "قصبة تيفولتوت"
+      },
+      "correct_answer": "B",
+      "explanation": "قصبة تامنوغالت الأثرية بوادي درعة تعد أقدم قصبة طينية مأهولة بالمنطقة يعود تأسيسها للقرن 16 وكانت مقراً لقيادة قبائل مزكيدة.",
+      "source_title": "المجلس الجهوي للسياحة درعة تافيلالت",
+      "source_url": "https://visitdraatafilalet.com",
+      "category": "خمن المعلم من الصورة",
+      "category_id": "guess_monument"
+    }
+  ]
+}

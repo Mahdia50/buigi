@@ -1,0 +1,304 @@
+/* ==========================================================================
+   طابع الزليج المغربي الملون الأصيل والمرح — ROYAL MOROCCAN ZELLIJ ARCADE
+   تصميم غني، حيوي، ممتع، ومليء بالأصالة المغربية والتباين فائق الوضوح
+   ========================================================================== */
+
+/* 1. خلفية الزليج المغربي الأصيل الغنية والواضحة (Moroccan Palace Night Ambiance) */
+body {
+  background-color: #070B19 !important;
+  background-image: 
+    linear-gradient(180deg, rgba(7, 11, 25, 0.88) 0%, rgba(11, 19, 43, 0.82) 40%, rgba(7, 11, 25, 0.92) 100%),
+    radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.3) 0%, transparent 60%),
+    radial-gradient(circle at 85% 40%, rgba(225, 29, 72, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 15% 70%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
+    url('/assets/zellij-fassi-tile.svg') !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
+  background-size: 100% 100%, 100% 700px, 600px 600px, 600px 600px, 96px 96px !important;
+  background-attachment: fixed, scroll, scroll, scroll, fixed !important;
+  color: #F8FAFC !important;
+  position: relative;
+}
+
+/* شريط الزليج الفاسي الملون بالأعلى */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background-image: url('/assets/zellij-colorful-ribbon.svg');
+  background-repeat: repeat-x;
+  background-size: auto 20px;
+  background-position: center top;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid #F59E0B;
+}
+
+/* شمسية الزليج الكبرى في خلفية المشهد */
+.zellij-watermark-bg {
+  position: fixed;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 640px;
+  height: 640px;
+  background-image: url('/assets/zellij-rosette.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -5;
+  filter: drop-shadow(0 0 60px rgba(2, 132, 199, 0.4));
+}
+
+/* 2. الهيدر وشريط التنقل العلوي */
+header {
+  border: 2.5px solid #F59E0B !important;
+  background: rgba(15, 23, 42, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 8px 0 #020617,
+    0 20px 40px rgba(0, 0, 0, 0.7) !important;
+  border-radius: 24px !important;
+  margin-top: 26px !important;
+  position: relative;
+}
+
+header a .font-heading.text-2xl {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.5) !important;
+}
+
+/* 3. العناوين والنصوص المشعة والمرحة */
+h1, h2, h3, .font-heading {
+  font-family: "Cairo", "Tajawal", -apple-system, sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #FFF 0%, #FDE047 30%, #F59E0B 70%, #EA580C 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 4px 15px rgba(245, 158, 11, 0.5));
+}
+
+p, .text-\[\#5b4a3b\], .text-\[\#6b5645\] {
+  color: #E2E8F0 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.text-\[\#211A16\] {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* 4. البطاقات والحاويات الزجاجية والخزفية مع برواز الزليج */
+.bg-\[\#F4EADB\] {
+  background: linear-gradient(180deg, #1E293B 0%, #0F172A 100%) !important;
+  border: 2.5px solid #38BDF8 !important;
+  color: #F8FAFC !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 0 #020617,
+    0 20px 40px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 22px !important;
+}
+
+.bg-\[\#211A16\] {
+  background: linear-gradient(180deg, #1E1B4B 0%, #0F172A 100%) !important;
+  border: 2.5px solid #F59E0B !important;
+  color: #F8FAFC !important;
+  box-shadow: 
+    inset 0 0 0 1px rgba(245, 158, 11, 0.4),
+    0 8px 0 #020617,
+    0 24px 44px rgba(0, 0, 0, 0.7) !important;
+  border-radius: 22px !important;
+}
+
+.glass, .glass-strong {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border: 2px solid rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 30px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 22px !important;
+}
+
+/* 5. خانات شبكة الأسئلة (سيراميك زليج ملون مبهج وأركيد 200 / 400 / 600) */
+.cell-face {
+  background: linear-gradient(180deg, #0284C7 0%, #0369A1 60%, #075985 100%) !important;
+  border: 2.5px solid #38BDF8 !important;
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
+  font-size: 1.25rem !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 12px rgba(56, 189, 248, 0.7) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 6px 0 #0C4A6E,
+    0 10px 20px rgba(2, 132, 199, 0.45) !important;
+  border-radius: 16px !important;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.cell-face:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.04) !important;
+  background: linear-gradient(180deg, #38BDF8 0%, #0284C7 60%, #0369A1 100%) !important;
+  border-color: #F59E0B !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 8px 0 #0C4A6E,
+    0 14px 28px rgba(56, 189, 248, 0.65) !important;
+}
+
+.cell-face:active:not(:disabled) {
+  transform: translateY(4px) !important;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 0 #0C4A6E !important;
+}
+
+/* 6. الأزرار التفاعلية الحيوية (Vibrant Arcade Buttons) */
+/* زر أحمر قرمزي ناري (بدء لعبة) */
+button.bg-gradient-to-l,
+.btn-ruby {
+  background: linear-gradient(180deg, #F43F5E 0%, #E11D48 50%, #9F1239 100%) !important;
+  border: 2.5px solid #FFE4E6 !important;
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 6px 0 #4C0519,
+    0 14px 28px rgba(225, 29, 72, 0.55) !important;
+  border-radius: 18px !important;
+  transition: all 0.15s ease !important;
+}
+
+button.bg-gradient-to-l:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.1) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 8px 0 #4C0519,
+    0 18px 32px rgba(225, 29, 72, 0.65) !important;
+}
+
+/* زر أصفر ذهبي زعفراني */
+button.bg-\[\#C2823D\], 
+a.bg-\[\#C2823D\] {
+  background: linear-gradient(180deg, #FBBF24 0%, #F59E0B 60%, #B45309 100%) !important;
+  border: 2.5px solid #FEF3C7 !important;
+  color: #0F172A !important;
+  font-weight: 900 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 6px 0 #78350F,
+    0 14px 24px rgba(245, 158, 11, 0.5) !important;
+  border-radius: 18px !important;
+  transition: all 0.15s ease !important;
+}
+
+button.bg-\[\#C2823D\]:hover, 
+a.bg-\[\#C2823D\]:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.08) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 8px 0 #78350F,
+    0 18px 30px rgba(245, 158, 11, 0.65) !important;
+}
+
+/* زر أزرق نيلي لغرف أونلاين */
+button.bg-\[\#211A16\],
+.btn-indigo {
+  background: linear-gradient(180deg, #3B82F6 0%, #1D4ED8 60%, #1E40AF 100%) !important;
+  border: 2.5px solid #BFDBFE !important;
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 6px 0 #1E3A8A,
+    0 14px 24px rgba(37, 99, 235, 0.5) !important;
+  border-radius: 18px !important;
+}
+
+button.bg-\[\#211A16\]:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.1) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 8px 0 #1E3A8A,
+    0 18px 30px rgba(37, 99, 235, 0.65) !important;
+}
+
+/* 7. بطاقات الإحصائيات الأربع الملونة الحيوية */
+.grid-cols-2 > div:nth-child(1), .sm\:grid-cols-4 > div:nth-child(1) {
+  border-color: #E11D48 !important;
+  box-shadow: 0 6px 0 #9F1239, 0 10px 20px rgba(225, 29, 72, 0.3) !important;
+}
+
+.grid-cols-2 > div:nth-child(2), .sm\:grid-cols-4 > div:nth-child(2) {
+  border-color: #F59E0B !important;
+  box-shadow: 0 6px 0 #B45309, 0 10px 20px rgba(245, 158, 11, 0.3) !important;
+}
+
+.grid-cols-2 > div:nth-child(3), .sm\:grid-cols-4 > div:nth-child(3) {
+  border-color: #10B981 !important;
+  box-shadow: 0 6px 0 #047857, 0 10px 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+.grid-cols-2 > div:nth-child(4), .sm\:grid-cols-4 > div:nth-child(4) {
+  border-color: #38BDF8 !important;
+  box-shadow: 0 6px 0 #0369A1, 0 10px 20px rgba(56, 189, 248, 0.3) !important;
+}
+
+/* 8. مدخلات النصوص والفئات المختارة */
+input, select {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border: 2px solid #38BDF8 !important;
+  color: #FFFFFF !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+input:focus {
+  border-color: #F59E0B !important;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 9. الفوتر المغربي الفاخر */
+footer {
+  border-top: 2px solid #F59E0B !important;
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #94A3B8 !important;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.5);
+  margin-top: 4rem !important;
+}
+
+footer a:hover {
+  color: #F59E0B !important;
+}
+
+
+/* إزالة شارة Edit with Base 44 تماماً */
+#base44-badge,
+[id*="base44"],
+[class*="base44"],
+div[style*="z-index: 2147483647"],
+div:has(> a[href*="base44"]),
+a[href*="base44.com"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  top: -9999px !important;
+}

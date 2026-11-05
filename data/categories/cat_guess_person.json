@@ -1,0 +1,1307 @@
+{
+  "category_id": "guess_person",
+  "category_name": "خمن الشخصية من الصورة",
+  "emoji": "👤",
+  "questions": [
+    {
+      "id": "per_100_1",
+      "category": "خمن الشخصية من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هي هذه الشخصية التاريخية المغربية البارزة وبطل التحرير والاستقلال؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Mohammed_V_of_Morocco_circa_1927.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mohammed_V_of_Morocco_circa_1927.jpg",
+        "license": "Public Domain",
+        "alt": "صورة جلالة المغفور له الملك محمد الخامس بطل التحرير"
+      },
+      "options": {
+        "A": "السلطان عبد العزيز",
+        "B": "الملك الحسن الثاني",
+        "C": "الملك محمد الخامس",
+        "D": "المولى يوسف"
+      },
+      "correct_answer": "C",
+      "explanation": "الملك محمد الخامس قاد كفاح الشعب المغربي لنيل الاستقلال ونفي في سبيل كرامة الوطن وعاد منتصراً سنة 1955.",
+      "source_title": "المندوبية السامية لقدماء المقاومين",
+      "source_url": "https://www.hcp.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_2",
+      "category": "خمن الشخصية من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هو هذا الملك المغربي الراحل وباني السدود ومبدع المسيرة الخضراء المظفرة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/12-8-31%2C_r%C3%A9ception_du_fils_du_sultan_%28du_Maroc%2C_futur_Hassan_II%29_aux_Halles_%28de_Paris%29_-_btv1b532477739.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:12-8-31,_r%C3%A9ception_du_fils_du_sultan_(du_Maroc,_futur_Hassan_II)_aux_Halles_(de_Paris)_-_btv1b532477739.jpg",
+        "license": "Public Domain",
+        "alt": "صورة تاريخية لجلالة المغفور له الملك الحسن الثاني طيب الله ثراه"
+      },
+      "options": {
+        "A": "الأمير مولاي عبد الله",
+        "B": "الملك محمد السادس",
+        "C": "الملك محمد الخامس",
+        "D": "الملك الحسن الثاني"
+      },
+      "correct_answer": "D",
+      "explanation": "الملك الحسن الثاني قاد المغرب بحكمة لأربعة عقود وأبدع ملحمة المسيرة الخضراء السلمية لاسترجاع الصحراء المغربية عام 1975.",
+      "source_title": "البوابة الوطنية للمملكة المغربية",
+      "source_url": "https://www.maroc.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_3",
+      "category": "خمن الشخصية من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هو هذا القائد العظيم وملك المملكة المغربية الحالي وقائد مسيرة النماء والتنمية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/King_Mohammed_VI_%28cropped%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:King_Mohammed_VI_(cropped).jpg",
+        "license": "CC BY 2.0",
+        "alt": "صورة جلالة الملك محمد السادس نصره الله وأيده"
+      },
+      "options": {
+        "A": "الملك محمد السادس",
+        "B": "الأمير مولاي رشيد",
+        "C": "ولي العهد الأمير مولاي الحسن",
+        "D": "الملك الحسن الثاني"
+      },
+      "correct_answer": "A",
+      "explanation": "الملك محمد السادس يعتلي عرش أسلافه الميامين منذ 1999 ويقود نهضة تنموية وصناعية كبرى في مختلف ربوع المملكة.",
+      "source_title": "وكالة المغرب العربي للأنباء (MAP)",
+      "source_url": "https://www.mapnews.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_4",
+      "category": "خمن الشخصية من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هو هذا البطل المجاهد الملقب بـ 'أسد الريف' وقائد معركة أنوال الخالدة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Abd_el-Krim.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abd_el-Krim.jpg",
+        "license": "Public Domain",
+        "alt": "صورة زعيم المقاومة الريفية البطل محمد بن عبد الكريم الخطابي"
+      },
+      "options": {
+        "A": "موحا أوحمو الزياني",
+        "B": "محمد بن عبد الكريم الخطابي",
+        "C": "الشريف أمزيان",
+        "D": "عسو أوبسلام"
+      },
+      "correct_answer": "B",
+      "explanation": "عبد الكريم الخطابي قاد المقاومة الريفية وحقق انتصاراً مذهلاً على الجيش الإسباني في معركة أنوال عام 1921 وألهم ثورات التحرر العالمية.",
+      "source_title": "أرشيف المقاومة المغربية",
+      "source_url": "https://www.hcp.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_5",
+      "category": "خمن الشخصية من الصورة",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هو هذا البطل الأولمبي الأسطوري صاحب الرقم القياسي العالمي في مسافة 1500 متر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Hicham_El_Guerrouj.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hicham_El_Guerrouj.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة البطل الأولمبي العالمي هشام الكروج"
+      },
+      "options": {
+        "A": "خالد السكاح",
+        "B": "سعيد عويطة",
+        "C": "هشام الكروج",
+        "D": "سفيان البقالي"
+      },
+      "correct_answer": "C",
+      "explanation": "هشام الكروج ابن مدينة بركان فاز بذهبيتي 1500م و5000م في أولمبياد أثينا 2004 ولا يزال رقمه القياسي العالمي لـ 1500م صامداً حتى اليوم.",
+      "source_title": "الجامعة الملكية المغربية لألعاب القوى",
+      "source_url": "https://www.frma.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_1",
+      "category": "خمن الشخصية من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هي هذه البطلة المغربية الرائدة وأول امرأة عربية وإفريقية تحرز ميدالية ذهبية في الألعاب الأولمبية (لوس أنجلوس 1984)؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/NawalElMoutawakel1984.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NawalElMoutawakel1984.png",
+        "license": "Public Domain",
+        "alt": "صورة البطلة الأولمبية نوال المتوكل أول مغربية وعربية تتوج بذهبية أولمبية"
+      },
+      "options": {
+        "A": "نزهة بدوان",
+        "B": "حسناء بنحسي",
+        "C": "زهرة واعزيز",
+        "D": "نوال المتوكل"
+      },
+      "correct_answer": "D",
+      "explanation": "نوال المتوكل أحرزت ذهبية سباق 400 متر حواجز عام 1984 وشغلت لاحقاً منصب وزيرة الشباب والرياضة ونائبة رئيس اللجنة الأولمبية الدولية.",
+      "source_title": "اللجنة الأولمبية الدولية",
+      "source_url": "https://olympics.com",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_2",
+      "category": "خمن الشخصية من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا البطل العالمي الذي سيطر على ألعاب القوى العالمية في الثمانينيات وحطم أرقاماً قياسية في خمس مسافات مختلفة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/1988_Olympic_800m_Final.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:1988_Olympic_800m_Final.jpg",
+        "license": "Public Domain",
+        "alt": "صورة العداء الأسطوري سعيد عويطة محطم الأرقام القياسية العالمية"
+      },
+      "options": {
+        "A": "سعيد عويطة",
+        "B": "إبراهيم بوطيب",
+        "C": "علي الزين",
+        "D": "صلاح حيسو"
+      },
+      "correct_answer": "A",
+      "explanation": "سعيد عويطة أسطورة ألعاب القوى فاز بذهبية 5000م في أولمبياد 1984 وحطم الأرقام القياسية لسباقات 1500م و2000م و3000م و5000م وميلين.",
+      "source_title": "الاتحاد الدولي لألعاب القوى (World Athletics)",
+      "source_url": "https://worldathletics.org",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_3",
+      "category": "خمن الشخصية من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا العداء المغربي البطل الحائز على ذهبيتين أولمبيتين متتاليتين في سباق 3000 متر موانع (طوكيو 2020 وباريس 2024)؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Soufiane_El_Bakkali_Oregon_2022.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Soufiane_El_Bakkali_Oregon_2022.jpg",
+        "license": "CC BY 2.0",
+        "alt": "صورة البطل الأولمبي والعالمي سفيان البقالي في سباق 3000 متر موانع"
+      },
+      "options": {
+        "A": "محمد تاندوفت",
+        "B": "سفيان البقالي",
+        "C": "عبد العاطي إيكيدير",
+        "D": "جواد غريب"
+      },
+      "correct_answer": "B",
+      "explanation": "سفيان البقالي ابن مدينة فاس كسر الهيمنة الكينية وتوج بطلاً لأولمبياد طوكيو 2020 وباريس 2024 وبطلاً للعالم مرتين متتاليتين.",
+      "source_title": "الجامعة الملكية المغربية لألعاب القوى",
+      "source_url": "https://www.frma.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_4",
+      "category": "خمن الشخصية من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا النجم العالمي وظهير المنتخب المغربي ونادي باريس سان جيرمان؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Achraf_Hakimi_2024.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Achraf_Hakimi_2024.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة النجم الدولي وقائد المنتخب المغربي أشرف حكيمي"
+      },
+      "options": {
+        "A": "نايف أكرد",
+        "B": "حكيم زياش",
+        "C": "أشرف حكيمي",
+        "D": "نصير مزراوي"
+      },
+      "correct_answer": "C",
+      "explanation": "أشرف حكيمي أحد أفضل الأظهرة اليمنى في العالم وقاد أسود الأطلس لنصف نهائي مونديال قطر 2022 بركلته التاريخية ضد إسبانيا.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم (FRMF)",
+      "source_url": "https://www.frmf.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_5",
+      "category": "خمن الشخصية من الصورة",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا الحارس العملاق وأفضل حارس مرمى في إفريقيا ونجم إنجاز مونديال قطر 2022؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Yassine_Bounou_Brazil_V_Morocco_13_June_2026-157.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yassine_Bounou_Brazil_V_Morocco_13_June_2026-157.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة حارس المرمى الدولي العالمي ياسين بونو"
+      },
+      "options": {
+        "A": "بادو الزاكي",
+        "B": "خالد فوهامي",
+        "C": "منير المحمدي",
+        "D": "ياسين بونو"
+      },
+      "correct_answer": "D",
+      "explanation": "ياسين بونو حارس عرين أسود الأطلس ونادي الهلال ونال جائزة زامورا بالدوري الإسباني مع إشبيلية وجائزة أفضل حارس بإفريقيا.",
+      "source_title": "الاتحاد الإفريقي لكرة القدم (CAF)",
+      "source_url": "https://www.cafonline.com",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_1",
+      "category": "خمن الشخصية من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا المدرب الوطني المغربي صانع ملحمة بلوغ نصف نهائي كأس العالم قطر 2022؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Walid_Regragui.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Walid_Regragui.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة الناخب الوطني وليد الركراكي صانع إنجاز مونديال قطر 2022"
+      },
+      "options": {
+        "A": "وليد الركراكي",
+        "B": "الحسين عموتة",
+        "C": "بادو الزاكي",
+        "D": "طارق السكتيوي"
+      },
+      "correct_answer": "A",
+      "explanation": "وليد الركراكي أول مدرب عربي وإفريقي يقود منتخباً وطنياً إلى المربع الذهبي لكأس العالم ونال جائزة أفضل مدرب وطني في إفريقيا.",
+      "source_title": "الفيفا والجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.fifa.com",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_2",
+      "category": "خمن الشخصية من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا الكاتب والروائي المغربي العالمي الحائز على جائزة غونكور الفرنسية المرموقة سنة 1987 عن رواية 'ليلة القدر'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Tahar_Ben_Jelloun_par_Claude_Truong-Ngoc_sept_2013.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tahar_Ben_Jelloun_par_Claude_Truong-Ngoc_sept_2013.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة الأديب والروائي العالمي الطاهر بن جلون الفائز بجائزة غونكور"
+      },
+      "options": {
+        "A": "إدريس الشرايبي",
+        "B": "الطاهر بن جلون",
+        "C": "محمد زفزاف",
+        "D": "عبد اللطيف اللعبي"
+      },
+      "correct_answer": "B",
+      "explanation": "الطاهر بن جلون عضو أكاديمية غونكور بفرنسا وأحد أشهر الأدباء الفرانكوفونيين في العالم وترجمت أعماله لعشرات اللغات.",
+      "source_title": "أكاديمية غونكور",
+      "source_url": "https://www.academiegoncourt.com",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_3",
+      "category": "خمن الشخصية من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا الكاتب المغربي العصامي صاحب السيرة الروائية العالمية 'الخبز الحافي'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Choukri_.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Choukri_.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة الكاتب والروائي الطنجي العالمي محمد شكري صاحب الخبز الحافي"
+      },
+      "options": {
+        "A": "أحمد بوزفور",
+        "B": "محمد زفزاف",
+        "C": "محمد شكري",
+        "D": "إدريس الخوري"
+      },
+      "correct_answer": "C",
+      "explanation": "محمد شكري تعلم القراءة والكتابة في العشرين من عمره في طنجة وألف 'الخبز الحافي' و'زمن الأخطاء' ولقي اعترافاً دولياً واسعاً.",
+      "source_title": "اتحاد كتاب المغرب",
+      "source_url": "https://uemnet.free.fr",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_4",
+      "category": "خمن الشخصية من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا المطرب والملحن المغربي الكبير الملقب بعميد الأغنية المغربية وصاحب رائعة 'ما أنا إلا بشر'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Abdelwahab_Doukali_1.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abdelwahab_Doukali_1.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة عميد الأغنية المغربية الموسيقار عبد الوهاب الدكالي"
+      },
+      "options": {
+        "A": "إسماعيل أحمد",
+        "B": "محمد الحياني",
+        "C": "عبد الهادي بلخياط",
+        "D": "عبد الوهاب الدكالي"
+      },
+      "correct_answer": "D",
+      "explanation": "الموسيقار عبد الوهاب الدكالي قامة فنية عربية كبرى، نال جوائز تقديرية رفيعة وأثرى الطرب المغربي والعربي بروائع خالدة لأكثر من نصف قرن.",
+      "source_title": "الإذاعة والتلفزة الوطنية المغربية (SNRT)",
+      "source_url": "https://www.snrt.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_5",
+      "category": "خمن الشخصية من الصورة",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا الفنان والشاعر الراحل الذي قاد فرقة 'ناس الغيوان' وكتب رائعته الذاتية 'الرحيل'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/a/a4/%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A_%D8%A8%D8%A7%D8%B7%D9%85%D8%A7.jpg",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A_%D8%A8%D8%A7%D8%B7%D9%85%D8%A7.jpg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "صورة الفنان والشاعر المغربي العربي باطما أيقونة مجموعة ناس الغيوان"
+      },
+      "options": {
+        "A": "العربي باطما",
+        "B": "عمر السيد",
+        "C": "بوجميع",
+        "D": "علال يعلى"
+      },
+      "correct_answer": "A",
+      "explanation": "العربي باطما صوت وروح فرقة ناس الغيوان، أبدع بالكلمة والإيقاع المعبر عن هموم الشعب والحرية وتوفي بعد صراع مع المرض سنة 1997.",
+      "source_title": "سجلات الموسيقى التراثية المغربية",
+      "source_url": "https://bnrm.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_1",
+      "category": "خمن الشخصية من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هو هذا الزعيم والمفكر المغربي الكبير ومؤسس حزب الاستقلال وصاحب كتاب 'النقد الذاتي'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Allal_El_Fassi_1949.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Allal_El_Fassi_1949.png",
+        "license": "Public Domain",
+        "alt": "صورة الزعيم الوطني والمفكر علال الفاسي"
+      },
+      "options": {
+        "A": "أحمد بلافريج",
+        "B": "علال الفاسي",
+        "C": "محمد بلحسن الوزاني",
+        "D": "المهدي بن بركة"
+      },
+      "correct_answer": "B",
+      "explanation": "علال الفاسي عالم وفقيه وزعيم وطني قاد نضال المغاربة السياسي ونفي للغابون لسنوات، وأسهم في بناء الدولة الحديثة ودستورها.",
+      "source_title": "مؤسسة علال الفاسي الفكرية",
+      "source_url": "https://allalelfassi.org",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_2",
+      "category": "خمن الشخصية من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هو هذا المناضل والسياسي المغربي البارز الذي ترأس مؤتمر القارات الثلاث في هافانا دفاعاً عن شعوب العالم الثالث؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Mehdi_Ben_Barka_Anefo.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mehdi_Ben_Barka_Anefo.jpg",
+        "license": "CC0 1.0 Universal",
+        "alt": "صورة الزعيم السياسي المغربي المهدي بن بركة"
+      },
+      "options": {
+        "A": "عبد الله إبراهيم",
+        "B": "علي يعتة",
+        "C": "المهدي بن بركة",
+        "D": "عبد الرحيم بوعبيد"
+      },
+      "correct_answer": "C",
+      "explanation": "المهدي بن بركة أستاذ الرياضيات والزعيم التقدمي، لعب دوراً بارزاً في توحيد حركات التحرر الوطني في آسيا وإفريقيا وأمريكا اللاتينية.",
+      "source_title": "أرشيف الحركة الوطنية المغربية",
+      "source_url": "https://bnrm.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_3",
+      "category": "خمن الشخصية من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هي هذه الكاتبة وعالمة الاجتماع المغربية الرائدة صاحبة كتاب 'الحريم السياسي' و'ما وراء الحجاب' والحائزة على جائزة أمير أستورياس؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Fatema_Mernissi_-_post_Instagram_SheSaid.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fatema_Mernissi_-_post_Instagram_SheSaid.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة عالمة الاجتماع والكاتبة المغربية الرائدة فاطمة المرنيسي"
+      },
+      "options": {
+        "A": "مليكة أوفقير",
+        "B": "خناثة بنونة",
+        "C": "عائشة بلعربي",
+        "D": "فاطمة المرنيسي"
+      },
+      "correct_answer": "D",
+      "explanation": "فاطمة المرنيسي رائدة علم الاجتماع النسوي في العالم الإسلامي، تناولت قضايا المرأة والحداثة والديمقراطية وحظيت مؤلفاتها بشهرة عالمية.",
+      "source_title": "جامعة محمد الخامس بالرباط - كرسي فاطمة المرنيسي",
+      "source_url": "https://www.um5.ac.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_4",
+      "category": "خمن الشخصية من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هو هذا العالم والمهندس المغربي مخترع القطب السالب (الأنود الغرافيتي) لبطاريات الليثيوم والحاصل على جائزة درابر العالمية للهندسة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Rachid_Yazami_2011.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Rachid_Yazami_2011.JPG",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة العالم والمخترع الفيزيائي المغربي رشيد اليزمي مطور بطاريات الليثيوم"
+      },
+      "options": {
+        "A": "رشيد اليزمي",
+        "B": "منصف السلاوي",
+        "C": "عدنان الرمال",
+        "D": "كمال الودغيري"
+      },
+      "correct_answer": "A",
+      "explanation": "رشيد اليزمي ابن مدينة فاس مكن العالم من استخدام بطاريات الليثيوم أيون في الهواتف والسيارات الكهربائية ونال أرفع الأوسمة العالمية والوطنية.",
+      "source_title": "الأكاديمية الوطنية للهندسة بالولايات المتحدة",
+      "source_url": "https://www.nae.edu",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_5",
+      "category": "خمن الشخصية من الصورة",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هو هذا المهندس المغربي في وكالة الفضاء الأمريكية (ناسا) الذي قاد بنجاح مهمات هبوط المسبارات على كوكب المريخ؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Kamal_Oudghiri_%28cropped%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kamal_Oudghiri_(cropped).jpg",
+        "license": "CC BY 2.0",
+        "alt": "صورة العالم والمهندس الفضائي المغربي بوكالة ناسا كمال الودغيري"
+      },
+      "options": {
+        "A": "خالد الشاوي",
+        "B": "كمال الودغيري",
+        "C": "عصام معروف",
+        "D": "حمزة الحجوي"
+      },
+      "correct_answer": "B",
+      "explanation": "كمال الودغيري مهندس اتصالات الفضاء في وكالة ناسا، أشرف على غرف التحكم والاتصال الراديوي في مهمات استكشاف المريخ وزحل.",
+      "source_title": "وكالة الفضاء الأمريكية (NASA)",
+      "source_url": "https://www.nasa.gov",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_1",
+      "category": "خمن الشخصية من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "من هو هذا المؤرخ والروائي والمفكر المغربي الكبير صاحب 'الإيديولوجيا العربية المعاصرة' و'مجمل تاريخ المغرب'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Abdallah_Laroui%2C_2005.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abdallah_Laroui,_2005.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة المؤرخ والمفكر والروائي المغربي عبد الله العروي صاحب الإيديولوجيا العربية المعاصرة"
+      },
+      "options": {
+        "A": "محمد أركون",
+        "B": "عبد الكبير الخطيبي",
+        "C": "عبد الله العروي",
+        "D": "محمد عابد الجابري"
+      },
+      "correct_answer": "C",
+      "explanation": "عبد الله العروي فيلسوف التاريخ والمفكر الحداثي الأبرز، نال شخصية العام الثقافية لجائزة الشيخ زايد وله دراسات تأسيسية حول الدولة والحرية.",
+      "source_title": "أكاديمية المملكة المغربية",
+      "source_url": "https://www.alacademia.org.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_2",
+      "category": "خمن الشخصية من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "من هو هذا الفيلسوف والأكاديمي المغربي صاحب المشروع الفكري الضخم 'نقد العقل العربي'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/3/3e/Jabiri.jpg",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:Jabiri.jpg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "صورة الفيلسوف والمفكر المغربي محمد عابد الجابري صاحب نقد العقل العربي"
+      },
+      "options": {
+        "A": "محمد وقيدي",
+        "B": "طه عبد الرحمن",
+        "C": "سالم يفوت",
+        "D": "محمد عابد الجابري"
+      },
+      "correct_answer": "D",
+      "explanation": "محمد عابد الجابري ابن فكيك، أستاذ الفلسفة بالرباط وألف رباعيته الشهيرة حول العقل العربي وأعاد قراءة ابن رشد والتراث الإسلامي بعين نقدية.",
+      "source_title": "مركز دراسات الوحدة العربية",
+      "source_url": "https://caus.org.lb",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_3",
+      "category": "خمن الشخصية من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "من هو هذا المفكر والاقتصادي وعالم المستقبليات المغربي البارز الذي شغل منصب المدير العام المساعد لليونسكو وألّف \"صدام الحضارات\" و\"عولمة العولمة\"؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Mahdi_Elmandjra.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mahdi_Elmandjra.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة المفكر وعالم المستقبليات المغربي الدكتور المهدي المنجرة"
+      },
+      "options": {
+        "A": "المهدي المنجرة",
+        "B": "عبد الله العروي",
+        "C": "محمد عزيز الحبابي",
+        "D": "محمد عابد الجابري"
+      },
+      "correct_answer": "A",
+      "explanation": "صورة المفكر وعالم المستقبليات المغربي الدكتور المهدي المنجرة (1933 - 2014)، أحد أبرز رواد الدراسات المستقبلية ومؤلف \"الحرب الحضارية الأولى\" و\"عولمة العولمة\".",
+      "source_title": "مؤلفات الدكتور المهدي المنجرة الفكرية",
+      "source_url": "https://bnrm.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_4",
+      "category": "خمن الشخصية من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "من هو هذا الفنان الموسيقي وشيخ آلة 'لوتار' بالأطلس المتوسط وصاحب الأغنية الخالدة 'إناس إناس'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Rouichamoh.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Rouichamoh.JPG",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة الفنان والمطرب الأمازيغي الأطلسي الكبير محمد رويشة مع آلة الوتر"
+      },
+      "options": {
+        "A": "بنعيسى الخنيفري",
+        "B": "محمد رويشة",
+        "C": "محمد مغني",
+        "D": "حمو أو الزياني"
+      },
+      "correct_answer": "B",
+      "explanation": "محمد رويشة (1950 - 2012) ساحر أوتار لوتار بخنيفرة، ارتقى بالموسيقى الأمازيغية والوترية المغربية إلى العالمية بعزفه الوجداني الفريد.",
+      "source_title": "وزارة الشباب والثقافة والتواصل",
+      "source_url": "https://www.mjcc.gov.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_5",
+      "category": "خمن الشخصية من الصورة",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "من هو هذا الشاعر والفنان السوسي الذي يعد المؤسس التاريخي وعميد فن الروايس والموسيقى الأمازيغية الحديثة بسوس في القرن العشرين؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Lhadj_Belaid_Rebab_1.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lhadj_Belaid_Rebab_1.png",
+        "license": "Public Domain",
+        "alt": "صورة رائد الشعر والغناء الأمازيغي السوسي الرايس الحاج بلعيد مع آلة الرباب"
+      },
+      "options": {
+        "A": "سعيد أشتوك",
+        "B": "الحاج محمد الدمسيري",
+        "C": "الحاج بلعيد",
+        "D": "عمر واهروش"
+      },
+      "correct_answer": "C",
+      "explanation": "الرايس الحاج بلعيد (توفي حوالي 1945) أرسى قواعد شعر الروايس وعزف الرباب، وسجل أولى أسطواناته في باريس في ثلاثينيات القرن العشرين.",
+      "source_title": "المعهد الملكي للثقافة الأمازيغية (IRCAM)",
+      "source_url": "https://www.ircam.ma",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_6",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هو هذا النجم والمايسترو المغربي صانع ألعاب أسود الأطلس والمتألق في مونديال قطر 2022؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Hakim_Ziyech.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakim_Ziyech.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة حكيم زياش صانع ألعاب المنتخب المغربي"
+      },
+      "options": {
+        "A": "سفيان بوفال",
+        "B": "يونس بلهندة",
+        "C": "مبارك بوصوفة",
+        "D": "حكيم زياش"
+      },
+      "correct_answer": "D",
+      "explanation": "حكيم زياش النجم الدولي المغربي قاد المنتخب الوطني المغربي لنصف نهائي كأس العالم 2022 وسجل أهدافاً تاريخية.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_7",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هو هذا المقاتل الشرس ونجم خط وسط المنتخب المغربي الملقب بـ 'الدينامو' في كأس العالم 2022؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/2018_FIFA_World_Cup_Group_B_march_IRN-MAR_28_%28cropped%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:2018_FIFA_World_Cup_Group_B_march_IRN-MAR_28_(cropped).jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة لاعب خط وسط المنتخب المغربي سفيان أمرابط"
+      },
+      "options": {
+        "A": "سفيان أمرابط",
+        "B": "سليم أملاح",
+        "C": "نور الدين أمرابط",
+        "D": "عز الدين أوناحي"
+      },
+      "correct_answer": "A",
+      "explanation": "سفيان أمرابط قدم أداءً أسطورياً في خط وسط المغرب بمونديال قطر 2022 وقطع أكبر عدد من الكرات بالبطولة.",
+      "source_title": "الاتحاد الدولي لكرة القدم (FIFA)",
+      "source_url": "https://www.fifa.com",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_8",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هو هذا المهاجم والهداف التاريخي للمغرب صاحب القفزة الأسطورية والهدف التاريخي أمام البرتغال في مونديال 2022؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/AguerdYoussef.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:AguerdYoussef.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة المهاجم المغربي يوسف النصيري"
+      },
+      "options": {
+        "A": "أيوب الكعبي",
+        "B": "يوسف النصيري",
+        "C": "خالد بوطيب",
+        "D": "عبد الرزاق حمد الله"
+      },
+      "correct_answer": "B",
+      "explanation": "سجل يوسف النصيري الهدف الأغلى في تاريخ الكرة الإفريقية والعربية برأسية تاريخية بارتفاع 2.78م في شباك البرتغال بمونديال 2022.",
+      "source_title": "الفيفا والجامعة الملكية لكرة القدم",
+      "source_url": "https://www.fifa.com",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_9",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هي هذه الأميرة المغربية الجليلة كريمة الملك الراحل الحسن الثاني ورئيسة الجمعية المغربية لدعم اليونيسيف؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Princess_Lalla_Salma.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Princess_Lalla_Salma.jpg",
+        "license": "CC BY 2.0",
+        "alt": "صورة أميرة مغربية جليلة وراعية الأعمال الاجتماعية"
+      },
+      "options": {
+        "A": "الأميرة للا أسماء",
+        "B": "الأميرة للا حسناء",
+        "C": "الأميرة للا سلمى",
+        "D": "الأميرة للا مريم"
+      },
+      "correct_answer": "C",
+      "explanation": "الأميرة للا سلمى رئيسة مؤسسة للا سلمى لمحاربة السرطان وسفيرة النوايا الحسنة لمنظمة الصحة العالمية.",
+      "source_title": "وكالة المغرب العربي للأنباء",
+      "source_url": "https://www.mapnews.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_100_10",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "من هو هذا الحارس الدولي المغربي الكبير الذي حرس عرين الأسود في مونديال روسيا 2018 وتألق مع الأندية الإسبانية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Munir_Mohand_Mohamedi.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Munir_Mohand_Mohamedi.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة حارس المرمى الدولي منير المحمدي الكجوي"
+      },
+      "options": {
+        "A": "ياسين بونو",
+        "B": "أنس الزنيتي",
+        "C": "رضا التكناوتي",
+        "D": "منير المحمدي"
+      },
+      "correct_answer": "D",
+      "explanation": "منير المحمدي حارس مرمى المنتخب المغربي ساهم في التأهل التاريخي لمونديال روسيا ونال برونزية أولمبياد باريس 2024.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_6",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا القائد والصخرة الدفاعية السابق للمنتخب المغربي ونجم يوفنتوس وبايرن ميونيخ وروما؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Medhi_Benatia.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Medhi_Benatia.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة عميد أسود الأطلس السابق المهدي بنعطية"
+      },
+      "options": {
+        "A": "المهدي بنعطية",
+        "B": "مروان دا كوستا",
+        "C": "رومان سايس",
+        "D": "بدر بانون"
+      },
+      "correct_answer": "A",
+      "explanation": "المهدي بنعطية أحد أفضل المدافعين في تاريخ الكرة العربية والإفريقية قاد المنتخب المغربي لسنوات وتوج بألقاب الدوري الإيطالي والألماني.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_7",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا الجناح واللاعب المحارب في المنتخب المغربي الذي أذهل الجماهير بقتاليته في مونديال روسيا 2018 رغم إصابته؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Nordin_Amrabat_%28cropped%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nordin_Amrabat_(cropped).jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة الجناح الدولي نور الدين أمرابط"
+      },
+      "options": {
+        "A": "فيصل فجر",
+        "B": "نور الدين أمرابط",
+        "C": "طارق تيسودالي",
+        "D": "سفيان أمرابط"
+      },
+      "correct_answer": "B",
+      "explanation": "نور الدين أمرابط الأخ الأكبر لسفيان أمرابط عرف بروحه القتالية العالية وغيرته الوطنية في الدفاع عن قميص المنتخب المغربي.",
+      "source_title": "أرشيف المنتخب الوطني المغربي",
+      "source_url": "https://www.frmf.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_8",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا اللاعب الموهوب وفراشة خط وسط المغرب الذي أبهر المدرب الإسباني لويس إنريكي بمهارته وركضه في مونديال 2022؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Azzedine_Ounahi_Morocco_v_Norway_7_June_2026-37.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Azzedine_Ounahi_Morocco_v_Norway_7_June_2026-37.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة لاعب الوسط المغربي عز الدين أوناحي"
+      },
+      "options": {
+        "A": "إسماعيل صيباري",
+        "B": "أمير ريتشاردسون",
+        "C": "عز الدين أوناحي",
+        "D": "بلال الخنوس"
+      },
+      "correct_answer": "C",
+      "explanation": "خريج أكاديمية محمد السادس لكرة القدم عز الدين أوناحي كان اكتشاف مونديال قطر 2022 بمراوغاته ورشاقته الفريدة في خط الوسط.",
+      "source_title": "أكاديمية محمد السادس لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_9",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا المدافع الدولي المغربي الشامخ نجم ريال سوسيداد ووست هام السابق وأحد ركائز دفاع الأسود؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Aguerd2.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aguerd2.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة قطب الدفاع المغربي نايف أكرد"
+      },
+      "options": {
+        "A": "أشرف داري",
+        "B": "جواد الياميق",
+        "C": "رومان سايس",
+        "D": "نايف أكرد"
+      },
+      "correct_answer": "D",
+      "explanation": "نايف أكرد ابن مدينة القنيطرة وخريج الفتح الرياضي وأكاديمية محمد السادس تألق في كبريات الدوريات الأوروبية ومنتخب المغرب.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_200_10",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "من هو هذا القائد الصلب والمدافع المحنك لمنتخب المغرب في ملحمة قطر 2022 ونجم ولفرهامبتون وبشيكتاش السابق؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/RomainSaiss.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:RomainSaiss.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة قائد المنتخب المغربي رومان سايس"
+      },
+      "options": {
+        "A": "رومان غانم سايس",
+        "B": "يونس عبد الحميد",
+        "C": "المهدي بنعطية",
+        "D": "مروان الشماخ"
+      },
+      "correct_answer": "A",
+      "explanation": "رومان غانم سايس حمل شارة قيادة أسود الأطلس وضحى باللعب مصاباً في مونديال 2022 مسجلاً هدفاً تاريخياً ضد بلجيكا.",
+      "source_title": "الاتحاد الدولي لكرة القدم (FIFA)",
+      "source_url": "https://www.fifa.com",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_6",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا الزعيم والمفكر الوطني المغربي الكبير رئيس حزب الاستقلال وأحد أبرز مهندسي وثيقة الاستقلال 1944؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Allal_El_Fassi_1949.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Allal_El_Fassi_1949.png",
+        "license": "Public Domain",
+        "alt": "صورة الزعيم الوطني علال الفاسي"
+      },
+      "options": {
+        "A": "عبد الخالق الطريس",
+        "B": "علال الفاسي",
+        "C": "أحمد بلافريج",
+        "D": "محمد بلحسن الوزاني"
+      },
+      "correct_answer": "B",
+      "explanation": "العلامة والزعيم علال الفاسي قاد الحركة الوطنية السياسية والفكرية المغربية وألّف كتباً تأسيسية في مقاصد الشريعة والحرية.",
+      "source_title": "مؤسسة علال الفاسي",
+      "source_url": "https://allalfassi.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_7",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا السياسي والمناضل المغربي الكبير الذي قاد حكومة التناوب الديمقراطي التوافقي في عهد الملكين الحسن الثاني ومحمد السادس؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Abderrahmane_Youssoufi.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abderrahmane_Youssoufi.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة الوزير الأول الأسبق عبد الرحمن اليوسفي"
+      },
+      "options": {
+        "A": "إدريس جطو",
+        "B": "عبد الله إبراهيم",
+        "C": "عبد الرحمن اليوسفي",
+        "D": "عباس الفاسي"
+      },
+      "correct_answer": "C",
+      "explanation": "قاد الراحل عبد الرحمن اليوسفي تجربة التناوب التوافقي التاريخية بالمغرب (1998-2002) بحكمة سياسية ووطنية عالية.",
+      "source_title": "مؤسسة عبد الرحمن اليوسفي",
+      "source_url": "https://alacademia.org.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_8",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا المطرب والملحن والموسيقار المغربي الكبير الملقب بـ 'عميد الأغنية المغربية' وصاحب رائعة 'ما أنا إلا بشر'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Abdelwahab_Doukali_1.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abdelwahab_Doukali_1.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة الموسيقار والمطرب المغربي عبد الوهاب الدكالي"
+      },
+      "options": {
+        "A": "عبد الهادي بلخياط",
+        "B": "محمد الحياني",
+        "C": "إسماعيل أحمد",
+        "D": "عبد الوهاب الدكالي"
+      },
+      "correct_answer": "D",
+      "explanation": "عبد الوهاب الدكالي قامة شامخة في تاريخ الطرب المغربي والعربي لحن وأدى روائع خالدة كـ 'كان يا ما كان' و'سوق البشرية'.",
+      "source_title": "وزارة الشباب والثقافة والتواصل",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_9",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا المهاجم المغربي الدولي الواعد صاحب الهدف التاريخي في مرمى بلجيكا في كأس العالم 2022 ونجم تولوز الفرنسي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Zakaria_Aboukhlal_-_2023-02-01_%28cropped%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Zakaria_Aboukhlal_-_2023-02-01_(cropped).jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة المهاجم المغربي زكرياء أبو خلال"
+      },
+      "options": {
+        "A": "زكرياء أبو خلال",
+        "B": "إلياس شاعر",
+        "C": "عبد الحميد صابيري",
+        "D": "أنس زروري"
+      },
+      "correct_answer": "A",
+      "explanation": "سجل زكرياء أبو خلال الهدف الثاني الحاسم للمغرب ضد بلجيكا (2-0) في دور المجموعات بمونديال قطر 2022.",
+      "source_title": "الاتحاد الدولي لكرة القدم (FIFA)",
+      "source_url": "https://www.fifa.com",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_300_10",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "من هو هذا البطل العالمي الأسطوري في الكيك بوكسينغ والوزن الثقيل في منظمة K-1 وGlory الملقب بـ 'الفتى الذهبي'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Badr-Hari.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Badr-Hari.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة البطل العالمي في الكيك بوكسينغ بدر هاري"
+      },
+      "options": {
+        "A": "جمال بن صديق",
+        "B": "بدر هاري",
+        "C": "ريكو فيرهوفن",
+        "D": "طارق خبابز"
+      },
+      "correct_answer": "B",
+      "explanation": "بدر هاري أسطورة الفنون القتالية والكيك بوكسينغ العالمية في الوزن الثقيل، حقق أكثر من 100 فوز بالضربة القاضية رافعاً راية المغرب.",
+      "source_title": "الجامعة الملكية لرياضات الكيك بوكسينغ",
+      "source_url": "https://frmkbda.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_6",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هو هذا الشاعر والأديب والمترجم المغربي مؤسس مجلة 'أنفاس' الحائز على جائزة الغونكور الفرنسية للشعر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Abdellatif_La%C3%A2bi-2011.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abdellatif_La%C3%A2bi-2011.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة الشاعر والأديب المغربي عبد اللطيف اللعبي"
+      },
+      "options": {
+        "A": "مصطفى النيسابوري",
+        "B": "محمد خير الدين",
+        "C": "عبد اللطيف اللعبي",
+        "D": "محمد بنيس"
+      },
+      "correct_answer": "C",
+      "explanation": "عبد اللطيف اللعبي قامة شعرية ونضالية كبرى بالمغرب مؤسس مجلة أنفاس ونال جائزة غونكور للشعر سنة 2009.",
+      "source_title": "أكاديمية غونكور واتحاد كتاب المغرب",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_7",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هو هذا الفنان والكوميدي المغربي الفرنسي العالمي ابن الدار البيضاء وصاحب عروض 'ديجا كاندار' و'بدون تأشيرة'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Gad_Elmaleh_2011.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Gad_Elmaleh_2011.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة الفنان والكوميدي جاد المالح"
+      },
+      "options": {
+        "A": "سعيد الناصري",
+        "B": "جمال الدبوز",
+        "C": "إيلي سيمون",
+        "D": "جاد المالح (Gad Elmaleh)"
+      },
+      "correct_answer": "D",
+      "explanation": "جاد المالح ولد بالدار البيضاء عام 1971 ويعتبر من أشهر نجوم الكوميديا والستاند آب في العالم الفرانكفوني وهوليوود.",
+      "source_title": "أرشيف السينما والمسرح المغربي",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_8",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هو هذا النجم والكوميدي المغربي الفرنسي مؤسس 'مهرجان مراكش للضحك' (Marrakech du Rire)؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Jamel_Debbouze_AVP_2016.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jamel_Debbouze_AVP_2016.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة النجم والكوميدي جمال الدبوز"
+      },
+      "options": {
+        "A": "جمال الدبوز (Jamel Debbouze)",
+        "B": "محمد الخياري",
+        "C": "جاد المالح",
+        "D": "حسن الفد"
+      },
+      "correct_answer": "A",
+      "explanation": "جمال الدبوز نجم الكوميديا والسينما أسس مهرجان مراكش الدولي للضحك عام 2011 جاعلاً مراكش عاصمة عالمية للفكاهة.",
+      "source_title": "مهرجان مراكش الدولي للضحك",
+      "source_url": "https://marrakechdurire.com",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_9",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هو هذا المغني والرابر المغربي الأمريكي العالمي ابن الدار البيضاء ومؤسس علامة Coke Boys وصاحب أغنية 'Unforgettable'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/FM_PRESS03-A.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:FM_PRESS03-A.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة الرابر العالمي كريم خربوش المشهور بفرينش مونتانا"
+      },
+      "options": {
+        "A": "إل غراندي طوطو",
+        "B": "فرينش مونتانا (كريم خربوش)",
+        "C": "مسلم",
+        "D": "ديزي دروس"
+      },
+      "correct_answer": "B",
+      "explanation": "كريم خربوش المعروف بـ French Montana ولد بالدار البيضاء وهاجر لأمريكا ليصبح أحد أشهر نجوم الهيب هوب عالمياً.",
+      "source_title": "موسيقى الهيب هوب العالمية",
+      "source_url": "https://billboard.com",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_400_10",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "من هي هذه المصورة الفوتوغرافية والفنانة البصرية المغربية الشهيرة التي وثقت الهوية المغربية والإفريقية واستشهدت في هجوم واغادوغو 2016؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Leila_Alaoui_JCC.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Leila_Alaoui_JCC.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة الفنانة والمصورة الفوتوغرافية ليلى علوي"
+      },
+      "options": {
+        "A": "ياسمين الحسيني",
+        "B": "زينب السديرة",
+        "C": "ليلى علوي (Leïla Alaoui)",
+        "D": "مريم بن مبارك"
+      },
+      "correct_answer": "C",
+      "explanation": "الفنانة الراحلة ليلى علوي تركت إرثاً فوتوغرافياً وإنسانياً خالداً في توثيق وجوه المغاربة والمهاجرين في سلسلتها 'المغاربة'.",
+      "source_title": "مؤسسة ليلى علوي والمتحف الوطني للفنون بالرباط",
+      "source_url": "https://fnm.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_6",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هي هذه الخريطة الكروية الدائرية للعالم التي رسمها الجغرافي والرحالة المغربي الأندلسي السبتي الشريف الإدريسي في القرن 12م؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Al-Idrisi%27s_world_map.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Al-Idrisi%27s_world_map.JPG",
+        "license": "Public Domain",
+        "alt": "خريطة العالم الكروية للشريف الإدريسي السبتي"
+      },
+      "options": {
+        "A": "خريطة بيري ريس",
+        "B": "خريطة بطليموس",
+        "C": "خريطة ابن بطوطة",
+        "D": "خريطة الشريف الإدريسي السبتي (نزهة المشتاق)"
+      },
+      "correct_answer": "D",
+      "explanation": "صمم الجغرافي السبتي الشريف الإدريسي أدق خريطة للعالم في العصور الوسطى في كتابه 'نزهة المشتاق في اختراق الآفاق' وكرته الفضية.",
+      "source_title": "أكاديمية المملكة المغربية",
+      "source_url": "https://alacademia.org.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_7",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "من هو هذا الكاتب والمفكر المغربي الفرانكفوني المثير للاهتمام صاحب روايات 'جيش الإنقاذ' و'يوم الملك' الحائز على جائزة فلور؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Abdellah_Ta%C3%AFa_%2821e_Maghreb_des_Livres%2C_Paris%2C_7_et_8_f%C3%A9vrier_2015%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abdellah_Ta%C3%AFa_(21e_Maghreb_des_Livres,_Paris,_7_et_8_f%C3%A9vrier_2015).jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة الكاتب والسينمائي المغربي عبد الله الطايع"
+      },
+      "options": {
+        "A": "عبد الله الطايع",
+        "B": "ماحي بينبين",
+        "C": "رشيد أو",
+        "D": "فؤاد العروي"
+      },
+      "correct_answer": "A",
+      "explanation": "عبد الله الطايع كاتب ومخرج سينمائي مغربي نال جائزة فلور بفرنسا وترجمت رواياته إلى العديد من اللغات الأوروبية.",
+      "source_title": "أرشيف الأدب المغاربي",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_8",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الباشا التاريخي المراكشي النافذ في عهد الحماية الذي شيد قصر دار الباشا وكان من أقوى حكام الجنوب المغربي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Dar_El_Bacha.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dar_El_Bacha.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "قصر دار الباشا التهامي الكلاوي بمراكش"
+      },
+      "options": {
+        "A": "المدني الكلاوي",
+        "B": "التهامي الكلاوي (باشا مراكش)",
+        "C": "الباشا المقري",
+        "D": "الباشا عبد الحي الكتاني"
+      },
+      "correct_answer": "B",
+      "explanation": "التهامي الكلاوي زعيم قبائل غلاوة وباشا مراكش، شيد قصر دار الباشا الفخم وكان شخصية سياسية ذات نفوذ واسع بالقرن العشرين.",
+      "source_title": "تاريخ مراكش المعاصر",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_9",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الفنان التشكيلي والنحات المغربي المراكشي العالمي صاحب رواية 'نجوم سيدي مومن' التي حُوّلت لفيلم 'يا خيل الله'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Tayeb_Saddiki.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tayeb_Saddiki.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "صورة رائد من رواد المسرح والفن المغربي"
+      },
+      "options": {
+        "A": "الجيلالي الغرباوي",
+        "B": "ماحي بينبين",
+        "C": "الطيب الصديقي",
+        "D": "فريد بلكاهية"
+      },
+      "correct_answer": "C",
+      "explanation": "الفنان المسرحي الكبير الطيب الصديقي عميد المسرح المغربي أبدع مسرحيات تاريخية وشعبية ألهمت الأجيال العربية.",
+      "source_title": "مؤسسة الطيب الصديقي للمسرح",
+      "source_url": "https://minculture.gov.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    },
+    {
+      "id": "per_500_10",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "من هي هذه الشاعرة الأندلسية الغرناطية الفاسية العظيمة التي عاشت بالمغرب وخلدت في التاريخ بشعرها العذري ومساجلاتها؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Princess_Lalla_Meryem_of_Morocco.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Princess_Lalla_Meryem_of_Morocco.jpg",
+        "license": "CC BY 2.0",
+        "alt": "صورة الأميرة للا مريم سفيرة النوايا الحسنة لليونسكو"
+      },
+      "options": {
+        "A": "حفصة الركونية",
+        "B": "زينب المرينية",
+        "C": "عائشة الحرة",
+        "D": "الأميرة للا مريم"
+      },
+      "correct_answer": "D",
+      "explanation": "صاحبة السمو الملكي الأميرة للا مريم رئيسة المرصد الوطني لحقوق الطفل وسفيرة النوايا الحسنة لليونسكو لرعاية الطفولة والمرأة.",
+      "source_title": "المرصد الوطني لحقوق الطفل",
+      "source_url": "https://www.onde.ma",
+      "category": "خمن الشخصية من الصورة",
+      "category_id": "guess_person"
+    }
+  ]
+}

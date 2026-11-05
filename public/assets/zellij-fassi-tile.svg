@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <!-- Crisp tile mortar lines -->
+  <rect width="96" height="96" fill="#F8FAFC"/>
+
+  <!-- Outer Moroccan Turquoise & Cobalt diamonds -->
+  <polygon points="48,0 96,48 48,96 0,48" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1.5"/>
+  <polygon points="48,8 88,48 48,88 8,48" fill="#0284C7" stroke="#0369A1" stroke-width="1.5"/>
+  <polygon points="48,16 80,48 48,80 16,48" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Emerald Green & Saffron Gold interlace -->
+  <rect x="24" y="24" width="48" height="48" fill="#10B981" stroke="#059669" stroke-width="1.5" rx="4"/>
+  <rect x="24" y="24" width="48" height="48" transform="rotate(45 48 48)" fill="#F59E0B" stroke="#D97706" stroke-width="1.5" rx="4"/>
+
+  <!-- Central Star Rosette (Cobalt & Ruby Terracotta) -->
+  <g transform="translate(48,48)">
+    <!-- 8-Pointed Moroccan Star -->
+    <polygon points="0,-22 6.5,-6.5 22,0 6.5,6.5 0,22 -6.5,6.5 -22,0 -6.5,-6.5" fill="#1D4ED8" stroke="#1E40AF" stroke-width="1.5"/>
+    <polygon points="0,-22 6.5,-6.5 22,0 6.5,6.5 0,22 -6.5,6.5 -22,0 -6.5,-6.5" transform="rotate(45)" fill="#E11D48" stroke="#BE123C" stroke-width="1.5"/>
+    
+    <!-- White geometric star spacer -->
+    <circle cx="0" cy="0" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.2"/>
+    <!-- Center Golden Amber button -->
+    <circle cx="0" cy="0" r="4.5" fill="#FBBF24" stroke="#D97706" stroke-width="1"/>
+  </g>
+
+  <!-- 4 Corner Multi-colored Zellij Star Quarters -->
+  <!-- Top Left -->
+  <g transform="translate(0,0)">
+    <polygon points="0,-16 4.8,-4.8 16,0 4.8,4.8 0,16 -4.8,4.8 -16,0 -4.8,-4.8" fill="#1D4ED8" stroke="#1E40AF" stroke-width="1.2"/>
+    <polygon points="0,-16 4.8,-4.8 16,0 4.8,4.8 0,16 -4.8,4.8 -16,0 -4.8,-4.8" transform="rotate(45)" fill="#F59E0B" stroke="#D97706" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="2.5" fill="#10B981"/>
+  </g>
+  <!-- Top Right -->
+  <g transform="translate(96,0)">
+    <polygon points="0,-16 4.8,-4.8 16,0 4.8,4.8 0,16 -4.8,4.8 -16,0 -4.8,-4.8" fill="#1D4ED8" stroke="#1E40AF" stroke-width="1.2"/>
+    <polygon points="0,-16 4.8,-4.8 16,0 4.8,4.8 0,16 -4.8,4.8 -16,0 -4.8,-4.8" transform="rotate(45)" fill="#F59E0B" stroke="#D97706" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="2.5" fill="#10B981"/>
+  </g>
+  <!-- Bottom Left -->
+  <g transform="translate(0,96)">
+    <polygon points="0,-16 4.8,-4.8 16,0 4.8,4.8 0,16 -4.8,4.8 -16,0 -4.8,-4.8" fill="#1D4ED8" stroke="#1E40AF" stroke-width="1.2"/>
+    <polygon points="0,-16 4.8,-4.8 16,0 4.8,4.8 0,16 -4.8,4.8 -16,0 -4.8,-4.8" transform="rotate(45)" fill="#F59E0B" stroke="#D97706" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="2.5" fill="#10B981"/>
+  </g>
+  <!-- Bottom Right -->
+  <g transform="translate(96,96)">
+    <polygon points="0,-16 4.8,-4.8 16,0 4.8,4.8 0,16 -4.8,4.8 -16,0 -4.8,-4.8" fill="#1D4ED8" stroke="#1E40AF" stroke-width="1.2"/>
+    <polygon points="0,-16 4.8,-4.8 16,0 4.8,4.8 0,16 -4.8,4.8 -16,0 -4.8,-4.8" transform="rotate(45)" fill="#F59E0B" stroke="#D97706" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="2.5" fill="#10B981"/>
+  </g>
+</svg>

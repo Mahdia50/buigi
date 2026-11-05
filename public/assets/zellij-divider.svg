@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="20" viewBox="0 0 300 20">
+  <defs>
+    <linearGradient id="fadeLineL" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#C2823D" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#C2823D" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fadeLineR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C2823D" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#C2823D" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Left and Right taper lines -->
+  <line x1="20" y1="10" x2="130" y2="10" stroke="url(#fadeLineL)" stroke-width="1.5"/>
+  <line x1="170" y1="10" x2="280" y2="10" stroke="url(#fadeLineR)" stroke-width="1.5"/>
+  <!-- Diamonds on lines -->
+  <polygon points="100,7 104,10 100,13 96,10" fill="#BC5A36"/>
+  <polygon points="200,7 204,10 200,13 196,10" fill="#BC5A36"/>
+  <circle cx="120" cy="10" r="2" fill="#C2823D"/>
+  <circle cx="180" cy="10" r="2" fill="#C2823D"/>
+
+  <!-- Center 8-pointed Moroccan Star -->
+  <g transform="translate(150, 10)">
+    <polygon points="0,-7 2.1,-2.1 7,0 2.1,2.1 0,7 -2.1,2.1 -7,0 -2.1,-2.1" fill="#C2823D" stroke="#211A16" stroke-width="0.8"/>
+    <polygon points="0,-7 2.1,-2.1 7,0 2.1,2.1 0,7 -2.1,2.1 -7,0 -2.1,-2.1" transform="rotate(45)" fill="#BC5A36" stroke="#211A16" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="2" fill="#EADCC9" stroke="#211A16" stroke-width="0.5"/>
+  </g>
+</svg>

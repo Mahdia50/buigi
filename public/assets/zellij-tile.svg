@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      .z-line { stroke: #9C6634; stroke-width: 0.75; stroke-opacity: 0.2; fill: none; }
+      .z-accent { stroke: #BC5A36; stroke-width: 0.85; stroke-opacity: 0.22; fill: none; }
+      .z-star { fill: #C2823D; fill-opacity: 0.05; stroke: #9C6634; stroke-width: 0.85; stroke-opacity: 0.25; }
+      .z-star2 { fill: #BC5A36; fill-opacity: 0.04; stroke: #BC5A36; stroke-width: 0.85; stroke-opacity: 0.22; }
+      .z-center { fill: #9C6634; fill-opacity: 0.15; stroke: #9C6634; stroke-width: 0.5; stroke-opacity: 0.3; }
+    </style>
+  </defs>
+
+  <!-- Base Grid Lines -->
+  <line x1="0" y1="40" x2="80" y2="40" class="z-line"/>
+  <line x1="40" y1="0" x2="40" y2="80" class="z-line"/>
+  <line x1="0" y1="0" x2="80" y2="80" class="z-line"/>
+  <line x1="80" y1="0" x2="0" y2="80" class="z-line"/>
+
+  <!-- Secondary Diamond Grid -->
+  <polygon points="40,0 80,40 40,80 0,40" class="z-accent"/>
+
+  <!-- Center 8-Pointed Moroccan Star -->
+  <g transform="translate(40,40)">
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" class="z-star"/>
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" transform="rotate(45)" class="z-star2"/>
+    <circle cx="0" cy="0" r="4.5" class="z-center"/>
+    <circle cx="0" cy="0" r="1.5" fill="#C2823D" fill-opacity="0.3"/>
+  </g>
+
+  <!-- 4 Corner Star Quarters -->
+  <g transform="translate(0,0)">
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" class="z-star"/>
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" transform="rotate(45)" class="z-star2"/>
+  </g>
+  <g transform="translate(80,0)">
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" class="z-star"/>
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" transform="rotate(45)" class="z-star2"/>
+  </g>
+  <g transform="translate(0,80)">
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" class="z-star"/>
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" transform="rotate(45)" class="z-star2"/>
+  </g>
+  <g transform="translate(80,80)">
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" class="z-star"/>
+    <polygon points="0,-18 5.3,-5.3 18,0 5.3,5.3 0,18 -5.3,5.3 -18,0 -5.3,-5.3" transform="rotate(45)" class="z-star2"/>
+  </g>
+</svg>

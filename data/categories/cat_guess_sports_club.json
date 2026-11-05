@@ -1,0 +1,1307 @@
+{
+  "category_id": "guess_sports_club",
+  "category_name": "خمن الشعار أو النادي الرياضي",
+  "emoji": "⚽",
+  "questions": [
+    {
+      "id": "spo_100_1",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما هي الهيئة الرياضية الوطنية صاحبة هذا الشعار المشرف على المنتخبات الوطنية والبطولة الاحترافية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/a/a6/Maroc-Logo-FRMF.png",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:Maroc-Logo-FRMF.png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار الجامعة الملكية المغربية لكرة القدم FRMF"
+      },
+      "options": {
+        "A": "الجامعة الملكية المغربية لكرة القدم (FRMF)",
+        "B": "وزارة التربية الوطنية والرياضة",
+        "C": "اللجنة الأولمبية المغربية",
+        "D": "العصبة الوطنية الاحترافية"
+      },
+      "correct_answer": "A",
+      "explanation": "الجامعة الملكية المغربية لكرة القدم تأسست عام 1956 وتدير شؤون الساحرة المستديرة في المغرب وإنجازات المنتخبات الوطنية.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_2",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي المغربي العريق صاحب اللونين الأحمر والأبيض والملقب بـ 'وداد الأمة'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Wydad-Athletic-Club-Casablanca-Logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Wydad-Athletic-Club-Casablanca-Logo.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي الوداد الرياضي البيضاوي WAC"
+      },
+      "options": {
+        "A": "الجيش الملكي",
+        "B": "الوداد الرياضي (WAC)",
+        "C": "المغرب التطواني",
+        "D": "الرجاء الرياضي"
+      },
+      "correct_answer": "B",
+      "explanation": "الوداد الرياضي تأسس سنة 1937 بالدار البيضاء ويعد أكثر الأندية المغربية تتويجاً بالبطولة الوطنية ودوري أبطال إفريقيا ثلاث مرات.",
+      "source_title": "نادي الوداد الرياضي",
+      "source_url": "https://wac.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_3",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي المغربي العريق صاحب اللون الأخضر والملقب بـ 'النسور الخضر' و'الرجاء العالمي'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/fr/thumb/8/85/Logo_Raja_Club_Athletic.svg/960px-Logo_Raja_Club_Athletic.svg.png",
+        "source_url": "https://fr.wikipedia.org/wiki/Fichier:Logo_Raja_Club_Athletic.svg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار نادي الرجاء الرياضي البيضاوي RCA"
+      },
+      "options": {
+        "A": "الدفاع الحسني الجديدي",
+        "B": "الوداد الرياضي",
+        "C": "الرجاء الرياضي (RCA)",
+        "D": "النادي القنيطري"
+      },
+      "correct_answer": "C",
+      "explanation": "الرجاء الرياضي تأسس عام 1949 بدرب السلطان، وتوج بدوري أبطال إفريقيا 3 مرات وبلغ نهائي كأس العالم للأندية سنة 2013.",
+      "source_title": "نادي الرجاء الرياضي",
+      "source_url": "https://rajacasablanca.com",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_4",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي العسكري العريق بمدينة الرباط الملقب بـ 'الزعيم' وأول فريق مغربي يحرز دوري أبطال إفريقيا عام 1985؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/AS_FAR_logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:AS_FAR_logo.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي الجيش الملكي المغربي AS FAR"
+      },
+      "options": {
+        "A": "النادي القنيطري",
+        "B": "اتحاد تواركة",
+        "C": "الفتح الرباطي",
+        "D": "الجيش الملكي (AS FAR)"
+      },
+      "correct_answer": "D",
+      "explanation": "الجيش الملكي أسسه جلالة المغفور له الحسن الثاني سنة 1958 وتوج بلقب بطل إفريقيا سنة 1985 والعديد من بطولات الدوري وكأس العرش.",
+      "source_title": "الجمعية الرياضية للقوات المسلحة الملكية (AS FAR)",
+      "source_url": "https://as-far.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_5",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي العريق بالعاصمة العلمية فاس الفائز بالثلاثية التاريخية (كأس العرش، الكونفدرالية، والسوبر الإفريقي) عام 2011؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/MAS_de_Fes.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:MAS_de_Fes.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي المغرب الفاسي MAS"
+      },
+      "options": {
+        "A": "المغرب الفاسي (MAS)",
+        "B": "الوداد الفاسي",
+        "C": "نهضة بركان",
+        "D": "مولودية وجدة"
+      },
+      "correct_answer": "A",
+      "explanation": "المغرب الفاسي تأسس عام 1946 بمدينة فاس ويعد قطباً كروياً بارزاً بصفرته وسواده وتاريخه المجيد في إفريقيا والمغرب.",
+      "source_title": "نادي المغرب الرياضي الفاسي",
+      "source_url": "https://masfes.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_1",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي العاصمي التاريخي الملقب بـ 'أبناء العاصمة' والمتوج بكأس الكونفدرالية الإفريقية سنة 2010؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/en/8/8f/Fath_Union_Sport_%28logo%29.png",
+        "source_url": "https://en.wikipedia.org/wiki/File:Fath_Union_Sport_(logo).png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار نادي اتحاد الفتح الرياضي الرباطي FUS"
+      },
+      "options": {
+        "A": "اتحاد تواركة",
+        "B": "الفتح الرباطي (FUS)",
+        "C": "الجيش الملكي",
+        "D": "سطاد المغربي"
+      },
+      "correct_answer": "B",
+      "explanation": "الفتح الرياضي الرباطي تأسس سنة 1946 ويشتهر بنموذجه الاحترافي ومدارسه التكوينية المتميزة في مختلف الرياضات.",
+      "source_title": "نادي الفتح الرياضي الرباطي",
+      "source_url": "https://fus.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_2",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الأمازيغي السوسي الملقب بـ 'غزالة سوس' وبطل الدوري المغربي مرتين متتاليتين (2002 و2003)؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Husa_logo_2013.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Husa_logo_2013.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي حسنية أكادير HUSA"
+      },
+      "options": {
+        "A": "أمل تيزنيت",
+        "B": "رجاء أكادير",
+        "C": "حسنية أكادير (HUSA)",
+        "D": "أولمبيك الدشيرة"
+      },
+      "correct_answer": "C",
+      "explanation": "حسنية الاتحاد الرياضي لأكادير تأسس عام 1946 ويمثل عاصمة سوس في البطولة الاحترافية بملعب أدرار العالمي.",
+      "source_title": "نادي حسنية أكادير",
+      "source_url": "https://husafootball.com",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_3",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الشمالي صاحب الجماهيرية الغفيرة والملقب بـ 'فارس البوغاز' والمتوج بلقب البطولة الوطنية سنة 2018؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/en/6/64/Itihad_Tanger_FF_Logo.png",
+        "source_url": "https://en.wikipedia.org/wiki/File:Itihad_Tanger_FF_Logo.png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار نادي اتحاد طنجة IRT"
+      },
+      "options": {
+        "A": "شباب الريف الحسيمي",
+        "B": "نهضة طنجة",
+        "C": "المغرب التطواني",
+        "D": "اتحاد طنجة (IRT)"
+      },
+      "correct_answer": "D",
+      "explanation": "اتحاد طنجة يمثل عروس الشمال ويلعب بملعب ابن بطوطة الكبير ويتمتع بقاعدة جماهيرية عريضة وملتزمة (ألتراس هيركوليس).",
+      "source_title": "نادي اتحاد طنجة لكرة القدم",
+      "source_url": "https://irtanger.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_4",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الشمالي الأندلسي بطل الدوري المغربي عامي 2012 و2014 والمشارك بمونديال الأندية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Moghreb_athletic_tetouan_logo_png.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moghreb_athletic_tetouan_logo_png.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي المغرب أتلتيك تطوان MAT"
+      },
+      "options": {
+        "A": "المغرب التطواني (MAT)",
+        "B": "الفتح الناظوري",
+        "C": "اتحاد طنجة",
+        "D": "وداد تمارة"
+      },
+      "correct_answer": "A",
+      "explanation": "المغرب الرياضي التطواني تأسس عام 1922 وسبق له اللعب في الدوري الإسباني الممتاز (الليغا) في خمسينيات القرن الماضي بملعب سانية الرمل.",
+      "source_title": "الموقع الرسمي للمغرب التطواني",
+      "source_url": "https://matfoot.com",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_5",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الأطلسي العريق بحاضرة المحيط والملقب بـ 'القرش المسفيوي'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Uss_logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uss_logo.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي أولمبيك آسفي OCS"
+      },
+      "options": {
+        "A": "سريع وادي زم",
+        "B": "أولمبيك آسفي (OCS)",
+        "C": "الدفاع الجديدي",
+        "D": "شباب المحمدية"
+      },
+      "correct_answer": "B",
+      "explanation": "أولمبيك آسفي تأسس سنة 1921 بمدينة الخزف والسمك آسفي ويعد أحد أقدم الأندية الرياضية الممارسة في البطولة الاحترافية بالمغرب.",
+      "source_title": "نادي أولمبيك آسفي",
+      "source_url": "https://ocsafi.com",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_1",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي البرتقالي المتألق بجهة الشرق وبطل كأس الكونفدرالية الإفريقية وكأس السوبر الإفريقي مراراً؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/en/d/de/RS_Berkane_%28logo%29.png",
+        "source_url": "https://en.wikipedia.org/wiki/File:RS_Berkane_(logo).png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار نادي النهضة الرياضية البركانية RSB"
+      },
+      "options": {
+        "A": "نهضة الزمامرة",
+        "B": "مولودية وجدة",
+        "C": "نهضة بركان (RSB)",
+        "D": "اتحاد تاوريرت"
+      },
+      "correct_answer": "C",
+      "explanation": "النهضة الرياضية البركانية صنعت تاريخاً ذهبياً في السنوات الأخيرة بتتويجها بكأس الكونفدرالية الإفريقية (CAF) وكأس العرش والسوبر الإفريقي.",
+      "source_title": "النهضة الرياضية البركانية",
+      "source_url": "https://rsb.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_2",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي البهجاوي العريق الملقب بـ 'فارس النخيل' وحامل كأس الكونفدرالية الإفريقية عام 1996؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Kawkab_Marrakech_logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kawkab_Marrakech_logo.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي الكوكب المراكشي KACM"
+      },
+      "options": {
+        "A": "رجاء بني ملال",
+        "B": "أولمبيك مراكش",
+        "C": "شباب ابن جرير",
+        "D": "الكوكب المراكشي (KACM)"
+      },
+      "correct_answer": "D",
+      "explanation": "الكوكب الرياضي المراكشي تأسس سنة 1947 بالمدينة الحمراء وتوج بالبطولة الوطنية وكأس العرش 6 مرات وكأس الاتحاد الإفريقي.",
+      "source_title": "نادي الكوكب المراكشي",
+      "source_url": "https://kacm.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_3",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي التاريخي بمدينة وجدة الملقب بـ 'سندباد الشرق' وأول فائز بلقب كأس العرش المغربي سنة 1957؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/MOULOUDIA_OUJDA_LOGO.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:MOULOUDIA_OUJDA_LOGO.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي المولودية الوجدية MCO"
+      },
+      "options": {
+        "A": "مولودية وجدة (MCO)",
+        "B": "هلال الناظور",
+        "C": "نهضة بركان",
+        "D": "اتحاد وجدة"
+      },
+      "correct_answer": "A",
+      "explanation": "مولودية وجدة تأسس عام 1946 وتوج بأول نسخة لكأس العرش بعد الاستقلال سنة 1957 وفاز بها 4 مرات في تاريخه.",
+      "source_title": "نادي مولودية وجدة",
+      "source_url": "https://mcoujda.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_4",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي المنجمي العريق بعاصمة الفوسفاط الملقب بـ 'لوصيكا' وبطل الدوري المغربي سنة 2007؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/0/02/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%86%D8%A7%D8%AF%D9%8A_%D8%A3%D9%88%D9%84%D9%85%D8%A8%D9%8A%D9%83_%D8%AE%D8%B1%D9%8A%D8%A8%D9%83%D8%A9.png",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:%D8%B4%D8%B9%D8%A7%D8%B1_%D9%86%D8%A7%D8%AF%D9%8A_%D8%A3%D9%88%D9%84%D9%85%D8%A8%D9%8A%D9%83_%D8%AE%D8%B1%D9%8A%D8%A8%D9%83%D8%A9.png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار نادي أولمبيك خريبكة OCK"
+      },
+      "options": {
+        "A": "سريع وادي زم",
+        "B": "أولمبيك خريبكة (OCK)",
+        "C": "شباب بنجرير",
+        "D": "أولمبيك اليوسفية"
+      },
+      "correct_answer": "B",
+      "explanation": "أولمبيك خريبكة تأسس عام 1923 بدعم من المجمع الشريف للفوسفاط وحقق كأس العرش وبطولة المغرب وكأس الكؤوس العربية.",
+      "source_title": "نادي أولمبيك خريبكة",
+      "source_url": "https://ock.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_5",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الدكالي العريق بالجديدة وصاحب كأس العرش 2013 والملقب بـ 'فارس دكالة'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/en/8/84/Difa%C3%A2_El_Jadidi_%28logo%29.png",
+        "source_url": "https://en.wikipedia.org/wiki/File:Difa%C3%A2_El_Jadidi_(logo).png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار نادي الدفاع الحسني الجديدي DHJ"
+      },
+      "options": {
+        "A": "نهضة الزمامرة",
+        "B": "شباب السوالم",
+        "C": "الدفاع الحسني الجديدي (DHJ)",
+        "D": "رجاء الجديدة"
+      },
+      "correct_answer": "C",
+      "explanation": "الدفاع الحسني الجديدي تأسس سنة 1956 وأنجب أساطير كروية كبرى كالظلمي وبيتشو وبابا ومثل الكرة المغربية في المسابقات القارية.",
+      "source_title": "نادي الدفاع الحسني الجديدي",
+      "source_url": "https://dhjfoot.com",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_1",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هي الجامعة الرياضية الوطنية المغربية المسؤولة عن أم الألعاب وصانعة أغلب الميداليات الأولمبية للمملكة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/fr/4/4e/FRMA-logo.png",
+        "source_url": "https://fr.wikipedia.org/wiki/Fichier:FRMA-logo.png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار الجامعة الملكية المغربية لألعاب القوى FRMA"
+      },
+      "options": {
+        "A": "جامعة الملاكمة",
+        "B": "جامعة السباحة",
+        "C": "جامعة الجودو",
+        "D": "الجامعة الملكية المغربية لألعاب القوى (FRMA)"
+      },
+      "correct_answer": "D",
+      "explanation": "جامعة ألعاب القوى هي الأكثر تتويجاً في تاريخ الرياضة المغربية بفضل إنجازات عويطة والمتوكل والسكاح والكروج والبقالي وبدوان.",
+      "source_title": "الجامعة الملكية المغربية لألعاب القوى",
+      "source_url": "https://www.frma.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_2",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هي الهيئة الرياضية الوطنية صاحبة هذا الشعار المشرفة على بطولات كرة السلة بالمملكة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/fr/0/01/Logo_FRMBB.PNG",
+        "source_url": "https://fr.wikipedia.org/wiki/Fichier:Logo_FRMBB.PNG",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار الجامعة الملكية المغربية لكرة السلة FRMBB"
+      },
+      "options": {
+        "A": "الجامعة الملكية المغربية لكرة السلة (FRMBB)",
+        "B": "جامعة الكرة الطائرة",
+        "C": "جامعة كرة اليد",
+        "D": "جامعة التنس"
+      },
+      "correct_answer": "A",
+      "explanation": "الجامعة الملكية المغربية لكرة السلة تأسست عام 1956 وتوج المنتخب الوطني المغربي بلقب بطل إفريقيا لكرة السلة (الأفرو باسكت) سنة 1965.",
+      "source_title": "الجامعة الملكية المغربية لكرة السلة",
+      "source_url": "https://frmbb.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_3",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي العريق بحوض سبو الملقب بـ 'الكاك' وبطل الدوري المغربي 4 مرات في السبعينيات والثمانينيات؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/fr/thumb/2/2d/KAC_de_K%C3%A9nitra_%28logo%29.svg/960px-KAC_de_K%C3%A9nitra_%28logo%29.svg.png",
+        "source_url": "https://fr.wikipedia.org/wiki/Fichier:KAC_de_K%C3%A9nitra_(logo).svg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار النادي الرياضي القنيطري KAC"
+      },
+      "options": {
+        "A": "سيدي قاسم",
+        "B": "النادي القنيطري (KAC)",
+        "C": "سطاد المغربي",
+        "D": "اتحاد سيدي سليمان"
+      },
+      "correct_answer": "B",
+      "explanation": "النادي القنيطري تأسس سنة 1938 ويعد من أعرق قلاع كرة القدم الوطنية وصاحب مدرسة كروية تخرج منها الهداف التاريخي محمد البوساتي.",
+      "source_title": "النادي الرياضي القنيطري",
+      "source_url": "https://kacksf.com",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_4",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي العريق بمدينة الزهور وفريق الأسطورة أحمد فرس بطل الدوري وكأس العرش وكأس إفريقيا للأمم؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/SCC_Mohammedia.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SCC_Mohammedia.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي شباب المحمدية SCCM"
+      },
+      "options": {
+        "A": "نجم الشباب",
+        "B": "الراك",
+        "C": "شباب المحمدية (SCCM)",
+        "D": "الاتحاد البيضاوي"
+      },
+      "correct_answer": "C",
+      "explanation": "شباب المحمدية تأسس عام 1948 وأنجب أول كرة ذهبية إفريقية للمغرب الكابتن أحمد فرس والهداف عسيلة وحقق بطولة وكأس العرش وكأس السوبر.",
+      "source_title": "نادي شباب المحمدية",
+      "source_url": "https://sccm.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_5",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي البيضاوي العريق المشهور بلقب 'الراك' وبطل المغرب سنة 1972 وكأس العرش 1968؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Racing-Athletic.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Racing-Athletic.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي الراسينغ الرياضي البيضاوي RAC"
+      },
+      "options": {
+        "A": "التجمع البيضاوي",
+        "B": "نجم الشباب",
+        "C": "الرشاد البرنوصي",
+        "D": "الراسينغ الرياضي البيضاوي (RAC)"
+      },
+      "correct_answer": "D",
+      "explanation": "نادي الراسينغ البيضاوي تأسس سنة 1917 ويعد من أقدم أندية الدار البيضاء ومدرسة تكوين كروية مرموقة ترأسها طويلاً الراحل مندوزا.",
+      "source_title": "نادي الراسينغ الرياضي البيضاوي",
+      "source_url": "https://frmf.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_1",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هي المؤسسة الرياضية الوطنية العليا المشرفة على الرياضات الأولمبية والبعثات المغربية للأولمبياد؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/fr/b/ba/Logo-cnom2.png",
+        "source_url": "https://fr.wikipedia.org/wiki/Fichier:Logo-cnom2.png",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار اللجنة الوطنية الأولمبية المغربية CNOM"
+      },
+      "options": {
+        "A": "اللجنة الوطنية الأولمبية المغربية (CNOM)",
+        "B": "معهد مولاي رشيد لتكوين الأطر",
+        "C": "المحكمة الرياضية المغربية",
+        "D": "الجامعة الملكية للرياضة للجميع"
+      },
+      "correct_answer": "A",
+      "explanation": "اللجنة الأولمبية الوطنية المغربية تأسست عام 1959 ومعترف بها دولياً وتقود التخطيط الإستراتيجي للمشاركات الأولمبية المغربية.",
+      "source_title": "اللجنة الوطنية الأولمبية المغربية",
+      "source_url": "https://cnom.org.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_2",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الشاوي العريق بمدينة سطات بطل المغرب سنة 1971 وحامل كأس العرش سنة 1969؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/d/d6/Renaissance-Settat-Logo.jpg",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:Renaissance-Settat-Logo.jpg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار نادي النهضة الرياضية السطاتية RSS"
+      },
+      "options": {
+        "A": "فتح سيدي بنور",
+        "B": "النهضة الرياضية السطاتية (RSS)",
+        "C": "رجاء بني ملال",
+        "D": "اتحاد الخميسات"
+      },
+      "correct_answer": "B",
+      "explanation": "النهضة السطاتية كانت من عمالقة الكرة المغربية في الستينيات والسبعينيات وبلغت نصف نهائي كأس الكؤوس الإفريقية وأنجبت ألمع نجوم المنتخب.",
+      "source_title": "أرشيف الكرة المغربية",
+      "source_url": "https://frmf.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_3",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الفاسي العريق الذي تأسس سنة 1948 ويُلقب في الأوساط الرياضية بـ \"الواف\" (WAF)؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Wydad_de_F%C3%A8s_Logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Wydad_de_F%C3%A8s_Logo.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "شعار نادي الوداد الرياضي الفاسي WAF"
+      },
+      "options": {
+        "A": "المغرب الفاسي (MAS)",
+        "B": "رجاء بني ملال (RBM)",
+        "C": "الوداد الرياضي الفاسي (WAF)",
+        "D": "النادي المكناسي (CODM)"
+      },
+      "correct_answer": "C",
+      "explanation": "شعار نادي الوداد الرياضي الفاسي (Wydad Athletic de Fès)، وهو من أعرق أندية العاصمة العلمية وتأسس عام 1948.",
+      "source_title": "العصبة الوطنية لكرة القدم الاحترافية - المغرب",
+      "source_url": "https://frmf.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_4",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي التاريخي بجهة تادلة وعين أسردون بطل الدوري المغربي الممتاز سنة 1974؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/fr/thumb/f/fc/Raja_B%C3%A9ni_Mellal_%28logo%29.svg/960px-Raja_B%C3%A9ni_Mellal_%28logo%29.svg.png",
+        "source_url": "https://fr.wikipedia.org/wiki/Fichier:Raja_B%C3%A9ni_Mellal_(logo).svg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار نادي رجاء بني ملال RBM"
+      },
+      "options": {
+        "A": "أولمبيك خريبكة",
+        "B": "أمل قصبة تادلة",
+        "C": "اتحاد أزيلال",
+        "D": "رجاء بني ملال (RBM)"
+      },
+      "correct_answer": "D",
+      "explanation": "رجاء بني ملال (فارس عين أسردون) تأسس سنة 1956 وحقق إنجازاً تاريخياً بظفره بلقب البطولة الوطنية المغربية للقسم الأول موسم 1973-1974.",
+      "source_title": "أرشيف البطولة الوطنية المغربية",
+      "source_url": "https://frmf.ma",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_5",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ماذا يمثل هذا الشعار الكروي العالمي الثلاثي (يلا فاموس - Yalla Vamos)؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/en/thumb/8/81/2030_FIFA_World_Cup_Logo.svg/960px-2030_FIFA_World_Cup_Logo.svg.png",
+        "source_url": "https://en.wikipedia.org/wiki/File:2030_FIFA_World_Cup_Logo.svg",
+        "license": "Fair Use / الاستخدام العادل",
+        "alt": "شعار الملف المشترك لاستضافة كأس العالم 2030 يالامغرب"
+      },
+      "options": {
+        "A": "شعار الملف الرسمي لتنظيم كأس العالم 2030 (المغرب، إسبانيا، البرتغال)",
+        "B": "شعار كأس إفريقيا للأمم 2025",
+        "C": "شعار بطولة كأس العرب",
+        "D": "شعار دوري السوبر الإفريقي"
+      },
+      "correct_answer": "A",
+      "explanation": "شعار 'يلا فاموس' يجسد وحدة وتكامل ملف المغرب وإسبانيا والبرتغال لتنظيم كأس العالم FIFA 2030 لربط إفريقيا بأوروبا عبر جسر حضاري ورياضي استثنائي.",
+      "source_title": "الفيفا والملف المشترك لكأس العالم 2030",
+      "source_url": "https://yallavamos2030.org",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_6",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي الحريزي العريق الملقب بـ 'الحريزي' والممثل لمدينة برشيد في البطولة الاحترافية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/4/42/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%86%D8%A7%D8%AF%D9%8A_%D9%8A%D9%88%D8%B3%D9%81%D9%8A%D8%A9_%D8%A8%D8%B1%D8%B4%D9%8A%D8%AF.png",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:%D8%B4%D8%B9%D8%A7%D8%B1_%D9%86%D8%A7%D8%AF%D9%8A_%D9%8A%D9%88%D8%B3%D9%81%D9%8A%D8%A9_%D8%A8%D8%B1%D8%B4%D9%8A%D8%AF.png",
+        "license": "Fair Use",
+        "alt": "شعار نادي يوسفية برشيد CAYB"
+      },
+      "options": {
+        "A": "النهضة السطاتية",
+        "B": "يوسفية برشيد (CAYB)",
+        "C": "سريع وادي زم",
+        "D": "شباب السوالم"
+      },
+      "correct_answer": "B",
+      "explanation": "النادي الرياضي يوسفية برشيد تأسس سنة 1935 ويلعب بملعب الرازي ببرشيد بألوانه الأخضر والأسود.",
+      "source_title": "العصبة الوطنية لكرة القدم الاحترافية",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_7",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي الإسماعيلي العريق المتوج بلقب الدوري المغربي وكأس العرش والممثل لمدينة مكناس؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/8/8e/%D8%A7%D9%84%D9%86%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%85%D9%83%D9%86%D8%A7%D8%B3%D9%8A_%28%D8%B4%D8%B9%D8%A7%D8%B1%29.png",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:%D8%A7%D9%84%D9%86%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%85%D9%83%D9%86%D8%A7%D8%B3%D9%8A_(%D8%B4%D8%B9%D8%A7%D8%B1).png",
+        "license": "Fair Use",
+        "alt": "شعار النادي الرياضي المكناسي CODM"
+      },
+      "options": {
+        "A": "وداد فاس",
+        "B": "المغرب الفاسي",
+        "C": "النادي الرياضي المكناسي (CODM)",
+        "D": "الاتحاد الزموري"
+      },
+      "correct_answer": "C",
+      "explanation": "النادي المكناسي (الكوديم) تأسس سنة 1962 وتوج بلقب البطولة الوطنية سنة 1995 وكأس العرش سنة 1966.",
+      "source_title": "العصبة الوطنية لكرة القدم الاحترافية",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_8",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي المناضل في الشهداء الممثل لمنطقة وادي زم بإقليم خريبكة والمعروف باللونين الأزرق والأبيض؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/c/ca/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%86%D8%A7%D8%AF%D9%8A_%D8%B3%D8%B1%D9%8A%D8%B9_%D9%88%D8%A7%D8%AF%D9%8A_%D8%B2%D9%85.png",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:%D8%B4%D8%B9%D8%A7%D8%B1_%D9%86%D8%A7%D8%AF%D9%8A_%D8%B3%D8%B1%D9%8A%D8%B9_%D9%88%D8%A7%D8%AF%D9%8A_%D8%B2%D9%85.png",
+        "license": "Fair Use",
+        "alt": "شعار نادي سريع وادي زم RCOZ"
+      },
+      "options": {
+        "A": "اتحاد أبي الجعد",
+        "B": "أولمبيك خريبكة",
+        "C": "رجاء بني ملال",
+        "D": "سريع وادي زم (RCOZ)"
+      },
+      "correct_answer": "D",
+      "explanation": "سريع وادي زم نادٍ كروي تاريخي تأسس سنة 1926 بالمدينة الملقبة بـ 'باريس الصغيرة'.",
+      "source_title": "العصبة الوطنية لكرة القدم الاحترافية",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_9",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الملعب الأسطوري في الدار البيضاء الملقب بـ 'دونور' ومعقل فريقي الوداد والرجاء البيضاويين؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Gradins_du_Stade_Mohammed-V.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Gradins_du_Stade_Mohammed-V.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "مدرجات وأرضية مركب محمد الخامس بالدار البيضاء"
+      },
+      "options": {
+        "A": "المركب الرياضي محمد الخامس (الدار البيضاء)",
+        "B": "ملعب الأمير مولاي عبد الله",
+        "C": "ملعب ابن بطوطة",
+        "D": "ملعب أدرار"
+      },
+      "correct_answer": "A",
+      "explanation": "ملعب محمد الخامس بالدار البيضاء افتتح عام 1955 وشهد كبرى ملاحم الكرة المغربية والإفريقية وتتويجات أنديتها.",
+      "source_title": "شركة الدار البيضاء للتنشيط والتظاهرات (كازا إيفنت)",
+      "source_url": "https://casaevent.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_100_10",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الملعب الجوهري الكبير بمدينة طنجة الذي استضاف كأس السوبر الإسباني ومباريات كأس العالم للأندية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Ibn_Batouta_Stadium_of_Tangier.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ibn_Batouta_Stadium_of_Tangier.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "ملعب طنجة الكبير (ابن بطوطة)"
+      },
+      "options": {
+        "A": "الملعب البلدي بالقنيطرة",
+        "B": "الملعب الكبير لطنجة (ابن بطوطة)",
+        "C": "ملعب مرشان",
+        "D": "ملعب سانية الرمل"
+      },
+      "correct_answer": "B",
+      "explanation": "يعد ملعب ابن بطوطة بطنجة أحد أضخم وأحدث الملاعب في إفريقيا بسعة تفوق 75 ألف متفرج ومجهز لكأس العالم 2030.",
+      "source_title": "الشركة الوطنية لإنجاز وتدبير المنشآت الرياضية (سونارجيس)",
+      "source_url": "https://sonarges.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_6",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي الشعبي والتاريخي بالحي المحمدي بالدار البيضاء المتوج بكأس العرش 2019 ويلقب بـ 'الطاس'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/c/c0/TAS-Logo-1947.png",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:TAS-Logo-1947.png",
+        "license": "Fair Use",
+        "alt": "شعار نادي الاتحاد الرياضي البيضاوي TAS"
+      },
+      "options": {
+        "A": "رجاء بني ملال",
+        "B": "الراسينغ البيضاوي",
+        "C": "الاتحاد الرياضي البيضاوي (TAS)",
+        "D": "النجم البيضاوي"
+      },
+      "correct_answer": "C",
+      "explanation": "تأسس الاتحاد البيضاوي (الطاس) سنة 1947 بالحي المحمدي وخرّج أساطير مثل العربي بنمبارك وحقق كأس العرش سنة 2019.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_7",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي الأطلسي الممثل لمدينة خنيفرة والمعروف بلقب 'فريق زيان' وألوانه الحمراء والبيضاء؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/3/38/Maroc-CAK.jpg",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:Maroc-CAK.jpg",
+        "license": "Fair Use",
+        "alt": "شعار نادي شباب أطلس خنيفرة CAK"
+      },
+      "options": {
+        "A": "اتحاد الخميسات",
+        "B": "اتحاد أزيلال",
+        "C": "شباب قصبة تادلة",
+        "D": "شباب أطلس خنيفرة (CAK)"
+      },
+      "correct_answer": "D",
+      "explanation": "تأسس شباب أطلس خنيفرة عام 1943 ويمثل جبال الأطلس المتوسط وقبائل زيان التاريخية في المنافسات الوطنية.",
+      "source_title": "العصبة الوطنية لكرة القدم الاحترافية",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_8",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي السوسي الممثل لمدينة الدشيرة الجهادية بعمالة إنزكان أيت ملول والمعروف باللونين الأخضر والأبيض؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/4/4b/Dcheira-football.jpg",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:Dcheira-football.jpg",
+        "license": "Fair Use",
+        "alt": "شعار نادي أولمبيك الدشيرة"
+      },
+      "options": {
+        "A": "أولمبيك الدشيرة (OD)",
+        "B": "اتحاد أيت ملول",
+        "C": "حسنية أكادير",
+        "D": "أمل تيزنيت"
+      },
+      "correct_answer": "A",
+      "explanation": "أولمبيك الدشيرة نادٍ عريق بسوس تأسس سنة 1940 ويعد من أقوى أندية الدرجة الثانية المنافسة على الصعود.",
+      "source_title": "العصبة الوطنية لكرة القدم الاحترافية",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_9",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي الحريزي الواعد بجهة الدار البيضاء سطات الذي صعد للقسم الممتاز وحقق نتائج باهرة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/en/6/67/JS_Soualem_logo.png",
+        "source_url": "https://en.wikipedia.org/wiki/File:JS_Soualem_logo.png",
+        "license": "Fair Use",
+        "alt": "شعار نادي الشباب الرياضي السالمي"
+      },
+      "options": {
+        "A": "يوسفية برشيد",
+        "B": "الشباب الرياضي السالمي (JSS)",
+        "C": "وفاء وداد",
+        "D": "أولمبيك بوجنيبة"
+      },
+      "correct_answer": "B",
+      "explanation": "الشباب الرياضي السالمي تأسس بحد السوالم سنة 1984 وتمكن من بلوغ البطولة الوطنية الاحترافية الأولى وقدم عروضاً متميزة.",
+      "source_title": "العصبة الوطنية الاحترافية",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_200_10",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا الملعب المعماري المبتكر بمدينة مراكش المصمم على شكل قصبة مغربية وأبراج تقليدية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Inaugurazione_Stade_de_marrakech.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Inaugurazione_Stade_de_marrakech.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "الملعب الكبير لمراكش وقلاعه المعمارية"
+      },
+      "options": {
+        "A": "ملعب البشير",
+        "B": "ملعب الحارثي",
+        "C": "الملعب الكبير لمراكش",
+        "D": "ملعب أدرار"
+      },
+      "correct_answer": "C",
+      "explanation": "الملعب الكبير لمراكش افتتح سنة 2011 بتصميم هندسي مستوحى من قصبات الجنوب وأسواره الحمراء وتصل سعته إلى 45 ألف متفرج.",
+      "source_title": "سونارجيس (Sonarges)",
+      "source_url": "https://sonarges.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_6",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي في جهة الرباط سلا القنيطرة الممثل لمدينة تمارة ويلعب باللونين الأزرق والأصفر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/WST.new.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:WST.new.png",
+        "license": "Fair Use",
+        "alt": "شعار نادي وداد تمارة WST"
+      },
+      "options": {
+        "A": "اتحاد تمارة",
+        "B": "اتحاد تواركة",
+        "C": "الجمعية السلاوية",
+        "D": "نادي وداد تمارة (WST)"
+      },
+      "correct_answer": "D",
+      "explanation": "نادي الوداد الرياضي لتمارة تأسس سنة 1993 ويمثل مدينة تمارة الساحلية في أقسام العصبة الوطنية لكرة القدم.",
+      "source_title": "العصبة الوطنية لكرة القدم هواة والاحترافية",
+      "source_url": "https://lnf-amateurs.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_7",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الملعب الحديث المشيد في سفوح جبال سوس بمدينة أكادير والمستوحى اسمه من الكلمة الأمازيغية 'أدرار'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Adrar_Stadium_Agadir%2C_2013.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Adrar_Stadium_Agadir,_2013.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "ملعب أدرار الكبير بمدينة أكادير"
+      },
+      "options": {
+        "A": "ملعب أدرار الكبير (أكادير)",
+        "B": "ملعب الانبعاث",
+        "C": "ملعب سيدي داود",
+        "D": "ملعب المسيرة"
+      },
+      "correct_answer": "A",
+      "explanation": "ملعب أدرار بأكادير افتتح عام 2013 واستضاف كأس العالم للأندية، وتعني كلمة 'أدرار' بالأمازيغية الجبل الشامخ.",
+      "source_title": "الشركة الوطنية لإنجاز وتدبير المنشآت الرياضية",
+      "source_url": "https://sonarges.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_8",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الكروي والرياضي الريفي الممثل لمدينة الحسيمة وجبال الريف بالبطولة الوطنية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/en/1/13/Chabab_Rif_Al_Hoceima_basket_logo.png",
+        "source_url": "https://en.wikipedia.org/wiki/File:Chabab_Rif_Al_Hoceima_basket_logo.png",
+        "license": "Fair Use",
+        "alt": "شعار نادي شباب الريف الحسيمي CRA"
+      },
+      "options": {
+        "A": "هلال الناظور",
+        "B": "شباب الريف الحسيمي (CRA)",
+        "C": "اتحاد شفشاون",
+        "D": "فتح الناظور"
+      },
+      "correct_answer": "B",
+      "explanation": "نادي شباب الريف الحسيمي تأسس سنة 1953 ولعب بالقسم الأول لسنوات بملعب ميمون العرصي (تشيبولا) بالحسيمة.",
+      "source_title": "العصبة الوطنية لكرة القدم",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_9",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما هو الاسم الرسمي لمنافسات الدوري المغربي الممتاز لكرة القدم للمحترفين تحت إشراف الجامعة والعصبة الاحترافية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/2013_%D8%A7%D9%84%D8%A8%D8%B7%D9%88%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%A5%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9_.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:2013_البطولة_المغربية_الإحترافية_.png",
+        "license": "Fair Use",
+        "alt": "شعار البطولة المغربية الاحترافية لكرة القدم Botola Pro"
+      },
+      "options": {
+        "A": "كأس الرابطة المغربية",
+        "B": "دوري النجوم المغربي",
+        "C": "البطولة الاحترافية (Botola Pro)",
+        "D": "الدوري الممتاز الأطلسي"
+      },
+      "correct_answer": "C",
+      "explanation": "البطولة الاحترافية (Botola Pro Inwi) هي أعلى مسابقة كروية للأندية بالمغرب، وتصنف الأولى إفريقياً وعربياً لسنوات متتالية.",
+      "source_title": "العصبة الوطنية لكرة القدم الاحترافية (LNFP)",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_300_10",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الصرح الرياضي الكبير بالعاصمة الرباط الذي يحتضن مباريات الفتح الرياضي والجيش الملكي وألعاب القوى؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Complexe_Sportif_Prince_Moulay_Abdellah.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Complexe_Sportif_Prince_Moulay_Abdellah.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "المركب الرياضي الأمير مولاي عبد الله بالرباط"
+      },
+      "options": {
+        "A": "ملعب البريد",
+        "B": "ملعب ابن بطوطة",
+        "C": "ملعب الهلال",
+        "D": "المجمع الرياضي الأمير مولاي عبد الله (الرباط)"
+      },
+      "correct_answer": "D",
+      "explanation": "شيد مجمع الأمير مولاي عبد الله بالرباط عام 1983 وشهد إعادة بناء شاملة ليكون تحفة عصرية كبرى لكأس الأمم الإفريقية وكأس العالم.",
+      "source_title": "وزارة التربية الوطنية والتعليم الأولي والرياضة",
+      "source_url": "https://www.mjs.gov.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_6",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هو المنتخب الوطني المغربي البطل صاحب هذا الإنجاز التاريخي بالتتويج بكأس إفريقيا للأمم لثلاث نسخ متتالية وربع نهائي المونديال؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Morocco_national_futsal_team_during_the_AFCON_2026.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Morocco_national_futsal_team_during_the_AFCON_2026.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "المنتخب الوطني المغربي لكرة القدم داخل القاعة (الفوتسال)"
+      },
+      "options": {
+        "A": "منتخب المغرب لكرة القدم داخل القاعة (الفوتسال)",
+        "B": "منتخب الرجبي السباعي",
+        "C": "منتخب كرة اليد الشاطئية",
+        "D": "منتخب الهوكي المغربي"
+      },
+      "correct_answer": "A",
+      "explanation": "قاد الإطار الوطني هشام الدكيك منتخب المغرب للفوتسال ليصبح أحد أقوى منتخبات العالم وتوج بكأس العرب وإفريقيا وكأس القارات.",
+      "source_title": "الجامعة الملكية المغربية لكرة القدم",
+      "source_url": "https://www.frmf.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_7",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هو السباق والماراثون الصحراوي الدولي الأسطوري الأصعب في العالم الذي يقام سنوياً في الجنوب الشرقي المغربي لمسافة 250 كم؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/MARATHON_DES_SABLES_logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:MARATHON_DES_SABLES_logo.png",
+        "license": "Fair Use",
+        "alt": "شعار ماراثون الرمال الدولي بالمغرب Marathon des Sables"
+      },
+      "options": {
+        "A": "تحدي توبقال الجبلي",
+        "B": "ماراثون الرمال (Marathon des Sables)",
+        "C": "ماراثون مراكش الدولي",
+        "D": "رالي دكار الإفريقي"
+      },
+      "correct_answer": "B",
+      "explanation": "ماراثون الرمال الذي أسسه باتريك باوير عام 1986 بصحراء المغرب يختبر قدرة التحمل القصوى للعدائين في 6 مراحل شاقة.",
+      "source_title": "ماراثون الرمال الدولي بالمغرب",
+      "source_url": "https://marathondessables.com",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_8",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هو الرالي الصحراوي الدولي للسيارات والدراجات النارية الذي يعد الجولة الختامية لبطولة العالم للراليات الصحراوية بالمغرب؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Rallye-Maroc.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Rallye-Maroc.png",
+        "license": "Fair Use",
+        "alt": "شعار رالي المغرب الصحراوي Rallye du Maroc"
+      },
+      "options": {
+        "A": "تحدي الصحراء الكبرى",
+        "B": "رالي الفراعنة",
+        "C": "رالي المغرب (Rallye du Maroc)",
+        "D": "رالي أطلس الدولي"
+      },
+      "correct_answer": "C",
+      "explanation": "يعد رالي المغرب الصحراوي المحطة الأبرز في بطولة العالم للراليات الصحراوية للسيارات والدراجات النارية (W2RC).",
+      "source_title": "رالي المغرب الدولي (ODC)",
+      "source_url": "https://rallyemaroc.com",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_9",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هو المنتخب الوطني النسوي الذي حقق إنجازاً تاريخياً بالتأهل لثمن نهائي كأس العالم للسيدات بأستراليا 2023 ويلقب بـ 'لبؤات الأطلس'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/MarocB.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:MarocB.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "صورة المنتخب الوطني المغربي النسوي لكرة القدم"
+      },
+      "options": {
+        "A": "منتخب سيدات الكرة الطائرة",
+        "B": "منتخب السباحة النسوي",
+        "C": "منتخب سيدات كرة اليد",
+        "D": "منتخب المغرب النسوي لكرة القدم (لبؤات الأطلس)"
+      },
+      "correct_answer": "D",
+      "explanation": "تأهل منتخب المغرب النسوي لأول مرة لنهائيات كأس العالم للسيدات 2023 وبلغ الدور الثاني في إنجاز تاريخي غير مسبوق عربياً.",
+      "source_title": "الاتحاد الدولي لكرة القدم (FIFA)",
+      "source_url": "https://www.fifa.com",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_400_10",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما هي القاعة الرياضية المغطاة الكبرى في العاصمة الرباط التي تحتضن البطولات الإفريقية لكرة السلة واليد والفوتسال؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Salle_Moulay_Abdellah%2C_Rabat.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Salle_Moulay_Abdellah,_Rabat.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "القاعة المغطاة التابعة لمجمع الأمير مولاي عبد الله بالرباط"
+      },
+      "options": {
+        "A": "قاعة الأمير مولاي عبد الله بالرباط",
+        "B": "قاعة محمد الخامس بالبيضاء",
+        "C": "قاعة الزياتن بطنجة",
+        "D": "قاعة فتح الله البوعزاوي بسلا"
+      },
+      "correct_answer": "A",
+      "explanation": "القاعة المغطاة مولاي عبد الله بالرباط تحتضن مباريات الدوري الإفريقي لكرة السلة (BAL) ونهائيات كأس الأمم الإفريقية للفوتسال.",
+      "source_title": "الجامعة الملكية المغربية لكرة السلة واليد",
+      "source_url": "https://frmbb.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_6",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما هي الهيئة الأولمبية الوطنية المغربية المسؤولة عن المشاركات الأولمبية ودعم الرياضيين المغاربة في الألعاب العالمية؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/fr/b/ba/Logo-cnom2.png",
+        "source_url": "https://fr.wikipedia.org/wiki/Fichier:Logo-cnom2.png",
+        "license": "Fair Use",
+        "alt": "شعار اللجنة الوطنية الأولمبية المغربية CNOM"
+      },
+      "options": {
+        "A": "وزارة الشباب والرياضة",
+        "B": "اللجنة الوطنية الأولمبية المغربية (CNOM)",
+        "C": "معهد مولاي رشيد",
+        "D": "الاتحاد الرياضي العربي"
+      },
+      "correct_answer": "B",
+      "explanation": "تأسست اللجنة الأولمبية الوطنية المغربية سنة 1959 واعترفت بها اللجنة الأولمبية الدولية سنة 1959 لقيادة المشاركات المغربية بالأولمبياد.",
+      "source_title": "اللجنة الوطنية الأولمبية المغربية",
+      "source_url": "https://www.cnom.org.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_7",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الشاوي التاريخي العريق المتوج بلقب البطولة الوطنية وكأس العرش والممثل لمدينة سطات؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/ar/d/d6/Renaissance-Settat-Logo.jpg",
+        "source_url": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:Renaissance-Settat-Logo.jpg",
+        "license": "Fair Use",
+        "alt": "شعار نادي النهضة الرياضية السطاتية RSS"
+      },
+      "options": {
+        "A": "شباب بنجرير",
+        "B": "يوسفية برشيد",
+        "C": "النهضة الرياضية السطاتية (RSS)",
+        "D": "فتح سيدي بنور"
+      },
+      "correct_answer": "C",
+      "explanation": "النهضة السطاتية تأسس سنة 1946 وتوج بلقب البطولة المغربية سنة 1971 وكأس العرش 1969 وكان رقماً صعباً في تاريخ الكرة الوطنية.",
+      "source_title": "أرشيف الكرة المغربية",
+      "source_url": "https://frmf.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_8",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي الفاسي العريق الذي تأسس سنة 1948 ولعب نهائي كأس العرش ويعرف بـ 'الواف'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Wydad_de_F%C3%A8s_Logo.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Wydad_de_F%C3%A8s_Logo.png",
+        "license": "Fair Use",
+        "alt": "شعار نادي الوداد الرياضي الفاسي WAF"
+      },
+      "options": {
+        "A": "شباب فاس",
+        "B": "اتحاد فاس",
+        "C": "المغرب الرياضي الفاسي (MAS)",
+        "D": "الوداد الرياضي الفاسي (WAF)"
+      },
+      "correct_answer": "D",
+      "explanation": "الوداد الفاسي نادٍ تاريخي في العاصمة العلمية بلغ نهائي كأس العرش سنة 2018 وقدم العديد من النجوم للكرة المغربية.",
+      "source_title": "العصبة الوطنية الاحترافية",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_9",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا النادي التادلاوي العريق في عين أسردون المتوج بلقب البطولة الوطنية عام 1974 ويلعب باللونين الأخضر والأبيض؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/fr/thumb/f/fc/Raja_B%C3%A9ni_Mellal_%28logo%29.svg/960px-Raja_B%C3%A9ni_Mellal_%28logo%29.svg.png",
+        "source_url": "https://fr.wikipedia.org/wiki/Fichier:Raja_B%C3%A9ni_Mellal_(logo).svg",
+        "license": "Fair Use",
+        "alt": "شعار نادي رجاء بني ملال RBM"
+      },
+      "options": {
+        "A": "رجاء بني ملال (RBM)",
+        "B": "اتحاد أزيلال",
+        "C": "أولمبيك خريبكة",
+        "D": "شباب قصبة تادلة"
+      },
+      "correct_answer": "A",
+      "explanation": "رجاء بني ملال تأسس سنة 1956 وتوج بلقب الدوري المغربي موسم 1973-1974 ممثلاً لجهة بني ملال خنيفرة وعين أسردون.",
+      "source_title": "العصبة الوطنية الاحترافية",
+      "source_url": "https://lnfp.ma",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    },
+    {
+      "id": "spo_500_10",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ماذا يمثل هذا الشعار الكروي العالمي الثلاثي المعتمد رسمياً والمستوحى من شمس وبحر وجسور المغرب وإسبانيا والبرتغال؟",
+      "media": {
+        "type": "image",
+        "url": "https://thumb.wikimedia.org/wikipedia/en/thumb/8/81/2030_FIFA_World_Cup_Logo.svg/960px-2030_FIFA_World_Cup_Logo.svg.png",
+        "source_url": "https://en.wikipedia.org/wiki/File:2030_FIFA_World_Cup_Logo.svg",
+        "license": "Fair Use",
+        "alt": "شعار ملف كأس العالم 2030 يالامغرب"
+      },
+      "options": {
+        "A": "شعار دوري أبطال إفريقيا",
+        "B": "شعار الملف المشترك لكأس العالم 2030 (المغرب، إسبانيا، البرتغال)",
+        "C": "شعار مونديال الأندية بالرباط",
+        "D": "شعار كأس الأمم الإفريقية 2025"
+      },
+      "correct_answer": "B",
+      "explanation": "شعار 'Yalla Vamos 2030' يرمز للشراكة التاريخية العابرة للقارات بين المغرب وإسبانيا والبرتغال لاحتضان كأس العالم المئوية.",
+      "source_title": "الاتحاد الدولي لكرة القدم (FIFA)",
+      "source_url": "https://www.fifa.com",
+      "category": "خمن الشعار أو النادي الرياضي",
+      "category_id": "guess_sports_club"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="24" viewBox="0 0 120 24">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D49B45"/>
+      <stop offset="50%" stop-color="#C2823D"/>
+      <stop offset="100%" stop-color="#8E541C"/>
+    </linearGradient>
+  </defs>
+  <!-- Top and Bottom Gold Trim Lines -->
+  <line x1="0" y1="1" x2="120" y2="1" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <line x1="0" y1="23" x2="120" y2="23" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <line x1="0" y1="3" x2="120" y2="3" stroke="#211A16" stroke-width="0.8" stroke-opacity="0.6"/>
+  <line x1="0" y1="21" x2="120" y2="21" stroke="#211A16" stroke-width="0.8" stroke-opacity="0.6"/>
+
+  <!-- Repeating Zellij Moroccan Ribbon -->
+  <!-- Block 1 (x=0 to 40) -->
+  <g transform="translate(20, 12)">
+    <!-- Moroccan 8-pointed star -->
+    <polygon points="0,-8 2.4,-2.4 8,0 2.4,2.4 0,8 -2.4,2.4 -8,0 -2.4,-2.4" fill="#BC5A36" stroke="#211A16" stroke-width="0.7"/>
+    <polygon points="0,-8 2.4,-2.4 8,0 2.4,2.4 0,8 -2.4,2.4 -8,0 -2.4,-2.4" transform="rotate(45)" fill="#165B33" stroke="#211A16" stroke-width="0.7"/>
+    <circle cx="0" cy="0" r="2.5" fill="#C2823D" stroke="#211A16" stroke-width="0.5"/>
+    <!-- Interlacing diamonds left and right -->
+    <polygon points="-14,-4 -10,0 -14,4 -18,0" fill="#C2823D" stroke="#211A16" stroke-width="0.6"/>
+    <polygon points="14,-4 18,0 14,4 10,0" fill="#C2823D" stroke="#211A16" stroke-width="0.6"/>
+  </g>
+
+  <!-- Block 2 (x=40 to 80) -->
+  <g transform="translate(60, 12)">
+    <polygon points="0,-8 2.4,-2.4 8,0 2.4,2.4 0,8 -2.4,2.4 -8,0 -2.4,-2.4" fill="#BC5A36" stroke="#211A16" stroke-width="0.7"/>
+    <polygon points="0,-8 2.4,-2.4 8,0 2.4,2.4 0,8 -2.4,2.4 -8,0 -2.4,-2.4" transform="rotate(45)" fill="#165B33" stroke="#211A16" stroke-width="0.7"/>
+    <circle cx="0" cy="0" r="2.5" fill="#C2823D" stroke="#211A16" stroke-width="0.5"/>
+    <polygon points="-14,-4 -10,0 -14,4 -18,0" fill="#C2823D" stroke="#211A16" stroke-width="0.6"/>
+    <polygon points="14,-4 18,0 14,4 10,0" fill="#C2823D" stroke="#211A16" stroke-width="0.6"/>
+  </g>
+
+  <!-- Block 3 (x=80 to 120) -->
+  <g transform="translate(100, 12)">
+    <polygon points="0,-8 2.4,-2.4 8,0 2.4,2.4 0,8 -2.4,2.4 -8,0 -2.4,-2.4" fill="#BC5A36" stroke="#211A16" stroke-width="0.7"/>
+    <polygon points="0,-8 2.4,-2.4 8,0 2.4,2.4 0,8 -2.4,2.4 -8,0 -2.4,-2.4" transform="rotate(45)" fill="#165B33" stroke="#211A16" stroke-width="0.7"/>
+    <circle cx="0" cy="0" r="2.5" fill="#C2823D" stroke="#211A16" stroke-width="0.5"/>
+    <polygon points="-14,-4 -10,0 -14,4 -18,0" fill="#C2823D" stroke="#211A16" stroke-width="0.6"/>
+    <polygon points="14,-4 18,0 14,4 10,0" fill="#C2823D" stroke="#211A16" stroke-width="0.6"/>
+  </g>
+</svg>

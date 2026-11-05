@@ -1,0 +1,1307 @@
+{
+  "category_id": "food_photos",
+  "category_name": "الأكلات المغربية بالصور",
+  "emoji": "🍲",
+  "questions": [
+    {
+      "id": "foo_100_1",
+      "category": "الأكلات المغربية بالصور",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق المغربي التراثي الشهير المصنف ضمن التراث الإنساني لليونسكو؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Couscous_%2874111%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Couscous_(74111).jpg",
+        "license": "CC BY-SA 2.0",
+        "alt": "الكسكس المغربي بسبع خضار واللحم"
+      },
+      "options": {
+        "A": "الكسكس المغربي بسبع خضار",
+        "B": "الدشيشة",
+        "C": "الرفيسة العمياء",
+        "D": "السفة بالدجاج"
+      },
+      "correct_answer": "A",
+      "explanation": "الكسكس المغربي بالخضار السبع ولحم الغنم أو الدجاج هو الطبق الأيقوني ليوم الجمعة والمناسبات الوطنية والعائلية.",
+      "source_title": "قائمة التراث اللامادي لليونسكو - الكسكس",
+      "source_url": "https://ich.unesco.org/en/RL/knowledge-know-how-and-practices-pertaining-to-the-production-and-consumption-of-couscous-01602",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_2",
+      "category": "الأكلات المغربية بالصور",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الطاجين المغربي الفاخر المميز بامتزاج المالح بالحلو؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/IB_tajine_03.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:IB_tajine_03.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "طاجين اللحم بالبرقوق المجفف واللوز"
+      },
+      "options": {
+        "A": "طاجين السمك",
+        "B": "طاجين اللحم بالبرقوق واللوز",
+        "C": "طاجين الدجاج بالزيتون",
+        "D": "طاجين الكفتة بالبيض"
+      },
+      "correct_answer": "B",
+      "explanation": "طاجين اللحم بالبرقوق المجفف المعسل بالقرفة واللوز المقلي يعد درة المطبخ المغربي في الأعراس والضيافات الكبرى.",
+      "source_title": "فن الطبخ المغربي - المكتب الوطني للسياحة",
+      "source_url": "https://www.visitmorocco.com",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_3",
+      "category": "الأكلات المغربية بالصور",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذه الفطيرة المغربية الفاخرة المصنوعة من ورقة البسطيلة وحشوة الدجاج واللوز؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Bisteeya.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bisteeya.jpg",
+        "license": "CC BY 2.0",
+        "alt": "البسطيلة المغربية الفاسية بالدجاج واللوز والسكر والقرفة"
+      },
+      "options": {
+        "A": "البريوات",
+        "B": "المحنشة",
+        "C": "البسطيلة المغربية (Pastilla)",
+        "D": "الرغيفة المعسلة"
+      },
+      "correct_answer": "C",
+      "explanation": "البسطيلة الفاسية قمة الإبداع المطبخي المغربي وتجمع بين قرمشة الورقة وطراوة الدجاج واللوز المحلى بالسكر والقرفة.",
+      "source_title": "الطبخ المغربي الأصيل",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_4",
+      "category": "الأكلات المغربية بالصور",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الحساء المغربي الشهير الذي يتربع على مائدة الإفطار في شهر رمضان المبارك؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Liat_Portal_for_Foodie_Disorder_-_Harira_soup.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Harira_soup.jpg",
+        "license": "CC BY-SA 2.0",
+        "alt": "شوربة الحريرة المغربية التقليدية"
+      },
+      "options": {
+        "A": "حساء الصوبة بالخضر",
+        "B": "حساء البصارة",
+        "C": "حساء البلبولة",
+        "D": "شوربة الحريرة المغربية"
+      },
+      "correct_answer": "D",
+      "explanation": "الحريرة شوربة مغربية متكاملة غنية بالطماطم والحمص والعدس والكرافس واللحم وتقدم عادة مع التمر والشباكية.",
+      "source_title": "تقاليد المائدة الرمضانية بالمغرب",
+      "source_url": "https://www.maroc.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_5",
+      "category": "الأكلات المغربية بالصور",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا المشروب الوطني الأول وعنوان كرم الضيافة والترحيب في المغرب؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Maroc_-_Mauresque_dans_son_int%C3%A9rieur.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maroc_-_Mauresque_dans_son_int%C3%A9rieur.jpg",
+        "license": "Public Domain",
+        "alt": "الشاي المغربي بالنعناع في إبريق فضي مع الكؤوس"
+      },
+      "options": {
+        "A": "الشاي المغربي بالنعناع (أتاي)",
+        "B": "القهوة المغربية بالهيل",
+        "C": "عصير الرمان",
+        "D": "شراب اللويزة"
+      },
+      "correct_answer": "A",
+      "explanation": "أتاي المغربي المنعنع يمثل طقساً اجتماعياً وثقافياً عريقاً يتفنن المغاربة في إعداده وصبه من علو ليصنع 'الرزة' الشهيرة.",
+      "source_title": "طقوس الشاي في الثقافة المغربية",
+      "source_url": "https://www.habous.gov.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_1",
+      "category": "الأكلات المغربية بالصور",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه الأكلة المراكشية الشهيرة التي تطهى في قلة فخارية داخل رماد حمام 'الفرناتشي'؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Tangia_Marrakchia.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tangia_Marrakchia.JPG",
+        "license": "CC BY-SA 3.0",
+        "alt": "جرة الطنجية المراكشية الفخارية التقليدية"
+      },
+      "options": {
+        "A": "المدفونة الفيلالية",
+        "B": "الطنجية المراكشية",
+        "C": "القدرة الفاسية",
+        "D": "التقلية"
+      },
+      "correct_answer": "B",
+      "explanation": "الطنجية المراكشية طبق رجالي تاريخي يطهى ببطء لساعات في رماد الفرناتشي باستخدام لحم البقر والسمن والزعفران والكمون والحامض المصير.",
+      "source_title": "تراث مراكش وفن الطبخ - وزارة السياحة",
+      "source_url": "https://www.visitmorocco.com",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_2",
+      "category": "الأكلات المغربية بالصور",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه الحلوى المغربية المشبكة المقلية والمغمسة بالعسل والجلجلان والرمز الأبرز لرمضان؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Moroccan_Chebakiyya.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moroccan_Chebakiyya.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "حلوى الشباكية المغربية المعسلة"
+      },
+      "options": {
+        "A": "البريوات باللوز",
+        "B": "المقروط الوجدي",
+        "C": "الشباكية (المخرقة)",
+        "D": "البشنيخة"
+      },
+      "correct_answer": "C",
+      "explanation": "الشباكية حلوى تراثية مغربية أصيلة تصنع من عجين منسم بالنافع والينسون والقرفة والزعفران وتقلى وتشرب بالعسل الطبيعي.",
+      "source_title": "الحلويات التقليدية المغربية",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_3",
+      "category": "الأكلات المغربية بالصور",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه الفطائر المغربية المورقة المربعة الشكل المحضرة بالدقيق والسميد والزبدة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Msemen.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Msemen.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "فطائر المسمن المورق المغربي"
+      },
+      "options": {
+        "A": "البغرير",
+        "B": "الملوي الدائري",
+        "C": "البطبوط",
+        "D": "المسمن (الرغايف)"
+      },
+      "correct_answer": "D",
+      "explanation": "المسمن من أشهى الفطائر المغربية المورقة يقدم ساخناً في الفطور ولمجة المساء مع العسل والجبن أو زيت الزيتون وأتاي.",
+      "source_title": "المطبخ المغربي التقليدي",
+      "source_url": "https://www.visitmorocco.com",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_4",
+      "category": "الأكلات المغربية بالصور",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا الخبز المغربي الهش المستدير المطهو في المقلاة ويستخدم لحشو السندويشات والمقبلات؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Batbout.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Batbout.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "خبز البطبوط المغربي التقليدي"
+      },
+      "options": {
+        "A": "البطبوط (المخمار)",
+        "B": "خبز الدار بالسانوج",
+        "C": "القراشل",
+        "D": "خبز التافارنوت"
+      },
+      "correct_answer": "A",
+      "explanation": "البطبوط خبز مغربي تقليدي مجوف وخفيف يطهى على المقلة الثقيلة ويحشى بمختلف الحشوات اللذيذة في المناسبات ورمضان.",
+      "source_title": "المخبوزات التقليدية في المغرب",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_5",
+      "category": "الأكلات المغربية بالصور",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه الخبزة المغربية المحضرة من السميد الناعم وزيت الزيتون والزبدة والمحمرة على المقلاة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Harcha_%28Homemade%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Harcha_(Homemade).jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "الحرشة المغربية التقليدية بالسميد"
+      },
+      "options": {
+        "A": "المخنفر",
+        "B": "الحرشة المغربية",
+        "C": "القرشلة",
+        "D": "البسبوسة"
+      },
+      "correct_answer": "B",
+      "explanation": "الحرشة المغربية تمتاز بقوامها الرملي الهش ومذاقها المالح أو المحلى وتقدم مع الشاي بالنعناع والجبن والعسل والزبدة البلدية.",
+      "source_title": "فن المخبوزات والحلويات المغربية",
+      "source_url": "https://www.visitmorocco.com",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_1",
+      "category": "الأكلات المغربية بالصور",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذه الحلوى الملكية الفاسية الشهيرة بهلاليتها وعجين اللوز المعطر بماء زهر البرتقال؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Coine_di_gazele1.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Coine_di_gazele1.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "حلوى كعب الغزال المغربية التقليدية باللوز وماء الزهر"
+      },
+      "options": {
+        "A": "الغريبة المهلبلة",
+        "B": "المحنشة",
+        "C": "كعب الغزال (Cornes de gazelle)",
+        "D": "الفقاص البلدي"
+      },
+      "correct_answer": "C",
+      "explanation": "كعب الغزال سيدة الحلويات المغربية التقليدية تصنع من أرق ورقة عجين محشوة بلوز منقى ومطحون بدقة مع ماء الزهر الحر والمسكة الحرة.",
+      "source_title": "تاريخ الحلويات المغربية - أكاديمية فنون الطبخ",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_2",
+      "category": "الأكلات المغربية بالصور",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق المغربي التراثي المعد بقطع التريد الرقيق والدجاج البلدي والحلية والمساخن للمناسبات والنفاس؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Rfissa_de_poulet_marocaine.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Rfissa_de_poulet_marocaine.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "الرفيسة المغربية بالدجاج والتريد والعدس"
+      },
+      "options": {
+        "A": "التريد الأندلسي",
+        "B": "الكسكس بالبصل والزبيب",
+        "C": "السفة بالدجاج",
+        "D": "الرفيسة المغربية (Rfissa)"
+      },
+      "correct_answer": "D",
+      "explanation": "الرفيسة طبق مغربي عريق يقدم للأمهات بعد الولادة في السبوع وتجمع بين رقائق المسمن/التريد ومرق الدجاج المنسم برأس الحانوت والحلية.",
+      "source_title": "الأطباق الشعبية في التراث المغربي",
+      "source_url": "https://www.habous.gov.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_3",
+      "category": "الأكلات المغربية بالصور",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الطاجين البحري المغربي المتبل بخلطة الشارمولا (قزبر وثوم وكمون وفلفل أحمر وزيت زيتون)؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Octopus_Tagine.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Octopus_Tagine.jpg",
+        "license": "CC BY-SA 2.0",
+        "alt": "طاجين السمك وفواكه البحر بالشرمولة المغربية"
+      },
+      "options": {
+        "A": "طاجين الحوت بالشارمولا",
+        "B": "حوت في الفرن عادي",
+        "C": "طاجين الكفتة سردين",
+        "D": "طاجين القرش"
+      },
+      "correct_answer": "A",
+      "explanation": "طاجين الحوت يبرز غنى السواحل المغربية بالأسماك الطازجة (كالقرب والروجي والميرلا) المطهوة مع الخضر والشارمولا المغربية الأصيلة.",
+      "source_title": "أطباق البحر الأبيض المتوسط والأطلسي بالمغرب",
+      "source_url": "https://www.visitmorocco.com",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_4",
+      "category": "الأكلات المغربية بالصور",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذه الفطائر المغربية الخفيفة الملقبة بـ 'فطائر الألف ثقب' والمحضرة بالسميد والمطهوة من جهة واحدة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Baghrir_1.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Baghrir_1.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "فطائر البغرير المغربية المثقبة"
+      },
+      "options": {
+        "A": "البينيي المغربي",
+        "B": "البغرير (Baghrir)",
+        "C": "الملوي",
+        "D": "المخنفر"
+      },
+      "correct_answer": "B",
+      "explanation": "البغرير فطائر سميد مغربية أصيلة تتميز بظهور مئات الثقوب على سطحها أثناء الطهي وتقدم مدهونة بمزيج الزبدة الذائبة والعسل النقي.",
+      "source_title": "المطبخ المغربي - التراث اللامادي",
+      "source_url": "https://www.minculture.gov.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_5",
+      "category": "الأكلات المغربية بالصور",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق المغربي الاحتفالي المكون من شعرية مبخرة بالسمن ومغطاة بالسكر والقرفة وتخفي بداخلها لحم الدجاج؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Seffa_moroccan_food.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Seffa_moroccan_food.webp",
+        "license": "CC BY-SA 4.0",
+        "alt": "السفة المدفونة المغربية بالدجاج واللوز والقرفة"
+      },
+      "options": {
+        "A": "السفة بالروز",
+        "B": "الشعرية باللبن",
+        "C": "السفة المدفونة بالدجاج",
+        "D": "الكسكس الحلو (المدفون)"
+      },
+      "correct_answer": "C",
+      "explanation": "السفة المدفونة تجمع بين ملوحة وتتبيل الدجاج بالبصل والزعفران وحلاوة الشعرية المبخرة المكسوة بالقرفة والسكر الصقيل واللوز المقلي.",
+      "source_title": "أطباق الحفلات والأعراس بالمغرب",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_1",
+      "category": "الأكلات المغربية بالصور",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه السلطة الدافئة التراثية المصنوعة من الباذنجان المشوي والمهروس مع الطماطم والثوم وزيت الزيتون والكمون؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Zaalook.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Zaalook.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "مقبلات الزعلوك المغربي بالباذنجان والطماطم"
+      },
+      "options": {
+        "A": "الشكشوكة",
+        "B": "التكتوكة",
+        "C": "البابا غنوج الشامي",
+        "D": "الزعلوك (Zaalouk)"
+      },
+      "correct_answer": "D",
+      "explanation": "الزعلوك من أشهر وألذ المقبلات الدافئة في المائدة المغربية ويتميز بنكهة شواء الباذنجان وتتبيلته المغربية المتوازنة.",
+      "source_title": "المقبلات والسلطات في الطبخ المغربي",
+      "source_url": "https://www.visitmorocco.com",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_2",
+      "category": "الأكلات المغربية بالصور",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه السلطة المغربية الشعبية المكونة من الفلفل الأخضر والأحمر المشوي والمقشر والمطهو مع الطماطم الطرية والبهارات؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Moroccan_Grilled_Red_Pepper_Salad.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moroccan_Grilled_Red_Pepper_Salad.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "سلطة التكتوكة المغربية بالفلفل المشوي والطماطم"
+      },
+      "options": {
+        "A": "التكتوكة (Taktouka)",
+        "B": "الشلاطة المغربية العادية",
+        "C": "الزعلوك",
+        "D": "المسيعة"
+      },
+      "correct_answer": "A",
+      "explanation": "التكتوكة مرافقة كلاسيكية للأطباق الرئيسية بالمغرب وتعتمد على الفلفل الحلو المشوي على الفحم والمشحر مع الطماطم وزيت الزيتون البكر.",
+      "source_title": "دليل المطبخ المغربي",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_3",
+      "category": "الأكلات المغربية بالصور",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه الوجبة المغربية الاحتفالية في عيد الأضحى المعتمدة على تبخير قطع اللحم في الكسكاس وتقديمها مع الكمون والملح؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Mechoui-01.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mechoui-01.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "اللحم المبخر والمشوي المغربي مع الكمون والملح"
+      },
+      "options": {
+        "A": "الشواء في الفرن",
+        "B": "اللحم المبخر (المفور)",
+        "C": "الضلعة المحمرة",
+        "D": "القفرة"
+      },
+      "correct_answer": "B",
+      "explanation": "اللحم المبخر من أصح وألذ أطباق عيد الأضحى بالمغرب حيث يبخر اللحم لساعات مع البصل والكزبرة ويقدم طرياً يذوب في الفم مع رشة كمون وملح.",
+      "source_title": "عادات وتقاليد عيد الأضحى بالمغرب",
+      "source_url": "https://www.habous.gov.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_4",
+      "category": "الأكلات المغربية بالصور",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه الحلوى المغربية الفاخرة الملفوفة بشكل حلزوني دائري يشبه الثعبان ومحشوة بعقدة اللوز والمشربة بالعسل؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Mhancha_%2Cpatisserie_algerienne.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mhancha_,patisserie_algerienne.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "حلوى المحنشة المغربية باللوز والعسل"
+      },
+      "options": {
+        "A": "البسطيلة الحلوة",
+        "B": "الرغيفة المقلية",
+        "C": "المحنشة (Mhanncha)",
+        "D": "كعب الغزال"
+      },
+      "correct_answer": "C",
+      "explanation": "سميت المحنشة لشكلها الدائري الحلزوني (المتحنش) وتصنع من ورقة البسطيلة الرقيقة المحشوة باللوز والقرفة والزبدة وتزين باللوز والورد البلدي.",
+      "source_title": "الحلويات التقليدية المغربية الفاخرة",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_5",
+      "category": "الأكلات المغربية بالصور",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الحساء الشعبي الدافئ المصنوع من الفول الجاف أو الجلبانة بزيت الزيتون والكمون والشهير بالشمال والشرق شتاءً؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Bissara_Moroccan_split_pea_and_fava_bean_soup.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bissara_Moroccan_split_pea_and_fava_bean_soup.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "شوربة البيصارة المغربية بزيت الزيتون والكمون"
+      },
+      "options": {
+        "A": "حساء التشيشة",
+        "B": "الحريرة",
+        "C": "الدشيشة بالأعشاب",
+        "D": "البيصارة (Bessara)"
+      },
+      "correct_answer": "D",
+      "explanation": "البيصارة وجبة شعبية دافئة ومغذية جداً تمنح الطاقة والدفء في فصل الشتاء البارد وتعد من أقدم الأطعمة التراثية في المغرب.",
+      "source_title": "التغذية الشعبية في بوادي وحواضر المغرب",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_1",
+      "category": "الأكلات المغربية بالصور",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق المغربي التراثي الشهير المصنوع من أحشاء الخروف (الكرشة والرئة) المتبلة بالثوم والحامض المصير والحمص؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Moroccan_Kourdas.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moroccan_Kourdas.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "أكلة التقلية والكرداس المغربي التقليدي"
+      },
+      "options": {
+        "A": "التقلية (أو الدوارة)",
+        "B": "المجبنة",
+        "C": "المروزية",
+        "D": "الكوارع بالحمص"
+      },
+      "correct_answer": "A",
+      "explanation": "التقلية (الدوارة) وجبة تراثية دسمة تحضر في صبيحة أول أيام عيد الأضحى بمرق مسبك وغني بالبهارات والحامض المرقد والزيتون.",
+      "source_title": "المطبخ المغربي وتقاليد الأعياد",
+      "source_url": "https://www.habous.gov.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_2",
+      "category": "الأكلات المغربية بالصور",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق السعدي التاريخي الأندلسي العريق المعد بلحم الرقبة المعسل والزبيب وتوابل رأس الحانوت المعقدة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Ary-merroziya_2_platn%C3%AAye.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ary-merroziya_2_platn%C3%AAye.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "طاجين المروزية المغربي الفاسي العريق بالزبيب واللوز"
+      },
+      "options": {
+        "A": "اللحم بالبرقوق",
+        "B": "المروزية (Mrouzia)",
+        "C": "الطنجية",
+        "D": "القدرة"
+      },
+      "correct_answer": "B",
+      "explanation": "المروزية من أقدم الأطباق المغربية الأندلسية وكانت وسيلة لحفظ اللحم لأشهر بفضل كثافة العسل والتوابل (رأس الحانوت والمروزية).",
+      "source_title": "تاريخ الطبخ في الأندلس والمغرب - دار المعارف",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_3",
+      "category": "الأكلات المغربية بالصور",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذه الحلوى المغربية التقليدية المشققة الشهيرة المصنوعة باللوز المحمص والجلجلان وتعد سر إتقان الحلواني المغربي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Moroccan_Desserts.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moroccan_Desserts.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "حلويات الغريبة البهلة المغربية المشققة"
+      },
+      "options": {
+        "A": "غريبة النخالة",
+        "B": "غريبة المعلكة بالكاكاو",
+        "C": "الغريبة البهلة",
+        "D": "حلوى الصابلي"
+      },
+      "correct_answer": "C",
+      "explanation": "الغريبة البهلة تمتاز بتشقق سطحها البديع وقوامها الرملي الهش الذي يذوب في الفم، ويعتبر نجاح تشققها علامة على حنكة الطاهي.",
+      "source_title": "الحلويات التراثية المغربية",
+      "source_url": "https://bnrm.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_4",
+      "category": "الأكلات المغربية بالصور",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا اللحم المجفف والمقدد التاريخي الذي تشتهر به مدينة فاس ويحفظ في دهنه لشهور ويطهى مع البيض في الفطور؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Food_in_the_Medina_of_Fes._Morocco.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Food_in_the_Medina_of_Fes._Morocco.jpg",
+        "license": "CC BY-SA 2.0",
+        "alt": "الخليع الفاسي المغربي المحفوظ في الشحم المصفى"
+      },
+      "options": {
+        "A": "الكرداس",
+        "B": "القديد العادي",
+        "C": "البسطرمة",
+        "D": "الخليع المغربي (Khlii)"
+      },
+      "correct_answer": "D",
+      "explanation": "الخليع الفاسي كنز تراثي أصيل يحضر بتجفيف اللحم المتبل بالشمس ثم طهيه في شحم الكلي وزيت الزيتون ويقدم كأشهى فطور مع البيض البلدي وأتاي.",
+      "source_title": "تاريخ الأطعمة المحفوظة بمدينة فاس العتيقة",
+      "source_url": "https://ader-fes.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_5",
+      "category": "الأكلات المغربية بالصور",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم الوجبة التراثية الأمازيغية القديمة المصنوعة من دقيق الشعير أو الذرة ويتوسطها زيت الأركان أو السمن في رأس السنة (إيض يناير)؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Assida_2.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Assida_2.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "عصيدة تاكلا الأمازيغية بدقيق الشعير وزيت أركان والعسل"
+      },
+      "options": {
+        "A": "تاكلا (العصيدة الأمازيغية)",
+        "B": "أوفال",
+        "C": "تمبوسوت",
+        "D": "أركيكن"
+      },
+      "correct_answer": "A",
+      "explanation": "تاكلا (أو تاكلا ن يناير) طبق احتفالي طقوسي أمازيغي يرمز للارتباط بالأرض وخصوبة المحصول وتخبأ بداخله نواة التمر (أغورمي) تيمناً بالبركة.",
+      "source_title": "المعهد الملكي للثقافة الأمازيغية - الطبخ والتقاليد",
+      "source_url": "https://www.ircam.ma",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_6",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الطاجين المغربي الشهير والفاخر المحضر بالدجاج والليمون المصير والزيتون والمرق المدغمر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Tajine_de_poulet_au_citron_confit_%28mars_2022%29.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tajine_de_poulet_au_citron_confit_(mars_2022).JPG",
+        "license": "CC BY-SA 4.0",
+        "alt": "طاجين الدجاج المغربي بالليمون المصير والزيتون"
+      },
+      "options": {
+        "A": "طاجين الحوت بالشارمولا",
+        "B": "طاجين الدجاج بالليمون المصير والزيتون",
+        "C": "طاجين اللحم بالبرقوق",
+        "D": "طاجين الكفتة بالبيض"
+      },
+      "correct_answer": "B",
+      "explanation": "طاجين الدجاج بالليمون المصير (الحامض المرقد) والزيتون طبق مغربي تقليدي لا تخلو منه المناسبات والولائم العائلية.",
+      "source_title": "المكتب الوطني المغربي للسياحة",
+      "source_url": "https://www.visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_7",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذه المعجنات المغربية المقرمشة مثلثة الشكل المحشوة باللوز المقلي والمعسلة بعسل النحل الحر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Briouat_%28cropped%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Briouat_(cropped).jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "البريوات المغربية باللوز والعسل"
+      },
+      "options": {
+        "A": "كعب الغزال",
+        "B": "المحنشة",
+        "C": "البريوات باللوز والعسل",
+        "D": "الغريبة البهلة"
+      },
+      "correct_answer": "C",
+      "explanation": "البريوات المغربية تُلف بورقة البسطيلة الرقيقة وتُحشى بعقدة اللوز المنكهة بماء الزهر والقرفة ثم تقلى وتغمس في العسل.",
+      "source_title": "فن الحلويات المغربية التراثية",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_8",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما اسم هذا الخبز المغربي التراثي المستدير المحضر بدقيق القمح والسميد والمخبوز بالفرن البلدي لمرافقة الطواجن؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Khobz_Tajine.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Khobz_Tajine.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "خبز الدار المغربي التقليدي بالسميد"
+      },
+      "options": {
+        "A": "البطبوط",
+        "B": "الرغايف",
+        "C": "الحرشة",
+        "D": "خبز الدار المغربي (خبز الطاجين)"
+      },
+      "correct_answer": "D",
+      "explanation": "خبز الدار أو خبز الطاجين المغربي هو قوام المائدة المغربية اليومية ويعجن بحبات النافع والزنجلان ويخبز حتى يكتسب لوناً ذهبياً.",
+      "source_title": "المطبخ المغربي الأصيل",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_9",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما هو هذا المشروب المنعش الشهير المصنوع من البرتقال المغربي المعصور أمام الزوار بساحة جامع الفنا بمراكش؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/D%C5%BEma_el_Fna%2C_Marr%C3%A1ke%C5%A1%2C_2025_%2802%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Džma_el_Fna,_Marrákeš,_2025_(02).jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "عصير البرتقال الطازج في عربات ساحة جامع الفنا بمراكش"
+      },
+      "options": {
+        "A": "عصير البرتقال الطازج بمراكش",
+        "B": "عصير الرمان المركز",
+        "C": "شراب اللوز",
+        "D": "مخفوق الأفوكادو بالحليب"
+      },
+      "correct_answer": "A",
+      "explanation": "تشتهر ساحة جامع الفنا بعشرات العربات المزينة بأهرامات البرتقال المغربي الطازج اللذيذ الذي يعصر طرياً أمام الزائرين.",
+      "source_title": "دليل مراكش السياحي",
+      "source_url": "https://visitmarrakech.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_100_10",
+      "points": 100,
+      "difficulty": "easy",
+      "question_type": "image",
+      "question": "ما هو هذا الطبق الدجاجي الاحتفالي المغربي المحمر بالدغميرة البصلية والزعفران الحر والزيتون المتبل؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Poulet_chermoula_aux_olives_rouges.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Poulet_chermoula_aux_olives_rouges.png",
+        "license": "CC BY-SA 4.0",
+        "alt": "الدجاج المحمر بالدغميرة والزيتون على الطريقة المغربية"
+      },
+      "options": {
+        "A": "الرفيسة العميا",
+        "B": "الدجاج المحمر بالدغميرة والزيتون",
+        "C": "اللحم المفور بالأعشاب",
+        "D": "التريد بالبيض"
+      },
+      "correct_answer": "B",
+      "explanation": "الدجاج المحمر بالدغميرة طبق الأعراس المغربية الأول بامتياز، يتبل بالسمن البلدي والزعفران والهريسة ويحمر في الفرن.",
+      "source_title": "تراث الطبخ المغربي",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_6",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذا البسكويت والحلويات المغربية الجافة المقرمشة المخبوزة مرتين باللوز واليانسون والسمسم لمرافقة الشاي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Ary-feqqa%C3%A7.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ary-feqqa%C3%A7.JPG",
+        "license": "CC BY-SA 4.0",
+        "alt": "الفقاص المغربي التقليدي باللوز"
+      },
+      "options": {
+        "A": "البسكويت الإسباني",
+        "B": "الغريبة المسوسة",
+        "C": "الفقاص المغربي (Feqqas)",
+        "D": "المعمول المغربي"
+      },
+      "correct_answer": "C",
+      "explanation": "الفقاص حلوى مغربية تاريخية تخبز نصف نضج ثم تقطع شرائح رقيقة ويعاد تحميصها لتصبح مقرمشة وغنية باللوز والنافع.",
+      "source_title": "الحلويات التقليدية المغربية",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_7",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه الفطائر الدائرية المقلية والمقرمشة من الخارج والطرية من الداخل التي تباع طازجة في محلات الإسفناج بالمغرب؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Sfendj_algerie.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sfendj_algerie.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "السفنج المغربي المقرمش الساخن"
+      },
+      "options": {
+        "A": "البينيي",
+        "B": "البغرير",
+        "C": "الدونات الغربي",
+        "D": "السفنج المغربي (Sfenj)"
+      },
+      "correct_answer": "D",
+      "explanation": "السفنج من أشهر الفطائر الشعبية في أزقة المدن المغربية العتيقة، يحضر من عجين مخمر يقلى في مقلاتين من الزيت الساخن ويؤكل مع الشاي.",
+      "source_title": "المأكولات الشعبية المغربية",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_8",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه المعجنات المغربية التراثية المعقدة المصنوعة من خيوط العجين الرفيعة الملفوفة كالعمامة والمدهونة بالزبدة البلدية والعسل؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Ary-rziza_fijhaedje.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ary-rziza_fijhaedje.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "حلوى وفطائر رزة القاضي (الرزيزة المغربية)"
+      },
+      "options": {
+        "A": "رزة القاضي (الرزيزة المغربية)",
+        "B": "التريد السوسي",
+        "C": "الكنافة المغربية",
+        "D": "المسمن المورق"
+      },
+      "correct_answer": "A",
+      "explanation": "رزة القاضي أو الرزيزة إبداع نسائي مغربي نادر، حيث تُسحب خيوط العجين الطويلة بدقة فائقة وتلف كعمامة القاضي وتطهى على المقلاة.",
+      "source_title": "تراث الطبخ المغربي الأصيل",
+      "source_url": "https://minculture.gov.ma",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_9",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه الحلوى المغربية المغاربية الذهبية المحضرة من السميد ومعجون التمر والمقلية والمعسلة بعسل البرتقال؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Makroudh_-_%D9%85%D9%82%D8%B1%D9%88%D8%B6_-_Makroud_photo2.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Makroudh_-_%D9%85%D9%82%D8%B1%D9%88%D8%B6_-_Makroud_photo2.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "المقروط بالتمر والعسل المغربي"
+      },
+      "options": {
+        "A": "الشباكية",
+        "B": "المقروط (المقروط بالتمر)",
+        "C": "حلوى الغريبة",
+        "D": "البليغات"
+      },
+      "correct_answer": "B",
+      "explanation": "المقروط حلوى تراثية شهيرة بالشرق والمغرب تحضر من سميد القمح وحشوة التمر المعطر بالقرفة وماء الزهر وتزين بالسمسم.",
+      "source_title": "حلويات المغرب العربي التراثية",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_200_10",
+      "points": 200,
+      "difficulty": "medium",
+      "question_type": "image",
+      "question": "ما اسم هذه السلطة والمقبلات المغربية الدافئة المصنوعة من الباذنجان المشوي والمهروس مع الطماطم والثوم وزيت الزيتون والكمون؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Zaalouk-01.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Zaalouk-01.JPG",
+        "license": "CC BY-SA 3.0",
+        "alt": "سلطة الزعلوك المغربية بالباذنجان والطماطم"
+      },
+      "options": {
+        "A": "التكتوكة الفاسية",
+        "B": "البكبوكة",
+        "C": "الزعلوك المغربي (Zaalouk)",
+        "D": "الشكشوكة"
+      },
+      "correct_answer": "C",
+      "explanation": "الزعلوك هو ملك المقبلات المغربية ويقدم دافئاً أو بارداً مع الخبز الطازج، ويمزج طعم شواء الباذنجان بنكهة الكمون وزيت الزيتون.",
+      "source_title": "فن المطبخ المغربي",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_6",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذه الأكلة التراثية الصحراوية بتافيلالت والريصاني الملقبة بـ 'البيتزا الأمازيغية' والمحشوة باللحم المفروم والبيض والتوابل واللوز؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Medfouna%27s_dish%2C_Erfoud.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Medfouna%27s_dish,_Erfoud.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "المدفونة الفيلالية بالريصاني (البيتزا البربرية)"
+      },
+      "options": {
+        "A": "خبز الشحم",
+        "B": "الخبز المردوم",
+        "C": "البسطيلة الصحراوية",
+        "D": "المدفونة الفيلالية (Medfouna)"
+      },
+      "correct_answer": "D",
+      "explanation": "المدفونة الفيلالية أكلة عريقة من واحات تافيلالت تطهى في أفران طينية تقليدية وتعد تحفة طهوية تجمع النكهات الصحراوية الغنية.",
+      "source_title": "جهة درعة تافيلالت والمطبخ الصحراوي",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_7",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا المزيج الدهني الطبيعي الفاخر المصنوع بسوس من زيت الأركان الطبيعي واللوز البلدي المحمص وعسل النحل الحر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Amlo_zgh-%E2%B4%B0%E2%B5%8E%E2%B5%8D%E2%B5%93_o%C3%BBs_c%C3%BBts_deurs.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Amlo_zgh-ⴰⵎⵍⵓ_oûs_cûts_deurs.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "أملو المغربي الأصيل بزيت الأركان واللوز والعسل"
+      },
+      "options": {
+        "A": "أملو المغربي (Amlou)",
+        "B": "عسل السدر الحر",
+        "C": "دبس التمر التافيلالتي",
+        "D": "زبدة الفول السوداني"
+      },
+      "correct_answer": "A",
+      "explanation": "أملو منتج غذائي سوسي فاخر يُطحن بالرحى الصخرية التقليدية (أزرك) ويمد الجسم بطاقة حيوية وفيتامينات طبيعية ممتازة.",
+      "source_title": "الوكالة الوطنية لتنمية الواحات وشجر الأركان",
+      "source_url": "https://andzoa.ma",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_8",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا المسحوق الغذائي المغربي الغني المحضر في رمضان والأفراح من دقيق القمح المحمص واللوز والسمسم واليانسون؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sellou.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sellou.JPG",
+        "license": "CC BY-SA 3.0",
+        "alt": "طبق سلو المغربي (السفوف / الزميطة)"
+      },
+      "options": {
+        "A": "البلبولة المحلاة",
+        "B": "سلو (السفوف / الزميطة)",
+        "C": "عصيدة القمح",
+        "D": "حلوى السميد المحمص"
+      },
+      "correct_answer": "B",
+      "explanation": "سلو أو السفوف طبق مغربي أصيل يقدم في شهر رمضان المبارك وعقيقة المولود الجديد لتقوية الجسم واستعادة الطاقة.",
+      "source_title": "عادات المطبخ المغربي الرمضاني",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_9",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق السعدي التاريخي الملكي المحضر بلحم الرقبة ولحم الغنم مع العسل والتوابل ورأس الحانوت والزبيب واللوز؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Ary_merroziya.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ary_merroziya.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "طبق المروزية المغربية المعسلة التاريخية"
+      },
+      "options": {
+        "A": "اللحم بالبرقوق",
+        "B": "الطنجية المراكشية",
+        "C": "المروزية المغربية (Mrouzia)",
+        "D": "التقلية"
+      },
+      "correct_answer": "C",
+      "explanation": "المروزية طبق تاريخي ورثه المغاربة من عهد السعديين والأندلس، يمزج حلاوة العسل والزبيب مع توابل 'رأس الحانوت' ويطهى في عيد الأضحى.",
+      "source_title": "تاريخ الطبخ المغربي الأندلسي",
+      "source_url": "https://alacademia.org.ma",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_300_10",
+      "points": 300,
+      "difficulty": "hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق المغربي الشهير المكون من كرات اللحم المفروم المتبل المطهو في طاجين فخاري مع صلصة الطماطم والبيض؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Assiette_de_kefta_hrech.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Assiette_de_kefta_hrech.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "طاجين الكفتة المغربية المشوية والمتبلة"
+      },
+      "options": {
+        "A": "الكباب المغدور",
+        "B": "القطبان المشوية",
+        "C": "المقانق الفاسية",
+        "D": "طاجين الكفتة المغربية"
+      },
+      "correct_answer": "D",
+      "explanation": "طاجين الكفتة بمطيشة والبيض يعد من أكثر الأكلات المغربية انتشاراً وسرعة في التحضير بنكهة الكمون والكزبرة الطازجة.",
+      "source_title": "دليل الأكلات المغربية السريعة",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_6",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق الشتوي الشعبي المغربي الفاخر المكون من أقدام البقر أو الغنم المطهوة ببطء مع الحمص والقمح والزبيب؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Cattle_and_sheep_feet_from_Souk_Jmiaa_in_Casablanca_15.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cattle_and_sheep_feet_from_Souk_Jmiaa_in_Casablanca_15.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "الكرعين أو الهركمة المغربية بالحمص والزرع"
+      },
+      "options": {
+        "A": "الكرعين بالحمص (الهركمة)",
+        "B": "الراس مبخر",
+        "C": "اللحم بالقنية",
+        "D": "التقلية بالزيتون"
+      },
+      "correct_answer": "A",
+      "explanation": "الكرعين بالحمص والقمح (الهركمة) أكلة مغربية دافئة غنية بالجيلاتين الطبيعي تطهى طيلة الليل على مجمر الفحم.",
+      "source_title": "أسرار الطبخ المغربي التراثي",
+      "source_url": "https://minculture.gov.ma",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_7",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا اللحم المجفف والمقدد الفاسي التراثي المملح والمتبل بالقزبر والكروياء والمحفوظ في الشحم وزيت الزيتون؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Moroccan_preserved_dried_meat-Khli-01.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moroccan_preserved_dried_meat-Khli-01.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "الخليع الفاسي المغربي التقليدي"
+      },
+      "options": {
+        "A": "الكرداس الأمازيغي",
+        "B": "الخليع الفاسي (Khlii)",
+        "C": "القديد الصحراوي",
+        "D": "البسطرمة"
+      },
+      "correct_answer": "B",
+      "explanation": "الخليع ابتكار مغربي فاسي أصيل لحفظ اللحوم لشهور طويلة دون تبريد، ويؤكل مقلياً مع البيض أو حشوة للفطائر والمسمن.",
+      "source_title": "تراث الطبخ الفاسي العريق",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_8",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه الفطائر الرقيقة المورقة المشهورة بالبادية المغربية المدهونة بالسمن البلدي والمرافقة لكؤوس الشاي في الفطور؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Ary-rziza_fijhaedje.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ary-rziza_fijhaedje.jpg",
+        "license": "CC BY-SA 4.0",
+        "alt": "فطائر الملاوي والمسمن المغربي المورق"
+      },
+      "options": {
+        "A": "البغرير المخرق",
+        "B": "الحرشة الفاسية",
+        "C": "الملاوي المغربية (Melwi)",
+        "D": "البطبوط المخمار"
+      },
+      "correct_answer": "C",
+      "explanation": "الملاوي والمسمن المورق بالسمن والزبدة البلدية من أساسيات فطور الصباح بالمغرب وتحضر بطي العجين عدة طبقات متداخلة.",
+      "source_title": "المخبوزات التقليدية المغربية",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_9",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذا اللحم المجفف والمملح تحت شمس الصيف في عيد الأضحى بالأعشاب والملح لمرافقة الكسكس والمحمصة؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Mhames_b_dbabich_au_Kaddid.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mhames_b_dbabich_au_Kaddid.JPG",
+        "license": "CC BY-SA 4.0",
+        "alt": "القديد المغربي التقليدي المجفف"
+      },
+      "options": {
+        "A": "الكفتة المجففة",
+        "B": "السجق المدخن",
+        "C": "الخليع البلدي",
+        "D": "القديد المغربي (Kaddid)"
+      },
+      "correct_answer": "D",
+      "explanation": "القديد هو شرائح لحم الغنم المتبلة بالثوم والقزبر والكمون والمجففة تحت أشعة الشمس لاستخدامها في كسكس عاشوراء والأطباق الشتوية.",
+      "source_title": "عادات وتقاليد الطبخ المغربي",
+      "source_url": "https://minculture.gov.ma",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_400_10",
+      "points": 400,
+      "difficulty": "very_hard",
+      "question_type": "image",
+      "question": "ما اسم هذه الفطيرة الأندلسية الفاسية الفخمة المكونة من طبقات الورقة الرقيقة والمحشوة بالدجاج ولوز السكر ومزينة بالقرفة والسكر الصقيل؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Bisteeya.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bisteeya.jpg",
+        "license": "CC BY 2.0",
+        "alt": "البسطيلة الفاسية بالدجاج واللوز"
+      },
+      "options": {
+        "A": "البسطيلة المغربية الفاسية (Pastilla)",
+        "B": "فطيرة الدجاج المعسلة",
+        "C": "البريوات بالجبن",
+        "D": "المحنشة المالحة"
+      },
+      "correct_answer": "A",
+      "explanation": "البسطيلة الفاسية قمة الإبداع المغربي في مزج المالح والحلو، وتحشى بلحم الدجاج المنسم بالزعفران والقرفة وعقدة اللوز المحلى.",
+      "source_title": "روائع المطبخ المغربي الفاسي",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_6",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الطبق الوطني الكوني المصنف تراثاً عالمياً لليونسكو والمعد بسبع خضار ولحم البقر أو الغنم والمرق العطر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Couscous_%2874111%29.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Couscous_(74111).jpg",
+        "license": "CC BY-SA 2.0",
+        "alt": "الكسكس المغربي بسبع خضار واللحم"
+      },
+      "options": {
+        "A": "السفة المدفونة",
+        "B": "الكسكس المغربي بالسبع خضار (Couscous)",
+        "C": "الدشيشة بالأعشاب",
+        "D": "البركوكش الأطلسي"
+      },
+      "correct_answer": "B",
+      "explanation": "الكسكس المغربي بالسبع خضار (القرع، الجزر، اللفت، الحمص، الكوسا، الكرنب، الباذنجان) رمز الهوية والاجتماع العائلي ليوم الجمعة.",
+      "source_title": "اليونسكو - مهارات وخبرات إعداد الكسكس",
+      "source_url": "https://ich.unesco.org",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_7",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الطاجين المغربي المخملي المزين بحبات البرقوق الأسود المجفف والمشمش المعسل ومرشوش باللوز المقلي والسمسم؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/IB_tajine_03.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:IB_tajine_03.jpg",
+        "license": "CC BY-SA 3.0",
+        "alt": "طاجين اللحم بالبرقوق والمشمش واللوز"
+      },
+      "options": {
+        "A": "طاجين الدجاج بالبطاطس",
+        "B": "طاجين السفرجل",
+        "C": "طاجين اللحم بالبرقوق المعسل واللوز",
+        "D": "طاجين المروزية بالسمن"
+      },
+      "correct_answer": "C",
+      "explanation": "طاجين اللحم بالبرقوق واللوز أيقونة الولائم والأعراس المغربية يجمع بين نكهة المرق المتبل بحبات الزعفران وحلاوة البرقوق المكرمل.",
+      "source_title": "المكتب الوطني المغربي للسياحة",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_8",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذه الجرة الفخارية المراكشية الشهيرة التي تملأ بقطع اللحم والسمن والكمون والثوم والزعفران وتدفن في رماد الفرناتشي؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Tangia_Marrakchia.JPG",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tangia_Marrakchia.JPG",
+        "license": "CC BY-SA 3.0",
+        "alt": "جرة الطنجية المراكشية التاريخية"
+      },
+      "options": {
+        "A": "المقفول",
+        "B": "القدرة الفاسية",
+        "C": "البرمة السوسية",
+        "D": "الطنجية المراكشية (Tangia Marrakchia)"
+      },
+      "correct_answer": "D",
+      "explanation": "الطنجية المراكشية أكلة رجالية وحرفية عريقة بمراكش الحمراء، تطهى في رماد حمام الحي لساعات حتى يذوب اللحم في مرق كثيف وشهي.",
+      "source_title": "تراث مراكش الثقافي والطهوي",
+      "source_url": "https://visitmarrakech.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_9",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذه الحلوى الملكية الفاسية المقوسة على شكل حافر الغزال والمحشوة بعقدة اللوز الخالص المعطر بماء الزهر الحر؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Bisteeya.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bisteeya.jpg",
+        "license": "Public Domain",
+        "alt": "حلوى كعب الغزال الفاسية الملكية"
+      },
+      "options": {
+        "A": "كعب الغزال (Cornes de gazelle)",
+        "B": "الشباكية الفاسية",
+        "C": "غريبة اللوز والكركاع",
+        "D": "المحنشة باللوز"
+      },
+      "correct_answer": "A",
+      "explanation": "كعب الغزال درة تاج الحلويات المغربية التقليدية، تتميز بعجينتها الشفافة الرقيقة جداً وحشوتها الصافية من اللوز البلدي وماء زهر فاس.",
+      "source_title": "الحلويات الملكية المغربية",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    },
+    {
+      "id": "foo_500_10",
+      "points": 500,
+      "difficulty": "expert",
+      "question_type": "image",
+      "question": "ما اسم هذا الحساء المغربي الأحمر التراثي الغني بقطع اللحم والحمص والعدس والشعرية والقزبر والكرافص الذي يفتتح به إفطار رمضان؟",
+      "media": {
+        "type": "image",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Liat_Portal_for_Foodie_Disorder_-_Harira_soup.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Harira_soup.jpg",
+        "license": "CC BY-SA 2.0",
+        "alt": "شوربة الحريرة المغربية التقليدية بالخميرة البلدية"
+      },
+      "options": {
+        "A": "حساء البيصارة بالجلبانة",
+        "B": "شوربة الحريرة المغربية (Harira)",
+        "C": "حساء البلبولة بالزعتر",
+        "D": "شوربة السمك بالأعشاب"
+      },
+      "correct_answer": "B",
+      "explanation": "الحريرة هي سيدة المائدة المغربية الرمضانية، وتدور بالخميرة البلدية وعصير الطماطم الطازجة وتقدم مع التمر المجهول والبيض والشباكية.",
+      "source_title": "المطبخ المغربي وتقاليد رمضان",
+      "source_url": "https://visitmorocco.com",
+      "category": "الأكلات المغربية بالصور",
+      "category_id": "food_photos"
+    }
+  ]
+}

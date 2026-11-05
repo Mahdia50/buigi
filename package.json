@@ -1,0 +1,15 @@
+{
+  "name": "seen-maghrib-app",
+  "version": "1.0.0",
+  "description": "منصة لعبة سين المغرب التفاعلية - مسابقات ثقافية مغربية متوافقة مع بروتوكول البث والتأطير",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "build": "echo 'Build ready: static assets already compiled in public/'",
+    "vercel-build": "echo 'Vercel deployment ready'"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}

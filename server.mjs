@@ -55,14 +55,22 @@ try {
   }
 } catch (_) {}
 
+const LOCAL_ROOMS_DIR = path.join(__dirname, "data", "rooms");
+try {
+  if (!fs.existsSync(LOCAL_ROOMS_DIR)) fs.mkdirSync(LOCAL_ROOMS_DIR, { recursive: true });
+} catch (_) {}
+
 function saveRoom(code, room) {
   if (!code || !room) return;
   code = code.toUpperCase();
   memoryRooms.set(code, room);
+  const clean = { ...room, connections: undefined };
+  const jsonStr = JSON.stringify(clean);
   try {
-    const filePath = path.join(TMP_ROOMS_DIR, `${code}.json`);
-    const clean = { ...room, connections: undefined };
-    fs.writeFileSync(filePath, JSON.stringify(clean), "utf8");
+    fs.writeFileSync(path.join(TMP_ROOMS_DIR, `${code}.json`), jsonStr, "utf8");
+  } catch (_) {}
+  try {
+    fs.writeFileSync(path.join(LOCAL_ROOMS_DIR, `${code}.json`), jsonStr, "utf8");
   } catch (_) {}
 }
 
@@ -73,18 +81,27 @@ function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "") {
     return memoryRooms.get(code);
   }
   try {
-    const filePath = path.join(TMP_ROOMS_DIR, `${code}.json`);
-    if (fs.existsSync(filePath)) {
-      const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    const p1 = path.join(TMP_ROOMS_DIR, `${code}.json`);
+    if (fs.existsSync(p1)) {
+      const parsed = JSON.parse(fs.readFileSync(p1, "utf8"));
+      parsed.connections = new Set();
+      memoryRooms.set(code, parsed);
+      return parsed;
+    }
+  } catch (_) {}
+  try {
+    const p2 = path.join(LOCAL_ROOMS_DIR, `${code}.json`);
+    if (fs.existsSync(p2)) {
+      const parsed = JSON.parse(fs.readFileSync(p2, "utf8"));
       parsed.connections = new Set();
       memoryRooms.set(code, parsed);
       return parsed;
     }
   } catch (_) {}
 
-  // Auto-recovery: If room doesn't exist on this Lambda instance, auto-recreate to guarantee match never breaks
+  // Auto-recovery: If room does not exist, recreate cleanly with requested code
   if (code.length >= 3) {
-    console.log(`[INFO] استرجاع وتجديد تلقائي للغرفة ${code} لضمان استمرارية اللعب السحابي.`);
+    console.log(`[INFO] استرجاع وتجديد تلقائي للغرفة ${code} لضمان استمرارية اللعب.`);
     const recovered = createRoomInstance({ name: `غرفة ${code}` }, fallbackGuestId, fallbackGuestName, code);
     return recovered;
   }
@@ -128,8 +145,8 @@ const MIME_TYPES = {
 };
 
 // إنشاء غرفة جديدة مع لوحة الأسئلة والمضيف
-function createRoomInstance(payload = {}, hostGuestId = "", hostName = "") {
-  const code = Math.random().toString(36).substring(2, 6).toUpperCase();
+function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixedCode = null) {
+  const code = (fixedCode || payload.code || Math.random().toString(36).substring(2, 6)).toUpperCase();
 
   // اختيار الفئات المحددة أو الافتراضية (6 فئات)
   let selectedCategories = payload.categories;
@@ -199,6 +216,10 @@ function createRoomInstance(payload = {}, hostGuestId = "", hostName = "") {
     current: null,
     paused: false,
     chat_open: true,
+    lifelines: {
+      red: { fiftyFifty: true, friend: true },
+      green: { fiftyFifty: true, friend: true },
+    },
     log: [
       {
         id: "log-" + Date.now(),
@@ -246,6 +267,10 @@ function sanitizeRoom(room) {
     paused: room.paused,
     chat_open: room.chat_open,
     log: room.log,
+    lifelines: room.lifelines || {
+      red: { fiftyFifty: true, friend: true },
+      green: { fiftyFifty: true, friend: true },
+    },
     createdAt: room.createdAt,
   };
 }
@@ -451,8 +476,8 @@ export async function handleRequest(req, res) {
   }
 
   // 1. معالجة دوال الخادم التوافقية (TanStack Start Server Functions /_serverFn/*)
-  if (pathname.startsWith("/_serverFn/")) {
-    const fnHash = pathname.replace("/_serverFn/", "");
+  if (pathname.startsWith("/_serverFn/") || pathname.startsWith("/api/_serverFn/")) {
+    const fnHash = pathname.replace(/^\/(api\/)?_serverFn\//, "");
     const guestId = req.headers["x-seen-guest"] || "";
     const guestName = decodeURIComponent(req.headers["x-seen-name"] || "");
 
@@ -485,12 +510,32 @@ export async function handleRequest(req, res) {
           return;
         }
 
-        // إلحاق المنشئ كمشرف تلقائياً إذا كانت الغرفة حديثة
-        if (guestId && room.players.length === 1 && room.players[0].role === "host" && room.players[0].user_id !== guestId) {
-          if (Date.now() - room.createdAt < 60000) {
-            room.players[0].user_id = guestId;
-            if (guestName) room.players[0].name = guestName;
+        // تحديث حالة الاتصال والحفاظ على اللاعبين دون الكتابة فوق المشرف
+        let player = room.players.find(p => p.user_id === guestId);
+        if (player) {
+          player.last_seen = Date.now();
+          player.connected = true;
+          if (guestName && guestName !== "لاعب" && player.name === "لاعب") {
+            player.name = guestName.trim();
           }
+        } else if (guestId && guestName) {
+          const isHost = room.players.length === 0;
+          const redCount = room.players.filter(p => p.team === "red").length;
+          const greenCount = room.players.filter(p => p.team === "green").length;
+          player = {
+            id: "p-" + Math.random().toString(36).slice(2, 8),
+            user_id: guestId,
+            name: guestName.trim(),
+            role: isHost ? "host" : "player",
+            team: greenCount < redCount ? "green" : "red",
+            ready: true,
+            captain: isHost,
+            connected: true,
+            last_seen: Date.now(),
+            vote: null,
+          };
+          room.players.push(player);
+          saveRoom(room.code, room);
         }
 
         sendFnResponse(res, {
@@ -532,6 +577,7 @@ export async function handleRequest(req, res) {
           };
           room.players.push(player);
         }
+        saveRoom(room.code, room);
 
         sendFnResponse(res, {
           code: room.code,
@@ -631,6 +677,11 @@ export async function handleRequest(req, res) {
         const code = (payload.code || "").toUpperCase();
         const room = loadRoom(code, guestId, guestName);
         if (room && payload.key) {
+          const player = room.players.find(p => p.user_id === guestId);
+          if (player && player.team && player.team !== room.turn) {
+            sendFnResponse(res, { error: "ليس دور فريقك لاختيار السؤال" });
+            return;
+          }
           const [catId, valStr] = payload.key.split(":");
           const val = parseInt(valStr, 10);
           let qId = null;
@@ -640,19 +691,27 @@ export async function handleRequest(req, res) {
               if (c) qId = c.questionId;
             }
           }
+          const durationSec = Number(room.settings?.answerTime) || 30;
           room.current = {
             questionId: qId || `q-${catId}-${val}`,
             cellKey: payload.key,
             categoryId: catId,
             value: val,
             startedAt: Date.now(),
-            duration: room.settings.answerTime || 30,
+            total: durationSec,
+            duration: durationSec,
+            deadline: durationSec > 0 ? Date.now() + (durationSec * 1000) : null,
             revealed: false,
             awarded: false,
             winner: null,
             team: room.turn,
+            answeringTeam: room.turn,
+            attemptedTeams: [],
+            wrongAnswers: [],
+            hiddenOptions: [],
           };
           room.players.forEach(p => p.vote = null);
+          saveRoom(room.code, room);
         }
         sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
         return;
@@ -690,18 +749,26 @@ export async function handleRequest(req, res) {
                 if (c) qId = c.questionId;
               }
             }
+            const durationSec = Number(room.settings?.answerTime) || 30;
             room.current = {
               questionId: qId || `q-${catId}-${val}`,
               cellKey: bestKey,
               categoryId: catId,
               value: val,
               startedAt: Date.now(),
-              duration: room.settings.answerTime || 30,
+              total: durationSec,
+              duration: durationSec,
+              deadline: durationSec > 0 ? Date.now() + (durationSec * 1000) : null,
               revealed: false,
               awarded: false,
               winner: null,
               team: room.turn,
+              answeringTeam: room.turn,
+              attemptedTeams: [],
+              wrongAnswers: [],
+              hiddenOptions: [],
             };
+            saveRoom(room.code, room);
           }
           room.players.forEach(p => p.vote = null);
         }
@@ -715,6 +782,7 @@ export async function handleRequest(req, res) {
         const room = loadRoom(code, guestId, guestName);
         if (room && room.current) {
           room.current.revealed = true;
+          saveRoom(room.code, room);
         }
         sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
         return;
@@ -759,6 +827,7 @@ export async function handleRequest(req, res) {
               time: Date.now(),
             });
           }
+          saveRoom(room.code, room);
         }
         sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
         return;
@@ -791,7 +860,7 @@ export async function handleRequest(req, res) {
           room.current = null;
           room.turn = room.turn === "red" ? "green" : "red";
           room.players.forEach(p => p.vote = null);
-          if (room.used.length >= (room.board.length * 3)) {
+          if (room.used.length >= (room.board.length * 5)) {
             room.status = "finished";
             const winner = room.scores.red > room.scores.green ? "الفريق الأحمر" :
                            room.scores.green > room.scores.red ? "الفريق الأخضر" : "تعادل";
@@ -803,6 +872,7 @@ export async function handleRequest(req, res) {
               time: Date.now(),
             });
           }
+          saveRoom(room.code, room);
         }
         sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
         return;
@@ -814,6 +884,7 @@ export async function handleRequest(req, res) {
         const room = loadRoom(code, guestId, guestName);
         if (room) {
           room.paused = !room.paused;
+          saveRoom(room.code, room);
         }
         sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
         return;
@@ -949,7 +1020,287 @@ export async function handleRequest(req, res) {
     return;
   }
 
-  // 4. تقديم الملفات الثابتة للواجهة الأمامية (Static File Serving)
+  // 4. مسار الإجابة المباشرة على السؤال (/api/rooms/answer)
+  if (pathname === "/api/rooms/answer" && req.method === "POST") {
+    const guestId = req.headers["x-seen-guest"] || "";
+    const guestName = decodeURIComponent(req.headers["x-seen-name"] || "");
+    try {
+      const rawBody = await getRawOrParsedBody(req);
+      const payload = unpackPayload(rawBody);
+      const code = (payload.code || "").toUpperCase();
+      const room = loadRoom(code, guestId, guestName);
+      if (!room || !room.current || room.current.revealed) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "لا يوجد سؤال نشط حالياً للإجابة" }));
+        return;
+      }
+
+      const player = room.players.find(p => p.user_id === guestId);
+      const currentAnsweringTeam = room.current.answeringTeam || room.turn;
+
+      if (player && player.team && player.team !== currentAnsweringTeam) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({
+          ok: false,
+          message: `ليس دور فريقك للإجابة! الدور حالياً لـ${currentAnsweringTeam === "red" ? "الفريق الأحمر 🔴" : "الفريق الأخضر 🟢"}`
+        }));
+        return;
+      }
+
+      const qId = room.current.questionId;
+      let qData = questions.find(q => q.id === qId);
+      if (!qData) {
+        try {
+          const jsonBank = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "questions_bank_complete.json"), "utf8"));
+          qData = (jsonBank.questions || []).find(q => q.id === qId);
+        } catch (_) {}
+      }
+
+      const selectedOpt = String(payload.optionKey || "").toUpperCase();
+      const correctOpt = String(qData?.correct_answer || (qData?.answer ? Object.entries(qData?.options || {}).find(([k,v]) => v === qData?.answer)?.[0] : "A")).toUpperCase();
+      const isCorrect = selectedOpt === correctOpt;
+
+      if (!room.current.wrongAnswers) room.current.wrongAnswers = [];
+      if (!room.current.attemptedTeams) room.current.attemptedTeams = [];
+
+      const val = room.current.value || 100;
+      const teamLabel = currentAnsweringTeam === "red" ? "الفريق الأحمر 🔴" : "الفريق الأخضر 🟢";
+
+      if (isCorrect) {
+        room.current.revealed = true;
+        room.current.awarded = true;
+        room.current.winner = currentAnsweringTeam;
+        room.scores[currentAnsweringTeam] = (room.scores[currentAnsweringTeam] || 0) + val;
+        if (!room.used.includes(room.current.cellKey)) {
+          room.used.push(room.current.cellKey);
+        }
+        room.log.unshift({
+          id: "log-" + Date.now(),
+          reason: "إجابة صحيحة",
+          delta: val,
+          text: `+${val} نقطة لـ${teamLabel} بعد إجابة صحيحة (${selectedOpt})! 🎯`,
+          time: Date.now(),
+        });
+      } else {
+        if (!room.current.wrongAnswers.includes(selectedOpt)) {
+          room.current.wrongAnswers.push(selectedOpt);
+        }
+        if (!room.current.attemptedTeams.includes(currentAnsweringTeam)) {
+          room.current.attemptedTeams.push(currentAnsweringTeam);
+        }
+
+        const opposingTeam = currentAnsweringTeam === "red" ? "green" : "red";
+        const opposingTeamLabel = opposingTeam === "red" ? "الفريق الأحمر 🔴" : "الفريق الأخضر 🟢";
+
+        if (!room.current.attemptedTeams.includes(opposingTeam)) {
+          // نقل فرصة الإجابة للفريق الخصم (خطف السؤال) مع 15 ثانية إضافية
+          room.current.answeringTeam = opposingTeam;
+          room.current.total = 15;
+          room.current.duration = 15;
+          room.current.deadline = Date.now() + 15000;
+          room.log.unshift({
+            id: "log-" + Date.now(),
+            reason: "إجابة خاطئة - خطف السؤال",
+            delta: 0,
+            text: `إجابة خاطئة (${selectedOpt}) من ${teamLabel}! فرصة خطف السؤال انتقلت إلى ${opposingTeamLabel}! ⚡`,
+            time: Date.now(),
+          });
+        } else {
+          // كلا الفريقين أخطآ
+          room.current.revealed = true;
+          room.current.awarded = true;
+          room.current.winner = "none";
+          if (!room.used.includes(room.current.cellKey)) {
+            room.used.push(room.current.cellKey);
+          }
+          room.log.unshift({
+            id: "log-" + Date.now(),
+            reason: "أخطأ الفريقان",
+            delta: 0,
+            text: `أخطأ كِلا الفريقين في الإجابة! لم تُمنح أي نقطة لخانة ${val}.`,
+            time: Date.now(),
+          });
+        }
+      }
+
+      saveRoom(room.code, room);
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({
+        ok: true,
+        isCorrect,
+        room: sanitizeRoom(room),
+        players: room.players,
+        messages: room.messages,
+      }));
+    } catch (err) {
+      res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ ok: false, error: err.message }));
+    }
+    return;
+  }
+
+  // 5. مسار وسائل المساعدة في الغرف الأونلاين (/api/rooms/lifeline)
+  if (pathname === "/api/rooms/lifeline" && req.method === "POST") {
+    const guestId = req.headers["x-seen-guest"] || "";
+    const guestName = decodeURIComponent(req.headers["x-seen-name"] || "");
+    try {
+      const rawBody = await getRawOrParsedBody(req);
+      const payload = unpackPayload(rawBody);
+      const code = (payload.code || "").toUpperCase();
+      const room = loadRoom(code, guestId, guestName);
+      if (!room || !room.current || room.current.revealed) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "لا يوجد سؤال نشط لاستخدام وسيلة مساعدة" }));
+        return;
+      }
+
+      const player = room.players.find(p => p.user_id === guestId);
+      const currentAnsweringTeam = room.current.answeringTeam || room.turn;
+
+      if (player && player.team && player.team !== currentAnsweringTeam) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "فقط الفريق صاحب الدور يمكنه استخدام وسيلة مساعدة" }));
+        return;
+      }
+
+      if (!room.lifelines) {
+        room.lifelines = {
+          red: { fiftyFifty: true, friend: true },
+          green: { fiftyFifty: true, friend: true },
+        };
+      }
+      const teamLifelines = room.lifelines[currentAnsweringTeam] || { fiftyFifty: true, friend: true };
+      const teamLabel = currentAnsweringTeam === "red" ? "الفريق الأحمر" : "الفريق الأخضر";
+
+      if (payload.type === "5050") {
+        if (!teamLifelines.fiftyFifty) {
+          res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+          res.end(JSON.stringify({ ok: false, message: "تم استهلاك وسيلة 50:50 مسبقاً لهذا الفريق" }));
+          return;
+        }
+        teamLifelines.fiftyFifty = false;
+        room.lifelines[currentAnsweringTeam] = teamLifelines;
+
+        const qId = room.current.questionId;
+        let qData = questions.find(q => q.id === qId);
+        if (!qData) {
+          try {
+            const jsonBank = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "questions_bank_complete.json"), "utf8"));
+            qData = (jsonBank.questions || []).find(q => q.id === qId);
+          } catch (_) {}
+        }
+        const correctOpt = String(qData?.correct_answer || (qData?.answer ? Object.entries(qData?.options || {}).find(([k,v]) => v === qData?.answer)?.[0] : "A")).toUpperCase();
+        const wrongOpts = ["A", "B", "C", "D"].filter(k => k !== correctOpt).sort(() => Math.random() - 0.5);
+        room.current.hiddenOptions = wrongOpts.slice(0, 2);
+
+        room.log.unshift({
+          id: "log-" + Date.now(),
+          reason: "وسيلة مساعدة",
+          delta: 0,
+          text: `استخدم ${teamLabel} وسيلة 50:50 (حذف خيارين خاطئين)! 🪄`,
+          time: Date.now(),
+        });
+      } else if (payload.type === "friend") {
+        if (!teamLifelines.friend) {
+          res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+          res.end(JSON.stringify({ ok: false, message: "تم استهلاك وسيلة الاتصال بصديق مسبقاً لهذا الفريق" }));
+          return;
+        }
+        teamLifelines.friend = false;
+        room.lifelines[currentAnsweringTeam] = teamLifelines;
+
+        const now = Date.now();
+        const currentRemaining = Math.max(0, (room.current.deadline || (now + 30000)) - now);
+        room.current.deadline = now + currentRemaining + 30000;
+        room.current.total = (room.current.total || 30) + 30;
+
+        room.log.unshift({
+          id: "log-" + Date.now(),
+          reason: "وسيلة مساعدة",
+          delta: 0,
+          text: `استخدم ${teamLabel} وسيلة اتصال بصديق (+30 ثانية وقت إضافي)! ⏱️`,
+          time: Date.now(),
+        });
+      }
+
+      saveRoom(room.code, room);
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({
+        ok: true,
+        room: sanitizeRoom(room),
+        players: room.players,
+        messages: room.messages,
+      }));
+    } catch (err) {
+      res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ ok: false, error: err.message }));
+    }
+    return;
+  }
+
+  // 6. مسار اختيار خانة السؤال عبر REST (/api/rooms/select-cell)
+  if (pathname === "/api/rooms/select-cell" && req.method === "POST") {
+    const guestId = req.headers["x-seen-guest"] || "";
+    const guestName = decodeURIComponent(req.headers["x-seen-name"] || "");
+    try {
+      const rawBody = await getRawOrParsedBody(req);
+      const payload = unpackPayload(rawBody);
+      const code = (payload.code || "").toUpperCase();
+      const room = loadRoom(code, guestId, guestName);
+      if (!room || !payload.key) {
+        res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "بيانات غير صالحة" }));
+        return;
+      }
+
+      const player = room.players.find(p => p.user_id === guestId);
+      if (player && player.team && player.team !== room.turn) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "ليس دور فريقك لاختيار السؤال" }));
+        return;
+      }
+
+      const [catId, valStr] = payload.key.split(":");
+      const val = parseInt(valStr, 10);
+      let qId = null;
+      for (const cat of room.board) {
+        if (cat.categoryId === catId) {
+          const c = cat.cells.find(cell => cell.key === payload.key);
+          if (c) qId = c.questionId;
+        }
+      }
+      const durationSec = Number(room.settings?.answerTime) || 30;
+      room.current = {
+        questionId: qId || `q-${catId}-${val}`,
+        cellKey: payload.key,
+        categoryId: catId,
+        value: val,
+        startedAt: Date.now(),
+        total: durationSec,
+        duration: durationSec,
+        deadline: durationSec > 0 ? Date.now() + (durationSec * 1000) : null,
+        revealed: false,
+        awarded: false,
+        winner: null,
+        team: room.turn,
+        answeringTeam: room.turn,
+        attemptedTeams: [],
+        wrongAnswers: [],
+        hiddenOptions: [],
+      };
+      room.players.forEach(p => p.vote = null);
+      saveRoom(room.code, room);
+
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ ok: true, room: sanitizeRoom(room) }));
+    } catch (err) {
+      res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ ok: false, error: err.message }));
+    }
+    return;
+  }
+
+  // 7. تقديم الملفات الثابتة للواجهة الأمامية (Static File Serving)
   let filePath = path.join(PUBLIC_DIR, pathname === "/" ? "index.html" : pathname);
   if (!filePath.startsWith(PUBLIC_DIR)) {
     res.writeHead(403).end("Forbidden");

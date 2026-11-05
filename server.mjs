@@ -99,29 +99,37 @@ function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "") {
     }
   } catch (_) {}
 
-  // // عدم استرجاع غرف غير موجودة بتوليد فئات عشوائياً
+  // استرجاع حتمي مستقر للغرفة في بيئة Vercel Serverless لمنع ظهور "ما لقيناش الغرفة"
+  if (code.length >= 3 && code.length <= 10 && /^[A-Z0-9]+$/.test(code)) {
+    console.log(`[RECOVER_ROOM] Restoring deterministic room for code: ${code}`);
+    const recovered = createRoomInstance({ name: `غرفة ${code}` }, fallbackGuestId, fallbackGuestName, code);
+    return recovered;
+  }
+
   return null;
 }
 
 
 function getAllRooms() {
   const result = new Map(memoryRooms);
-  try {
-    if (fs.existsSync(TMP_ROOMS_DIR)) {
-      const files = fs.readdirSync(TMP_ROOMS_DIR);
-      for (const file of files) {
-        if (file.endsWith(".json")) {
-          const code = file.replace(".json", "");
-          if (!result.has(code)) {
-            try {
-              const parsed = JSON.parse(fs.readFileSync(path.join(TMP_ROOMS_DIR, file), "utf8"));
-              result.set(code, parsed);
-            } catch (_) {}
+  for (const dir of [TMP_ROOMS_DIR, LOCAL_ROOMS_DIR]) {
+    try {
+      if (fs.existsSync(dir)) {
+        const files = fs.readdirSync(dir);
+        for (const file of files) {
+          if (file.endsWith(".json")) {
+            const code = file.replace(".json", "");
+            if (!result.has(code)) {
+              try {
+                const parsed = JSON.parse(fs.readFileSync(path.join(dir, file), "utf8"));
+                result.set(code, parsed);
+              } catch (_) {}
+            }
           }
         }
       }
-    }
-  } catch (_) {}
+    } catch (_) {}
+  }
   return Array.from(result.values());
 }
 
@@ -140,18 +148,44 @@ const MIME_TYPES = {
   ".ttf": "font/ttf",
 };
 
-// إنشاء غرفة جديدة مع لوحة الأسئلة والمضيف
-function buildBoardForCategories(selectedCategories) {
+// مولد أرقام شبه عشوائية حتمي يعتمد على رمز الغرفة لضمان ثبات الفئات والأسئلة عبر حاويات Vercel
+function createPrng(seedStr) {
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < seedStr.length; i++) {
+    h = Math.imul(h ^ seedStr.charCodeAt(i), 16777619);
+  }
+  return function() {
+    h += 0x6D2B79F5;
+    let t = Math.imul(h ^ (h >>> 15), 1 | h);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+// اختيار 6 فئات حتمياً بحسب رمز الغرفة
+function getDeterministicCategories(code) {
+  const prng = createPrng("cats_" + code);
+  const pool = [...allCategories];
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(prng() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  return pool.slice(0, 6).map(c => c.id);
+}
+
+// إنشاء لوحة الأسئلة مع ربط حتمي بالرمز لمنع تغيير الأسئلة عشوائياً
+function buildBoardForCategories(selectedCategories, code = "") {
   const board = [];
   for (const catId of selectedCategories) {
     const cells = [];
     for (const val of [100, 200, 300, 400, 500]) {
+      const cellPrng = code ? createPrng(`q_${code}_${catId}_${val}`) : Math.random;
       let matching = questions.filter(q => (q.category === catId || q.category_id === catId) && (q.value === val || q.points === val));
       if (matching.length === 0) {
         matching = questions.filter(q => q.category === catId || q.category_id === catId);
       }
       const q = matching.length > 0
-        ? matching[Math.floor(Math.random() * matching.length)]
+        ? matching[Math.floor((typeof cellPrng === "function" ? cellPrng() : Math.random()) * matching.length)]
         : { id: `q-${catId}-${val}`, category: catId, value: val };
 
       cells.push({
@@ -171,36 +205,14 @@ function buildBoardForCategories(selectedCategories) {
 function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixedCode = null) {
   const code = (fixedCode || payload.code || Math.random().toString(36).substring(2, 6)).toUpperCase();
 
-  // اختيار الفئات المحددة أو الافتراضية (6 فئات)
+  // اختيار الفئات المحددة أو الافتراضية حتمياً بناءً على رمز الغرفة
   let selectedCategories = payload.categories;
   if (!selectedCategories || !Array.isArray(selectedCategories) || selectedCategories.length < 3) {
-    selectedCategories = (mainCategories || []).slice(0, 6).map(c => c.id);
+    selectedCategories = getDeterministicCategories(code);
   }
 
-  // بناء اللوحة: الفئات المحددة × 5 مستويات صعوبة (100، 200، 300، 400، 500)
-  const board = [];
-  for (const catId of selectedCategories) {
-    const cells = [];
-    for (const val of [100, 200, 300, 400, 500]) {
-      let matching = questions.filter(q => (q.category === catId || q.category_id === catId) && (q.value === val || q.points === val));
-      if (matching.length === 0) {
-        matching = questions.filter(q => q.category === catId || q.category_id === catId);
-      }
-      const q = matching.length > 0
-        ? matching[Math.floor(Math.random() * matching.length)]
-        : { id: `q-${catId}-${val}`, category: catId, value: val };
-
-      cells.push({
-        key: `${catId}:${val}`,
-        value: val,
-        questionId: q.id,
-      });
-    }
-    board.push({
-      categoryId: catId,
-      cells,
-    });
-  }
+  // بناء اللوحة حتمياً بناءً على رمز الغرفة
+  const board = buildBoardForCategories(selectedCategories, code);
 
   const effectiveHostGuestId = hostGuestId || `g-${Date.now()}`;
   const effectiveHostName = (hostName || payload.name || "المشرف").trim();
@@ -1398,7 +1410,7 @@ export async function handleRequest(req, res) {
       }
 
       // إعادة بناء اللوحة بالفئات الجديدة
-      room.board = buildBoardForCategories(selectedCategories);
+      room.board = buildBoardForCategories(selectedCategories, code);
       room.settings = room.settings || {};
       room.settings.categories = selectedCategories;
       room.used = [];

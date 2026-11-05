@@ -642,8 +642,10 @@ async function _handleRequest(req, res) {
           const isHost = room.players.length === 0;
           const redCount = room.players.filter(p => p.team === "red").length;
           const greenCount = room.players.filter(p => p.team === "green").length;
+          // معرف حتمي بناءً على guestId لضمان نفس الـ id في حال الانقطاع وإعادة الاتصال
+          const stableId = "p-" + guestId.replace(/[^a-z0-9]/gi, "").slice(0, 8);
           player = {
-            id: "p-" + Math.random().toString(36).slice(2, 8),
+            id: stableId,
             user_id: guestId,
             name: (guestName || "لاعب").trim(),
             role: isHost ? "host" : "player",

@@ -103,6 +103,8 @@ function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "") {
   if (code.length >= 3 && code.length <= 10 && /^[A-Z0-9]+$/.test(code)) {
     console.log(`[RECOVER_ROOM] Restoring deterministic room for code: ${code}`);
     const recovered = createRoomInstance({ name: `غرفة ${code}` }, fallbackGuestId, fallbackGuestName, code);
+    // حفظ الغرفة المُسترجعة فوراً لضمان استقرارها في الـ requests التالية
+    saveRoom(code, recovered);
     return recovered;
   }
 
@@ -217,8 +219,13 @@ function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixed
   const effectiveHostGuestId = hostGuestId || `g-${Date.now()}`;
   const effectiveHostName = (hostName || payload.name || "المشرف").trim();
 
+  // معرف حتمي للاعب المضيف بناءً على كود الغرفة لضمان الاستقرار عبر invocations
+  const hostPlayerId = fixedCode ? `p-host-${code.toLowerCase()}` : "p-" + Math.random().toString(36).slice(2, 8);
+  // وقت حتمي للغرفة المُسترجعة لمنع flicker
+  const roomTime = fixedCode ? parseInt(code, 36) % 1000000000000 + 1700000000000 : Date.now();
+
   const hostPlayer = {
-    id: "p-" + Math.random().toString(36).slice(2, 8),
+    id: hostPlayerId,
     user_id: effectiveHostGuestId,
     name: effectiveHostName,
     role: "host",
@@ -233,7 +240,7 @@ function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixed
   const newRoom = {
     code,
     name: payload.name || `غرفة ${code}`,
-    status: "lobby", // "lobby" | "playing" | "finished"
+    status: "lobby",
     visibility: payload.visibility || "public",
     passcode: payload.passcode || "",
     max_players: Number(payload.maxPlayers) || 8,
@@ -257,26 +264,26 @@ function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixed
     },
     log: [
       {
-        id: "log-" + Date.now(),
+        id: `log-init-${code}`,
         reason: "إنشاء الغرفة",
         delta: 0,
         text: `تم إنشاء الغرفة «${payload.name || code}» بنجاح`,
-        time: Date.now(),
+        time: roomTime,
       },
     ],
     messages: [
       {
-        id: "msg-" + Date.now(),
+        id: `msg-init-${code}`,
         name: "النظام",
         content: `مرحباً بكم في «${payload.name || "غرفة " + code}»! 🇲🇦`,
         team: "all",
         kind: "system",
-        time: Date.now(),
+        time: roomTime,
       },
     ],
     players: [hostPlayer],
     connections: new Set(),
-    createdAt: Date.now(),
+    createdAt: roomTime,
   };
 
   saveRoom(code, newRoom);
@@ -612,22 +619,25 @@ async function _handleRequest(req, res) {
           return;
         }
 
-        // تحديث حالة الاتصال ومطابقة الهويات بالاسم أو المعرف لضمان عدم ظهور نافذة الانضمام
+        // تحديث حالة الاتصال - فقط نحدث last_seen بدون saveRoom في كل poll
         let player = room.players.find(p => p.user_id === guestId);
         if (!player && guestName && guestName !== "لاعب") {
           player = room.players.find(p => p.name.trim() === guestName.trim());
           if (player) {
-            player.user_id = guestId; // ربط هوية الزائر بحساب اللاعب فوراً
+            player.user_id = guestId;
           }
         }
 
+        let needsSave = false;
         if (player) {
           player.last_seen = Date.now();
           player.connected = true;
           if (guestName && guestName !== "لاعب" && player.name === "لاعب") {
             player.name = guestName.trim();
+            needsSave = true; // نحفظ فقط إذا تغير الاسم
           }
-          saveRoom(room.code, room);
+          // لا نُستدعي saveRoom في كل poll - فقط عند تغييرات حقيقية
+          if (needsSave) saveRoom(room.code, room);
         } else if (guestId) {
           const isHost = room.players.length === 0;
           const redCount = room.players.filter(p => p.team === "red").length;
@@ -650,7 +660,18 @@ async function _handleRequest(req, res) {
 
         sendFnResponse(res, {
           room: sanitizeRoom(room),
-          players: room.players || [],
+          // نُخفي last_seen من الـ response لمنع re-render في كل poll
+          players: (room.players || []).map(p => ({
+            id: p.id,
+            user_id: p.user_id,
+            name: p.name,
+            role: p.role,
+            team: p.team,
+            ready: p.ready,
+            captain: p.captain,
+            connected: p.connected,
+            vote: p.vote,
+          })),
           messages: room.messages || [],
         });
         return;

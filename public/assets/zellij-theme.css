@@ -302,3 +302,15 @@ a[href*="base44.com"] {
   position: absolute !important;
   top: -9999px !important;
 }
+
+/* شعار سين المغرب الرسمي */
+.seen-brand-mark {
+  background-image: url('/images/logo.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-color: #C2823D !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5) !important;
+}
+.seen-brand-mark span {
+  display: none !important;
+}

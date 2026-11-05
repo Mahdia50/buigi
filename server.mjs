@@ -392,7 +392,10 @@ async function getRawOrParsedBody(req) {
 function sendFnResponse(res, data) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.writeHead(200);
+  // لا نُضيف x-tss-serialized حتى يقرأ TanStack الـ JSON مباشرة
+  if (!res.headersSent) {
+    res.writeHead(200);
+  }
   const out = {
     result: data,
     data: data,
@@ -451,7 +454,12 @@ async function _handleRequest(req, res) {
   // إتاحة CORS للأجهزة والشبكة المحلية
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-seen-guest, x-seen-name, x-tsr-serverFn");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-seen-guest, x-seen-name, x-tsr-serverFn, accept");
+  res.setHeader("Access-Control-Expose-Headers", "Content-Type, x-tss-serialized");
+  // ضمان Content-Type مبكراً لتجنب خطأ TanStack "no content-type"
+  if (req.method !== "OPTIONS") {
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+  }
 
   if (req.method === "OPTIONS") {
     res.writeHead(204);

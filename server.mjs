@@ -510,22 +510,34 @@ export async function handleRequest(req, res) {
           return;
         }
 
-        // تحديث حالة الاتصال والحفاظ على اللاعبين دون الكتابة فوق المشرف
+        // تحديث حالة الاتصال ومطابقة الهويات بالاسم أو المعرف لضمان عدم ظهور نافذة الانضمام
         let player = room.players.find(p => p.user_id === guestId);
+        if (!player && guestName && guestName !== "لاعب") {
+          player = room.players.find(p => p.name.trim() === guestName.trim());
+          if (player) {
+            player.user_id = guestId; // ربط هوية الزائر بحساب اللاعب فوراً
+          }
+        }
+        if (!player && room.players.length === 1 && room.players[0].role === "host") {
+          player = room.players[0];
+          player.user_id = guestId;
+          if (guestName && guestName !== "لاعب") player.name = guestName.trim();
+        }
         if (player) {
           player.last_seen = Date.now();
           player.connected = true;
           if (guestName && guestName !== "لاعب" && player.name === "لاعب") {
             player.name = guestName.trim();
           }
-        } else if (guestId && guestName) {
+          saveRoom(room.code, room);
+        } else if (guestId) {
           const isHost = room.players.length === 0;
           const redCount = room.players.filter(p => p.team === "red").length;
           const greenCount = room.players.filter(p => p.team === "green").length;
           player = {
             id: "p-" + Math.random().toString(36).slice(2, 8),
             user_id: guestId,
-            name: guestName.trim(),
+            name: (guestName || "لاعب").trim(),
             role: isHost ? "host" : "player",
             team: greenCount < redCount ? "green" : "red",
             ready: true,
@@ -556,6 +568,10 @@ export async function handleRequest(req, res) {
         }
 
         let player = room.players.find(p => p.user_id === guestId);
+        if (!player && payload.name) {
+          player = room.players.find(p => p.name.trim() === payload.name.trim());
+          if (player) player.user_id = guestId;
+        }
         if (player) {
           if (payload.name) player.name = payload.name.trim();
           if (payload.team) player.team = payload.team;

@@ -99,14 +99,10 @@ function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "") {
     }
   } catch (_) {}
 
-  // Auto-recovery: If room does not exist, recreate cleanly with requested code
-  if (code.length >= 3) {
-    console.log(`[INFO] استرجاع وتجديد تلقائي للغرفة ${code} لضمان استمرارية اللعب.`);
-    const recovered = createRoomInstance({ name: `غرفة ${code}` }, fallbackGuestId, fallbackGuestName, code);
-    return recovered;
-  }
+  // // عدم استرجاع غرف غير موجودة بتوليد فئات عشوائياً
   return null;
 }
+
 
 function getAllRooms() {
   const result = new Map(memoryRooms);
@@ -145,6 +141,33 @@ const MIME_TYPES = {
 };
 
 // إنشاء غرفة جديدة مع لوحة الأسئلة والمضيف
+function buildBoardForCategories(selectedCategories) {
+  const board = [];
+  for (const catId of selectedCategories) {
+    const cells = [];
+    for (const val of [100, 200, 300, 400, 500]) {
+      let matching = questions.filter(q => (q.category === catId || q.category_id === catId) && (q.value === val || q.points === val));
+      if (matching.length === 0) {
+        matching = questions.filter(q => q.category === catId || q.category_id === catId);
+      }
+      const q = matching.length > 0
+        ? matching[Math.floor(Math.random() * matching.length)]
+        : { id: `q-${catId}-${val}`, category: catId, value: val };
+
+      cells.push({
+        key: `${catId}:${val}`,
+        value: val,
+        questionId: q.id,
+      });
+    }
+    board.push({
+      categoryId: catId,
+      cells,
+    });
+  }
+  return board;
+}
+
 function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixedCode = null) {
   const code = (fixedCode || payload.code || Math.random().toString(36).substring(2, 6)).toUpperCase();
 
@@ -319,10 +342,16 @@ async function getRawOrParsedBody(req) {
   if (req.body !== undefined && req.body !== null) {
     return req.body;
   }
+  if (req.readableEnded || req.complete) {
+    return "";
+  }
   return new Promise((resolve) => {
     let raw = "";
     req.on("data", chunk => { raw += chunk; });
-    req.on("end", () => resolve(raw));
+    req.on("end", () => {
+      req.body = raw;
+      resolve(raw);
+    });
     req.on("error", () => resolve(""));
   });
 }
@@ -359,6 +388,16 @@ export async function handleRequest(req, res) {
   }
 
   console.log(`[REQ] ${req.method} ${pathname}`);
+  if (req.method === "POST" || req.method === "PUT" || req.method === "PATCH") {
+    if (req.body === undefined || req.body === null) {
+      req.body = await new Promise((resolve) => {
+        let raw = "";
+        req.on("data", chunk => { raw += chunk; });
+        req.on("end", () => resolve(raw));
+        req.on("error", () => resolve(""));
+      });
+    }
+  }
   // إتاحة CORS للأجهزة والشبكة المحلية
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
@@ -488,6 +527,7 @@ export async function handleRequest(req, res) {
       const m = typeof body === "string" ? (body.match(/"code"[^}]*?"s":"([A-Za-z0-9]+)"/) || body.match(/"code"\s*:\s*"([A-Za-z0-9]+)"/)) : null;
       if (m) payload.code = m[1];
     }
+    console.log("[INSIDE SERVERFN BODY]");
 
       // أ) دالة إنشاء غرفة (b6a03d5cb0dea21e320dfac594c299c2c147746c2d6031a29d4ac6455979463a)
       if (fnHash === "b6a03d5cb0dea21e320dfac594c299c2c147746c2d6031a29d4ac6455979463a") {
@@ -509,6 +549,10 @@ export async function handleRequest(req, res) {
           sendFnResponse(res, null);
           return;
         }
+        if (room && room.kicked && (room.kicked.includes(guestId) || (guestName && room.kicked.includes(guestName)))) {
+          sendFnResponse(res, { ok: false, kicked: true, error: "تم طردك من هذه الغرفة بواسطة المشرف" });
+          return;
+        }
 
         // تحديث حالة الاتصال ومطابقة الهويات بالاسم أو المعرف لضمان عدم ظهور نافذة الانضمام
         let player = room.players.find(p => p.user_id === guestId);
@@ -518,11 +562,7 @@ export async function handleRequest(req, res) {
             player.user_id = guestId; // ربط هوية الزائر بحساب اللاعب فوراً
           }
         }
-        if (!player && room.players.length === 1 && room.players[0].role === "host") {
-          player = room.players[0];
-          player.user_id = guestId;
-          if (guestName && guestName !== "لاعب") player.name = guestName.trim();
-        }
+
         if (player) {
           player.last_seen = Date.now();
           player.connected = true;
@@ -642,7 +682,26 @@ export async function handleRequest(req, res) {
         const room = loadRoom(code, guestId, guestName);
         if (room) {
           if (payload.kick) {
-            room.players = room.players.filter(p => p.id !== payload.playerId);
+            const kickedPlayer = room.players.find(p => p.id === payload.playerId || p.user_id === payload.playerId);
+            if (kickedPlayer && kickedPlayer.role !== "host") {
+              room.kicked = room.kicked || [];
+              if (kickedPlayer.user_id && !room.kicked.includes(kickedPlayer.user_id)) {
+                room.kicked.push(kickedPlayer.user_id);
+              }
+              if (kickedPlayer.name && !room.kicked.includes(kickedPlayer.name)) {
+                room.kicked.push(kickedPlayer.name);
+              }
+              room.players = room.players.filter(p => p.id !== kickedPlayer.id && p.user_id !== kickedPlayer.user_id);
+              room.messages.push({
+                id: "msg-" + Date.now(),
+                name: "النظام",
+                content: `🚪 تم طرد «${kickedPlayer.name}» من الغرفة`,
+                team: "all",
+                kind: "system",
+                time: Date.now(),
+              });
+              saveRoom(room.code, room);
+            }
           } else {
             const player = room.players.find(p => p.id === payload.playerId);
             if (player) {
@@ -695,7 +754,8 @@ export async function handleRequest(req, res) {
         if (room && payload.key) {
           const player = room.players.find(p => p.user_id === guestId);
           if (player && player.team && player.team !== room.turn) {
-            sendFnResponse(res, { error: "ليس دور فريقك لاختيار السؤال" });
+            console.log(`[BLOCKED] تم منع اللاعب ${player.name} (${player.team}) من اختيار خانة لأن الدور لـ ${room.turn}`);
+            sendFnResponse(res, { ok: false, error: "ليس دور فريقك لاختيار السؤال" });
             return;
           }
           const [catId, valStr] = payload.key.split(":");
@@ -938,6 +998,7 @@ export async function handleRequest(req, res) {
             time: Date.now(),
           });
         }
+        saveRoom(room.code, room);
         sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
         return;
       }
@@ -1271,8 +1332,8 @@ export async function handleRequest(req, res) {
 
       const player = room.players.find(p => p.user_id === guestId);
       if (player && player.team && player.team !== room.turn) {
-        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-        res.end(JSON.stringify({ ok: false, message: "ليس دور فريقك لاختيار السؤال" }));
+        res.writeHead(403, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, error: "ليس دور فريقك لاختيار السؤال" }));
         return;
       }
 
@@ -1316,7 +1377,61 @@ export async function handleRequest(req, res) {
     return;
   }
 
-  // 7. تقديم الملفات الثابتة للواجهة الأمامية (Static File Serving)
+    // مسار تحديث فئات الغرفة (/api/rooms/update-categories)
+  if (pathname === "/api/rooms/update-categories" && req.method === "POST") {
+    const guestId = req.headers["x-seen-guest"] || "";
+    const guestName = decodeURIComponent(req.headers["x-seen-name"] || "");
+    try {
+      const rawBody = await getRawOrParsedBody(req);
+      const payload = unpackPayload(rawBody);
+      const code = (payload.code || "").toUpperCase();
+      const room = loadRoom(code, guestId, guestName);
+      if (!room) {
+        res.writeHead(404, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, error: "الغرفة غير موجودة" }));
+        return;
+      }
+
+      let selectedCategories = payload.categories;
+      if (!selectedCategories || !Array.isArray(selectedCategories) || selectedCategories.length < 3) {
+        selectedCategories = (mainCategories || []).slice(0, 6).map(c => c.id);
+      }
+
+      // إعادة بناء اللوحة بالفئات الجديدة
+      room.board = buildBoardForCategories(selectedCategories);
+      room.settings = room.settings || {};
+      room.settings.categories = selectedCategories;
+      room.used = [];
+      room.current = null;
+      room.log.unshift({
+        id: "log-" + Date.now(),
+        reason: "تغيير الفئات",
+        delta: 0,
+        text: `المشرف قام بتحديث فئات الأسئلة (${selectedCategories.length} فئات)`,
+        time: Date.now(),
+      });
+      room.messages.push({
+        id: "msg-" + Date.now(),
+        name: "النظام",
+        content: `🎯 تم تحديث فئات اللوحة (${selectedCategories.length} فئات)`,
+        team: "all",
+        kind: "system",
+        time: Date.now(),
+      });
+
+      saveRoom(room.code, room);
+      console.log(`[INFO] تم تحديث فئات الغرفة [${room.code}] إلى:`, selectedCategories);
+
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ ok: true, room: sanitizeRoom(room) }));
+    } catch (err) {
+      res.writeHead(500, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ ok: false, error: err.message }));
+    }
+    return;
+  }
+
+// 7. تقديم الملفات الثابتة للواجهة الأمامية (Static File Serving)
   let filePath = path.join(PUBLIC_DIR, pathname === "/" ? "index.html" : pathname);
   if (!filePath.startsWith(PUBLIC_DIR)) {
     res.writeHead(403).end("Forbidden");

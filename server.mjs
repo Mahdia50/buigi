@@ -250,6 +250,7 @@ async function adoptSnapshot(room, snapshot, code) {
   room.players = snapNewer
     ? unionPlayers(room.players || [], snapPlayers)
     : unionPlayers(snapPlayers, room.players || []);
+  room.players = withoutKicked(room, room.players);
   const afterIds = room.players.map((p) => p.user_id || p.id).sort().join("|");
   let changed = beforeIds !== afterIds;
   if (snapNewer && snapshot.status) {
@@ -260,6 +261,19 @@ async function adoptSnapshot(room, snapshot, code) {
   }
   if (changed) await saveRoom(code, room);
   return room;
+}
+
+function isKicked(room, guestId, guestName, player) {
+  const banned = room?.kicked;
+  if (!Array.isArray(banned) || !banned.length) return false;
+  if (guestId && banned.includes(guestId)) return true;
+  if (guestName && guestName !== "لاعب" && banned.includes(guestName)) return true;
+  if (player && (banned.includes(player.user_id) || banned.includes(player.id) || (player.name && banned.includes(player.name)))) return true;
+  return false;
+}
+
+function withoutKicked(room, players) {
+  return (players || []).filter((p) => !isKicked(room, p?.user_id, p?.name, p));
 }
 
 function findPlayer(room, guestId, guestName, playerId) {
@@ -1139,6 +1153,10 @@ async function _handleRequest(req, res) {
           await sendFnResponse(res, null);
           return;
         }
+        if (isKicked(room, guestId, payload.name || guestName)) {
+          await sendFnResponse(res, { ok: false, kicked: true, error: "تم طردك من هذه الغرفة بواسطة المشرف" });
+          return;
+        }
 
         let player = findPlayer(room, guestId, payload.name || guestName, payload.playerId);
         if (player) {
@@ -1228,16 +1246,25 @@ async function _handleRequest(req, res) {
         const room = await loadRoom(code, guestId, guestName);
         if (room) {
           if (payload.kick) {
+            const actor = findPlayer(room, guestId, guestName);
+            if (!actor || actor.role !== "host") {
+              await sendFnResponse(res, { ok: false, error: "فقط صاحب الغرفة يقدر يطرد" });
+              return;
+            }
             const kickedPlayer = room.players.find(p => p.id === payload.playerId || p.user_id === payload.playerId);
-            if (kickedPlayer && kickedPlayer.role !== "host") {
+            if (kickedPlayer && kickedPlayer.role !== "host" && kickedPlayer.id !== actor.id) {
               room.kicked = room.kicked || [];
               if (kickedPlayer.user_id && !room.kicked.includes(kickedPlayer.user_id)) {
                 room.kicked.push(kickedPlayer.user_id);
               }
+              if (kickedPlayer.id && !room.kicked.includes(kickedPlayer.id)) {
+                room.kicked.push(kickedPlayer.id);
+              }
               if (kickedPlayer.name && !room.kicked.includes(kickedPlayer.name)) {
                 room.kicked.push(kickedPlayer.name);
               }
-              room.players = room.players.filter(p => p.id !== kickedPlayer.id && p.user_id !== kickedPlayer.user_id);
+              room.players = withoutKicked(room, room.players.filter(p => p.id !== kickedPlayer.id && p.user_id !== kickedPlayer.user_id));
+              if (!Array.isArray(room.messages)) room.messages = [];
               room.messages.push({
                 id: "msg-" + Date.now(),
                 name: "النظام",
@@ -1247,7 +1274,11 @@ async function _handleRequest(req, res) {
                 time: Date.now(),
               });
               await saveRoom(room.code, room);
+              await sendFnResponse(res, { ok: true, room: sanitizeRoom(room), players: room.players });
+              return;
             }
+            await sendFnResponse(res, { ok: false, error: "ما قدرناش نطردو هاد اللاعب" });
+            return;
           } else {
             const actor = findPlayer(room, guestId, guestName);
             const player = room.players.find(p => p.id === payload.playerId || p.user_id === payload.playerId);

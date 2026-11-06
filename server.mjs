@@ -60,9 +60,24 @@ try {
   if (!fs.existsSync(LOCAL_ROOMS_DIR)) fs.mkdirSync(LOCAL_ROOMS_DIR, { recursive: true });
 } catch (_) {}
 
+function readRoomFromDisk(code) {
+  for (const dir of [TMP_ROOMS_DIR, LOCAL_ROOMS_DIR]) {
+    try {
+      const filePath = path.join(dir, `${code}.json`);
+      if (!fs.existsSync(filePath)) continue;
+      const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      parsed.connections = new Set();
+      return parsed;
+    } catch (_) {}
+  }
+  return null;
+}
+
 function saveRoom(code, room) {
   if (!code || !room) return;
   code = code.toUpperCase();
+  room.rev = (Number(room.rev) || 0) + 1;
+  room.updatedAt = Date.now();
   memoryRooms.set(code, room);
   const clean = { ...room, connections: undefined };
   const jsonStr = JSON.stringify(clean);
@@ -77,27 +92,23 @@ function saveRoom(code, room) {
 function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "") {
   if (!code) return null;
   code = code.toUpperCase();
-  if (memoryRooms.has(code)) {
-    return memoryRooms.get(code);
+  const disk = readRoomFromDisk(code);
+  const mem = memoryRooms.get(code);
+  if (mem && disk) {
+    const memRev = Number(mem.rev) || 0;
+    const diskRev = Number(disk.rev) || 0;
+    if (diskRev > memRev) {
+      disk.connections = mem.connections instanceof Set ? mem.connections : new Set();
+      memoryRooms.set(code, disk);
+      return disk;
+    }
+    return mem;
   }
-  try {
-    const p1 = path.join(TMP_ROOMS_DIR, `${code}.json`);
-    if (fs.existsSync(p1)) {
-      const parsed = JSON.parse(fs.readFileSync(p1, "utf8"));
-      parsed.connections = new Set();
-      memoryRooms.set(code, parsed);
-      return parsed;
-    }
-  } catch (_) {}
-  try {
-    const p2 = path.join(LOCAL_ROOMS_DIR, `${code}.json`);
-    if (fs.existsSync(p2)) {
-      const parsed = JSON.parse(fs.readFileSync(p2, "utf8"));
-      parsed.connections = new Set();
-      memoryRooms.set(code, parsed);
-      return parsed;
-    }
-  } catch (_) {}
+  if (mem) return mem;
+  if (disk) {
+    memoryRooms.set(code, disk);
+    return disk;
+  }
 
   // استرجاع حتمي مستقر للغرفة في بيئة Vercel Serverless لمنع ظهور "ما لقيناش الغرفة"
   if (code.length >= 3 && code.length <= 10 && /^[A-Z0-9]+$/.test(code)) {
@@ -390,6 +401,7 @@ function sanitizeRoom(room) {
     lifelinesInfo,
     allLifelines: ALL_LIFELINES,
     createdAt: room.createdAt,
+    rev: room.rev || 0,
   };
 }
 
@@ -812,7 +824,7 @@ async function _handleRequest(req, res) {
               role: isFirst ? "host" : "player",
               team: payload.team || "red",
               ready: true,
-              captain: isFirst,
+              captain: isFirst || !room.players.some(p => p.team === (payload.team || "red") && p.captain),
               connected: true,
               last_seen: Date.now(),
               vote: null,
@@ -943,10 +955,26 @@ async function _handleRequest(req, res) {
         const room = loadRoom(code, guestId, guestName);
         if (room && payload.key) {
           const player = room.players.find(p => p.user_id === guestId);
-          if (player && player.team && player.team !== room.turn) {
-            console.log(`[BLOCKED] تم منع اللاعب ${player.name} (${player.team}) من اختيار خانة لأن الدور لـ ${room.turn}`);
+          if (room.current && !room.current.awarded) {
+            sendFnResponse(res, { ok: false, error: "السؤال الحالي مازال مفتوح. كمّلوه قبل اختيار خانة جديدة." });
+            return;
+          }
+          if (room.used.includes(payload.key)) {
+            sendFnResponse(res, { ok: false, error: "هاد الخانة تلعبات من قبل" });
+            return;
+          }
+          let effectiveTurn = room.turn;
+          if (room.current && room.current.awarded) {
+            effectiveTurn = room.turn === "red" ? "green" : "red";
+          }
+          if (player && player.team && player.team !== effectiveTurn) {
+            console.log(`[BLOCKED] تم منع اللاعب ${player.name} (${player.team}) من اختيار خانة لأن الدور لـ ${effectiveTurn}`);
             sendFnResponse(res, { ok: false, error: "ليس دور فريقك لاختيار السؤال" });
             return;
+          }
+          if (room.current && room.current.awarded) {
+            room.turn = effectiveTurn;
+            room.current = null;
           }
           const [catId, valStr] = payload.key.split(":");
           const val = parseInt(valStr, 10);
@@ -1309,6 +1337,12 @@ async function _handleRequest(req, res) {
       if (!room || !room.current || room.current.revealed) {
         res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
         res.end(JSON.stringify({ ok: false, message: "لا يوجد سؤال نشط حالياً للإجابة" }));
+        return;
+      }
+
+      if (payload.cellKey && room.current.cellKey && payload.cellKey !== room.current.cellKey) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "هذا ليس السؤال المفتوح الآن" }));
         return;
       }
 

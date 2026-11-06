@@ -260,6 +260,7 @@ async function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "", snap
     room = disk;
   }
   if (snapshot) room = adoptSnapshot(room, snapshot, code);
+  ensureRoomLists(room);
   return room;
 }
 
@@ -485,15 +486,12 @@ const ALL_LIFELINES = [
   { id: "audience",   emoji: "👥", name: "رأي الجمهور",         desc: "يُظهر نسبة تصويت وهمية للخيارات" },
   { id: "extra30",    emoji: "⏰", name: "+30 ثانية",            desc: "يضيف 30 ثانية للوقت" },
   { id: "hint",       emoji: "💡", name: "تلميح",               desc: "يُظهر تلميحاً إضافياً للسؤال" },
-  { id: "skip",       emoji: "⏭️", name: "تجاوز السؤال",        desc: "ينتقل لسؤال جديد من نفس الفئة" },
   { id: "double",     emoji: "✌️", name: "جاوب مرتين",          desc: "يسمح بمحاولتين للإجابة" },
   { id: "steal",      emoji: "🎯", name: "خطف النقاط",          desc: "عند الإجابة الصحيحة تُضاعف نقاط الخانة" },
   { id: "freeze",     emoji: "🧊", name: "تجميد الخصم",         desc: "يمنع الخصم من خطف السؤال" },
-  { id: "swap",       emoji: "🔄", name: "تبديل الخانة",        desc: "يختار خانة عشوائية بنفس القيمة" },
   { id: "reveal_opt", emoji: "🔍", name: "كشف خيار",            desc: "يكشف حرف الإجابة الصحيحة" },
   { id: "extra15",    emoji: "⌚", name: "+15 ثانية",            desc: "يضيف 15 ثانية للوقت" },
   { id: "no_steal",   emoji: "🛡️", name: "حماية السؤال",        desc: "لا يمكن للخصم خطف السؤال" },
-  { id: "transfer",   emoji: "🎁", name: "نقل السؤال",          desc: "ينقل السؤال للخصم مع الوقت الحالي" },
   { id: "bonus50",    emoji: "💰", name: "+50 نقطة بونص",       desc: "يضيف 50 نقطة إضافية لقيمة الخانة" },
   { id: "second_ch",  emoji: "🔁", name: "فرصة ثانية",          desc: "عند الخطأ يمنح فرصة إجابة ثانية" },
   { id: "reduce",     emoji: "✂️", name: "تقليل الخيارات",     desc: "يُقلص الخيارات لـ 3 فقط (يحذف 1)" },
@@ -502,11 +500,36 @@ const ALL_LIFELINES = [
   { id: "all_see",    emoji: "👁️", name: "الكل يرى",            desc: "يُظهر الجواب للجميع لكن يخفي التأكيد" },
 ];
 
+function chosenLifelineIds(room, team) {
+  const raw = room.settings?.chosenLifelines?.[team];
+  const ids = (Array.isArray(raw) && raw.length ? raw : ["5050", "friend", "extra30"])
+    .filter((id) => ALL_LIFELINES.some((l) => l.id === id));
+  return ids.length ? ids : ["5050", "friend", "extra30"];
+}
+
+function ensureRoomLists(room) {
+  if (!room) return;
+  if (!Array.isArray(room.used)) room.used = [];
+  if (!Array.isArray(room.log)) room.log = [];
+  if (!Array.isArray(room.messages)) room.messages = [];
+  if (!Array.isArray(room.kicked)) room.kicked = [];
+  if (!Array.isArray(room.players)) room.players = [];
+  if (!room.scores) room.scores = { red: 0, green: 0 };
+  if (!room.lifelines) room.lifelines = { red: {}, green: {} };
+  const current = room.current;
+  if (current && current.friendCallActive && current.friendCallEnd && Date.now() >= current.friendCallEnd) {
+    const remaining = Number(current.friendCallRemaining) || 0;
+    current.deadline = Date.now() + remaining;
+    current.friendCallActive = false;
+    current.total = Math.max(1, Math.ceil(remaining / 1000));
+  }
+}
+
 function getAvailableLifelines(room, team) {
-  const chosen = room.settings?.chosenLifelines?.[team] || ["5050","friend","extra30"];
+  const chosen = chosenLifelineIds(room, team);
   const used = room.lifelines?.[team] || {};
   return chosen.map(id => {
-    const def = ALL_LIFELINES.find(l => l.id === id) || { id, emoji: "⭐", name: id, desc: "" };
+    const def = ALL_LIFELINES.find(l => l.id === id);
     return { ...def, available: !used[id] };
   });
 }
@@ -514,10 +537,10 @@ function getAvailableLifelines(room, team) {
 function sanitizeRoom(room) {
   const lifelinesInfo = {};
   for (const team of ["red","green"]) {
-    const chosen = room.settings?.chosenLifelines?.[team] || ["5050","friend","extra30"];
+    const chosen = chosenLifelineIds(room, team);
     const used = room.lifelines?.[team] || {};
     lifelinesInfo[team] = chosen.map(id => {
-      const def = ALL_LIFELINES.find(l=>l.id===id) || {id,emoji:"⭐",name:id,desc:""};
+      const def = ALL_LIFELINES.find(l=>l.id===id);
       return {...def, available:!used[id]};
     });
   }
@@ -1587,6 +1610,11 @@ async function _handleRequest(req, res) {
       const teamLabel = currentAnsweringTeam === "red" ? "الفريق الأحمر" : "الفريق الأخضر";
       const lifelineType = payload.type;
       const def = ALL_LIFELINES.find(l => l.id === lifelineType);
+      if (!def) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "هذه الوسيلة ما بقاش متاحة" }));
+        return;
+      }
 
       // تحقق من أن الوسيلة مختارة من قِبل الفريق
       const chosen = room.settings?.chosenLifelines?.[currentAnsweringTeam] || ["5050","friend","extra30"];
@@ -1677,37 +1705,7 @@ async function _handleRequest(req, res) {
         room.current.doubleOnSteal = true;
         logText += ` (النقاط مضاعفة عند الإجابة الصحيحة)`;
 
-      } else if (lifelineType === "skip") {
-        // خانة عشوائية من نفس الفئة
-        const catId = room.current.categoryId;
-        const val = room.current.value;
-        const catCells = (room.board.find(b=>b.categoryId===catId)?.cells||[]).filter(c=>!room.used.includes(c.key)&&c.key!==room.current.cellKey);
-        if (catCells.length > 0) {
-          const newCell = catCells[Math.floor(Math.random()*catCells.length)];
-          room.current.questionId = newCell.questionId;
-          room.current.cellKey = newCell.key;
-          room.current.value = newCell.value;
-        }
-        logText += ` (انتقل لسؤال جديد)`;
-
-      } else if (lifelineType === "transfer") {
-        const opp = currentAnsweringTeam === "red" ? "green" : "red";
-        room.current.answeringTeam = opp;
-        logText += ` (انتقل السؤال للخصم)`;
-
-      } else if (lifelineType === "swap") {
-        const val = room.current.value;
-        const allCells = room.board.flatMap(b=>b.cells).filter(c=>c.value===val&&!room.used.includes(c.key)&&c.key!==room.current.cellKey);
-        if (allCells.length > 0) {
-          const newCell = allCells[Math.floor(Math.random()*allCells.length)];
-          room.current.questionId = newCell.questionId;
-          room.current.cellKey = newCell.key;
-          room.current.categoryId = newCell.key.split(":")[0];
-        }
-        logText += ` (تبديل بخانة عشوائية من نفس القيمة)`;
-
       } else if (lifelineType === "audience") {
-        // رأي جمهور وهمي
         const qId = room.current.questionId;
         let qData = questions.find(q=>q.id===qId);
         if (!qData) { try { const jb=JSON.parse(fs.readFileSync(path.join(__dirname,"data","questions_bank_complete.json"),"utf8")); qData=(jb.questions||[]).find(q=>q.id===qId); } catch(_){} }

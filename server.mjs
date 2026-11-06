@@ -381,31 +381,94 @@ function getDeterministicCategories(code) {
   return pool.slice(0, 6).map(c => c.id);
 }
 
-// إنشاء لوحة الأسئلة مع ربط حتمي بالرمز لمنع تغيير الأسئلة عشوائياً
-function buildBoardForCategories(selectedCategories, code = "") {
+function questionText(q) {
+  return String(q?.question || q?.text || "").replace(/\s+/g, " ").trim();
+}
+
+const USED_QUESTIONS_FILE = path.join(__dirname, "data", "used-question-ids.json");
+let usedQuestionIds = null;
+
+async function loadUsedQuestionIds() {
+  if (usedQuestionIds) return usedQuestionIds;
+  const ids = new Set();
+  try {
+    const cache = vercelRuntimeCache();
+    if (cache) {
+      const value = await cache.get("seen:used-questions");
+      if (Array.isArray(value)) value.forEach((id) => ids.add(id));
+    }
+  } catch (_) {}
+  try {
+    if (fs.existsSync(USED_QUESTIONS_FILE)) {
+      const parsed = JSON.parse(fs.readFileSync(USED_QUESTIONS_FILE, "utf8"));
+      if (Array.isArray(parsed)) parsed.forEach((id) => ids.add(id));
+    }
+  } catch (_) {}
+  usedQuestionIds = ids;
+  return ids;
+}
+
+async function rememberQuestionIds(ids) {
+  const set = await loadUsedQuestionIds();
+  let changed = false;
+  for (const id of ids || []) {
+    if (!id || String(id).startsWith("q-") || set.has(id)) continue;
+    set.add(id);
+    changed = true;
+  }
+  if (!changed) return;
+  const list = [...set];
+  try { fs.writeFileSync(USED_QUESTIONS_FILE, JSON.stringify(list)); } catch (_) {}
+  try {
+    const cache = vercelRuntimeCache();
+    if (cache) await cache.set("seen:used-questions", list, { ttl: 60 * 60 * 24 * 30, tags: ["seen-questions"] });
+  } catch (_) {}
+}
+
+function boardQuestionIds(board) {
+  const ids = [];
+  for (const cat of board || []) {
+    for (const cell of cat.cells || []) if (cell.questionId) ids.push(cell.questionId);
+  }
+  return ids;
+}
+
+// لوحة بلا تكرار: كل سؤال يتلعب مرة في المباراة، وما يعاودش فالغرف الجاية حتى يخلص المخزون
+function buildBoardForCategories(selectedCategories, code = "", blockedIds = new Set()) {
+  const usedIds = new Set();
+  const usedTexts = new Set();
   const board = [];
+  const fresh = (list) => list.filter((q) => {
+    if (!q?.id || usedIds.has(q.id)) return false;
+    const text = questionText(q);
+    if (text && usedTexts.has(text)) return false;
+    if (blockedIds.has(q.id)) return false;
+    return true;
+  });
   for (const catId of selectedCategories) {
     const cells = [];
+    const inCat = questions.filter((q) => q.category_id === catId || q.category === catId);
     for (const val of [100, 200, 300, 400, 500]) {
-      const cellPrng = code ? createPrng(`q_${code}_${catId}_${val}`) : Math.random;
-      let matching = questions.filter(q => (q.category === catId || q.category_id === catId) && (q.value === val || q.points === val));
-      if (matching.length === 0) {
-        matching = questions.filter(q => q.category === catId || q.category_id === catId);
+      const cellPrng = code ? createPrng(`q_${code}_${catId}_${val}_v2`) : Math.random;
+      let pool = fresh(inCat.filter((q) => q.value === val || q.points === val));
+      if (!pool.length) pool = fresh(inCat);
+      if (!pool.length) {
+        pool = inCat.filter((q) => q?.id && !usedIds.has(q.id) && !usedTexts.has(questionText(q)));
       }
-      const q = matching.length > 0
-        ? matching[Math.floor((typeof cellPrng === "function" ? cellPrng() : Math.random()) * matching.length)]
+      const roll = typeof cellPrng === "function" ? cellPrng() : Math.random();
+      const q = pool.length
+        ? pool[Math.floor(roll * pool.length)]
         : { id: `q-${catId}-${val}`, category: catId, value: val };
-
+      if (q.id) usedIds.add(q.id);
+      const text = questionText(q);
+      if (text) usedTexts.add(text);
       cells.push({
         key: `${catId}:${val}`,
         value: val,
         questionId: q.id,
       });
     }
-    board.push({
-      categoryId: catId,
-      cells,
-    });
+    board.push({ categoryId: catId, cells });
   }
   return board;
 }
@@ -419,8 +482,9 @@ async function createRoomInstance(payload = {}, hostGuestId = "", hostName = "",
     selectedCategories = getDeterministicCategories(code);
   }
 
-  // بناء اللوحة حتمياً بناءً على رمز الغرفة
-  const board = buildBoardForCategories(selectedCategories, code);
+  // بناء اللوحة حتمياً بناءً على رمز الغرفة، بلا أسئلة سبقات
+  const board = buildBoardForCategories(selectedCategories, code, await loadUsedQuestionIds());
+  await rememberQuestionIds(boardQuestionIds(board));
 
   const effectiveHostGuestId = hostGuestId || `g-${Date.now()}`;
   const effectiveHostName = (hostName || payload.name || "المشرف").trim();
@@ -2119,7 +2183,8 @@ async function _handleRequest(req, res) {
       }
 
       // إعادة بناء اللوحة بالفئات الجديدة
-      room.board = buildBoardForCategories(selectedCategories, code);
+      room.board = buildBoardForCategories(selectedCategories, code + ":cats:" + Date.now(), await loadUsedQuestionIds());
+      await rememberQuestionIds(boardQuestionIds(room.board));
       room.settings = room.settings || {};
       room.settings.categories = selectedCategories;
       room.used = [];

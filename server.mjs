@@ -396,10 +396,13 @@ async function getRawOrParsedBody(req) {
   });
 }
 
-function sendFnResponse(res, data) {
+function sendFnResponse(res, data, roomToSave = null) {
+  // حفظ الغرفة تلقائياً إذا مُررت لضمان الاستمرارية في Vercel
+  if (roomToSave && roomToSave.code) {
+    saveRoom(roomToSave.code, roomToSave);
+  }
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Access-Control-Allow-Origin", "*");
-  // لا نُضيف x-tss-serialized حتى يقرأ TanStack الـ JSON مباشرة
   if (!res.headersSent) {
     res.writeHead(200);
   }
@@ -760,9 +763,10 @@ async function _handleRequest(req, res) {
             if (payload.ready !== undefined) player.ready = !!payload.ready;
             if (payload.captain !== undefined) player.captain = !!payload.captain;
             player.last_seen = Date.now();
+            saveRoom(room.code, room);  // حفظ تعديلات اللاعب
           }
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -816,9 +820,10 @@ async function _handleRequest(req, res) {
                 player.captain = !!payload.captain;
               }
             }
+            saveRoom(room.code, room);  // حفظ تغييرات الكابتن والفريق
           }
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -828,8 +833,9 @@ async function _handleRequest(req, res) {
         const room = loadRoom(code, guestId, guestName);
         if (room && payload.settings) {
           room.settings.voteMode = !!payload.settings.voteMode;
+          saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -848,7 +854,7 @@ async function _handleRequest(req, res) {
             time: Date.now(),
           });
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -894,7 +900,7 @@ async function _handleRequest(req, res) {
           room.players.forEach(p => p.vote = null);
           saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -906,7 +912,7 @@ async function _handleRequest(req, res) {
           const player = room.players.find(p => p.user_id === guestId);
           if (player) player.vote = payload.key;
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -953,7 +959,7 @@ async function _handleRequest(req, res) {
           }
           room.players.forEach(p => p.vote = null);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -965,7 +971,7 @@ async function _handleRequest(req, res) {
           room.current.revealed = true;
           saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1010,7 +1016,7 @@ async function _handleRequest(req, res) {
           }
           saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1029,7 +1035,7 @@ async function _handleRequest(req, res) {
             time: Date.now(),
           });
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1055,7 +1061,7 @@ async function _handleRequest(req, res) {
           }
           saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1067,7 +1073,7 @@ async function _handleRequest(req, res) {
           room.paused = !room.paused;
           saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1079,7 +1085,7 @@ async function _handleRequest(req, res) {
           room.status = "finished";
           room.current = null;
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1104,7 +1110,7 @@ async function _handleRequest(req, res) {
           });
         }
         saveRoom(room.code, room);
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1115,7 +1121,7 @@ async function _handleRequest(req, res) {
         if (room) {
           room.chat_open = !!payload.open;
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null });
+        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 

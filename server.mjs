@@ -141,9 +141,9 @@ async function primeRoom(code) {
   const cached = await readSharedRoom(code);
   const mem = memoryRooms.get(code);
   const disk = readRoomFromDisk(code);
-  const sources = [mem, disk, cached].filter(Boolean);
+  const sources = [mem, disk, cached].filter(Boolean).sort((a, b) => (Number(a.rev) || 0) - (Number(b.rev) || 0));
   if (!sources.length) return;
-  const best = sources.reduce((a, b) => ((Number(b.rev) || 0) > (Number(a.rev) || 0) ? b : a));
+  const best = sources[sources.length - 1];
   const players = sources.reduce((acc, source) => unionPlayers(acc, source.players || []), []);
   const room = best === mem ? mem : { ...best };
   room.players = players;
@@ -157,8 +157,11 @@ async function saveRoom(code, room) {
   code = code.toUpperCase();
   const remote = await readSharedRoom(code);
   if (remote && typeof remote === "object") {
-    const players = unionPlayers(remote.players || [], room.players || []);
-    if ((Number(remote.rev) || 0) > (Number(room.rev) || 0)) {
+    const remoteNewer = (Number(remote.rev) || 0) > (Number(room.rev) || 0);
+    const players = remoteNewer
+      ? unionPlayers(room.players || [], remote.players || [])
+      : unionPlayers(remote.players || [], room.players || []);
+    if (remoteNewer) {
       const connections = room.connections;
       Object.assign(room, remote, { code, players, connections });
     } else {
@@ -200,7 +203,7 @@ function unionPlayers(listA = [], listB = []) {
       name: player.name && player.name !== "لاعب" ? player.name : prev.name,
       team: player.team || prev.team,
       role: prev.role === "host" || player.role === "host" ? "host" : (player.role || prev.role),
-      captain: !!(prev.captain || player.captain),
+      captain: player.captain !== undefined ? !!player.captain : !!prev.captain,
       ready: player.ready !== undefined ? player.ready : prev.ready,
     });
   };
@@ -219,7 +222,7 @@ function unionPlayers(listA = [], listB = []) {
   for (const team of ["red", "green"]) {
     const captains = players.filter((p) => p.team === team && p.captain);
     if (captains.length <= 1) continue;
-    const keep = captains.find((p) => p.role === "host") || captains[0];
+    const keep = captains[captains.length - 1];
     players = players.map((p) => (
       p.team === team && p.captain && p.id !== keep.id && p.user_id !== keep.user_id
         ? { ...p, captain: false }
@@ -527,23 +530,23 @@ async function restoreCurrentFromPayload(room, payload) {
 
 // تعريف الـ 20 وسيلة مساعدة المتاحة
 const ALL_LIFELINES = [
-  { id: "5050",       emoji: "🪄", name: "50:50",               desc: "يحذف خيارين خاطئين" },
-  { id: "friend",     emoji: "📞", name: "اتصال بصديق",         desc: "يوقف الوقت 30 ثانية للتشاور" },
-  { id: "audience",   emoji: "👥", name: "رأي الجمهور",         desc: "يُظهر نسبة تصويت وهمية للخيارات" },
-  { id: "extra30",    emoji: "⏰", name: "+30 ثانية",            desc: "يضيف 30 ثانية للوقت" },
-  { id: "hint",       emoji: "💡", name: "تلميح",               desc: "يُظهر تلميحاً إضافياً للسؤال" },
-  { id: "double",     emoji: "✌️", name: "جاوب مرتين",          desc: "يسمح بمحاولتين للإجابة" },
-  { id: "steal",      emoji: "🎯", name: "خطف النقاط",          desc: "عند الإجابة الصحيحة تُضاعف نقاط الخانة" },
-  { id: "freeze",     emoji: "🧊", name: "تجميد الخصم",         desc: "يمنع الخصم من خطف السؤال" },
-  { id: "reveal_opt", emoji: "🔍", name: "كشف خيار",            desc: "يكشف حرف الإجابة الصحيحة" },
-  { id: "extra15",    emoji: "⌚", name: "+15 ثانية",            desc: "يضيف 15 ثانية للوقت" },
-  { id: "no_steal",   emoji: "🛡️", name: "حماية السؤال",        desc: "لا يمكن للخصم خطف السؤال" },
-  { id: "bonus50",    emoji: "💰", name: "+50 نقطة بونص",       desc: "يضيف 50 نقطة إضافية لقيمة الخانة" },
-  { id: "second_ch",  emoji: "🔁", name: "فرصة ثانية",          desc: "عند الخطأ يمنح فرصة إجابة ثانية" },
-  { id: "reduce",     emoji: "✂️", name: "تقليل الخيارات",     desc: "يُقلص الخيارات لـ 3 فقط (يحذف 1)" },
-  { id: "time_stop",  emoji: "⏸️", name: "إيقاف الوقت",         desc: "يوقف العداد 20 ثانية" },
-  { id: "double_neg", emoji: "💣", name: "مضاعفة الخسارة",      desc: "إذا أخطأ الخصم تضاعفت الخصومة عليه" },
-  { id: "all_see",    emoji: "👁️", name: "الكل يرى",            desc: "يُظهر الجواب للجميع لكن يخفي التأكيد" },
+  { id: "5050",       emoji: "🪄", name: "50:50",               desc: "يحذف خيارين خاطئين", cost: 150 },
+  { id: "friend",     emoji: "📞", name: "اتصال بصديق",         desc: "يوقف الوقت 30 ثانية للتشاور", cost: 100 },
+  { id: "audience",   emoji: "👥", name: "رأي الجمهور",         desc: "يُظهر نسبة تصويت وهمية للخيارات", cost: 100 },
+  { id: "extra30",    emoji: "⏰", name: "+30 ثانية",            desc: "يضيف 30 ثانية للوقت", cost: 100 },
+  { id: "hint",       emoji: "💡", name: "تلميح",               desc: "يُظهر تلميحاً إضافياً للسؤال", cost: 75 },
+  { id: "double",     emoji: "✌️", name: "جاوب مرتين",          desc: "يسمح بمحاولتين للإجابة", cost: 150 },
+  { id: "steal",      emoji: "🎯", name: "خطف النقاط",          desc: "عند الإجابة الصحيحة تُضاعف نقاط الخانة", cost: 250 },
+  { id: "freeze",     emoji: "🧊", name: "تجميد الخصم",         desc: "يمنع الخصم من خطف السؤال", cost: 150 },
+  { id: "reveal_opt", emoji: "🔍", name: "كشف خيار",            desc: "يكشف حرف الإجابة الصحيحة", cost: 200 },
+  { id: "extra15",    emoji: "⌚", name: "+15 ثانية",            desc: "يضيف 15 ثانية للوقت", cost: 50 },
+  { id: "no_steal",   emoji: "🛡️", name: "حماية السؤال",        desc: "لا يمكن للخصم خطف السؤال", cost: 150 },
+  { id: "bonus50",    emoji: "💰", name: "+50 نقطة بونص",       desc: "يضيف 50 نقطة إضافية لقيمة الخانة", cost: 200 },
+  { id: "second_ch",  emoji: "🔁", name: "فرصة ثانية",          desc: "عند الخطأ يمنح فرصة إجابة ثانية", cost: 200 },
+  { id: "reduce",     emoji: "✂️", name: "تقليل الخيارات",     desc: "يُقلص الخيارات لـ 3 فقط (يحذف 1)", cost: 50 },
+  { id: "time_stop",  emoji: "⏸️", name: "إيقاف الوقت",         desc: "يوقف العداد 20 ثانية", cost: 75 },
+  { id: "double_neg", emoji: "💣", name: "مضاعفة الخسارة",      desc: "إذا أخطأ الخصم تضاعفت الخصومة عليه", cost: 200 },
+  { id: "all_see",    emoji: "👁️", name: "الكل يرى",            desc: "يُظهر الجواب للجميع لكن يخفي التأكيد", cost: 300 },
 ];
 
 function chosenLifelineIds(room, team) {
@@ -1031,7 +1034,6 @@ async function _handleRequest(req, res) {
             if (payload.name !== undefined) player.name = payload.name.trim();
             if (payload.team !== undefined) player.team = payload.team;
             if (payload.ready !== undefined) player.ready = !!payload.ready;
-            if (payload.captain !== undefined) player.captain = !!payload.captain;
             player.last_seen = Date.now();
             await saveRoom(room.code, room);  // حفظ تعديلات اللاعب
           }
@@ -1082,13 +1084,13 @@ async function _handleRequest(req, res) {
               await saveRoom(room.code, room);
             }
           } else {
-            const player = room.players.find(p => p.id === payload.playerId);
-            if (player) {
-              if (payload.team) player.team = payload.team;
-              if (payload.captain !== undefined) {
-                room.players.filter(p => p.team === player.team).forEach(p => p.captain = false);
-                player.captain = !!payload.captain;
-              }
+            const actor = findPlayer(room, guestId, guestName);
+            const player = room.players.find(p => p.id === payload.playerId || p.user_id === payload.playerId);
+            if (player && actor?.role === "host" && payload.team) player.team = payload.team;
+            const sameTeamCaptain = actor && actor.captain && player && actor.team === player.team && actor.id !== player.id;
+            if (sameTeamCaptain && payload.captain) {
+              room.players.filter(p => p.team === player.team).forEach(p => { p.captain = false; });
+              player.captain = true;
             }
             await saveRoom(room.code, room);  // حفظ تغييرات الكابتن والفريق
           }
@@ -1682,9 +1684,12 @@ async function _handleRequest(req, res) {
       // تنفيذ الوسيلة
       teamUsed[lifelineType] = true;
       room.lifelines[currentAnsweringTeam] = teamUsed;
+      const cost = Number(def.cost) || 0;
+      if (!room.scores) room.scores = { red: 0, green: 0 };
+      room.scores[currentAnsweringTeam] = (room.scores[currentAnsweringTeam] || 0) - cost;
 
       const now = Date.now();
-      let logText = `استخدم ${teamLabel} وسيلة "${def?.emoji || "⭐"} ${def?.name || lifelineType}"`;
+      let logText = `استخدم ${teamLabel} وسيلة "${def?.emoji || "⭐"} ${def?.name || lifelineType}"` + (cost ? ` (−${cost} نقطة)` : "");
 
       // ===== تنفيذ كل وسيلة =====
       if (lifelineType === "5050" || lifelineType === "reduce") {
@@ -1780,7 +1785,7 @@ async function _handleRequest(req, res) {
         logText += ` (الجواب مرئي للجميع)`;
       }
 
-      room.log.unshift({ id:"log-"+Date.now(), reason:"وسيلة مساعدة", delta:0, text:logText, time:now });
+      room.log.unshift({ id:"log-"+Date.now(), reason:"وسيلة مساعدة", delta: cost ? -cost : 0, text:logText, time:now });
       await saveRoom(room.code, room);
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ ok:true, room:sanitizeRoom(room), players:room.players, messages:room.messages }));

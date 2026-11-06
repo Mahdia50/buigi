@@ -291,6 +291,41 @@ function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixed
   return newRoom;
 }
 
+function restoreCurrentFromPayload(room, payload) {
+  if (!room || room.current) return; // current موجود، لا حاجة للاسترجاع
+  const cellKey = payload.cellKey || payload.key;
+  if (!cellKey) return;
+  const [catId, valStr] = cellKey.split(":");
+  const val = parseInt(valStr, 10);
+  let qId = null;
+  for (const cat of room.board || []) {
+    if (cat.categoryId === catId) {
+      const c = cat.cells?.find(cell => cell.key === cellKey);
+      if (c) qId = c.questionId;
+    }
+  }
+  const durationSec = Number(room.settings?.answerTime) || 30;
+  room.current = {
+    questionId: qId || `q-${catId}-${val}`,
+    cellKey,
+    categoryId: catId,
+    value: val,
+    startedAt: Date.now(),
+    total: durationSec,
+    duration: durationSec,
+    deadline: durationSec > 0 ? Date.now() + (durationSec * 1000) : null,
+    revealed: false,
+    awarded: false,
+    winner: null,
+    team: room.turn,
+    answeringTeam: room.turn,
+    attemptedTeams: [],
+    wrongAnswers: [],
+    hiddenOptions: [],
+  };
+  saveRoom(room.code, room);
+}
+
 function sanitizeRoom(room) {
   return {
     id: room.code,
@@ -970,9 +1005,12 @@ async function _handleRequest(req, res) {
       if (fnHash === "ed573daface9b83072fecbbfb375251c6b62a091f2df2f939a2428f8ac851162") {
         const code = (payload.code || "").toUpperCase();
         const room = loadRoom(code, guestId, guestName);
-        if (room && room.current) {
-          room.current.revealed = true;
-          saveRoom(room.code, room);
+        if (room) {
+          restoreCurrentFromPayload(room, payload);
+          if (room.current) {
+            room.current.revealed = true;
+            saveRoom(room.code, room);
+          }
         }
         sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
@@ -982,6 +1020,9 @@ async function _handleRequest(req, res) {
       if (fnHash === "c4e7a4b9c4e13c37246b17ca655f2af59319ea9dc9616be7f8eee652a70b3fb2") {
         const code = (payload.code || "").toUpperCase();
         const room = loadRoom(code, guestId, guestName);
+        if (room) {
+          restoreCurrentFromPayload(room, payload);
+        }
         if (room && room.current) {
           const winner = payload.winner; // "red" | "green" | "none"
           const val = room.current.value || 200;
@@ -1220,6 +1261,10 @@ async function _handleRequest(req, res) {
       const payload = unpackPayload(rawBody);
       const code = (payload.code || "").toUpperCase();
       const room = loadRoom(code, guestId, guestName);
+
+      // استرجاع current من payload إذا كان مفقوداً (Vercel cold start)
+      if (room) restoreCurrentFromPayload(room, payload);
+
       if (!room || !room.current || room.current.revealed) {
         res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
         res.end(JSON.stringify({ ok: false, message: "لا يوجد سؤال نشط حالياً للإجابة" }));

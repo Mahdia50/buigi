@@ -676,7 +676,10 @@ async function _handleRequest(req, res) {
           room: sanitizeRoom(room),
           // connected بـ bucket 30 ثانية لمنع التغيير في كل poll
           players: (room.players || []).map(p => {
-            const isConnected = !!(p.connected && Date.now() - (p.last_seen || 0) < 90000);
+            // bucket بـ 30 ثانية: true إذا last_seen < 90s، نُقرّب للـ 30s لتقليل التغيير
+            const bucket30 = Math.floor(Date.now() / 30000);
+            const lastBucket = Math.floor((p.last_seen || 0) / 30000);
+            const isConnected = (bucket30 - lastBucket) < 3; // أقل من 3 buckets = أقل من 90 ثانية
             return {
               id: p.id,
               user_id: p.user_id,

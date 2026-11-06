@@ -964,7 +964,7 @@ async function _handleRequest(req, res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-seen-guest, x-seen-name, x-tsr-serverFn, accept");
   res.setHeader("Access-Control-Expose-Headers", "Content-Type, x-tss-serialized");
   // ضمان Content-Type مبكراً لتجنب خطأ TanStack "no content-type"
-  if (req.method !== "OPTIONS") {
+  if (req.method !== "OPTIONS" && pathname !== "/api/proxy-image") {
     res.setHeader("Content-Type", "application/json; charset=utf-8");
   }
 
@@ -1022,34 +1022,59 @@ async function _handleRequest(req, res) {
       } catch (_) {}
     }
 
-    const client = imgUrl.startsWith("https") ? https : http;
-    client.get(imgUrl, {
-      headers: { "User-Agent": "SeenMaghribBot/1.0 (info@seenmaghrib.ma)" }
-    }, (proxyRes) => {
-      if (proxyRes.statusCode >= 300 && proxyRes.statusCode < 400 && proxyRes.headers.location) {
-        res.writeHead(302, { Location: "/api/proxy-image?url=" + encodeURIComponent(proxyRes.headers.location) });
-        res.end();
-        return;
-      }
-      const mime = proxyRes.headers["content-type"] || "image/jpeg";
-      res.writeHead(proxyRes.statusCode || 200, {
-        "Content-Type": mime,
-        "Cache-Control": "public, max-age=86400",
-        "Access-Control-Allow-Origin": "*"
+    const fetchImage = (target, redirectsLeft) => {
+      const client = target.startsWith("https") ? https : http;
+      const reqImg = client.get(target, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+          "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+        },
+      }, (proxyRes) => {
+        if (proxyRes.statusCode >= 300 && proxyRes.statusCode < 400 && proxyRes.headers.location && redirectsLeft > 0) {
+          proxyRes.resume();
+          try {
+            fetchImage(new URL(proxyRes.headers.location, target).href, redirectsLeft - 1);
+          } catch (_) {
+            res.writeHead(502);
+            res.end("bad redirect");
+          }
+          return;
+        }
+        const chunks = [];
+        proxyRes.on("data", (chunk) => chunks.push(chunk));
+        proxyRes.on("end", () => {
+          const body = Buffer.concat(chunks);
+          const mime = String(proxyRes.headers["content-type"] || "image/jpeg").split(";")[0];
+          const ok = proxyRes.statusCode === 200 && mime.startsWith("image/");
+          if (!ok) {
+            res.writeHead(502, { "Content-Type": "text/plain; charset=utf-8" });
+            res.end("image unavailable");
+            return;
+          }
+          if (canWriteDisk) {
+            try {
+              fs.writeFileSync(cachedFilePath, body);
+              fs.writeFileSync(metaPath, mime);
+            } catch (_) {}
+          }
+          res.writeHead(200, {
+            "Content-Type": mime,
+            "Cache-Control": "public, max-age=86400",
+            "Access-Control-Allow-Origin": "*",
+          });
+          res.end(body);
+        });
       });
-      if (canWriteDisk && proxyRes.statusCode === 200) {
-        try {
-          const fileStream = fs.createWriteStream(cachedFilePath);
-          proxyRes.pipe(fileStream);
-          fs.writeFileSync(metaPath, mime);
-        } catch (_) {}
-      }
-      proxyRes.pipe(res);
-    }).on("error", (err) => {
-      console.error("[PROXY_ERROR]", imgUrl, err.message);
-      res.writeHead(502);
-      res.end(err.message);
-    });
+      reqImg.on("error", (err) => {
+        console.error("[PROXY_ERROR]", target, err.message);
+        if (!res.headersSent) {
+          res.writeHead(502, { "Content-Type": "text/plain; charset=utf-8" });
+          res.end(err.message);
+        }
+      });
+      reqImg.setTimeout(15000, () => reqImg.destroy(new Error("timeout")));
+    };
+    fetchImage(imgUrl, 3);
     return;
   }
 

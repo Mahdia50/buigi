@@ -77,11 +77,46 @@ function cacheRoomKey(code) {
   return "https://seen.local/rooms/" + String(code || "").toUpperCase();
 }
 
+function vercelRuntimeCache() {
+  try {
+    const ctx = globalThis[Symbol.for("@vercel/request-context")];
+    const resolved = ctx && typeof ctx.get === "function" ? ctx.get() : ctx;
+    const cache = resolved?.cache;
+    if (cache && typeof cache.get === "function" && typeof cache.set === "function") return cache;
+  } catch (_) {}
+  return null;
+}
+
+async function readSharedRoom(code) {
+  try {
+    const cache = vercelRuntimeCache();
+    if (!cache) return readRoomFromEdgeCache(code);
+    const value = await cache.get("room:" + code);
+    if (!value || typeof value !== "object") return readRoomFromEdgeCache(code);
+    value.connections = new Set();
+    return value;
+  } catch (_) {
+    return null;
+  }
+}
+
+async function writeSharedRoom(code, room) {
+  const clean = { ...room, connections: undefined };
+  try {
+    const cache = vercelRuntimeCache();
+    if (cache) {
+      await cache.set("room:" + code, clean, { ttl: 60 * 60 * 12, tags: ["seen-room"] });
+      return;
+    }
+  } catch (_) {}
+  await writeRoomToEdgeCache(code, JSON.stringify(clean));
+}
+
 async function readRoomFromEdgeCache(code) {
   try {
     if (typeof caches === "undefined" || !caches?.open) return null;
     const cache = await caches.open("seen-rooms-v1");
-    const hit = await cache.match(cacheRoomKey(code));
+    const hit = await cache.match(new Request(cacheRoomKey(code)));
     if (!hit) return null;
     const parsed = await hit.json();
     if (!parsed || typeof parsed !== "object") return null;
@@ -96,31 +131,43 @@ async function writeRoomToEdgeCache(code, jsonStr) {
   try {
     if (typeof caches === "undefined" || !caches?.open) return;
     const cache = await caches.open("seen-rooms-v1");
-    await cache.put(cacheRoomKey(code), new Response(jsonStr, {
-      headers: { "content-type": "application/json", "cache-control": "public, s-maxage=86400" },
+    await cache.put(new Request(cacheRoomKey(code)), new Response(jsonStr, {
+      headers: { "content-type": "application/json", "cache-control": "public, s-maxage=43200" },
     }));
   } catch (_) {}
 }
 
 async function primeRoom(code) {
-  const cached = await readRoomFromEdgeCache(code);
-  if (!cached) return;
+  const cached = await readSharedRoom(code);
   const mem = memoryRooms.get(code);
   const disk = readRoomFromDisk(code);
-  const cacheRev = Number(cached.rev) || 0;
-  const memRev = Number(mem?.rev) || 0;
-  const diskRev = Number(disk?.rev) || 0;
-  if (cacheRev >= memRev && cacheRev >= diskRev) {
-    cached.connections = mem?.connections instanceof Set ? mem.connections : new Set();
-    memoryRooms.set(code, cached);
-  }
+  const sources = [mem, disk, cached].filter(Boolean);
+  if (!sources.length) return;
+  const best = sources.reduce((a, b) => ((Number(b.rev) || 0) > (Number(a.rev) || 0) ? b : a));
+  const players = sources.reduce((acc, source) => unionPlayers(acc, source.players || []), []);
+  const room = best === mem ? mem : { ...best };
+  room.players = players;
+  room.connections = mem?.connections instanceof Set ? mem.connections : new Set();
+  room.code = code;
+  memoryRooms.set(code, room);
 }
 
-function saveRoom(code, room) {
+async function saveRoom(code, room) {
   if (!code || !room) return;
   code = code.toUpperCase();
-  room.rev = (Number(room.rev) || 0) + 1;
+  const remote = await readSharedRoom(code);
+  if (remote && typeof remote === "object") {
+    const players = unionPlayers(remote.players || [], room.players || []);
+    if ((Number(remote.rev) || 0) > (Number(room.rev) || 0)) {
+      const connections = room.connections;
+      Object.assign(room, remote, { code, players, connections });
+    } else {
+      room.players = players;
+    }
+  }
+  room.rev = Math.max(Number(room.rev) || 0, Number(remote?.rev) || 0) + 1;
   room.updatedAt = Date.now();
+  room.code = code;
   memoryRooms.set(code, room);
   const clean = { ...room, connections: undefined };
   const jsonStr = JSON.stringify(clean);
@@ -130,11 +177,10 @@ function saveRoom(code, room) {
   try {
     fs.writeFileSync(path.join(LOCAL_ROOMS_DIR, `${code}.json`), jsonStr, "utf8");
   } catch (_) {}
-  const job = writeRoomToEdgeCache(code, jsonStr);
-  if (job && typeof job.then === "function") {
-    if (!globalThis.__seenWrites) globalThis.__seenWrites = [];
-    globalThis.__seenWrites.push(job.catch(() => {}));
-  }
+  const job = writeSharedRoom(code, clean).catch(() => {});
+  if (!globalThis.__seenWrites) globalThis.__seenWrites = [];
+  globalThis.__seenWrites.push(job);
+  await job;
 }
 
 function unionPlayers(listA = [], listB = []) {
@@ -183,7 +229,7 @@ function unionPlayers(listA = [], listB = []) {
   return players;
 }
 
-function adoptSnapshot(room, snapshot, code) {
+async function adoptSnapshot(room, snapshot, code) {
   if (!snapshot || typeof snapshot !== "object") return room;
   const snapCode = String(snapshot.code || snapshot.id || "").toUpperCase();
   if (snapCode && snapCode !== code) return room;
@@ -191,7 +237,7 @@ function adoptSnapshot(room, snapshot, code) {
   if (!room) {
     if (!snapPlayers.length && !(Array.isArray(snapshot.board) && snapshot.board.length)) return null;
     const created = { ...snapshot, code, players: snapPlayers, connections: new Set(), recovered: false };
-    saveRoom(code, created);
+    await saveRoom(code, created);
     return memoryRooms.get(code) || created;
   }
   const before = (room.players || []).length;
@@ -205,7 +251,7 @@ function adoptSnapshot(room, snapshot, code) {
     Object.assign(room, snapshot, { code, players, connections, recovered: false });
     changed = true;
   }
-  if (changed) saveRoom(code, room);
+  if (changed) await saveRoom(code, room);
   return room;
 }
 
@@ -259,7 +305,7 @@ async function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "", snap
     memoryRooms.set(code, disk);
     room = disk;
   }
-  if (snapshot) room = adoptSnapshot(room, snapshot, code);
+  if (snapshot) room = await adoptSnapshot(room, snapshot, code);
   ensureRoomLists(room);
   return room;
 }
@@ -357,7 +403,7 @@ function buildBoardForCategories(selectedCategories, code = "") {
   return board;
 }
 
-function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixedCode = null) {
+async function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixedCode = null) {
   const code = (fixedCode || payload.code || Math.random().toString(36).substring(2, 6)).toUpperCase();
 
   // اختيار الفئات المحددة أو الافتراضية حتمياً بناءً على رمز الغرفة
@@ -439,12 +485,12 @@ function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixed
     createdAt: roomTime,
   };
 
-  saveRoom(code, newRoom);
+  await saveRoom(code, newRoom);
   console.log(`[INFO] تم إنشاء غرفة [${code}] باسم "${newRoom.name}" مع ${selectedCategories.length} فئات.`);
   return newRoom;
 }
 
-function restoreCurrentFromPayload(room, payload) {
+async function restoreCurrentFromPayload(room, payload) {
   if (!room || room.current) return; // current موجود، لا حاجة للاسترجاع
   const cellKey = payload.cellKey || payload.key;
   if (!cellKey) return;
@@ -476,7 +522,7 @@ function restoreCurrentFromPayload(room, payload) {
     wrongAnswers: [],
     hiddenOptions: [],
   };
-  saveRoom(room.code, room);
+  await saveRoom(room.code, room);
 }
 
 // تعريف الـ 20 وسيلة مساعدة المتاحة
@@ -648,10 +694,10 @@ async function getRawOrParsedBody(req) {
   });
 }
 
-function sendFnResponse(res, data, roomToSave = null) {
+async function sendFnResponse(res, data, roomToSave = null) {
   // حفظ الغرفة تلقائياً إذا مُررت لضمان الاستمرارية في Vercel
   if (roomToSave && roomToSave.code) {
-    saveRoom(roomToSave.code, roomToSave);
+    await saveRoom(roomToSave.code, roomToSave);
   }
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -855,8 +901,8 @@ async function _handleRequest(req, res) {
 
       // أ) دالة إنشاء غرفة (b6a03d5cb0dea21e320dfac594c299c2c147746c2d6031a29d4ac6455979463a)
       if (fnHash === "b6a03d5cb0dea21e320dfac594c299c2c147746c2d6031a29d4ac6455979463a") {
-        const room = createRoomInstance(payload, guestId, guestName);
-        sendFnResponse(res, {
+        const room = await createRoomInstance(payload, guestId, guestName);
+        await sendFnResponse(res, {
           code: room.code,
           room: sanitizeRoom(room),
         });
@@ -870,11 +916,11 @@ async function _handleRequest(req, res) {
         const code = (payload.code || url.searchParams.get("code") || "").toUpperCase();
         const room = await loadRoom(code, guestId, guestName, payload.snapshot || null);
         if (!room) {
-          sendFnResponse(res, null);
+          await sendFnResponse(res, null);
           return;
         }
         if (room && room.kicked && (room.kicked.includes(guestId) || (guestName && room.kicked.includes(guestName)))) {
-          sendFnResponse(res, { ok: false, kicked: true, error: "تم طردك من هذه الغرفة بواسطة المشرف" });
+          await sendFnResponse(res, { ok: false, kicked: true, error: "تم طردك من هذه الغرفة بواسطة المشرف" });
           return;
         }
 
@@ -890,10 +936,10 @@ async function _handleRequest(req, res) {
             needsSave = true; // نحفظ فقط إذا تغير الاسم
           }
           // لا نُستدعي saveRoom في كل poll - فقط عند تغييرات حقيقية
-          if (needsSave) saveRoom(room.code, room);
+          if (needsSave) await saveRoom(room.code, room);
         }
 
-        sendFnResponse(res, {
+        await sendFnResponse(res, {
           room: sanitizeRoom(room),
           // connected بـ bucket 30 ثانية لمنع التغيير في كل poll
           players: (room.players || []).map(p => {
@@ -921,9 +967,13 @@ async function _handleRequest(req, res) {
       // ج) دالة الانضمام لغرفة (3f5434af99322857bca8801cb4fceb3939b136bab699d4daef7430f26712449a)
       if (fnHash === "3f5434af99322857bca8801cb4fceb3939b136bab699d4daef7430f26712449a") {
         const code = (payload.code || "").toUpperCase();
-        const room = await loadRoom(code, guestId, guestName, payload.snapshot || null);
+        let room = null;
+        for (let attempt = 0; attempt < 5 && !room; attempt++) {
+          room = await loadRoom(code, guestId, guestName, payload.snapshot || null);
+          if (!room && attempt < 4) await new Promise((resolve) => setTimeout(resolve, 300));
+        }
         if (!room) {
-          sendFnResponse(res, null);
+          await sendFnResponse(res, null);
           return;
         }
 
@@ -961,9 +1011,9 @@ async function _handleRequest(req, res) {
             room.players.push(player);
           }
         }
-        saveRoom(room.code, room);
+        await saveRoom(room.code, room);
 
-        sendFnResponse(res, {
+        await sendFnResponse(res, {
           code: room.code,
           room: sanitizeRoom(room),
           player,
@@ -983,10 +1033,10 @@ async function _handleRequest(req, res) {
             if (payload.ready !== undefined) player.ready = !!payload.ready;
             if (payload.captain !== undefined) player.captain = !!payload.captain;
             player.last_seen = Date.now();
-            saveRoom(room.code, room);  // حفظ تعديلات اللاعب
+            await saveRoom(room.code, room);  // حفظ تعديلات اللاعب
           }
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1001,7 +1051,7 @@ async function _handleRequest(req, res) {
             player.connected = true;
           }
         }
-        sendFnResponse(res, { ok: true });
+        await sendFnResponse(res, { ok: true });
         return;
       }
 
@@ -1029,7 +1079,7 @@ async function _handleRequest(req, res) {
                 kind: "system",
                 time: Date.now(),
               });
-              saveRoom(room.code, room);
+              await saveRoom(room.code, room);
             }
           } else {
             const player = room.players.find(p => p.id === payload.playerId);
@@ -1040,10 +1090,10 @@ async function _handleRequest(req, res) {
                 player.captain = !!payload.captain;
               }
             }
-            saveRoom(room.code, room);  // حفظ تغييرات الكابتن والفريق
+            await saveRoom(room.code, room);  // حفظ تغييرات الكابتن والفريق
           }
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1053,9 +1103,9 @@ async function _handleRequest(req, res) {
         const room = await loadRoom(code, guestId, guestName);
         if (room && payload.settings) {
           room.settings.voteMode = !!payload.settings.voteMode;
-          saveRoom(room.code, room);
+          await saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1074,7 +1124,7 @@ async function _handleRequest(req, res) {
             time: Date.now(),
           });
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1085,11 +1135,11 @@ async function _handleRequest(req, res) {
         if (room && payload.key) {
           const player = room.players.find(p => p.user_id === guestId);
           if (room.current && !room.current.awarded) {
-            sendFnResponse(res, { ok: false, error: "السؤال الحالي مازال مفتوح. كمّلوه قبل اختيار خانة جديدة." });
+            await sendFnResponse(res, { ok: false, error: "السؤال الحالي مازال مفتوح. كمّلوه قبل اختيار خانة جديدة." });
             return;
           }
           if (room.used.includes(payload.key)) {
-            sendFnResponse(res, { ok: false, error: "هاد الخانة تلعبات من قبل" });
+            await sendFnResponse(res, { ok: false, error: "هاد الخانة تلعبات من قبل" });
             return;
           }
           let effectiveTurn = room.turn;
@@ -1098,7 +1148,7 @@ async function _handleRequest(req, res) {
           }
           if (player && player.team && player.team !== effectiveTurn) {
             console.log(`[BLOCKED] تم منع اللاعب ${player.name} (${player.team}) من اختيار خانة لأن الدور لـ ${effectiveTurn}`);
-            sendFnResponse(res, { ok: false, error: "ليس دور فريقك لاختيار السؤال" });
+            await sendFnResponse(res, { ok: false, error: "ليس دور فريقك لاختيار السؤال" });
             return;
           }
           if (room.current && room.current.awarded) {
@@ -1134,9 +1184,9 @@ async function _handleRequest(req, res) {
             hiddenOptions: [],
           };
           room.players.forEach(p => p.vote = null);
-          saveRoom(room.code, room);
+          await saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1148,7 +1198,7 @@ async function _handleRequest(req, res) {
           const player = room.players.find(p => p.user_id === guestId);
           if (player) player.vote = payload.key;
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1191,11 +1241,11 @@ async function _handleRequest(req, res) {
               wrongAnswers: [],
               hiddenOptions: [],
             };
-            saveRoom(room.code, room);
+            await saveRoom(room.code, room);
           }
           room.players.forEach(p => p.vote = null);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1204,13 +1254,13 @@ async function _handleRequest(req, res) {
         const code = (payload.code || "").toUpperCase();
         const room = await loadRoom(code, guestId, guestName);
         if (room) {
-          restoreCurrentFromPayload(room, payload);
+          await restoreCurrentFromPayload(room, payload);
           if (room.current) {
             room.current.revealed = true;
-            saveRoom(room.code, room);
+            await saveRoom(room.code, room);
           }
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1219,7 +1269,7 @@ async function _handleRequest(req, res) {
         const code = (payload.code || "").toUpperCase();
         const room = await loadRoom(code, guestId, guestName);
         if (room) {
-          restoreCurrentFromPayload(room, payload);
+          await restoreCurrentFromPayload(room, payload);
         }
         if (room && room.current) {
           const winner = payload.winner; // "red" | "green" | "none"
@@ -1256,9 +1306,9 @@ async function _handleRequest(req, res) {
               time: Date.now(),
             });
           }
-          saveRoom(room.code, room);
+          await saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1277,7 +1327,7 @@ async function _handleRequest(req, res) {
             time: Date.now(),
           });
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1301,9 +1351,9 @@ async function _handleRequest(req, res) {
               time: Date.now(),
             });
           }
-          saveRoom(room.code, room);
+          await saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1313,9 +1363,9 @@ async function _handleRequest(req, res) {
         const room = await loadRoom(code, guestId, guestName);
         if (room) {
           room.paused = !room.paused;
-          saveRoom(room.code, room);
+          await saveRoom(room.code, room);
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1327,7 +1377,7 @@ async function _handleRequest(req, res) {
           room.status = "finished";
           room.current = null;
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1351,8 +1401,8 @@ async function _handleRequest(req, res) {
             time: Date.now(),
           });
         }
-        saveRoom(room.code, room);
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await saveRoom(room.code, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1363,7 +1413,7 @@ async function _handleRequest(req, res) {
         if (room) {
           room.chat_open = !!payload.open;
         }
-        sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
+        await sendFnResponse(res, { ok: true, room: room ? sanitizeRoom(room) : null }, room);
         return;
       }
 
@@ -1383,7 +1433,7 @@ async function _handleRequest(req, res) {
             time: Date.now(),
           });
         }
-        sendFnResponse(res, { ok: true });
+        await sendFnResponse(res, { ok: true });
         return;
       }
 
@@ -1399,12 +1449,12 @@ async function _handleRequest(req, res) {
             players: r.players ? r.players.length : 0,
             maxPlayers: r.max_players || 8,
           }));
-        sendFnResponse(res, roomList);
+        await sendFnResponse(res, roomList);
         return;
       }
 
       // ت) استجابة عامة لأي طلب serverFn آخر
-      sendFnResponse(res, { success: true, ok: true });
+      await sendFnResponse(res, { success: true, ok: true });
       return;
   }
 
@@ -1415,7 +1465,7 @@ async function _handleRequest(req, res) {
     try {
       const rawBody = await getRawOrParsedBody(req);
       const payload = unpackPayload(rawBody);
-      const room = createRoomInstance(payload, guestId, guestName, payload.code || null);
+      const room = await createRoomInstance(payload, guestId, guestName, payload.code || null);
       res.setHeader("Content-Type", "application/json; charset=utf-8");
       res.setHeader("Access-Control-Allow-Origin", "*");
       res.writeHead(200);
@@ -1461,7 +1511,7 @@ async function _handleRequest(req, res) {
       const room = await loadRoom(code, guestId, guestName);
 
       // استرجاع current من payload إذا كان مفقوداً (Vercel cold start)
-      if (room) restoreCurrentFromPayload(room, payload);
+      if (room) await restoreCurrentFromPayload(room, payload);
 
       if (!room || !room.current || room.current.revealed) {
         res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
@@ -1563,7 +1613,7 @@ async function _handleRequest(req, res) {
         }
       }
 
-      saveRoom(room.code, room);
+      await saveRoom(room.code, room);
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({
         ok: true,
@@ -1731,7 +1781,7 @@ async function _handleRequest(req, res) {
       }
 
       room.log.unshift({ id:"log-"+Date.now(), reason:"وسيلة مساعدة", delta:0, text:logText, time:now });
-      saveRoom(room.code, room);
+      await saveRoom(room.code, room);
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ ok:true, room:sanitizeRoom(room), players:room.players, messages:room.messages }));
     } catch (err) {
@@ -1762,7 +1812,7 @@ async function _handleRequest(req, res) {
       room.settings.lifelinesPicked = room.settings.lifelinesPicked || {};
       room.settings.lifelinesPicked[team] = true;
       room.log.unshift({ id:"log-"+Date.now(), reason:"اختيار وسائل", delta:0, text:`قائد ${team==="red"?"الأحمر":"الأخضر"} اختار ${chosen.length} وسائل مساعدة`, time:Date.now() });
-      saveRoom(room.code, room);
+      await saveRoom(room.code, room);
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ ok:true, room:sanitizeRoom(room) }));
     } catch(err) {
@@ -1814,7 +1864,7 @@ async function _handleRequest(req, res) {
         if (!room.used.includes(room.current.cellKey)) room.used.push(room.current.cellKey);
         room.log.unshift({ id:"log-"+Date.now(), reason:"انتهاء الوقت", delta:0, text:`انتهى الوقت — لا نقاط لخانة ${room.current.value}`, time:now });
       }
-      saveRoom(room.code, room);
+      await saveRoom(room.code, room);
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ ok:true, room:sanitizeRoom(room), players:room.players }));
     } catch(err) {
@@ -1874,7 +1924,7 @@ async function _handleRequest(req, res) {
         hiddenOptions: [],
       };
       room.players.forEach(p => p.vote = null);
-      saveRoom(room.code, room);
+      await saveRoom(room.code, room);
 
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ ok: true, room: sanitizeRoom(room) }));
@@ -1927,7 +1977,7 @@ async function _handleRequest(req, res) {
         time: Date.now(),
       });
 
-      saveRoom(room.code, room);
+      await saveRoom(room.code, room);
       console.log(`[INFO] تم تحديث فئات الغرفة [${room.code}] إلى:`, selectedCategories);
 
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });

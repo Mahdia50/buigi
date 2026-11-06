@@ -6,11 +6,13 @@
     "api/index.js": {
       "memory": 1024,
       "maxDuration": 30,
+      "regions": ["cdg1"],
       "includeFiles": "server.mjs,data/**,public/assets/**"
     },
     "api/[...all].js": {
       "memory": 1024,
       "maxDuration": 30,
+      "regions": ["cdg1"],
       "includeFiles": "server.mjs,data/**,public/assets/**"
     }
   },

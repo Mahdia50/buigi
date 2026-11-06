@@ -73,6 +73,49 @@ function readRoomFromDisk(code) {
   return null;
 }
 
+function cacheRoomKey(code) {
+  return "https://seen.local/rooms/" + String(code || "").toUpperCase();
+}
+
+async function readRoomFromEdgeCache(code) {
+  try {
+    if (typeof caches === "undefined" || !caches?.open) return null;
+    const cache = await caches.open("seen-rooms-v1");
+    const hit = await cache.match(cacheRoomKey(code));
+    if (!hit) return null;
+    const parsed = await hit.json();
+    if (!parsed || typeof parsed !== "object") return null;
+    parsed.connections = new Set();
+    return parsed;
+  } catch (_) {
+    return null;
+  }
+}
+
+async function writeRoomToEdgeCache(code, jsonStr) {
+  try {
+    if (typeof caches === "undefined" || !caches?.open) return;
+    const cache = await caches.open("seen-rooms-v1");
+    await cache.put(cacheRoomKey(code), new Response(jsonStr, {
+      headers: { "content-type": "application/json", "cache-control": "public, s-maxage=86400" },
+    }));
+  } catch (_) {}
+}
+
+async function primeRoom(code) {
+  const cached = await readRoomFromEdgeCache(code);
+  if (!cached) return;
+  const mem = memoryRooms.get(code);
+  const disk = readRoomFromDisk(code);
+  const cacheRev = Number(cached.rev) || 0;
+  const memRev = Number(mem?.rev) || 0;
+  const diskRev = Number(disk?.rev) || 0;
+  if (cacheRev >= memRev && cacheRev >= diskRev) {
+    cached.connections = mem?.connections instanceof Set ? mem.connections : new Set();
+    memoryRooms.set(code, cached);
+  }
+}
+
 function saveRoom(code, room) {
   if (!code || !room) return;
   code = code.toUpperCase();
@@ -87,39 +130,137 @@ function saveRoom(code, room) {
   try {
     fs.writeFileSync(path.join(LOCAL_ROOMS_DIR, `${code}.json`), jsonStr, "utf8");
   } catch (_) {}
+  const job = writeRoomToEdgeCache(code, jsonStr);
+  if (job && typeof job.then === "function") {
+    if (!globalThis.__seenWrites) globalThis.__seenWrites = [];
+    globalThis.__seenWrites.push(job.catch(() => {}));
+  }
 }
 
-function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "") {
+function unionPlayers(listA = [], listB = []) {
+  const map = new Map();
+  const add = (player) => {
+    if (!player || typeof player !== "object") return;
+    const key = player.user_id || player.id;
+    if (!key) return;
+    const prev = map.get(key);
+    if (!prev) {
+      map.set(key, { ...player });
+      return;
+    }
+    map.set(key, {
+      ...prev,
+      ...player,
+      name: player.name && player.name !== "لاعب" ? player.name : prev.name,
+      team: player.team || prev.team,
+      role: prev.role === "host" || player.role === "host" ? "host" : (player.role || prev.role),
+      captain: !!(prev.captain || player.captain),
+      ready: player.ready !== undefined ? player.ready : prev.ready,
+    });
+  };
+  listA.forEach(add);
+  listB.forEach(add);
+  let players = [...map.values()];
+  const hosts = players.filter((p) => p.role === "host");
+  if (hosts.length > 1) {
+    const primary = hosts.find((p) => String(p.id || "").startsWith("p-host-")) || hosts[0];
+    players = players.map((p) => {
+      if (p.role !== "host") return p;
+      if (p.id === primary.id || p.user_id === primary.user_id) return p;
+      return { ...p, role: "player", captain: p.team === primary.team ? false : p.captain };
+    });
+  }
+  for (const team of ["red", "green"]) {
+    const captains = players.filter((p) => p.team === team && p.captain);
+    if (captains.length <= 1) continue;
+    const keep = captains.find((p) => p.role === "host") || captains[0];
+    players = players.map((p) => (
+      p.team === team && p.captain && p.id !== keep.id && p.user_id !== keep.user_id
+        ? { ...p, captain: false }
+        : p
+    ));
+  }
+  return players;
+}
+
+function adoptSnapshot(room, snapshot, code) {
+  if (!snapshot || typeof snapshot !== "object") return room;
+  const snapCode = String(snapshot.code || snapshot.id || "").toUpperCase();
+  if (snapCode && snapCode !== code) return room;
+  const snapPlayers = Array.isArray(snapshot.players) ? snapshot.players : [];
+  if (!room) {
+    if (!snapPlayers.length && !(Array.isArray(snapshot.board) && snapshot.board.length)) return null;
+    const created = { ...snapshot, code, players: snapPlayers, connections: new Set(), recovered: false };
+    saveRoom(code, created);
+    return memoryRooms.get(code) || created;
+  }
+  const before = (room.players || []).length;
+  room.players = unionPlayers(room.players || [], snapPlayers);
+  const snapRev = Number(snapshot.rev) || 0;
+  const roomRev = Number(room.rev) || 0;
+  let changed = room.players.length !== before;
+  if (snapRev > roomRev && snapshot.status) {
+    const players = room.players;
+    const connections = room.connections instanceof Set ? room.connections : new Set();
+    Object.assign(room, snapshot, { code, players, connections, recovered: false });
+    changed = true;
+  }
+  if (changed) saveRoom(code, room);
+  return room;
+}
+
+function findPlayer(room, guestId, guestName, playerId) {
+  if (!room || !Array.isArray(room.players)) return null;
+  let player = null;
+  if (guestId) player = room.players.find((p) => p.user_id === guestId) || null;
+  if (!player && playerId) {
+    player = room.players.find((p) => p.id === playerId) || null;
+    if (player && guestId && !room.players.some((p) => p !== player && p.user_id === guestId)) player.user_id = guestId;
+  }
+  if (!player && guestId) {
+    const stable = "p-" + String(guestId).replace(/[^a-z0-9]/gi, "").slice(0, 8);
+    player = room.players.find((p) => p.id === stable) || null;
+    if (player && !room.players.some((p) => p !== player && p.user_id === guestId)) player.user_id = guestId;
+  }
+  if (!player && guestName && guestName !== "لاعب") {
+    const matches = room.players.filter((p) => (p.name || "").trim() === guestName.trim() && (!p.user_id || p.user_id === guestId));
+    if (matches.length === 1) player = matches[0];
+  }
+  return player;
+}
+
+function isTeamLeader(room, player) {
+  if (!player) return false;
+  if (player.role === "host" || player.captain) return true;
+  const mates = (room.players || []).filter((p) => p.team === player.team);
+  return mates.length === 1 || !mates.some((p) => p.captain);
+}
+
+async function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "", snapshot = null) {
   if (!code) return null;
   code = code.toUpperCase();
+  await primeRoom(code);
   const disk = readRoomFromDisk(code);
   const mem = memoryRooms.get(code);
+  let room = null;
   if (mem && disk) {
     const memRev = Number(mem.rev) || 0;
     const diskRev = Number(disk.rev) || 0;
     if (diskRev > memRev) {
       disk.connections = mem.connections instanceof Set ? mem.connections : new Set();
       memoryRooms.set(code, disk);
-      return disk;
+      room = disk;
+    } else {
+      room = mem;
     }
-    return mem;
-  }
-  if (mem) return mem;
-  if (disk) {
+  } else if (mem) {
+    room = mem;
+  } else if (disk) {
     memoryRooms.set(code, disk);
-    return disk;
+    room = disk;
   }
-
-  // استرجاع حتمي مستقر للغرفة في بيئة Vercel Serverless لمنع ظهور "ما لقيناش الغرفة"
-  if (code.length >= 3 && code.length <= 10 && /^[A-Z0-9]+$/.test(code)) {
-    console.log(`[RECOVER_ROOM] Restoring deterministic room for code: ${code}`);
-    const recovered = createRoomInstance({ name: `غرفة ${code}` }, fallbackGuestId, fallbackGuestName, code);
-    // حفظ الغرفة المُسترجعة فوراً لضمان استقرارها في الـ requests التالية
-    saveRoom(code, recovered);
-    return recovered;
-  }
-
-  return null;
+  if (snapshot) room = adoptSnapshot(room, snapshot, code);
+  return room;
 }
 
 
@@ -514,6 +655,10 @@ export async function handleRequest(req, res) {
       res.writeHead(500);
       res.end(JSON.stringify({ error: err?.message || "خطأ غير متوقع", ok: false }));
     }
+  } finally {
+    const jobs = globalThis.__seenWrites || [];
+    globalThis.__seenWrites = [];
+    if (jobs.length) await Promise.all(jobs);
   }
 }
 
@@ -700,7 +845,7 @@ async function _handleRequest(req, res) {
         console.log("[POLL_STATE] req headers:", req.headers["x-seen-guest"], "payload:", JSON.stringify(payload));
 
         const code = (payload.code || url.searchParams.get("code") || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName, payload.snapshot || null);
         if (!room) {
           sendFnResponse(res, null);
           return;
@@ -711,13 +856,7 @@ async function _handleRequest(req, res) {
         }
 
         // تحديث حالة الاتصال - فقط نحدث last_seen بدون saveRoom في كل poll
-        let player = room.players.find(p => p.user_id === guestId);
-        if (!player && guestName && guestName !== "لاعب") {
-          player = room.players.find(p => p.name.trim() === guestName.trim());
-          if (player) {
-            player.user_id = guestId;
-          }
-        }
+        let player = findPlayer(room, guestId, guestName, payload.playerId);
 
         let needsSave = false;
         if (player) {
@@ -729,35 +868,6 @@ async function _handleRequest(req, res) {
           }
           // لا نُستدعي saveRoom في كل poll - فقط عند تغييرات حقيقية
           if (needsSave) saveRoom(room.code, room);
-        } else if (guestId) {
-          const isHost = room.players.length === 0;
-          const redCount = room.players.filter(p => p.team === "red").length;
-          const greenCount = room.players.filter(p => p.team === "green").length;
-          // معرف حتمي بناءً على guestId
-          const stableId = "p-" + guestId.replace(/[^a-z0-9]/gi, "").slice(0, 8);
-          // تحقق مجدداً بالـ stableId لمنع الإضافة المكررة
-          const existingById = room.players.find(p => p.id === stableId);
-          if (existingById) {
-            player = existingById;
-            player.user_id = guestId;
-            player.last_seen = Date.now();
-            player.connected = true;
-          } else {
-            player = {
-              id: stableId,
-              user_id: guestId,
-              name: (guestName || "لاعب").trim(),
-              role: isHost ? "host" : "player",
-              team: greenCount < redCount ? "green" : "red",
-              ready: true,
-              captain: isHost,
-              connected: true,
-              last_seen: Date.now(),
-              vote: null,
-            };
-            room.players.push(player);
-          }
-          saveRoom(room.code, room);
         }
 
         sendFnResponse(res, {
@@ -788,17 +898,13 @@ async function _handleRequest(req, res) {
       // ج) دالة الانضمام لغرفة (3f5434af99322857bca8801cb4fceb3939b136bab699d4daef7430f26712449a)
       if (fnHash === "3f5434af99322857bca8801cb4fceb3939b136bab699d4daef7430f26712449a") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName, payload.snapshot || null);
         if (!room) {
           sendFnResponse(res, null);
           return;
         }
 
-        let player = room.players.find(p => p.user_id === guestId);
-        if (!player && payload.name) {
-          player = room.players.find(p => p.name.trim() === payload.name.trim());
-          if (player) player.user_id = guestId;
-        }
+        let player = findPlayer(room, guestId, payload.name || guestName, payload.playerId);
         if (player) {
           if (payload.name) player.name = payload.name.trim();
           if (payload.team) player.team = payload.team;
@@ -845,7 +951,7 @@ async function _handleRequest(req, res) {
       // د) دالة تعديل اللاعب لنفسه (a50ea8dede48ff28d2d768225fec7dbfc09e46366be18348629aff803e6c090a)
       if (fnHash === "a50ea8dede48ff28d2d768225fec7dbfc09e46366be18348629aff803e6c090a") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           const player = room.players.find(p => p.user_id === guestId);
           if (player) {
@@ -864,7 +970,7 @@ async function _handleRequest(req, res) {
       // هـ) دالة نبض الاتصال (592dd66f94a3598b050f602f9690b1235e57e7482e9ba93b40db806501485dc7)
       if (fnHash === "592dd66f94a3598b050f602f9690b1235e57e7482e9ba93b40db806501485dc7") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           const player = room.players.find(p => p.user_id === guestId);
           if (player) {
@@ -879,7 +985,7 @@ async function _handleRequest(req, res) {
       // و) دالة إدارة المضيف للاعبين (e072b2ac2728ef1c5cff8085d7918c43ea2f449bf174b69c2c3b42b63f1a5b81)
       if (fnHash === "e072b2ac2728ef1c5cff8085d7918c43ea2f449bf174b69c2c3b42b63f1a5b81") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           if (payload.kick) {
             const kickedPlayer = room.players.find(p => p.id === payload.playerId || p.user_id === payload.playerId);
@@ -921,7 +1027,7 @@ async function _handleRequest(req, res) {
       // ز) دالة تبديل وضع التصويت (d926873c9e0ff523dfaf922be37122e6dc35ecd7eae5de19e4c9c0abf24be61d)
       if (fnHash === "d926873c9e0ff523dfaf922be37122e6dc35ecd7eae5de19e4c9c0abf24be61d") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room && payload.settings) {
           room.settings.voteMode = !!payload.settings.voteMode;
           saveRoom(room.code, room);
@@ -933,7 +1039,7 @@ async function _handleRequest(req, res) {
       // ح) دالة انطلاق اللعبة (3cf3b624d778237a3ac1ead6fde77274f3c78eb1303ccc65be1cafac0deaf033)
       if (fnHash === "3cf3b624d778237a3ac1ead6fde77274f3c78eb1303ccc65be1cafac0deaf033") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           room.status = "playing";
           room.turn = "red";
@@ -952,7 +1058,7 @@ async function _handleRequest(req, res) {
       // ط) دالة اختيار خانة السؤال (b60d9b1fdcaa3c8da56f6950e9d0fe81ea0f41bfcb81c99438b2f2deb108e1cd)
       if (fnHash === "b60d9b1fdcaa3c8da56f6950e9d0fe81ea0f41bfcb81c99438b2f2deb108e1cd") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room && payload.key) {
           const player = room.players.find(p => p.user_id === guestId);
           if (room.current && !room.current.awarded) {
@@ -1014,7 +1120,7 @@ async function _handleRequest(req, res) {
       // ي) دالة تصويت اللاعب على خانة (b5f859259799fccfda877d42505508cbf8bb0b008ca29cb1b81567f79e8fcb48)
       if (fnHash === "b5f859259799fccfda877d42505508cbf8bb0b008ca29cb1b81567f79e8fcb48") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           const player = room.players.find(p => p.user_id === guestId);
           if (player) player.vote = payload.key;
@@ -1026,7 +1132,7 @@ async function _handleRequest(req, res) {
       // ك) دالة اعتماد تصويت الفريق (8d50640cf1e1965be7c19869bf559c66e691e70c0d56780e8e357c349634e1b2)
       if (fnHash === "8d50640cf1e1965be7c19869bf559c66e691e70c0d56780e8e357c349634e1b2") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           const counts = {};
           room.players.filter(p => p.team === room.turn && p.vote).forEach(p => {
@@ -1073,7 +1179,7 @@ async function _handleRequest(req, res) {
       // ل) دالة كشف الجواب (ed573daface9b83072fecbbfb375251c6b62a091f2df2f939a2428f8ac851162)
       if (fnHash === "ed573daface9b83072fecbbfb375251c6b62a091f2df2f939a2428f8ac851162") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           restoreCurrentFromPayload(room, payload);
           if (room.current) {
@@ -1088,7 +1194,7 @@ async function _handleRequest(req, res) {
       // م) دالة منح النقاط للفائز (c4e7a4b9c4e13c37246b17ca655f2af59319ea9dc9616be7f8eee652a70b3fb2)
       if (fnHash === "c4e7a4b9c4e13c37246b17ca655f2af59319ea9dc9616be7f8eee652a70b3fb2") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           restoreCurrentFromPayload(room, payload);
         }
@@ -1136,7 +1242,7 @@ async function _handleRequest(req, res) {
       // ن) دالة تعديل النقاط يدوياً (02ba190985e1193a99b79612702f36124040bde6374079e830fd41471a4f2190)
       if (fnHash === "02ba190985e1193a99b79612702f36124040bde6374079e830fd41471a4f2190") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room && payload.team) {
           const delta = Number(payload.delta) || 0;
           room.scores[payload.team] = Math.max(0, (room.scores[payload.team] || 0) + delta);
@@ -1155,7 +1261,7 @@ async function _handleRequest(req, res) {
       // س) دالة الانتقال للسؤال التالي (3384f975f333a274c7046854ffc0ce43371f9ff1c861817d9324dffa6dce3e25)
       if (fnHash === "3384f975f333a274c7046854ffc0ce43371f9ff1c861817d9324dffa6dce3e25") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           room.current = null;
           room.turn = room.turn === "red" ? "green" : "red";
@@ -1181,7 +1287,7 @@ async function _handleRequest(req, res) {
       // ع) دالة إيقاف/استئناف اللعبة مؤقتاً (cbeec8773419deec8ce7dd97665b2d14934ddf48ba8955d1c61d351b95ca7910)
       if (fnHash === "cbeec8773419deec8ce7dd97665b2d14934ddf48ba8955d1c61d351b95ca7910") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           room.paused = !room.paused;
           saveRoom(room.code, room);
@@ -1193,7 +1299,7 @@ async function _handleRequest(req, res) {
       // ف) دالة إنهاء اللعبة (a187b4d4a19074ed9408afa257c8033d2acb480dfe1c62e0add30d11122c5af9)
       if (fnHash === "a187b4d4a19074ed9408afa257c8033d2acb480dfe1c62e0add30d11122c5af9") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           room.status = "finished";
           room.current = null;
@@ -1205,7 +1311,7 @@ async function _handleRequest(req, res) {
       // ص) دالة إعادة ضبط المباراة (7eb9799b85ffdbbdb13165831be0f77419ed446c392448d532da34bdd22a0c85)
       if (fnHash === "7eb9799b85ffdbbdb13165831be0f77419ed446c392448d532da34bdd22a0c85") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           room.status = "lobby";
           room.scores = { red: 0, green: 0 };
@@ -1230,7 +1336,7 @@ async function _handleRequest(req, res) {
       // ق) دالة فتح/إغلاق الدردشة (48e56b7f05656138ec030ecb14269bf296dbccae425713ea6722e07727f6c9de)
       if (fnHash === "48e56b7f05656138ec030ecb14269bf296dbccae425713ea6722e07727f6c9de") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room) {
           room.chat_open = !!payload.open;
         }
@@ -1241,7 +1347,7 @@ async function _handleRequest(req, res) {
       // ر) دالة إرسال رسالة في الشات (d97e650e4c3026fe1bba7c7a47166e126c58bdca4a7d0bc37757c1cfd33ac7bf)
       if (fnHash === "d97e650e4c3026fe1bba7c7a47166e126c58bdca4a7d0bc37757c1cfd33ac7bf") {
         const code = (payload.code || "").toUpperCase();
-        const room = loadRoom(code, guestId, guestName);
+        const room = await loadRoom(code, guestId, guestName);
         if (room && payload.content) {
           const player = room.players.find(p => p.user_id === guestId);
           const senderName = player ? player.name : (guestName || "مشارك");
@@ -1310,7 +1416,7 @@ async function _handleRequest(req, res) {
   const roomMatch = pathname.match(/^\/api\/rooms\/([A-Za-z0-9]+)$/);
   if (roomMatch && req.method === "GET") {
     const code = roomMatch[1].toUpperCase();
-    const room = loadRoom(code, guestId, guestName);
+    const room = await loadRoom(code, guestId, guestName);
     if (!room) {
       res.writeHead(404, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ error: "الغرفة غير موجودة" }));
@@ -1329,7 +1435,7 @@ async function _handleRequest(req, res) {
       const rawBody = await getRawOrParsedBody(req);
       const payload = unpackPayload(rawBody);
       const code = (payload.code || "").toUpperCase();
-      const room = loadRoom(code, guestId, guestName);
+      const room = await loadRoom(code, guestId, guestName);
 
       // استرجاع current من payload إذا كان مفقوداً (Vercel cold start)
       if (room) restoreCurrentFromPayload(room, payload);
@@ -1458,7 +1564,7 @@ async function _handleRequest(req, res) {
       const rawBody = await getRawOrParsedBody(req);
       const payload = unpackPayload(rawBody);
       const code = (payload.code || "").toUpperCase();
-      const room = loadRoom(code, guestId, guestName);
+      const room = await loadRoom(code, guestId, guestName);
       if (!room || !room.current || room.current.revealed) {
         res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
         res.end(JSON.stringify({ ok: false, message: "لا يوجد سؤال نشط لاستخدام وسيلة مساعدة" }));
@@ -1644,10 +1750,11 @@ async function _handleRequest(req, res) {
       const rawBody = await getRawOrParsedBody(req);
       const payload = unpackPayload(rawBody);
       const code = (payload.code || "").toUpperCase();
-      const room = loadRoom(code, guestId);
+      const guestName = decodeURIComponent(req.headers["x-seen-name"] || payload.name || "");
+      const room = await loadRoom(code, guestId || payload.userId || "", guestName, payload.snapshot || null);
       if (!room) { res.writeHead(404); res.end(JSON.stringify({ok:false})); return; }
-      const player = room.players.find(p=>p.user_id===guestId);
-      if (!player || !player.captain) { res.writeHead(200); res.end(JSON.stringify({ok:false,message:"فقط الكابتن يختار الوسائل"})); return; }
+      const player = findPlayer(room, guestId || payload.userId || "", guestName || payload.name || "", payload.playerId);
+      if (!isTeamLeader(room, player)) { res.writeHead(200); res.end(JSON.stringify({ok:false,message:"فقط الكابتن يختار الوسائل"})); return; }
       const team = player.team;
       const chosen = (payload.lifelines||[]).filter(id=>ALL_LIFELINES.find(l=>l.id===id)).slice(0,3);
       if (chosen.length < 1) { res.writeHead(200); res.end(JSON.stringify({ok:false,message:"اختر على الأقل وسيلة واحدة"})); return; }
@@ -1680,7 +1787,7 @@ async function _handleRequest(req, res) {
       const rawBody = await getRawOrParsedBody(req);
       const payload = unpackPayload(rawBody);
       const code = (payload.code || "").toUpperCase();
-      const room = loadRoom(code, guestId);
+      const room = await loadRoom(code, guestId);
       if (!room || !room.current || room.current.revealed || room.current.awarded) {
         res.writeHead(200); res.end(JSON.stringify({ok:false})); return;
       }
@@ -1726,7 +1833,7 @@ async function _handleRequest(req, res) {
       const rawBody = await getRawOrParsedBody(req);
       const payload = unpackPayload(rawBody);
       const code = (payload.code || "").toUpperCase();
-      const room = loadRoom(code, guestId, guestName);
+      const room = await loadRoom(code, guestId, guestName);
       if (!room || !payload.key) {
         res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
         res.end(JSON.stringify({ ok: false, message: "بيانات غير صالحة" }));
@@ -1788,7 +1895,7 @@ async function _handleRequest(req, res) {
       const rawBody = await getRawOrParsedBody(req);
       const payload = unpackPayload(rawBody);
       const code = (payload.code || "").toUpperCase();
-      const room = loadRoom(code, guestId, guestName);
+      const room = await loadRoom(code, guestId, guestName);
       if (!room) {
         res.writeHead(404, { "Content-Type": "application/json; charset=utf-8" });
         res.end(JSON.stringify({ ok: false, error: "الغرفة غير موجودة" }));

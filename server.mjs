@@ -146,7 +146,8 @@ async function primeRoom(code) {
   const best = sources[sources.length - 1];
   const players = sources.reduce((acc, source) => unionPlayers(acc, source.players || []), []);
   const room = best === mem ? mem : { ...best };
-  room.players = players;
+  room.kicked = [...new Set(sources.flatMap((source) => source.kicked || []))];
+  room.players = withoutKicked(room, players);
   room.connections = mem?.connections instanceof Set ? mem.connections : new Set();
   room.code = code;
   memoryRooms.set(code, room);
@@ -155,35 +156,44 @@ async function primeRoom(code) {
 async function saveRoom(code, room) {
   if (!code || !room) return;
   code = code.toUpperCase();
-  const remote = await readSharedRoom(code);
-  if (remote && typeof remote === "object") {
-    const remoteNewer = (Number(remote.rev) || 0) > (Number(room.rev) || 0);
-    const players = remoteNewer
-      ? unionPlayers(room.players || [], remote.players || [])
-      : unionPlayers(remote.players || [], room.players || []);
-    if (remoteNewer) {
-      const connections = room.connections;
-      Object.assign(room, remote, { code, players, connections });
-    } else {
-      room.players = players;
+  let working = room;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const remote = await readSharedRoom(code);
+    if (remote && typeof remote === "object") {
+      const kicked = [...new Set([...(remote.kicked || []), ...(working.kicked || [])])];
+      const remoteNewer = (Number(remote.rev) || 0) > (Number(working.rev) || 0);
+      let players = remoteNewer
+        ? unionPlayers(working.players || [], remote.players || [])
+        : unionPlayers(remote.players || [], working.players || []);
+      players = withoutKicked({ kicked }, players);
+      if (remoteNewer) {
+        const connections = working.connections;
+        Object.assign(working, remote, { code, players, connections, kicked });
+      } else {
+        working.players = players;
+        working.kicked = kicked;
+      }
     }
+    working.rev = Math.max(Number(working.rev) || 0, Number(remote?.rev) || 0) + 1;
+    working.updatedAt = Date.now();
+    working.code = code;
+    const clean = { ...working, connections: undefined };
+    const jsonStr = JSON.stringify(clean);
+    try {
+      fs.writeFileSync(path.join(TMP_ROOMS_DIR, `${code}.json`), jsonStr, "utf8");
+    } catch (_) {}
+    try {
+      fs.writeFileSync(path.join(LOCAL_ROOMS_DIR, `${code}.json`), jsonStr, "utf8");
+    } catch (_) {}
+    await writeSharedRoom(code, clean).catch(() => {});
+    const seen = await readSharedRoom(code);
+    const seenIds = (seen?.players || []).map((p) => p.user_id || p.id).sort().join("|");
+    const ourIds = (working.players || []).map((p) => p.user_id || p.id).sort().join("|");
+    if (!seen || seen.rev === working.rev || seenIds === ourIds) break;
+    working.rev = Number(seen.rev) || working.rev;
   }
-  room.rev = Math.max(Number(room.rev) || 0, Number(remote?.rev) || 0) + 1;
-  room.updatedAt = Date.now();
-  room.code = code;
-  memoryRooms.set(code, room);
-  const clean = { ...room, connections: undefined };
-  const jsonStr = JSON.stringify(clean);
-  try {
-    fs.writeFileSync(path.join(TMP_ROOMS_DIR, `${code}.json`), jsonStr, "utf8");
-  } catch (_) {}
-  try {
-    fs.writeFileSync(path.join(LOCAL_ROOMS_DIR, `${code}.json`), jsonStr, "utf8");
-  } catch (_) {}
-  const job = writeSharedRoom(code, clean).catch(() => {});
-  if (!globalThis.__seenWrites) globalThis.__seenWrites = [];
-  globalThis.__seenWrites.push(job);
-  await job;
+  memoryRooms.set(code, working);
+  if (working !== room) Object.assign(room, working, { connections: room.connections });
 }
 
 function unionPlayers(listA = [], listB = []) {
@@ -240,6 +250,7 @@ async function adoptSnapshot(room, snapshot, code) {
   if (!room) {
     if (!snapPlayers.length && !(Array.isArray(snapshot.board) && snapshot.board.length)) return null;
     const created = { ...snapshot, code, players: snapPlayers, connections: new Set(), recovered: false };
+    created.players = withoutKicked(created, snapPlayers);
     await saveRoom(code, created);
     return memoryRooms.get(code) || created;
   }
@@ -247,16 +258,21 @@ async function adoptSnapshot(room, snapshot, code) {
   const roomRev = Number(room.rev) || 0;
   const snapNewer = snapRev > roomRev;
   const beforeIds = (room.players || []).map((p) => p.user_id || p.id).sort().join("|");
-  room.players = snapNewer
-    ? unionPlayers(room.players || [], snapPlayers)
-    : unionPlayers(snapPlayers, room.players || []);
-  room.players = withoutKicked(room, room.players);
+  room.players = withoutKicked(room, unionPlayers(snapPlayers, room.players || []));
   const afterIds = room.players.map((p) => p.user_id || p.id).sort().join("|");
   let changed = beforeIds !== afterIds;
-  if (snapNewer && snapshot.status) {
+  const roomIds = beforeIds ? beforeIds.split("|") : [];
+  const snapCoversRoom = roomIds.every((id) => snapPlayers.some((p) => (p.user_id || p.id) === id));
+  const drifted = snapshot.status !== room.status
+    || snapshot.turn !== room.turn
+    || (snapshot.current?.cellKey || null) !== (room.current?.cellKey || null)
+    || JSON.stringify(snapshot.scores || {}) !== JSON.stringify(room.scores || {})
+    || JSON.stringify(snapshot.used || []) !== JSON.stringify(room.used || []);
+  if (snapNewer && snapshot.status && snapCoversRoom && drifted) {
     const players = room.players;
     const connections = room.connections instanceof Set ? room.connections : new Set();
-    Object.assign(room, snapshot, { code, players, connections, recovered: false });
+    const kicked = room.kicked;
+    Object.assign(room, snapshot, { code, players, connections, kicked, recovered: false });
     changed = true;
   }
   if (changed) await saveRoom(code, room);
@@ -314,6 +330,8 @@ async function loadRoom(code, fallbackGuestId = "", fallbackGuestName = "", snap
     const memRev = Number(mem.rev) || 0;
     const diskRev = Number(disk.rev) || 0;
     if (diskRev > memRev) {
+      disk.kicked = [...new Set([...(disk.kicked || []), ...(mem.kicked || [])])];
+      disk.players = withoutKicked(disk, unionPlayers(mem.players || [], disk.players || []));
       disk.connections = mem.connections instanceof Set ? mem.connections : new Set();
       memoryRooms.set(code, disk);
       room = disk;
@@ -1116,8 +1134,11 @@ async function _handleRequest(req, res) {
           if (needsSave) await saveRoom(room.code, room);
         }
 
+        const view = sanitizeRoom(room);
+        const snapRev = Number(payload.snapshot?.rev) || 0;
+        if (snapRev > (Number(view.rev) || 0)) view.rev = snapRev;
         await sendFnResponse(res, {
-          room: sanitizeRoom(room),
+          room: view,
           // connected بـ bucket 30 ثانية لمنع التغيير في كل poll
           players: (room.players || []).map(p => {
             // bucket بـ 30 ثانية: true إذا last_seen < 90s، نُقرّب للـ 30s لتقليل التغيير
@@ -1137,6 +1158,7 @@ async function _handleRequest(req, res) {
             };
           }),
           messages: room.messages || [],
+          kickedIds: room.kicked || [],
         });
         return;
       }

@@ -259,8 +259,8 @@ function createRoomInstance(payload = {}, hostGuestId = "", hostName = "", fixed
     paused: false,
     chat_open: true,
     lifelines: {
-      red: { fiftyFifty: true, friend: true },
-      green: { fiftyFifty: true, friend: true },
+      red: {},
+      green: {},
     },
     log: [
       {
@@ -326,7 +326,49 @@ function restoreCurrentFromPayload(room, payload) {
   saveRoom(room.code, room);
 }
 
+// تعريف الـ 20 وسيلة مساعدة المتاحة
+const ALL_LIFELINES = [
+  { id: "5050",       emoji: "🪄", name: "50:50",               desc: "يحذف خيارين خاطئين" },
+  { id: "friend",     emoji: "📞", name: "اتصال بصديق",         desc: "يوقف الوقت 30 ثانية للتشاور" },
+  { id: "audience",   emoji: "👥", name: "رأي الجمهور",         desc: "يُظهر نسبة تصويت وهمية للخيارات" },
+  { id: "extra30",    emoji: "⏰", name: "+30 ثانية",            desc: "يضيف 30 ثانية للوقت" },
+  { id: "hint",       emoji: "💡", name: "تلميح",               desc: "يُظهر تلميحاً إضافياً للسؤال" },
+  { id: "skip",       emoji: "⏭️", name: "تجاوز السؤال",        desc: "ينتقل لسؤال جديد من نفس الفئة" },
+  { id: "double",     emoji: "✌️", name: "جاوب مرتين",          desc: "يسمح بمحاولتين للإجابة" },
+  { id: "steal",      emoji: "🎯", name: "خطف النقاط",          desc: "عند الإجابة الصحيحة تُضاعف نقاط الخانة" },
+  { id: "freeze",     emoji: "🧊", name: "تجميد الخصم",         desc: "يمنع الخصم من خطف السؤال" },
+  { id: "swap",       emoji: "🔄", name: "تبديل الخانة",        desc: "يختار خانة عشوائية بنفس القيمة" },
+  { id: "reveal_opt", emoji: "🔍", name: "كشف خيار",            desc: "يكشف حرف الإجابة الصحيحة" },
+  { id: "extra15",    emoji: "⌚", name: "+15 ثانية",            desc: "يضيف 15 ثانية للوقت" },
+  { id: "no_steal",   emoji: "🛡️", name: "حماية السؤال",        desc: "لا يمكن للخصم خطف السؤال" },
+  { id: "transfer",   emoji: "🎁", name: "نقل السؤال",          desc: "ينقل السؤال للخصم مع الوقت الحالي" },
+  { id: "bonus50",    emoji: "💰", name: "+50 نقطة بونص",       desc: "يضيف 50 نقطة إضافية لقيمة الخانة" },
+  { id: "second_ch",  emoji: "🔁", name: "فرصة ثانية",          desc: "عند الخطأ يمنح فرصة إجابة ثانية" },
+  { id: "reduce",     emoji: "✂️", name: "تقليل الخيارات",     desc: "يُقلص الخيارات لـ 3 فقط (يحذف 1)" },
+  { id: "time_stop",  emoji: "⏸️", name: "إيقاف الوقت",         desc: "يوقف العداد 20 ثانية" },
+  { id: "double_neg", emoji: "💣", name: "مضاعفة الخسارة",      desc: "إذا أخطأ الخصم تضاعفت الخصومة عليه" },
+  { id: "all_see",    emoji: "👁️", name: "الكل يرى",            desc: "يُظهر الجواب للجميع لكن يخفي التأكيد" },
+];
+
+function getAvailableLifelines(room, team) {
+  const chosen = room.settings?.chosenLifelines?.[team] || ["5050","friend","extra30"];
+  const used = room.lifelines?.[team] || {};
+  return chosen.map(id => {
+    const def = ALL_LIFELINES.find(l => l.id === id) || { id, emoji: "⭐", name: id, desc: "" };
+    return { ...def, available: !used[id] };
+  });
+}
+
 function sanitizeRoom(room) {
+  const lifelinesInfo = {};
+  for (const team of ["red","green"]) {
+    const chosen = room.settings?.chosenLifelines?.[team] || ["5050","friend","extra30"];
+    const used = room.lifelines?.[team] || {};
+    lifelinesInfo[team] = chosen.map(id => {
+      const def = ALL_LIFELINES.find(l=>l.id===id) || {id,emoji:"⭐",name:id,desc:""};
+      return {...def, available:!used[id]};
+    });
+  }
   return {
     id: room.code,
     code: room.code,
@@ -344,10 +386,9 @@ function sanitizeRoom(room) {
     paused: room.paused,
     chat_open: room.chat_open,
     log: room.log,
-    lifelines: room.lifelines || {
-      red: { fiftyFifty: true, friend: true },
-      green: { fiftyFifty: true, friend: true },
-    },
+    lifelines: room.lifelines || { red: {}, green: {} },
+    lifelinesInfo,
+    allLifelines: ALL_LIFELINES,
     createdAt: room.createdAt,
   };
 }
@@ -1400,76 +1441,245 @@ async function _handleRequest(req, res) {
       }
 
       if (!room.lifelines) {
-        room.lifelines = {
-          red: { fiftyFifty: true, friend: true },
-          green: { fiftyFifty: true, friend: true },
-        };
+        room.lifelines = { red: {}, green: {} };
       }
-      const teamLifelines = room.lifelines[currentAnsweringTeam] || { fiftyFifty: true, friend: true };
+      const teamUsed = room.lifelines[currentAnsweringTeam] || {};
       const teamLabel = currentAnsweringTeam === "red" ? "الفريق الأحمر" : "الفريق الأخضر";
+      const lifelineType = payload.type;
+      const def = ALL_LIFELINES.find(l => l.id === lifelineType);
 
-      if (payload.type === "5050") {
-        if (!teamLifelines.fiftyFifty) {
-          res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-          res.end(JSON.stringify({ ok: false, message: "تم استهلاك وسيلة 50:50 مسبقاً لهذا الفريق" }));
-          return;
-        }
-        teamLifelines.fiftyFifty = false;
-        room.lifelines[currentAnsweringTeam] = teamLifelines;
+      // تحقق من أن الوسيلة مختارة من قِبل الفريق
+      const chosen = room.settings?.chosenLifelines?.[currentAnsweringTeam] || ["5050","friend","extra30"];
+      if (!chosen.includes(lifelineType)) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "هذه الوسيلة ليست مختارة من قِبل فريقك" }));
+        return;
+      }
+      if (teamUsed[lifelineType]) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: `وسيلة "${def?.name || lifelineType}" مستهلكة مسبقاً` }));
+        return;
+      }
 
+      // تنفيذ الوسيلة
+      teamUsed[lifelineType] = true;
+      room.lifelines[currentAnsweringTeam] = teamUsed;
+
+      const now = Date.now();
+      let logText = `استخدم ${teamLabel} وسيلة "${def?.emoji || "⭐"} ${def?.name || lifelineType}"`;
+
+      // ===== تنفيذ كل وسيلة =====
+      if (lifelineType === "5050" || lifelineType === "reduce") {
+        // حذف خيارين/خيار خاطئ
         const qId = room.current.questionId;
         let qData = questions.find(q => q.id === qId);
         if (!qData) {
-          try {
-            const jsonBank = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "questions_bank_complete.json"), "utf8"));
-            qData = (jsonBank.questions || []).find(q => q.id === qId);
-          } catch (_) {}
+          try { const jb = JSON.parse(fs.readFileSync(path.join(__dirname,"data","questions_bank_complete.json"),"utf8")); qData=(jb.questions||[]).find(q=>q.id===qId); } catch(_){}
         }
-        const correctOpt = String(qData?.correct_answer || (qData?.answer ? Object.entries(qData?.options || {}).find(([k,v]) => v === qData?.answer)?.[0] : "A")).toUpperCase();
-        const wrongOpts = ["A", "B", "C", "D"].filter(k => k !== correctOpt).sort(() => Math.random() - 0.5);
-        room.current.hiddenOptions = wrongOpts.slice(0, 2);
+        const correctOpt = String(qData?.correct_answer || "A").toUpperCase();
+        const wrongOpts = ["A","B","C","D"].filter(k=>k!==correctOpt).sort(()=>Math.random()-.5);
+        room.current.hiddenOptions = lifelineType === "5050" ? wrongOpts.slice(0,2) : wrongOpts.slice(0,1);
+        logText += ` (حُذفت ${room.current.hiddenOptions.length} خيارات خاطئة)`;
 
-        room.log.unshift({
-          id: "log-" + Date.now(),
-          reason: "وسيلة مساعدة",
-          delta: 0,
-          text: `استخدم ${teamLabel} وسيلة 50:50 (حذف خيارين خاطئين)! 🪄`,
-          time: Date.now(),
-        });
-      } else if (payload.type === "friend") {
-        if (!teamLifelines.friend) {
-          res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-          res.end(JSON.stringify({ ok: false, message: "تم استهلاك وسيلة الاتصال بصديق مسبقاً لهذا الفريق" }));
-          return;
+      } else if (lifelineType === "friend") {
+        // إيقاف الوقت 30 ثانية: نُوقف العداد ثم نُعيده بعد 30ث
+        room.current.friendCallActive = true;
+        room.current.friendCallEnd = now + 30000;
+        room.current.friendCallPrevDeadline = room.current.deadline;
+        // نُوقف الـ deadline مؤقتاً (نحفظ الوقت المتبقي)
+        const remaining = Math.max(0, (room.current.deadline||now) - now);
+        room.current.friendCallRemaining = remaining;
+        room.current.deadline = null; // unlimited حتى ينتهي الـ call
+        logText += ` (الوقت متوقف 30 ثانية للتشاور 📞)`;
+
+      } else if (lifelineType === "extra30") {
+        const remaining = Math.max(0, (room.current.deadline||now) - now);
+        room.current.deadline = now + remaining + 30000;
+        room.current.total = (room.current.total||30) + 30;
+        logText += ` (+30 ثانية ⏰)`;
+
+      } else if (lifelineType === "extra15" || lifelineType === "time_stop") {
+        const addSecs = lifelineType === "extra15" ? 15 : 20;
+        const remaining = Math.max(0, (room.current.deadline||now) - now);
+        room.current.deadline = now + remaining + (addSecs * 1000);
+        room.current.total = (room.current.total||30) + addSecs;
+        logText += ` (+${addSecs} ثانية)`;
+
+      } else if (lifelineType === "reveal_opt") {
+        // كشف حرف الإجابة الصحيحة
+        const qId = room.current.questionId;
+        let qData = questions.find(q => q.id === qId);
+        if (!qData) { try { const jb=JSON.parse(fs.readFileSync(path.join(__dirname,"data","questions_bank_complete.json"),"utf8")); qData=(jb.questions||[]).find(q=>q.id===qId); } catch(_){} }
+        room.current.revealedLetter = String(qData?.correct_answer || "A").toUpperCase();
+        logText += ` (الجواب يبدأ بـ ${room.current.revealedLetter})`;
+
+      } else if (lifelineType === "double") {
+        room.current.doubleChance = true;
+        logText += ` (مسموح بمحاولتين)`;
+
+      } else if (lifelineType === "second_ch") {
+        room.current.secondChance = true;
+        logText += ` (فرصة ثانية عند الخطأ)`;
+
+      } else if (lifelineType === "no_steal") {
+        room.current.noSteal = true;
+        logText += ` (محمية من الخطف)`;
+
+      } else if (lifelineType === "freeze") {
+        room.current.frozen = currentAnsweringTeam === "red" ? "green" : "red";
+        logText += ` (الخصم مُجمَّد)`;
+
+      } else if (lifelineType === "bonus50") {
+        room.current.bonusPoints = (room.current.bonusPoints||0) + 50;
+        logText += ` (+50 نقطة بونص على هذه الخانة)`;
+
+      } else if (lifelineType === "steal") {
+        room.current.doubleOnSteal = true;
+        logText += ` (النقاط مضاعفة عند الإجابة الصحيحة)`;
+
+      } else if (lifelineType === "skip") {
+        // خانة عشوائية من نفس الفئة
+        const catId = room.current.categoryId;
+        const val = room.current.value;
+        const catCells = (room.board.find(b=>b.categoryId===catId)?.cells||[]).filter(c=>!room.used.includes(c.key)&&c.key!==room.current.cellKey);
+        if (catCells.length > 0) {
+          const newCell = catCells[Math.floor(Math.random()*catCells.length)];
+          room.current.questionId = newCell.questionId;
+          room.current.cellKey = newCell.key;
+          room.current.value = newCell.value;
         }
-        teamLifelines.friend = false;
-        room.lifelines[currentAnsweringTeam] = teamLifelines;
+        logText += ` (انتقل لسؤال جديد)`;
 
-        const now = Date.now();
-        const currentRemaining = Math.max(0, (room.current.deadline || (now + 30000)) - now);
-        room.current.deadline = now + currentRemaining + 30000;
-        room.current.total = (room.current.total || 30) + 30;
+      } else if (lifelineType === "transfer") {
+        const opp = currentAnsweringTeam === "red" ? "green" : "red";
+        room.current.answeringTeam = opp;
+        logText += ` (انتقل السؤال للخصم)`;
 
-        room.log.unshift({
-          id: "log-" + Date.now(),
-          reason: "وسيلة مساعدة",
-          delta: 0,
-          text: `استخدم ${teamLabel} وسيلة اتصال بصديق (+30 ثانية وقت إضافي)! ⏱️`,
-          time: Date.now(),
+      } else if (lifelineType === "swap") {
+        const val = room.current.value;
+        const allCells = room.board.flatMap(b=>b.cells).filter(c=>c.value===val&&!room.used.includes(c.key)&&c.key!==room.current.cellKey);
+        if (allCells.length > 0) {
+          const newCell = allCells[Math.floor(Math.random()*allCells.length)];
+          room.current.questionId = newCell.questionId;
+          room.current.cellKey = newCell.key;
+          room.current.categoryId = newCell.key.split(":")[0];
+        }
+        logText += ` (تبديل بخانة عشوائية من نفس القيمة)`;
+
+      } else if (lifelineType === "audience") {
+        // رأي جمهور وهمي
+        const qId = room.current.questionId;
+        let qData = questions.find(q=>q.id===qId);
+        if (!qData) { try { const jb=JSON.parse(fs.readFileSync(path.join(__dirname,"data","questions_bank_complete.json"),"utf8")); qData=(jb.questions||[]).find(q=>q.id===qId); } catch(_){} }
+        const correctOpt = String(qData?.correct_answer||"A").toUpperCase();
+        const opts = ["A","B","C","D"];
+        let pcts = {}; let rem = 100;
+        opts.forEach((k,i) => {
+          if (k === correctOpt) return;
+          const p = i < opts.length-1 ? Math.floor(Math.random()*15) : 0;
+          pcts[k] = p; rem -= p;
         });
+        pcts[correctOpt] = rem;
+        room.current.audienceVotes = pcts;
+        logText += ` (رأي الجمهور: ${correctOpt}=${pcts[correctOpt]}%)`;
+
+      } else if (lifelineType === "double_neg") {
+        room.current.doubleNeg = currentAnsweringTeam === "red" ? "green" : "red";
+        logText += ` (خطأ الخصم = ضعف الخصم)`;
+
+      } else if (lifelineType === "all_see") {
+        room.current.allSeeActive = true;
+        logText += ` (الجواب مرئي للجميع)`;
       }
 
+      room.log.unshift({ id:"log-"+Date.now(), reason:"وسيلة مساعدة", delta:0, text:logText, time:now });
       saveRoom(room.code, room);
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-      res.end(JSON.stringify({
-        ok: true,
-        room: sanitizeRoom(room),
-        players: room.players,
-        messages: room.messages,
-      }));
+      res.end(JSON.stringify({ ok:true, room:sanitizeRoom(room), players:room.players, messages:room.messages }));
     } catch (err) {
       res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
-      res.end(JSON.stringify({ ok: false, error: err.message }));
+      res.end(JSON.stringify({ ok:false, error:err.message }));
+    }
+    return;
+  }
+
+  // 5b. مسار اختيار وسائل المساعدة للقائد (/api/rooms/choose-lifelines)
+  if (pathname === "/api/rooms/choose-lifelines" && req.method === "POST") {
+    const guestId = req.headers["x-seen-guest"] || "";
+    try {
+      const rawBody = await getRawOrParsedBody(req);
+      const payload = unpackPayload(rawBody);
+      const code = (payload.code || "").toUpperCase();
+      const room = loadRoom(code, guestId);
+      if (!room) { res.writeHead(404); res.end(JSON.stringify({ok:false})); return; }
+      const player = room.players.find(p=>p.user_id===guestId);
+      if (!player || !player.captain) { res.writeHead(200); res.end(JSON.stringify({ok:false,message:"فقط الكابتن يختار الوسائل"})); return; }
+      const team = player.team;
+      const chosen = (payload.lifelines||[]).filter(id=>ALL_LIFELINES.find(l=>l.id===id)).slice(0,3);
+      if (chosen.length < 1) { res.writeHead(200); res.end(JSON.stringify({ok:false,message:"اختر على الأقل وسيلة واحدة"})); return; }
+      if (!room.settings) room.settings = {};
+      if (!room.settings.chosenLifelines) room.settings.chosenLifelines = {};
+      room.settings.chosenLifelines[team] = chosen;
+      room.settings.lifelinesPicked = room.settings.lifelinesPicked || {};
+      room.settings.lifelinesPicked[team] = true;
+      room.log.unshift({ id:"log-"+Date.now(), reason:"اختيار وسائل", delta:0, text:`قائد ${team==="red"?"الأحمر":"الأخضر"} اختار ${chosen.length} وسائل مساعدة`, time:Date.now() });
+      saveRoom(room.code, room);
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ ok:true, room:sanitizeRoom(room) }));
+    } catch(err) {
+      res.writeHead(400); res.end(JSON.stringify({ok:false,error:err.message}));
+    }
+    return;
+  }
+
+  // 5c. مسار قائمة الوسائل المتاحة (/api/rooms/lifelines-list)
+  if (pathname === "/api/rooms/lifelines-list" && req.method === "GET") {
+    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+    res.end(JSON.stringify({ ok:true, lifelines:ALL_LIFELINES }));
+    return;
+  }
+
+  // 5d. مسار انتهاء وقت السؤال (/api/rooms/time-expire)
+  if (pathname === "/api/rooms/time-expire" && req.method === "POST") {
+    const guestId = req.headers["x-seen-guest"] || "";
+    try {
+      const rawBody = await getRawOrParsedBody(req);
+      const payload = unpackPayload(rawBody);
+      const code = (payload.code || "").toUpperCase();
+      const room = loadRoom(code, guestId);
+      if (!room || !room.current || room.current.revealed || room.current.awarded) {
+        res.writeHead(200); res.end(JSON.stringify({ok:false})); return;
+      }
+      const currentTeam = room.current.answeringTeam || room.turn;
+      const opposingTeam = currentTeam === "red" ? "green" : "red";
+      // تحقق أن الوقت انتهى فعلاً
+      const now = Date.now();
+      if (room.current.deadline && (room.current.deadline - now) > 2000) {
+        res.writeHead(200); res.end(JSON.stringify({ok:false,message:"الوقت لم ينته بعد"})); return;
+      }
+      // تحقق هل الخصم جرب مسبقاً
+      const attempted = room.current.attemptedTeams || [];
+      const noSteal = room.current.noSteal || room.current.frozen === opposingTeam;
+      if (!attempted.includes(opposingTeam) && !noSteal) {
+        // انتقل السؤال للخصم بدون موقت
+        room.current.answeringTeam = opposingTeam;
+        room.current.deadline = null; // بدون وقت = unlimited
+        room.current.total = 999;
+        room.current.attemptedTeams = [...attempted, currentTeam];
+        room.log.unshift({ id:"log-"+Date.now(), reason:"انتهاء الوقت", delta:0, text:`انتهى وقت ${currentTeam==="red"?"الأحمر":"الأخضر"} — السؤال ينتقل للخصم بدون موقت! ⏰`, time:now });
+      } else {
+        // كلا الفريقين أخطأ/انتهى وقتهم
+        room.current.revealed = true;
+        room.current.awarded = true;
+        room.current.winner = "none";
+        if (!room.used.includes(room.current.cellKey)) room.used.push(room.current.cellKey);
+        room.log.unshift({ id:"log-"+Date.now(), reason:"انتهاء الوقت", delta:0, text:`انتهى الوقت — لا نقاط لخانة ${room.current.value}`, time:now });
+      }
+      saveRoom(room.code, room);
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ ok:true, room:sanitizeRoom(room), players:room.players }));
+    } catch(err) {
+      res.writeHead(400); res.end(JSON.stringify({ok:false,error:err.message}));
     }
     return;
   }

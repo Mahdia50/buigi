@@ -243,12 +243,16 @@ async function adoptSnapshot(room, snapshot, code) {
     await saveRoom(code, created);
     return memoryRooms.get(code) || created;
   }
-  const before = (room.players || []).length;
-  room.players = unionPlayers(room.players || [], snapPlayers);
   const snapRev = Number(snapshot.rev) || 0;
   const roomRev = Number(room.rev) || 0;
-  let changed = room.players.length !== before;
-  if (snapRev > roomRev && snapshot.status) {
+  const snapNewer = snapRev > roomRev;
+  const beforeIds = (room.players || []).map((p) => p.user_id || p.id).sort().join("|");
+  room.players = snapNewer
+    ? unionPlayers(room.players || [], snapPlayers)
+    : unionPlayers(snapPlayers, room.players || []);
+  const afterIds = room.players.map((p) => p.user_id || p.id).sort().join("|");
+  let changed = beforeIds !== afterIds;
+  if (snapNewer && snapshot.status) {
     const players = room.players;
     const connections = room.connections instanceof Set ? room.connections : new Set();
     Object.assign(room, snapshot, { code, players, connections, recovered: false });
@@ -585,6 +589,21 @@ function ensureRoomLists(room) {
   if (!Array.isArray(room.players)) room.players = [];
   if (!room.scores) room.scores = { red: 0, green: 0 };
   if (!room.lifelines) room.lifelines = { red: {}, green: {} };
+  room.paused = healBool(room.paused, false);
+  room.chat_open = healBool(room.chat_open, true);
+  if (room.current === 0 || room.current === 1 || room.current === 2 || room.current === 3) room.current = null;
+  if (room.current && typeof room.current === "object") {
+    room.current.revealed = healBool(room.current.revealed, false);
+    room.current.awarded = healBool(room.current.awarded, false);
+    room.current.friendCallActive = healBool(room.current.friendCallActive, false);
+  }
+  if (room.settings) room.settings.voteMode = healBool(room.settings.voteMode, false);
+  for (const player of room.players) {
+    player.ready = healBool(player.ready, false);
+    player.captain = healBool(player.captain, false);
+    player.connected = healBool(player.connected, false);
+    if (player.vote === 0 || player.vote === 1) player.vote = null;
+  }
   const current = room.current;
   if (current && current.friendCallActive && current.friendCallEnd && Date.now() >= current.friendCallEnd) {
     if (current.friendCallRemaining == null) current.deadline = null;
@@ -677,11 +696,25 @@ function sanitizeRoom(room) {
 
 
 function parseSerovalNode(node, root) {
-  if (!node) return undefined;
-  if (node.s !== undefined) return node.s;
-  if (node.n !== undefined) return node.n;
-  if (node.b !== undefined) return node.b;
-  if (node.t === 10 && node.p) { // object
+  if (node == null) return undefined;
+  if (typeof node !== "object") return node;
+  if (node.t === 0) return node.s;
+  if (node.t === 1) return node.s;
+  if (node.t === 2) {
+    if (node.s === 0) return null;
+    if (node.s === 1) return undefined;
+    if (node.s === 2) return true;
+    if (node.s === 3) return false;
+    if (node.s === 4) return -0;
+    if (node.s === 5) return Infinity;
+    if (node.s === 6) return -Infinity;
+    if (node.s === 7) return NaN;
+    return undefined;
+  }
+  if (node.t === 3 && typeof node.s === "string") {
+    try { return BigInt(node.s); } catch (_) { return node.s; }
+  }
+  if (node.t === 10 && node.p) {
     const obj = {};
     const keys = node.p.k || [];
     const vals = node.p.v || [];
@@ -690,15 +723,21 @@ function parseSerovalNode(node, root) {
     }
     return obj;
   }
-  if (node.t === 9 && node.a) { // array
+  if (node.t === 9 && node.a) {
     return node.a.map(item => parseSerovalNode(item, root));
   }
-  if (node.t === 1) return node.s;
-  if (node.t === 2) return node.n;
-  if (node.t === 3) return true;
-  if (node.t === 4) return false;
-  if (node.t === 5) return null;
+  if (node.s !== undefined && node.t == null) return node.s;
+  if (node.n !== undefined) return node.n;
+  if (node.b !== undefined) return node.b;
   return undefined;
+}
+
+function healBool(value, fallback = false) {
+  if (value === true || value === false) return value;
+  if (value === 2) return true;
+  if (value === 3 || value === 0 || value === 1) return false;
+  if (value == null) return fallback;
+  return !!value;
 }
 
 function unpackPayload(body) {
@@ -1086,10 +1125,15 @@ async function _handleRequest(req, res) {
         const code = (payload.code || "").toUpperCase();
         const room = await loadRoom(code, guestId, guestName);
         if (room) {
-          const player = room.players.find(p => p.user_id === guestId);
+          const player = findPlayer(room, guestId, guestName, payload.playerId);
           if (player) {
             if (payload.name !== undefined) player.name = payload.name.trim();
-            if (payload.team !== undefined) player.team = payload.team;
+            if (payload.team === "red" || payload.team === "green") {
+              if (player.team !== payload.team) {
+                player.captain = !room.players.some((p) => p !== player && p.team === payload.team && p.captain);
+              }
+              player.team = payload.team;
+            }
             if (payload.ready !== undefined) player.ready = !!payload.ready;
             player.last_seen = Date.now();
             await saveRoom(room.code, room);  // حفظ تعديلات اللاعب
@@ -1192,7 +1236,9 @@ async function _handleRequest(req, res) {
         const code = (payload.code || "").toUpperCase();
         const room = await loadRoom(code, guestId, guestName);
         if (room && payload.key) {
-          const player = room.players.find(p => p.user_id === guestId);
+          if (!Array.isArray(room.used)) room.used = [];
+          if (!Array.isArray(room.board)) room.board = [];
+          const player = findPlayer(room, guestId, guestName, payload.playerId);
           if (room.current && !room.current.awarded) {
             await sendFnResponse(res, { ok: false, error: "السؤال الحالي مازال مفتوح. كمّلوه قبل اختيار خانة جديدة." });
             return;

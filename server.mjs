@@ -642,38 +642,50 @@ async function _handleRequest(req, res) {
           const isHost = room.players.length === 0;
           const redCount = room.players.filter(p => p.team === "red").length;
           const greenCount = room.players.filter(p => p.team === "green").length;
-          // معرف حتمي بناءً على guestId لضمان نفس الـ id في حال الانقطاع وإعادة الاتصال
+          // معرف حتمي بناءً على guestId
           const stableId = "p-" + guestId.replace(/[^a-z0-9]/gi, "").slice(0, 8);
-          player = {
-            id: stableId,
-            user_id: guestId,
-            name: (guestName || "لاعب").trim(),
-            role: isHost ? "host" : "player",
-            team: greenCount < redCount ? "green" : "red",
-            ready: true,
-            captain: isHost,
-            connected: true,
-            last_seen: Date.now(),
-            vote: null,
-          };
-          room.players.push(player);
+          // تحقق مجدداً بالـ stableId لمنع الإضافة المكررة
+          const existingById = room.players.find(p => p.id === stableId);
+          if (existingById) {
+            player = existingById;
+            player.user_id = guestId;
+            player.last_seen = Date.now();
+            player.connected = true;
+          } else {
+            player = {
+              id: stableId,
+              user_id: guestId,
+              name: (guestName || "لاعب").trim(),
+              role: isHost ? "host" : "player",
+              team: greenCount < redCount ? "green" : "red",
+              ready: true,
+              captain: isHost,
+              connected: true,
+              last_seen: Date.now(),
+              vote: null,
+            };
+            room.players.push(player);
+          }
           saveRoom(room.code, room);
         }
 
         sendFnResponse(res, {
           room: sanitizeRoom(room),
-          // نُخفي last_seen من الـ response لمنع re-render في كل poll
-          players: (room.players || []).map(p => ({
-            id: p.id,
-            user_id: p.user_id,
-            name: p.name,
-            role: p.role,
-            team: p.team,
-            ready: p.ready,
-            captain: p.captain,
-            connected: p.connected,
-            vote: p.vote,
-          })),
+          // connected بـ bucket 30 ثانية لمنع التغيير في كل poll
+          players: (room.players || []).map(p => {
+            const isConnected = !!(p.connected && Date.now() - (p.last_seen || 0) < 90000);
+            return {
+              id: p.id,
+              user_id: p.user_id,
+              name: p.name,
+              role: p.role,
+              team: p.team,
+              ready: p.ready,
+              captain: p.captain,
+              connected: isConnected,
+              vote: p.vote,
+            };
+          }),
           messages: room.messages || [],
         });
         return;
@@ -700,19 +712,31 @@ async function _handleRequest(req, res) {
           player.connected = true;
         } else {
           const isFirst = room.players.length === 0;
-          player = {
-            id: "p-" + Math.random().toString(36).slice(2, 8),
-            user_id: guestId || `g-${Date.now()}`,
-            name: (payload.name || guestName || "لاعب").trim(),
-            role: isFirst ? "host" : "player",
-            team: payload.team || "red",
-            ready: true,
-            captain: isFirst,
-            connected: true,
-            last_seen: Date.now(),
-            vote: null,
-          };
-          room.players.push(player);
+          const stableId = guestId ? "p-" + guestId.replace(/[^a-z0-9]/gi, "").slice(0, 8) : "p-" + Math.random().toString(36).slice(2, 8);
+          // تحقق بالـ stableId أيضاً
+          const existingByStableId = room.players.find(p => p.id === stableId);
+          if (existingByStableId) {
+            player = existingByStableId;
+            if (payload.name) player.name = payload.name.trim();
+            if (payload.team) player.team = payload.team;
+            player.user_id = guestId || player.user_id;
+            player.last_seen = Date.now();
+            player.connected = true;
+          } else {
+            player = {
+              id: stableId,
+              user_id: guestId || `g-${Date.now()}`,
+              name: (payload.name || guestName || "لاعب").trim(),
+              role: isFirst ? "host" : "player",
+              team: payload.team || "red",
+              ready: true,
+              captain: isFirst,
+              connected: true,
+              last_seen: Date.now(),
+              vote: null,
+            };
+            room.players.push(player);
+          }
         }
         saveRoom(room.code, room);
 

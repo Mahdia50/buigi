@@ -493,6 +493,26 @@ async function createRoomInstance(payload = {}, hostGuestId = "", hostName = "",
   return newRoom;
 }
 
+function turnAfterClose(room) {
+  if (room?.current?.awarded) {
+    const cell = room.current.cellKey || "";
+    if (room.advancedCell !== cell) return room.turn === "red" ? "green" : "red";
+  }
+  return room.turn;
+}
+
+function closeAwardedQuestion(room) {
+  if (!room?.current?.awarded) return false;
+  const cell = room.current.cellKey || "";
+  if (room.advancedCell !== cell) {
+    room.turn = room.turn === "red" ? "green" : "red";
+    room.advancedCell = cell;
+  }
+  room.current = null;
+  if (Array.isArray(room.players)) room.players.forEach((p) => { p.vote = null; });
+  return true;
+}
+
 async function restoreCurrentFromPayload(room, payload) {
   if (!room || room.current) return; // current موجود، لا حاجة للاسترجاع
   const cellKey = payload.cellKey || payload.key;
@@ -1144,19 +1164,13 @@ async function _handleRequest(req, res) {
             await sendFnResponse(res, { ok: false, error: "هاد الخانة تلعبات من قبل" });
             return;
           }
-          let effectiveTurn = room.turn;
-          if (room.current && room.current.awarded) {
-            effectiveTurn = room.turn === "red" ? "green" : "red";
-          }
+          const effectiveTurn = turnAfterClose(room);
           if (player && player.team && player.team !== effectiveTurn) {
             console.log(`[BLOCKED] تم منع اللاعب ${player.name} (${player.team}) من اختيار خانة لأن الدور لـ ${effectiveTurn}`);
             await sendFnResponse(res, { ok: false, error: "ليس دور فريقك لاختيار السؤال" });
             return;
           }
-          if (room.current && room.current.awarded) {
-            room.turn = effectiveTurn;
-            room.current = null;
-          }
+          closeAwardedQuestion(room);
           const [catId, valStr] = payload.key.split(":");
           const val = parseInt(valStr, 10);
           let qId = null;
@@ -1337,10 +1351,7 @@ async function _handleRequest(req, res) {
       if (fnHash === "3384f975f333a274c7046854ffc0ce43371f9ff1c861817d9324dffa6dce3e25") {
         const code = (payload.code || "").toUpperCase();
         const room = await loadRoom(code, guestId, guestName);
-        if (room) {
-          room.current = null;
-          room.turn = room.turn === "red" ? "green" : "red";
-          room.players.forEach(p => p.vote = null);
+        if (room && closeAwardedQuestion(room)) {
           if (room.used.length >= (room.board.length * 5)) {
             room.status = "finished";
             const winner = room.scores.red > room.scores.green ? "الفريق الأحمر" :
@@ -1491,6 +1502,8 @@ async function _handleRequest(req, res) {
   const roomMatch = pathname.match(/^\/api\/rooms\/([A-Za-z0-9]+)$/);
   if (roomMatch && req.method === "GET") {
     const code = roomMatch[1].toUpperCase();
+    const guestId = req.headers["x-seen-guest"] || "";
+    const guestName = decodeURIComponent(req.headers["x-seen-name"] || "");
     const room = await loadRoom(code, guestId, guestName);
     if (!room) {
       res.writeHead(404, { "Content-Type": "application/json; charset=utf-8" });
@@ -1539,6 +1552,13 @@ async function _handleRequest(req, res) {
         return;
       }
 
+      if (room.current.answerBusy === currentAnsweringTeam) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, message: "فريقك جاوب دابا على هاد السؤال" }));
+        return;
+      }
+      room.current.answerBusy = currentAnsweringTeam;
+
       const qId = room.current.questionId;
       let qData = questions.find(q => q.id === qId);
       if (!qData) {
@@ -1584,8 +1604,9 @@ async function _handleRequest(req, res) {
         const opposingTeam = currentAnsweringTeam === "red" ? "green" : "red";
         const opposingTeamLabel = opposingTeam === "red" ? "الفريق الأحمر 🔴" : "الفريق الأخضر 🟢";
 
-        if (!room.current.attemptedTeams.includes(opposingTeam)) {
+        if (!room.current.attemptedTeams.includes(opposingTeam) && !room.current.noSteal && room.current.frozen !== opposingTeam) {
           // نقل فرصة الإجابة للفريق الخصم (خطف السؤال) مع 15 ثانية إضافية
+          room.current.answerBusy = null;
           room.current.answeringTeam = opposingTeam;
           room.current.total = 15;
           room.current.duration = 15;
@@ -1846,9 +1867,11 @@ async function _handleRequest(req, res) {
       }
       const currentTeam = room.current.answeringTeam || room.turn;
       const opposingTeam = currentTeam === "red" ? "green" : "red";
-      // تحقق أن الوقت انتهى فعلاً
       const now = Date.now();
-      if (room.current.deadline && (room.current.deadline - now) > 2000) {
+      if (payload.cellKey && room.current.cellKey && payload.cellKey !== room.current.cellKey) {
+        res.writeHead(200); res.end(JSON.stringify({ok:false})); return;
+      }
+      if (!room.current.deadline || (room.current.deadline - now) > 2000) {
         res.writeHead(200); res.end(JSON.stringify({ok:false,message:"الوقت لم ينته بعد"})); return;
       }
       // تحقق هل الخصم جرب مسبقاً
@@ -1856,6 +1879,7 @@ async function _handleRequest(req, res) {
       const noSteal = room.current.noSteal || room.current.frozen === opposingTeam;
       if (!attempted.includes(opposingTeam) && !noSteal) {
         // انتقل السؤال للخصم بدون موقت
+        room.current.answerBusy = null;
         room.current.answeringTeam = opposingTeam;
         room.current.deadline = null; // بدون وقت = unlimited
         room.current.total = 999;
@@ -1894,11 +1918,23 @@ async function _handleRequest(req, res) {
       }
 
       const player = room.players.find(p => p.user_id === guestId);
-      if (player && player.team && player.team !== room.turn) {
+      if (room.current && !room.current.awarded) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, error: "السؤال الحالي مازال مفتوح. كمّلوه قبل اختيار خانة جديدة." }));
+        return;
+      }
+      const effectiveTurn = turnAfterClose(room);
+      if (player && player.team && player.team !== effectiveTurn) {
         res.writeHead(403, { "Content-Type": "application/json; charset=utf-8" });
         res.end(JSON.stringify({ ok: false, error: "ليس دور فريقك لاختيار السؤال" }));
         return;
       }
+      if (room.used.includes(payload.key)) {
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ ok: false, error: "هاد الخانة تلعبات من قبل" }));
+        return;
+      }
+      closeAwardedQuestion(room);
 
       const [catId, valStr] = payload.key.split(":");
       const val = parseInt(valStr, 10);

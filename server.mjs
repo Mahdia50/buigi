@@ -587,11 +587,48 @@ function ensureRoomLists(room) {
   if (!room.lifelines) room.lifelines = { red: {}, green: {} };
   const current = room.current;
   if (current && current.friendCallActive && current.friendCallEnd && Date.now() >= current.friendCallEnd) {
-    const remaining = Number(current.friendCallRemaining) || 0;
-    current.deadline = Date.now() + remaining;
+    if (current.friendCallRemaining == null) current.deadline = null;
+    else {
+      const remaining = Number(current.friendCallRemaining) || 0;
+      current.deadline = Date.now() + remaining;
+      current.total = Math.max(1, Math.ceil(remaining / 1000));
+    }
     current.friendCallActive = false;
-    current.total = Math.max(1, Math.ceil(remaining / 1000));
   }
+}
+
+function findQuestionById(qId) {
+  let qData = questions.find((q) => q.id === qId);
+  if (!qData) {
+    try {
+      const jsonBank = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "questions_bank_complete.json"), "utf8"));
+      qData = (jsonBank.questions || []).find((q) => q.id === qId);
+    } catch (_) {}
+  }
+  return qData || null;
+}
+
+function hintFromQuestion(qData) {
+  const answer = String(qData?.answer || "").trim();
+  let text = String(qData?.explanation || qData?.explain || "").trim();
+  if (answer && text.includes(answer)) text = text.split(answer).join("…").replace(/\s+/g, " ").trim();
+  const useful = text.replace(/[.…\s]/g, "");
+  if (useful.length < 12) {
+    const core = answer.replace(/^ال/, "");
+    const first = [...core].find((ch) => /[\u0600-\u06FFA-Za-z0-9]/.test(ch)) || "";
+    const count = [...core.replace(/\s/g, "")].length;
+    text = first ? `الجواب كيبدأ بـ «${first}» وفيه ${count} حرف` : "فكر فالتفاصيل ديال السؤال";
+  }
+  return text.slice(0, 240);
+}
+
+function pauseQuestionClock(current, now, ms, label) {
+  const remaining = current.deadline ? Math.max(0, current.deadline - now) : null;
+  current.friendCallActive = true;
+  current.friendCallEnd = now + ms;
+  current.friendCallRemaining = remaining;
+  current.friendCallLabel = label;
+  current.deadline = null;
 }
 
 function getAvailableLifelines(room, team) {
@@ -1579,26 +1616,63 @@ async function _handleRequest(req, res) {
       const teamLabel = currentAnsweringTeam === "red" ? "الفريق الأحمر 🔴" : "الفريق الأخضر 🟢";
 
       if (isCorrect) {
+        let gained = val;
+        if (room.current.bonusFor === currentAnsweringTeam) gained += Number(room.current.bonusPoints) || 0;
+        if (room.current.doubleOnSteal && room.current.doubleFor === currentAnsweringTeam) gained *= 2;
         room.current.revealed = true;
         room.current.awarded = true;
         room.current.winner = currentAnsweringTeam;
-        room.scores[currentAnsweringTeam] = (room.scores[currentAnsweringTeam] || 0) + val;
+        room.scores[currentAnsweringTeam] = (room.scores[currentAnsweringTeam] || 0) + gained;
         if (!room.used.includes(room.current.cellKey)) {
           room.used.push(room.current.cellKey);
         }
         room.log.unshift({
           id: "log-" + Date.now(),
           reason: "إجابة صحيحة",
-          delta: val,
-          text: `+${val} نقطة لـ${teamLabel} بعد إجابة صحيحة (${selectedOpt})! 🎯`,
+          delta: gained,
+          text: `+${gained} نقطة لـ${teamLabel} بعد إجابة صحيحة (${selectedOpt})! 🎯`,
           time: Date.now(),
         });
       } else {
         if (!room.current.wrongAnswers.includes(selectedOpt)) {
           room.current.wrongAnswers.push(selectedOpt);
         }
-        if (!room.current.attemptedTeams.includes(currentAnsweringTeam)) {
+        const extraTry = (room.current.doubleChance || room.current.secondChance) && room.current.extraTryFor !== currentAnsweringTeam;
+        if (extraTry) {
+          room.current.extraTryFor = currentAnsweringTeam;
+          room.current.answerBusy = null;
+          room.log.unshift({
+            id: "log-" + Date.now(),
+            reason: "محاولة ثانية",
+            delta: 0,
+            text: `إجابة خاطئة (${selectedOpt}) من ${teamLabel}. عندهم محاولة ثانية على نفس السؤال.`,
+            time: Date.now(),
+          });
+        } else if (!room.current.attemptedTeams.includes(currentAnsweringTeam)) {
           room.current.attemptedTeams.push(currentAnsweringTeam);
+        }
+        if (!extraTry && room.current.doubleNeg === currentAnsweringTeam) {
+          const pen = val * 2;
+          room.scores[currentAnsweringTeam] = (room.scores[currentAnsweringTeam] || 0) - pen;
+          room.log.unshift({
+            id: "log-" + Date.now(),
+            reason: "مضاعفة الخسارة",
+            delta: -pen,
+            text: `−${pen} نقطة على ${teamLabel} بسبب مضاعفة الخسارة.`,
+            time: Date.now(),
+          });
+        }
+        if (extraTry) {
+          await saveRoom(room.code, room);
+          res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+          res.end(JSON.stringify({
+            ok: true,
+            isCorrect: false,
+            room: sanitizeRoom(room),
+            players: room.players,
+            messages: room.messages,
+          }));
+          return;
         }
 
         const opposingTeam = currentAnsweringTeam === "red" ? "green" : "red";
@@ -1726,14 +1800,7 @@ async function _handleRequest(req, res) {
         logText += ` (حُذفت ${room.current.hiddenOptions.length} خيارات خاطئة)`;
 
       } else if (lifelineType === "friend") {
-        // إيقاف الوقت 30 ثانية: نُوقف العداد ثم نُعيده بعد 30ث
-        room.current.friendCallActive = true;
-        room.current.friendCallEnd = now + 30000;
-        room.current.friendCallPrevDeadline = room.current.deadline;
-        // نُوقف الـ deadline مؤقتاً (نحفظ الوقت المتبقي)
-        const remaining = Math.max(0, (room.current.deadline||now) - now);
-        room.current.friendCallRemaining = remaining;
-        room.current.deadline = null; // unlimited حتى ينتهي الـ call
+        pauseQuestionClock(room.current, now, 30000, "📞 تشاور");
         logText += ` (الوقت متوقف 30 ثانية للتشاور 📞)`;
 
       } else if (lifelineType === "extra30") {
@@ -1742,12 +1809,19 @@ async function _handleRequest(req, res) {
         room.current.total = (room.current.total||30) + 30;
         logText += ` (+30 ثانية ⏰)`;
 
-      } else if (lifelineType === "extra15" || lifelineType === "time_stop") {
-        const addSecs = lifelineType === "extra15" ? 15 : 20;
+      } else if (lifelineType === "extra15") {
         const remaining = Math.max(0, (room.current.deadline||now) - now);
-        room.current.deadline = now + remaining + (addSecs * 1000);
-        room.current.total = (room.current.total||30) + addSecs;
-        logText += ` (+${addSecs} ثانية)`;
+        room.current.deadline = now + remaining + 15000;
+        room.current.total = (room.current.total||30) + 15;
+        logText += ` (+15 ثانية)`;
+
+      } else if (lifelineType === "time_stop") {
+        pauseQuestionClock(room.current, now, 20000, "⏸️ الوقت واقف");
+        logText += ` (العداد واقف 20 ثانية)`;
+
+      } else if (lifelineType === "hint") {
+        room.current.hintText = hintFromQuestion(findQuestionById(room.current.questionId));
+        logText += ` (بان التلميح)`;
 
       } else if (lifelineType === "reveal_opt") {
         // كشف حرف الإجابة الصحيحة
@@ -1775,10 +1849,12 @@ async function _handleRequest(req, res) {
 
       } else if (lifelineType === "bonus50") {
         room.current.bonusPoints = (room.current.bonusPoints||0) + 50;
+        room.current.bonusFor = currentAnsweringTeam;
         logText += ` (+50 نقطة بونص على هذه الخانة)`;
 
       } else if (lifelineType === "steal") {
         room.current.doubleOnSteal = true;
+        room.current.doubleFor = currentAnsweringTeam;
         logText += ` (النقاط مضاعفة عند الإجابة الصحيحة)`;
 
       } else if (lifelineType === "audience") {
